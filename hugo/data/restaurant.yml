@@ -1,0 +1,41 @@
+timezone: "Europe/Madrid"
+
+week:
+  monday:
+    lunch:
+      start: "13:00"
+      end: "15:30"
+      type: menu
+    dinner:
+      start: "20:00"
+      end: "23:00"
+      type: carta
+
+  tuesday:
+    lunch:
+      start: "13:00"
+      end: "15:30"
+      type: menu
+    dinner:
+      start: "20:00"
+      end: "23:00"
+      type: carta
+
+  saturday:
+    lunch:
+      start: "13:00"
+      end: "16:00"
+      type: carta
+    dinner:
+      start: "20:00"
+      end: "23:30"
+      type: carta
+
+exceptions:
+  - date: "2026-09-24"
+    active: true
+    status: closed
+    message:
+      ca: "Avui tanquem per la Mercè"
+      es: "Hoy cerramos por la Mercè"
+      en: "Closed for La Mercè"

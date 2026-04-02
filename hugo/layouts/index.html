@@ -1,0 +1,11 @@
+{{ partial "status.html" . }}
+
+{{ if eq $status "menu" }}
+  {{ partial "home-menu.html" . }}
+
+{{ else if eq $status "carta" }}
+  {{ partial "home-carta.html" . }}
+
+{{ else }}
+  {{ partial "home-closed.html" . }}
+{{ end }}

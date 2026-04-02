@@ -1,0 +1,66 @@
+{{ $now := now }}
+{{ $day := lower (dateFormat "Monday" $now) }}
+
+{{ $minutes := add (mul $now.Hour 60) $now.Minute }}
+{{ $today := dateFormat "2006-01-02" $now }}
+
+{{ $data := .Site.Data.restaurant }}
+
+{{ $status := "unknown" }}
+{{ $service := "" }}
+{{ $message := "" }}
+
+{{/* ------------------------------- */}}
+{{/* 1. EXCEPCIONS (GUANYEN SEMPRE) */}}
+{{/* ------------------------------- */}}
+
+{{ range $data.exceptions }}
+  {{ if and .active (eq .date $today) }}
+    {{ $status = .status }}
+    {{ $message = .message.ca }}
+  {{ end }}
+{{ end }}
+
+{{ if eq $status "open" }}
+
+  {{ $dayData := index $data.week $day }}
+
+  {{/* ---------------- LUNCH ---------------- */}}
+  {{ if $dayData.lunch }}
+
+    {{ $lunchStart := add (mul (index (split $dayData.lunch.start ":") 0 | int) 60)
+                           (index (split $dayData.lunch.start ":") 1 | int) }}
+
+    {{ $lunchEnd := add (mul (index (split $dayData.lunch.end ":") 0 | int) 60)
+                         (index (split $dayData.lunch.end ":") 1 | int) }}
+
+    {{ if and (ge $minutes $lunchStart) (le $minutes $lunchEnd) }}
+      {{ $status = $dayData.lunch.type }}
+      {{ $service = "lunch" }}
+    {{ end }}
+
+  {{ end }}
+
+  {{/* ---------------- DINNER ---------------- */}}
+  {{ if eq $status "closed" }}
+
+    {{ if $dayData.dinner }}
+
+      {{ $dinnerStart := add (mul (index (split $dayData.dinner.start ":") 0 | int) 60)
+                             (index (split $dayData.dinner.start ":") 1 | int) }}
+
+      {{ $dinnerEnd := add (mul (index (split $dayData.dinner.end ":") 0 | int) 60)
+                           (index (split $dayData.dinner.end ":") 1 | int) }}
+
+      {{ if and (ge $minutes $dinnerStart) (le $minutes $dinnerEnd) }}
+        {{ $status = $dayData.dinner.type }}
+        {{ $service = "dinner" }}
+      {{ end }}
+
+    {{ end }}
+
+  {{ end }}
+
+{{ end }}
+
+{{ return $status }}

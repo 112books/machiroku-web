@@ -1,0 +1,6 @@
+{{- $res := partial "horaris-status.html" . -}}
+
+{{- dict
+  "status" (index $res "status")
+  "reason" (index $res "reason")
+-}}

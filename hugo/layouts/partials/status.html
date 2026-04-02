@@ -1,0 +1,11 @@
+{{- $res := partial "get-status.html" . -}}
+
+{{- $status := index $res "status" -}}
+
+{{- if eq $status "open" -}}
+OBERT · servei
+{{- else if eq $status "closed" -}}
+TANCAT
+{{- else -}}
+HORARI NO DISPONIBLE
+{{- end -}}

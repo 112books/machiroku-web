@@ -7,5 +7,5 @@ bucket = "./hugo/public"
 [build]
 command = "cd hugo && hugo"
 
-[vars]
-PAGES_BUILD_OUTPUT_DIR = "hugo/public"
+[builds]
+directory = "hugo/public"

@@ -1,0 +1,61 @@
+horari_base:
+  dilluns:
+    franges:
+      - inici: "13:00"
+        fi: "15:30"
+    servei: "menu"
+
+  dimarts:
+    franges:
+      - inici: "13:00"
+        fi: "15:30"
+    servei: "menu"
+
+  dimecres:
+    franges:
+      - inici: "13:00"
+        fi: "15:30"
+      - inici: "20:00"
+        fi: "23:00"
+    servei: "menu"
+
+  dijous:
+    franges:
+      - inici: "13:00"
+        fi: "15:30"
+      - inici: "20:00"
+        fi: "23:00"
+    servei: "menu"
+
+  divendres:
+    franges:
+      - inici: "13:00"
+        fi: "15:30"
+      - inici: "20:00"
+        fi: "23:00"
+    servei: "menu"
+
+  dissabte:
+    franges:
+      - inici: "13:00"
+        fi: "15:30"
+      - inici: "20:00"
+        fi: "23:00"
+    servei: "carta"
+
+  diumenge:
+    obert: false
+
+
+excepcions:
+  - data: "2026-09-24"
+    motiu:
+      ca: "Festa de la Mercè"
+      es: "Fiesta de la Mercè"
+      en: "La Mercè"
+    franges:
+      - inici: "13:00"
+        fi: "15:30"
+      - inici: "20:00"
+        fi: "23:00"
+    servei: "carta"

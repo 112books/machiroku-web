@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ca">
+<head>
+	<meta name="generator" content="Hugo 0.159.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <title></title>
+<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<header>
+  <div id="status-wrap">
+  <div id="status-badge" class="loading">
+    <span id="status-text">···</span>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+
+<script>
+function getTodayName() {
+  return [
+    "diumenge","dilluns","dimarts","dimecres",
+    "dijous","divendres","dissabte"
+  ][new Date().getDay()];
+}
+
+function toMinutes(t) {
+  if (!t) return 0;
+  const parts = t.split(":");
+  return Number(parts[0]) * 60 + Number(parts[1]);
+}
+
+function safeEl(id) {
+  return document.getElementById(id);
+}
+
+function render(text, state) {
+  const badge = safeEl("status-badge");
+  const el = safeEl("status-text");
+  if (!badge || !el) return;
+
+  badge.className = state;
+  el.innerText = text;
+}
+
+async function updateStatus() {
+  try {
+    const res = await fetch("/data/horaris.yaml", { cache: "no-store" });
+    const text = await res.text();
+    const data = jsyaml.load(text);
+
+    const today = getTodayName();
+    const now = new Date();
+    const mins = now.getHours() * 60 + now.getMinutes();
+
+    let openNow = null;
+    let nextOpen = null;
+
+    Object.values(data || {}).forEach(servei => {
+      if (!servei?.dies?.includes(today)) return;
+
+      const o = toMinutes(servei.obertura);
+      const t = toMinutes(servei.tancament);
+
+      if (mins >= o && mins < t) {
+        openNow = { o, t };
+      }
+
+      if (mins < o && (!nextOpen || o < nextOpen.o)) {
+        nextOpen = { o };
+      }
+    });
+
+    
+    const badge = document.getElementById("status-badge");
+    const el = document.getElementById("status-text");
+    if (!badge || !el) return;
+
+    function set(state, text) {
+      badge.className = state;
+      el.innerText = text;
+    }
+
+    
+    if (!openNow) {
+
+      if (!nextOpen) {
+        set("closed", "TANCAT · avui sense servei");
+        return;
+      }
+
+      const diff = nextOpen.o - mins;
+
+      if (diff <= 60) {
+        set("closed", "TANCAT · obrim en breu");
+      } else {
+        const h = Math.floor(diff / 60);
+        set("closed", `TANCAT · obrim en ${h} h`);
+      }
+
+      return;
+    }
+
+    
+    const remaining = openNow.t - mins;
+
+    
+    if (remaining <= 10) {
+      set("open", "OBERT · última comanda");
+    }
+
+    else if (remaining <= 25) {
+      set("open", "OBERT · acabem servei aviat");
+    }
+
+    else if (mins - openNow.o < 60) {
+      set("open", "OBERT · servei en marxa");
+    }
+
+    else {
+      set("open", "OBERT · sala activa");
+    }
+
+  } catch (e) {
+    console.error(e);
+    document.getElementById("status-text").innerText =
+      "STATUS NO DISPONIBLE";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateStatus();
+  setInterval(updateStatus, 60000);
+});
+</script>
+</header>
+
+<main>
+  
+
+<section class="hero">
+
+  <h1></h1>
+
+  <p id="tagline">
+    Cuina japonesa contemporània amb essència de silenci i producte.
+  </p>
+
+  <div class="cta">
+    <a href="/ca/menu/">Veure la carta</a>
+    <a href="/ca/reserves/">Fer reserva</a>
+  </div>
+
+</section>
+
+<section class="info">
+
+  <div class="block">
+    <h2>Horari</h2>
+    <p>Migdia: 13:00 – 15:30</p>
+    <p>Nit: 19:00 – 22:00 (divendres i dissabte)</p>
+  </div>
+
+  <div class="block">
+    <h2>Localització</h2>
+    <p>Centre de la ciutat</p>
+    <a href="https://maps.google.com" target="_blank">Veure al mapa</a>
+  </div>
+
+  <div class="block">
+    <h2>Contacte</h2>
+    <p>Telèfon directe (sense intermediaris)</p>
+    <p>WhatsApp disponible</p>
+  </div>
+
+</section>
+
+<section class="notice">
+  <p id="dynamic-message">
+    
+  </p>
+</section>
+
+
+</main>
+
+</body>
+</html>

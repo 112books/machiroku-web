@@ -5,7 +5,4 @@ compatibility_date = "2024-04-03"
 bucket = "./hugo/public"
 
 [build]
-command = "cd hugo && hugo"
-
-[builds]
-directory = "hugo/public"
+command = "cd hugo && hugo --config hugo.toml"

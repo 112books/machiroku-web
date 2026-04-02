@@ -1,8 +1,8 @@
-name = "machiroku"
+name = "machiroku-web"
 compatibility_date = "2024-04-03"
 
 [site]
-bucket = "./public"
+bucket = "./hugo/public"
 
 [build]
-command = "hugo"
+command = "cd hugo && hugo"

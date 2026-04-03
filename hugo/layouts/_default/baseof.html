@@ -15,13 +15,13 @@
   {{ partial "popup.html" . }}
   <header class="site-header">
     <div class="header-top">
-      <a href="{{ .Site.BaseURL }}" class="logo">
+      <a href="{{ "/" | relLangURL }}" class="logo">
         <img src="{{ .Site.BaseURL }}logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku" style="height:38px;">
       </a>
       <div class="lang-switch">
-        <a href="{{ .Site.BaseURL }}ca/">CA</a>
-        <a href="{{ .Site.BaseURL }}es/">ES</a>
-        <a href="{{ .Site.BaseURL }}en/">EN</a>
+        <a href="{{ "/ca/" }}">CA</a>
+        <a href="{{ "/es/" }}">ES</a>
+        <a href="{{ "/en/" }}">EN</a>
       </div>
     </div>
     <nav class="site-nav">
@@ -31,11 +31,11 @@
         <span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="{{ .Site.BaseURL }}">{{ i18n "home" }}</a></li>
-        <li><a href="{{ .Site.BaseURL }}oferta/">{{ i18n "oferta" }}</a></li>
-        <li><a href="{{ .Site.BaseURL }}reserves/">{{ i18n "reserves" }}</a></li>
-        <li><a href="{{ .Site.BaseURL }}contacte/">{{ i18n "contacte" }}</a></li>
-        <li><a href="{{ .Site.BaseURL }}sobre-nosaltres/">{{ i18n "sobre_nosaltres" }}</a></li>
+        <li><a href="{{ "/" | relLangURL }}">{{ i18n "home" }}</a></li>
+        <li><a href="{{ "/oferta/" | relLangURL }}">{{ i18n "oferta" }}</a></li>
+        <li><a href="{{ "/reserves/" | relLangURL }}">{{ i18n "reserves" }}</a></li>
+        <li><a href="{{ "/contacte/" | relLangURL }}">{{ i18n "contacte" }}</a></li>
+        <li><a href="{{ "/sobre-nosaltres/" | relLangURL }}">{{ i18n "sobre_nosaltres" }}</a></li>
         <li class="nav-status">{{ partial "status.html" . }}</li>
       </ul>
     </nav>
@@ -91,11 +91,11 @@
     <div class="footer-bottom">
       <div class="footer-copyright">
         <p>&copy; {{ now.Year }} Machiroku</p>
-        <img src="{{ .Site.BaseURL }}images/logos/logo.svg" alt="Machiroku" style="height:30px; margin: var(--spacing-sm) 0;">
+        <img src="{{ .Site.BaseURL }}logos/logo.svg" alt="Machiroku" style="height:30px; margin: var(--spacing-sm) 0;">
         <p class="footer-links">
-          <a href="{{ .Site.BaseURL }}legal/">{{ i18n "legales" }}</a> -
-          <a href="{{ .Site.BaseURL }}privacitat/">{{ i18n "privacitat" }}</a> -
-          <a href="{{ .Site.BaseURL }}cookies/">{{ i18n "cookies" }}</a>
+          <a href="{{ "/legal/" | relLangURL }}">{{ i18n "legales" }}</a> -
+          <a href="{{ "/privacitat/" | relLangURL }}">{{ i18n "privacitat" }}</a> -
+          <a href="{{ "/cookies/" | relLangURL }}">{{ i18n "cookies" }}</a>
         </p>
       </div>
       <div class="footer-powered">

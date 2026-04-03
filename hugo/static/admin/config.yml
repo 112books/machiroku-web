@@ -7,4 +7,12 @@ backend:
 media_folder: "static/images"
 public_folder: "/images"
 
-local_backend: true
+collections:
+  - name: "pages"
+    label: "Pàgines"
+    folder: "content/ca"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titol", name: "title", widget: "string" }
+      - { label: "Contingut", name: "body", widget: "markdown" }

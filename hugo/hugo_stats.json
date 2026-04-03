@@ -7,7 +7,6 @@
       "div",
       "footer",
       "h1",
-      "h2",
       "h3",
       "head",
       "header",
@@ -22,7 +21,6 @@
       "path",
       "pre",
       "script",
-      "section",
       "span",
       "svg",
       "title",
@@ -31,7 +29,6 @@
     "classes": [
       "btn",
       "btn-primary",
-      "cta-buttons",
       "footer-bottom",
       "footer-col",
       "footer-contact",
@@ -46,10 +43,6 @@
       "footer-social",
       "google-reviews-link",
       "header-top",
-      "hero-home",
-      "hero-logo",
-      "hero-next-open",
-      "hero-status",
       "logo",
       "nav-links",
       "nav-status",
@@ -61,16 +54,12 @@
       "site-footer",
       "site-header",
       "site-nav",
-      "slogan",
       "status",
       "status--closed",
-      "status-label",
       "status-message"
     ],
     "ids": [
-      "main-content",
-      "price-15",
-      "price-15-1"
+      "main-content"
     ]
   }
 }

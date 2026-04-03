@@ -2,33 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://112books.github.io/machiroku-web/en/menus/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/es/menus/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</loc>
-  </url><url>
     <loc>https://112books.github.io/machiroku-web/ca/</loc>
   </url><url>
     <loc>https://112books.github.io/machiroku-web/categories/</loc>
   </url><url>
-    <loc>https://112books.github.io/machiroku-web/en/contacte/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/ca/contacte/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/es/contacte/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/en/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/es/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/en/oferta/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/en/home/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/ca/home/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/es/home/</loc>
+    <loc>https://112books.github.io/machiroku-web/contacte/</loc>
   </url><url>
     <loc>https://112books.github.io/machiroku-web/</loc>
   </url><url>
@@ -38,19 +16,11 @@
   </url><url>
     <loc>https://112books.github.io/machiroku-web/ca/menus/unaju/</loc>
   </url><url>
-    <loc>https://112books.github.io/machiroku-web/es/oferta/</loc>
+    <loc>https://112books.github.io/machiroku-web/oferta/</loc>
   </url><url>
-    <loc>https://112books.github.io/machiroku-web/ca/oferta/</loc>
+    <loc>https://112books.github.io/machiroku-web/reserves/</loc>
   </url><url>
-    <loc>https://112books.github.io/machiroku-web/es/reserves/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/en/reserves/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/ca/reserves/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/ca/sobre-nosaltres/</loc>
-  </url><url>
-    <loc>https://112books.github.io/machiroku-web/es/sobre-nosaltres/</loc>
+    <loc>https://112books.github.io/machiroku-web/sobre-nosaltres/</loc>
   </url><url>
     <loc>https://112books.github.io/machiroku-web/tags/</loc>
   </url>

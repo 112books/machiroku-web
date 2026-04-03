@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="ca">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ .Title }} | Machiroku</title>
-  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Language.Params.description }}{{ end }}">
+  <meta name="description" content="Restaurant japonès al centre de Barcelona">
   <meta name="author" content="Machiroku">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{ .Permalink }}">
@@ -15,14 +15,9 @@
   {{ partial "popup.html" . }}
   <header class="site-header">
     <div class="header-top">
-      <a href="{{ "/" | relLangURL }}" class="logo">
+      <a href="{{ .Site.BaseURL }}" class="logo">
         <img src="{{ .Site.BaseURL }}logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku" style="height:38px;">
       </a>
-      <div class="lang-switch">
-        <a href="{{ "ca" | relLangURL }}">CA</a>
-        <a href="{{ "es" | relLangURL }}">ES</a>
-        <a href="{{ "en" | relLangURL }}">EN</a>
-      </div>
     </div>
     <nav class="site-nav">
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
@@ -48,7 +43,7 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-col footer-reserve">
-        <a href="{{ "/reserves" | relLangURL }}" class="btn btn-primary">{{ i18n "fer_reserva" }}</a>
+        <a href="{{ .Site.BaseURL }}reserves/" class="btn btn-primary">{{ i18n "fer_reserva" }}</a>
         <div class="footer-schedule">
           <h3>{{ i18n "horaris" }}</h3>
           <p class="schedule-day">{{ i18n "dilluns_dimarts" }}</p>
@@ -93,9 +88,9 @@
         <p>&copy; {{ now.Year }} Machiroku</p>
         <img src="{{ .Site.BaseURL }}logos/logo.svg" alt="Machiroku" style="height:30px; margin: var(--spacing-sm) 0;">
         <p class="footer-links">
-          <a href="{{ "/legal/" | relLangURL }}">{{ i18n "legales" }}</a> -
-          <a href="{{ "/privacitat/" | relLangURL }}">{{ i18n "privacitat" }}</a> -
-          <a href="{{ "/cookies/" | relLangURL }}">{{ i18n "cookies" }}</a>
+          <a href="{{ .Site.BaseURL }}legal/">{{ i18n "legales" }}</a> -
+          <a href="{{ .Site.BaseURL }}privacitat/">{{ i18n "privacitat" }}</a> -
+          <a href="{{ .Site.BaseURL }}cookies/">{{ i18n "cookies" }}</a>
         </p>
       </div>
       <div class="footer-powered">

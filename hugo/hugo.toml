@@ -1,33 +1,10 @@
 baseURL = "https://112books.github.io/machiroku-web/"
 defaultContentLanguage = "ca"
-defaultContentLanguageInSubdir = true
 title = "Machiroku"
 
 [taxonomies]
   category = "categories"
   tag = "tags"
-
-[languages]
-  [languages.ca]
-    languageName = "Català"
-    languageCode = "ca-ES"
-    weight = 1
-    [languages.ca.params]
-      description = "Restaurant japonès al centre de Barcelona"
-      
-  [languages.es]
-    languageName = "Español"
-    languageCode = "es-ES"
-    weight = 2
-    [languages.es.params]
-      description = "Restaurante japonés en el centro de Barcelona"
-      
-  [languages.en]
-    languageName = "English"
-    languageCode = "en-GB"
-    weight = 3
-    [languages.en.params]
-      description = "Japanese restaurant in Barcelona city center"
 
 [mediaTypes]
   [mediaTypes."text/yaml"]

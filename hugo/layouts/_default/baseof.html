@@ -15,7 +15,9 @@
   {{ partial "popup.html" . }}
   <header class="site-header">
     <nav class="site-nav">
-      <a href="{{ .Site.BaseURL }}" class="logo">Machiroku</a>
+      <a href="{{ .Site.BaseURL }}" class="logo">
+        <img src="{{ .Site.BaseURL }}logo.svg" alt="Machiroku" style="height:40px;">
+      </a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
         <span></span>
         <span></span>

@@ -1,6 +1,6 @@
 baseURL = "https://112books.github.io/machiroku-web/"
 defaultContentLanguage = "ca"
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
 title = "Machiroku"
 
 [taxonomies]

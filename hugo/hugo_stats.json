@@ -55,6 +55,7 @@
       "logo",
       "logo-square",
       "nav-links",
+      "nav-status",
       "nav-toggle",
       "rating",
       "reviews-link",
@@ -66,7 +67,6 @@
       "slogan",
       "status",
       "status--closed",
-      "status-bar",
       "status-label",
       "status-message"
     ],

@@ -36,13 +36,10 @@
         <li><a href="{{ .Site.BaseURL }}reserves/">{{ i18n "reserves" }}</a></li>
         <li><a href="{{ .Site.BaseURL }}contacte/">{{ i18n "contacte" }}</a></li>
         <li><a href="{{ .Site.BaseURL }}sobre-nosaltres/">{{ i18n "sobre_nosaltres" }}</a></li>
+        <li class="nav-status">{{ partial "status.html" . }}</li>
       </ul>
     </nav>
   </header>
-
-  <div class="status-bar">
-    {{ partial "status.html" . }}
-  </div>
 
   <main id="main-content">
     {{ block "main" . }}{{ end }}

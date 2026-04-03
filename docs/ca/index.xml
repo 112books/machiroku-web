@@ -1,31 +1,73 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cas on Machiroku</title>
+    <title>Machiroku</title>
     <link>https://112books.github.io/machiroku-web/ca/</link>
-    <description>Recent content in Cas on Machiroku</description>
+    <description>Recent content on Machiroku</description>
     <generator>Hugo</generator>
-    <language>ca</language>
+    <language>ca-ES</language>
     <atom:link href="https://112books.github.io/machiroku-web/ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Menú Sushi</title>
-      <link>https://112books.github.io/machiroku-web/ca/menus/sushi/</link>
+      <link>https://112books.github.io/machiroku-web/ca/ca/menus/sushi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/menus/sushi/</guid>
+      <guid>https://112books.github.io/machiroku-web/ca/ca/menus/sushi/</guid>
+      <description>&lt;p&gt;Sopa de miso + 3 peces de sashimi + 4 nigiri + 1 maki + postre o cafè&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menú Sushi</title>
+      <link>https://112books.github.io/machiroku-web/ca/en/menus/sushi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/en/menus/sushi/</guid>
+      <description>&lt;p&gt;Sopa de miso + 3 peces de sashimi + 4 nigiri + 1 maki + postre o cafè&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menú Sushi</title>
+      <link>https://112books.github.io/machiroku-web/ca/es/menus/sushi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/es/menus/sushi/</guid>
       <description>&lt;p&gt;Sopa de miso + 3 peces de sashimi + 4 nigiri + 1 maki + postre o cafè&lt;/p&gt;</description>
     </item>
     <item>
       <title>Menú Tendon</title>
-      <link>https://112books.github.io/machiroku-web/ca/menus/tendon/</link>
+      <link>https://112books.github.io/machiroku-web/ca/ca/menus/tendon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/menus/tendon/</guid>
+      <guid>https://112books.github.io/machiroku-web/ca/ca/menus/tendon/</guid>
+      <description>&lt;p&gt;Tendon (arroz japonés con tempura de gambas y verduras) + sopa de miso + postre&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menú Tendon</title>
+      <link>https://112books.github.io/machiroku-web/ca/en/menus/tendon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/en/menus/tendon/</guid>
+      <description>&lt;p&gt;Tendon (arroz japonés con tempura de gambas y verduras) + sopa de miso + postre&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menú Tendon</title>
+      <link>https://112books.github.io/machiroku-web/ca/es/menus/tendon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/es/menus/tendon/</guid>
       <description>&lt;p&gt;Tendon (arroz japonés con tempura de gambas y verduras) + sopa de miso + postre&lt;/p&gt;</description>
     </item>
     <item>
       <title>Menú Unaju</title>
-      <link>https://112books.github.io/machiroku-web/ca/menus/unaju/</link>
+      <link>https://112books.github.io/machiroku-web/ca/ca/menus/unaju/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/menus/unaju/</guid>
+      <guid>https://112books.github.io/machiroku-web/ca/ca/menus/unaju/</guid>
+      <description>&lt;p&gt;Unaju (arroz japonés con anguila a la parrilla) + sopa de miso + postre&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menú Unaju</title>
+      <link>https://112books.github.io/machiroku-web/ca/en/menus/unaju/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/en/menus/unaju/</guid>
+      <description>&lt;p&gt;Unaju (arroz japonés con anguila a la parrilla) + sopa de miso + postre&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menú Unaju</title>
+      <link>https://112books.github.io/machiroku-web/ca/es/menus/unaju/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/es/menus/unaju/</guid>
       <description>&lt;p&gt;Unaju (arroz japonés con anguila a la parrilla) + sopa de miso + postre&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ca">
+<html lang="{{ .Site.Language.Lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,9 @@
   <meta name="author" content="Machiroku">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{ .Permalink }}">
+  {{ range .AllTranslations }}
+  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+  {{ end }}
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
   <link rel="icon" type="image/svg+xml" href="{{ .Site.BaseURL }}favicon.svg">
 </head>
@@ -26,12 +29,18 @@
         <span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="{{ .Site.BaseURL }}">{{ i18n "home" }}</a></li>
-        <li><a href="{{ .Site.BaseURL }}oferta/">{{ i18n "oferta" }}</a></li>
-        <li><a href="{{ .Site.BaseURL }}reserves/">{{ i18n "reserves" }}</a></li>
-        <li><a href="{{ .Site.BaseURL }}contacte/">{{ i18n "contacte" }}</a></li>
-        <li><a href="{{ .Site.BaseURL }}sobre-nosaltres/">{{ i18n "sobre_nosaltres" }}</a></li>
+        <li><a href="{{ "/" | relLangURL }}">{{ i18n "home" }}</a></li>
+        <li><a href="{{ "/oferta/" | relLangURL }}">{{ i18n "oferta" }}</a></li>
+        <li><a href="{{ "/reserves/" | relLangURL }}">{{ i18n "reserves" }}</a></li>
+        <li><a href="{{ "/contacte/" | relLangURL }}">{{ i18n "contacte" }}</a></li>
+        <li><a href="{{ "/sobre-nosaltres/" | relLangURL }}">{{ i18n "sobre_nosaltres" }}</a></li>
         <li class="nav-status">{{ partial "status.html" . }}</li>
+        <li class="lang-switch">
+          {{ $lang := .Language.Lang }}
+          <a href="{{ printf "/%s/" "ca" | relLangURL }}" {{ if eq $lang "ca" }}class="active"{{ end }}>CA</a>
+          <a href="{{ printf "/%s/" "es" | relLangURL }}" {{ if eq $lang "es" }}class="active"{{ end }}>ES</a>
+          <a href="{{ printf "/%s/" "en" | relLangURL }}" {{ if eq $lang "en" }}class="active"{{ end }}>EN</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -43,7 +52,7 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-col footer-reserve">
-        <a href="{{ .Site.BaseURL }}reserves/" class="btn btn-primary">{{ i18n "fer_reserva" }}</a>
+        <a href="{{ "/reserves/" | relLangURL }}" class="btn btn-primary">{{ i18n "fer_reserva" }}</a>
         <div class="footer-schedule">
           <h3>{{ i18n "horaris" }}</h3>
           <p class="schedule-day">{{ i18n "dilluns_dimarts" }}</p>
@@ -57,13 +66,13 @@
       </div>
       <div class="footer-col footer-contact">
         <h3>{{ i18n "ubicacio" }}</h3>
-        <p>{{ site.Data.restaurant.adreca.ca }}</p>
+        <p>{{ hugo.Data.restaurant.adreca.ca }}</p>
         <p>08003 Barcelona</p>
         <div class="footer-social">
-          <a href="tel:{{ site.Data.restaurant.telefon }}" aria-label="{{ i18n "tel" }}">
+          <a href="tel:{{ hugo.Data.restaurant.telefon }}" aria-label="{{ i18n "tel" }}">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           </a>
-          <a href="mailto:{{ site.Data.restaurant.email }}" aria-label="Email">
+          <a href="mailto:{{ hugo.Data.restaurant.email }}" aria-label="Email">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 1L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
           <a href="https://instagram.com/machiroku_barcelona" target="_blank" rel="noopener" aria-label="Instagram">
@@ -88,9 +97,9 @@
         <p>&copy; {{ now.Year }} Machiroku</p>
         <img src="{{ .Site.BaseURL }}logos/logo.svg" alt="Machiroku" style="height:30px; margin: var(--spacing-sm) 0;">
         <p class="footer-links">
-          <a href="{{ .Site.BaseURL }}legal/">{{ i18n "legales" }}</a> -
-          <a href="{{ .Site.BaseURL }}privacitat/">{{ i18n "privacitat" }}</a> -
-          <a href="{{ .Site.BaseURL }}cookies/">{{ i18n "cookies" }}</a>
+          <a href="{{ "/legal/" | relLangURL }}">{{ i18n "legales" }}</a> -
+          <a href="{{ "/privacitat/" | relLangURL }}">{{ i18n "privacitat" }}</a> -
+          <a href="{{ "/cookies/" | relLangURL }}">{{ i18n "cookies" }}</a>
         </p>
       </div>
       <div class="footer-powered">

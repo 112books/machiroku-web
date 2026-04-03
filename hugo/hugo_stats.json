@@ -7,6 +7,7 @@
       "div",
       "footer",
       "h1",
+      "h2",
       "h3",
       "head",
       "header",
@@ -47,7 +48,9 @@
       "status-message"
     ],
     "ids": [
-      "main-content"
+      "main-content",
+      "price-15",
+      "price-15-1"
     ]
   }
 }

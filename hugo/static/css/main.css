@@ -440,14 +440,70 @@ main {
   }
 }
 
-.footer-legal {
+.footer-bottom {
   max-width: 1000px;
-  margin: var(--spacing-lg) auto 0;
+  margin: var(--spacing-xl) auto 0;
   padding-top: var(--spacing-lg);
   border-top: 1px solid var(--color-border);
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
   font-size: 12px;
   color: var(--color-text-light);
+}
+
+.footer-copyright {
+  text-align: left;
+}
+
+.footer-copyright p {
+  margin: 4px 0;
+}
+
+.footer-links a {
+  color: var(--color-text-light);
+  text-decoration: underline;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
+}
+
+.footer-powered {
+  text-align: right;
+}
+
+.footer-powered p {
+  margin: 4px 0;
+}
+
+.footer-powered a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.footer-powered a:hover {
+  text-decoration: underline;
+}
+
+.footer-services {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-copyright,
+  .footer-powered {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 /* Animations */

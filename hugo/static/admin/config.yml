@@ -1,5 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: 112books/machiroku-web
+  branch: main
+  base_url: https://decap-cms-oauth-provider.onrender.com
 
 media_folder: "static/images"
 public_folder: "/images"
@@ -87,7 +90,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Títol", name: "title", widget: "string" }
+      - { label: "Titol", name: "title", widget: "string" }
       - { label: "Categoria", name: "category", widget: "string", required: false }
       - { label: "Descripció", name: "description", widget: "text", required: false }
       - { label: "Preu", name: "price", widget: "string", required: false }
@@ -100,5 +103,5 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Títol", name: "title", widget: "string" }
+      - { label: "Titol", name: "title", widget: "string" }
       - { label: "Contingut", name: "body", widget: "markdown" }

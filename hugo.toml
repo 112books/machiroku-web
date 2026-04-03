@@ -1,8 +1,0 @@
-[mediaTypes]
-  [mediaTypes."text/yaml"]
-    suffixes = ["yaml", "yml"]
-
-[outputFormats]
-  [outputFormats.YAML]
-    mediaType = "text/yaml"
-    isPlainText = true

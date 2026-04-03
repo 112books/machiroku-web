@@ -1,4 +1,3 @@
-
 backend:
   name: git-gateway
 
@@ -9,8 +8,52 @@ collections:
   - name: "home"
     label: "Home"
     files:
-      - file: "content/ca/_index.md"
+      - name: "home-ca"
+        file: "content/ca/home/_index.md"
         label: "Home CA"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "config"
+    label: "Configuració del restaurant"
+    files:
+      - name: "restaurant"
+        label: "Informació del restaurant"
+        file: "data/restaurant.yaml"
+        fields:
+          - { label: "Telèfon", name: "telefon", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Adreça (CA)", name: "adreca", widget: "object", fields: [
+              { label: "Català", name: "ca", widget: "string" },
+              { label: "Castellà", name: "es", widget: "string" },
+              { label: "Anglès", name: "en", widget: "string" }
+            ] }
+          - { label: "Google Maps URL", name: "google_maps_url", widget: "string" }
+
+  - name: "horaris"
+    label: "Horaris"
+    files:
+      - name: "horaris"
+        label: "Horaris del restaurant"
+        file: "data/horaris.yaml"
+        fields:
+          - label: "Horaris"
+            name: "horaris"
+            widget: "object"
+            fields:
+              - label: "Menú migdia"
+                name: "menu"
+                widget: "object"
+                fields:
+                  - { label: "Dies (dl, dt, dc, dj, dv, ds, dg)", name: "dies", widget: "list", default: ["dl","dt","dc","dj","dv"] }
+                  - { label: "Obertura", name: "obertura", widget: "string", default: "13:00" }
+                  - { label: "Tancament", name: "tancament", widget: "string", default: "15:30" }
+              - label: "Carta nit"
+                name: "carta"
+                widget: "object"
+                fields:
+                  - { label: "Dies (dl, dt, dc, dj, dv, ds, dg)", name: "dies", widget: "list", default: ["dv","ds"] }
+                  - { label: "Obertura", name: "obertura", widget: "string", default: "19:00" }
+                  - { label: "Tancament", name: "tancament", widget: "string", default: "22:00" }

@@ -2,7 +2,7 @@ backend:
   name: github
   repo: 112books/machiroku-web
   branch: main
-  base_url: https://oauth.decapcms.org
+  base_url: https://machiroku.hola-78f.workers.dev
 
 media_folder: "static/images"
 public_folder: "/images"

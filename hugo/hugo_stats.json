@@ -43,7 +43,8 @@
       "site-nav",
       "status",
       "status--closed",
-      "status-bar"
+      "status-bar",
+      "status-message"
     ],
     "ids": [
       "main-content"

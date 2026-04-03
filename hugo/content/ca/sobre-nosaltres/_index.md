@@ -8,10 +8,27 @@ title: "Sobre nosaltres"
 </section>
 
 <section class="about-content">
-  <p>Machiroku és un restaurant japonès al cor de Barcelona, enamorat de la cuina tradicional japonesa amb un toc modern.</p>
+  <p>Des del 2000, Machiroku és un restaurant de cuina japonesa autèntica situat al cor del Barri Gòtic de Barcelona.</p>
   
-  <p>El nostre xef, <strong>Mashahiro Tottori</strong>, porta anys perfeccionant l'art del sushi i els plats típics japonesos, sempre amb productes de temporada i de la màxima qualitat.</p>
+  <p>El nostre equip japonès us ofereix una experiència culinària tradicional amb els millors productes frescos: sashimi, nigiri, maki, i plats típics japonesos com el Tendon i l'Unaju.</p>
   
-  <p>De dilluns a divendres offrim un menú migdia senzill i saborós. Els divendres i dissabtes per la nit, la carta s'amplia per mostrar plats més elaborats on el xef pot lluir la seva creativitat.</p>
+  <p>A migdia, oferim menús complets a preu fixe amb sopa de miso, amanida i arròs. A la nit, tenim una carta àmplia amb una gran varietat de sushi i plats tradicionals.</p>
+  
+  <p>El 2022 vam obrir el nostre nou local a Carrer Magdalenes, 23, on us esperem per gaudir de la millor cuina japonesa a Barcelona.</p>
+  
+  <div class="about-features">
+    <div class="feature">
+      <h3>Cuina japonesa autèntica</h3>
+      <p>Ingredients frescos i receptes tradicionals</p>
+    </div>
+    <div class="feature">
+      <h3>Menú dilluns - divendres</h3>
+      <p>16€ - Menú complet amb entrada, plat i postres</p>
+    </div>
+    <div class="feature">
+      <h3>Carta nit</h3>
+      <p>Dijous - Dissabte: Sushi, sashimi i plats tradicionals</p>
+    </div>
+  </div>
 </section>
 {{ end }}

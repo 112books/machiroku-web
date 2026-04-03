@@ -8,10 +8,12 @@ title: "About us"
 </section>
 
 <section class="about-content">
-  <p>Machiroku is a Japanese restaurant in the heart of Barcelona, in love with traditional Japanese cuisine with a modern twist.</p>
+  <p>Since 2000, Machiroku is an authentic Japanese restaurant located in the heart of the Gothic Quarter of Barcelona.</p>
   
-  <p>Our chef, <strong>Mashahiro Tottori</strong>, has spent years perfecting the art of sushi and typical Japanese dishes, always with seasonal products of the highest quality.</p>
+  <p>Our Japanese team offers you a traditional culinary experience with the best fresh products: sashimi, nigiri, maki, and typical Japanese dishes like Tendon and Unaju.</p>
   
-  <p>Monday to Friday we offer a simple and tasty lunch menu. On Friday and Saturday nights, the menu expands to show more elaborate dishes where the chef can showcase his creativity.</p>
+  <p>At lunch, we offer complete set menus at a fixed price with miso soup, salad and rice. At night, we have an extensive carta with a great variety of sushi and traditional dishes.</p>
+  
+  <p>In 2022 we opened our new location at Carrer Magdalenes, 23, where we await you to enjoy the best Japanese cuisine in Barcelona.</p>
 </section>
 {{ end }}

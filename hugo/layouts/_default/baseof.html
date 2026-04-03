@@ -8,8 +8,8 @@
   <meta name="author" content="Machiroku">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{ .Permalink }}">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+  <link rel="icon" type="image/svg+xml" href="{{ .Site.BaseURL }}favicon.svg">
 </head>
 <body>
   {{ partial "popup.html" . }}
@@ -67,6 +67,6 @@
       <p>&copy; {{ now.Year }} Machiroku. <a href="{{ .Site.BaseURL }}legal/">{{ i18n "legales" }}</a></p>
     </div>
   </footer>
-  <script src="/js/main.js" defer></script>
+  <script src="{{ .Site.BaseURL }}js/main.js" defer></script>
 </body>
 </html>

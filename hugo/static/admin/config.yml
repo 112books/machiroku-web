@@ -1,18 +1,15 @@
-backend:
-  name: github
-  repo: 112books/machiroku-web
-  branch: main
-  base_url: https://machiroku.hola-78f.workers.dev
+repo: 112books/machiroku-web
+branch: main
+api_root: https://api.github.com
 
-media_folder: "static/images"
-public_folder: "/images"
+media_folder: static/images
+public_folder: /images
 
 collections:
-  - name: "pages"
-    label: "Pàgines"
-    folder: "content/ca"
+  - name: pages
+    label: Pàgines
+    folder: content/ca
     create: true
-    slug: "{{slug}}"
     fields:
-      - { label: "Titol", name: "title", widget: "string" }
-      - { label: "Contingut", name: "body", widget: "markdown" }
+      - { name: title, label: Titol, widget: string }
+      - { name: body, label: Contingut, widget: markdown }

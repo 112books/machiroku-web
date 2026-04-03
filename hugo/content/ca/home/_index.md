@@ -6,7 +6,8 @@ hero:
 ---
 
 {{ define "main" }}
-<section class="hero">
+<section class="hero hero-home">
+  <img src="{{ .Site.BaseURL }}logo-gran.svg" alt="Machiroku" class="hero-logo">
   <h1>Autèntica cuina japonesa des del 2000</h1>
   <p class="hero-subtitle">{{ i18n "ara_estem" }}: {{ partial "status.html" . }}</p>
 </section>

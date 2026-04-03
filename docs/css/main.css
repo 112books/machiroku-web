@@ -24,6 +24,29 @@ body {
   min-height: 100vh;
 }
 
+.hero-home {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://112books.github.io/machiroku-web/images/background.webp');
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hero-logo {
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero-home h1 {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
 a {
   color: inherit;
   text-decoration: none;

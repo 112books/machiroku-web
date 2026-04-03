@@ -1,11 +1,25 @@
 {{ define "main" }}
 <section class="hero-home">
+  <p class="slogan">{{ i18n "slogan" }}</p>
+  
   <img src="https://112books.github.io/machiroku-web/logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku" class="hero-logo">
-  <p class="hero-subtitle">{{ i18n "ara_estem" }}: {{ partial "status.html" . }}</p>
+  
+  <div class="hero-status">
+    <span class="status-label">{{ i18n "ara_estem" }}:</span>
+    {{ partial "status.html" . }}
+  </div>
+  
+  <div class="hero-next-open">
+    {{ i18n "tornem_obrir" }} {{ i18n "avui" }} {{ i18n "a_les" }} 13:00h
+  </div>
+</section>
+
+<section class="hero-logo-square">
+  <img src="https://112books.github.io/machiroku-web/images/machiroku-logo-only.svg" alt="Machiroku" class="logo-square">
 </section>
 
 <section class="cta-buttons">
   <a href="{{ "/reserves" | relLangURL }}" class="btn btn-primary">{{ i18n "fer_reserva" }}</a>
-  <a href="{{ "/oferta" | relLangURL }}" class="btn btn-secondary">{{ i18n "oferta" }}</a>
+  <a href="{{ "/oferta" | relLangURL }}" class="btn">{{ i18n "oferta" }}</a>
 </section>
 {{ end }}

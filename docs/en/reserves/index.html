@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cas | Machiroku</title>
+  <title>Reservations | Machiroku</title>
   <meta name="description" content="Restaurant japonès al centre de Barcelona">
   <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -22,11 +22,11 @@
           
         
           
-            <a href="/machiroku-web/ca/" class="lang-link">es</a>
+            <a href="/machiroku-web/en/reserves/" class="lang-link">es</a>
           
         
           
-            <a href="/machiroku-web/ca/" class="lang-link">en</a>
+            <a href="/machiroku-web/en/reserves/" class="lang-link">en</a>
           
         
       </div>
@@ -40,8 +40,21 @@
   <main>
     
 <main>
-  <h1>Cas</h1>
-  
+  <h1>Reservations</h1>
+  <p>{{ define &ldquo;main&rdquo; }}</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;div class=&quot;reserve-method&quot;&gt;
+  &lt;h3&gt;WhatsApp&lt;/h3&gt;
+  &lt;a href=&quot;https://wa.me/{{ site.Data.restaurant.whatsapp | replace &quot;+&quot; &quot;&quot; }}&quot; class=&quot;btn btn-secondary&quot;&gt;
+    WhatsApp
+  &lt;/a&gt;
+  &lt;p class=&quot;whatsapp-msg&quot;&gt;&quot;Hello, I would like to reserve for X people on X date at X.&quot;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+
 </main>
 
   </main>

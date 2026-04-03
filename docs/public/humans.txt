@@ -1,0 +1,7 @@
+/* Team */
+Founder: Mashahiro Tottori
+Chef: Mashahiro Tottori
+
+/* Site */
+Software: Hugo
+CMS: Decap

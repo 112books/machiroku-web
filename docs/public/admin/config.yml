@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: 112books/machiroku-web
+  branch: main
+  base_url: https://oauth.decapcms.org
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Pàgines"
+    folder: "content/ca"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titol", name: "title", widget: "string" }
+      - { label: "Contingut", name: "body", widget: "markdown" }

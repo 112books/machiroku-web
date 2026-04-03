@@ -1,0 +1,52 @@
+{
+  "htmlElements": {
+    "tags": [
+      "a",
+      "body",
+      "button",
+      "div",
+      "footer",
+      "h1",
+      "h3",
+      "head",
+      "header",
+      "html",
+      "li",
+      "link",
+      "main",
+      "meta",
+      "nav",
+      "p",
+      "pre",
+      "script",
+      "section",
+      "span",
+      "title",
+      "ul"
+    ],
+    "classes": [
+      "btn",
+      "btn-primary",
+      "btn-secondary",
+      "cta-buttons",
+      "footer-col",
+      "footer-grid",
+      "footer-legal",
+      "hero",
+      "hero-subtitle",
+      "lang-switch",
+      "logo",
+      "nav-links",
+      "nav-toggle",
+      "site-footer",
+      "site-header",
+      "site-nav",
+      "status",
+      "status--closed",
+      "status-bar"
+    ],
+    "ids": [
+      "main-content"
+    ]
+  }
+}

@@ -4,25 +4,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ .Title }} | Machiroku</title>
-  <meta name="description" content="{{ .Site.Language.Params.description }}">
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Language.Params.description }}{{ end }}">
+  <meta name="author" content="Machiroku">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{ .Permalink }}">
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
   <header class="site-header">
     <nav class="site-nav">
-      <a href="{{ "/" | relLangURL }}" class="logo">Machiroku</a>
+      <a href="{{ .Site.BaseURL }}" class="logo">Machiroku</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <ul class="nav-links">
-        <li><a href="{{ "/home" | relLangURL }}">{{ i18n "home" }}</a></li>
-        <li><a href="{{ "/oferta" | relLangURL }}">{{ i18n "oferta" }}</a></li>
-        <li><a href="{{ "/reserves" | relLangURL }}">{{ i18n "reserves" }}</a></li>
-        <li><a href="{{ "/contacte" | relLangURL }}">{{ i18n "contacte" }}</a></li>
+        <li><a href="{{ .Site.BaseURL }}">{{ i18n "home" }}</a></li>
+        <li><a href="{{ .Site.BaseURL }}oferta/">{{ i18n "oferta" }}</a></li>
+        <li><a href="{{ .Site.BaseURL }}reserves/">{{ i18n "reserves" }}</a></li>
+        <li><a href="{{ .Site.BaseURL }}contacte/">{{ i18n "contacte" }}</a></li>
+        <li><a href="{{ .Site.BaseURL }}sobre-nosaltres/">{{ i18n "sobre_nosaltres" }}</a></li>
       </ul>
       <div class="lang-switch">
-        {{ range .Site.Languages }}
-          {{ if ne .Lang $.Site.Language.Lang }}
-            <a href="{{ $.RelPermalink | relLangURL }}" class="lang-link">{{ .Lang }}</a>
-          {{ end }}
-        {{ end }}
+        <a href="{{ .Site.BaseURL }}ca/">CA</a>
+        <a href="{{ .Site.BaseURL }}es/">ES</a>
+        <a href="{{ .Site.BaseURL }}en/">EN</a>
       </div>
     </nav>
   </header>
@@ -31,7 +39,7 @@
     {{ partial "status.html" . }}
   </div>
 
-  <main>
+  <main id="main-content">
     {{ block "main" . }}{{ end }}
   </main>
 
@@ -55,8 +63,9 @@
       </div>
     </div>
     <div class="footer-legal">
-      <p>&copy; {{ now.Year }} Machiroku. {{ i18n "legales" }}</p>
+      <p>&copy; {{ now.Year }} Machiroku. <a href="{{ .Site.BaseURL }}legal/">{{ i18n "legales" }}</a></p>
     </div>
   </footer>
+  <script src="/js/main.js" defer></script>
 </body>
 </html>

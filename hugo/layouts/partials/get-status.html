@@ -1,6 +1,65 @@
-{{- $res := partial "horaris-status.html" . -}}
+{{- $now := now -}}
+{{- $dayNum := $now.Weekday -}}
+{{- $minutes := add (mul $now.Hour 60) $now.Minute -}}
+{{- $today := $now.Format "2006-01-02" -}}
 
-{{- dict
-  "status" (index $res "status")
-  "reason" (index $res "reason")
--}}
+{{- $horaris := site.Data.horaris -}}
+
+{{- $status := "closed" -}}
+{{- $service := "" -}}
+{{- $message := "" -}}
+
+{{/* ---------------- EXCEPCIONS ---------------- */}}
+{{- with site.Data.restaurant -}}
+  {{- range .excepcions -}}
+    {{- if and .actiu (eq .data $today) -}}
+      {{- $status = .estat -}}
+      {{- $message = index .missatge $.Site.Language.Lang -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* ---------------- HORARIS ---------------- */}}
+{{- $dayKey := "" -}}
+{{- if eq $dayNum 0 -}}{{- $dayKey = "dl" -}}
+{{- else if eq $dayNum 1 -}}{{- $dayKey = "dt" -}}
+{{- else if eq $dayNum 2 -}}{{- $dayKey = "dc" -}}
+{{- else if eq $dayNum 3 -}}{{- $dayKey = "dj" -}}
+{{- else if eq $dayNum 4 -}}{{- $dayKey = "dv" -}}
+{{- else if eq $dayNum 5 -}}{{- $dayKey = "ds" -}}
+{{- else if eq $dayNum 6 -}}{{- $dayKey = "dg" -}}
+{{- end -}}
+
+{{/* MENU */}}
+{{- if and (eq $status "closed") (in $horaris.horaris.menu.dies $dayKey) -}}
+  {{- $menuStartParts := split $horaris.horaris.menu.obertura ":" -}}
+  {{- $menuStartH := index $menuStartParts 0 | int -}}
+  {{- $menuStartM := index $menuStartParts 1 | int -}}
+  {{- $menuStartMin := add (mul $menuStartH 60) $menuStartM -}}
+  {{- $menuEndParts := split $horaris.horaris.menu.tancament ":" -}}
+  {{- $menuEndH := index $menuEndParts 0 | int -}}
+  {{- $menuEndM := index $menuEndParts 1 | int -}}
+  {{- $menuEndMin := add (mul $menuEndH 60) $menuEndM -}}
+  {{- if and (ge $minutes $menuStartMin) (le $minutes $menuEndMin) -}}
+    {{- $status = "menu" -}}
+    {{- $service = "menu" -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* CARTA */}}
+{{- if and (eq $status "closed") (in $horaris.horaris.carta.dies $dayKey) -}}
+  {{- $cartaStartParts := split $horaris.horaris.carta.obertura ":" -}}
+  {{- $cartaStartH := index $cartaStartParts 0 | int -}}
+  {{- $cartaStartM := index $cartaStartParts 1 | int -}}
+  {{- $cartaStartMin := add (mul $cartaStartH 60) $cartaStartM -}}
+  {{- $cartaEndParts := split $horaris.horaris.carta.tancament ":" -}}
+  {{- $cartaEndH := index $cartaEndParts 0 | int -}}
+  {{- $cartaEndM := index $cartaEndParts 1 | int -}}
+  {{- $cartaEndMin := add (mul $cartaEndH 60) $cartaEndM -}}
+  {{- if and (ge $minutes $cartaStartMin) (le $minutes $cartaEndMin) -}}
+    {{- $status = "carta" -}}
+    {{- $service = "carta" -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (dict "status" $status "service" $service "message" $message) -}}

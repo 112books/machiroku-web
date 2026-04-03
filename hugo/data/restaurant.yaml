@@ -1,0 +1,22 @@
+telefon: "+34 93 123 45 67"
+whatsapp: "+34 93 123 45 67"
+email: "machiroku@machiroku.com"
+adreca:
+  ca: "Carrer de la Mercè, 12, 08002 Barcelona"
+  es: "Carrer de la Mercè, 12, 08002 Barcelona"
+  en: "Carrer de la Mercè, 12, 08002 Barcelona"
+google_maps_url: "https://maps.google.com/?q=Machiroku+Barcelona"
+
+horaris:
+  menu:
+    dies: ["monday", "tuesday", "wednesday", "thursday", "friday"]
+    obertura: "13:00"
+    tancament: "15:30"
+  carta:
+    dies: ["friday", "saturday"]
+    obertura: "19:00"
+    tancament: "22:00"
+
+excepcions: []
+
+avisos: []

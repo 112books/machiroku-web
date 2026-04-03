@@ -1,3 +1,10 @@
+---
+title: "Inicio"
+hero:
+  titol: "Cocina japonesa auténtica"
+  subtitol: "Menú mediodía de lunes a viernes · Carta noche viernes y sábado"
+---
+
 {{ define "main" }}
 <section class="hero">
   <h1>{{ .Title }}</h1>

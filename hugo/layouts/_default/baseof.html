@@ -1,19 +1,62 @@
 <!doctype html>
-<html lang="ca">
+<html lang="{{ .Site.Language.Lang }}">
 <head>
   <meta charset="utf-8">
-  <title>{{ .Title }}</title>
-<link rel="stylesheet" href="/css/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }} | Machiroku</title>
+  <meta name="description" content="{{ .Site.Language.Params.description }}">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="{{ "/" | relLangURL }}" class="logo">Machiroku</a>
+      <ul class="nav-links">
+        <li><a href="{{ "/home" | relLangURL }}">{{ i18n "home" }}</a></li>
+        <li><a href="{{ "/oferta" | relLangURL }}">{{ i18n "oferta" }}</a></li>
+        <li><a href="{{ "/reserves" | relLangURL }}">{{ i18n "reserves" }}</a></li>
+        <li><a href="{{ "/contacte" | relLangURL }}">{{ i18n "contacte" }}</a></li>
+      </ul>
+      <div class="lang-switch">
+        {{ range .Site.Languages }}
+          {{ if ne .Lang $.Site.Language.Lang }}
+            <a href="{{ $.RelPermalink | relLangURL }}" class="lang-link">{{ .Lang }}</a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </nav>
+  </header>
 
-<header>
-  {{ partial "status.html" . }}
-</header>
+  <div class="status-bar">
+    {{ partial "status.html" . }}
+  </div>
 
-<main>
-  {{ block "main" . }}{{ end }}
-</main>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
 
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Machiroku</h3>
+        <p>{{ i18n "ubicacio" }}: {{ site.Data.restaurant.adreca.ca }}</p>
+        <p><a href="tel:{{ site.Data.restaurant.telefon }}">{{ i18n "tel" }}: {{ site.Data.restaurant.telefon }}</a></p>
+        <p><a href="mailto:{{ site.Data.restaurant.email }}">{{ site.Data.restaurant.email }}</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>{{ i18n "horaris" }}</h3>
+        <p>{{ i18n "menu_migdia" }}: {{ site.Data.horaris.horaris.menu.obertura }} - {{ site.Data.horaris.horaris.menu.tancament }}</p>
+        <p>{{ i18n "carta_nit" }}: {{ site.Data.horaris.horaris.carta.obertura }} - {{ site.Data.horaris.horaris.carta.tancament }}</p>
+      </div>
+      <div class="footer-col">
+        <h3>{{ i18n "fer_reserva" }}</h3>
+        <p><a href="tel:{{ site.Data.restaurant.telefon }}">{{ site.Data.restaurant.telefon }}</a></p>
+        <p><a href="https://wa.me/{{ site.Data.restaurant.whatsapp | replace "+" "" }}">WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>&copy; {{ now.Year }} Machiroku. {{ i18n "legales" }}</p>
+    </div>
+  </footer>
 </body>
 </html>

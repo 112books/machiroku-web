@@ -1,3 +1,10 @@
+---
+title: "Home"
+hero:
+  titol: "Authentic Japanese cuisine"
+  subtitol: "Lunch menu Monday to Friday · Dinner menu Friday and Saturday"
+---
+
 {{ define "main" }}
 <section class="hero">
   <h1>{{ .Title }}</h1>

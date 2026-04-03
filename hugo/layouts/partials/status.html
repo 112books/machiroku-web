@@ -1,11 +1,13 @@
 {{- $res := partial "get-status.html" . -}}
-
 {{- $status := index $res "status" -}}
+{{- $service := index $res "service" -}}
 
-{{- if eq $status "open" -}}
-OBERT · servei
-{{- else if eq $status "closed" -}}
-TANCAT
+{{- if eq $status "menu" -}}
+  <span class="status status--open">{{ i18n "menu_migdia" }}</span>
+{{- else if eq $status "carta" -}}
+  <span class="status status--open">{{ i18n "carta_nit" }}</span>
+{{- else if eq $status "open" -}}
+  <span class="status status--open">{{ i18n "obert" }}</span>
 {{- else -}}
-HORARI NO DISPONIBLE
+  <span class="status status--closed">{{ i18n "tancat" }}</span>
 {{- end -}}

@@ -18,14 +18,17 @@
 body {
   font-family: var(--font-sans);
   margin: 0;
-  background: var(--color-bg);
+  background: linear-gradient(rgba(250,249,247,0.85), rgba(250,249,247,0.85)), url('https://112books.github.io/machiroku-web/images/machiroku-web-background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--color-text);
   line-height: 1.6;
   min-height: 100vh;
 }
 
 .hero-home {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://112books.github.io/machiroku-web/images/background.webp');
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://112books.github.io/machiroku-web/images/machiroku-web-background.png');
   background-size: cover;
   background-position: center;
   min-height: 80vh;
@@ -66,10 +69,11 @@ img {
 .site-header {
   padding: var(--spacing-md) var(--spacing-lg);
   border-bottom: 1px solid var(--color-border);
-  background: var(--color-bg);
+  background: rgba(250,249,247,0.95);
   position: sticky;
   top: 0;
   z-index: 100;
+  backdrop-filter: blur(10px);
 }
 
 .site-nav {
@@ -342,9 +346,10 @@ main {
 }
 
 .site-footer {
-  background: #f0f0f0;
+  background: rgba(240,240,240,0.95);
   padding: var(--spacing-xl) var(--spacing-lg);
   margin-top: var(--spacing-xl);
+  backdrop-filter: blur(10px);
 }
 
 .footer-grid {

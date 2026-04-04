@@ -8,6 +8,34 @@
     <language>ca-ES</language>
     <atom:link href="https://112books.github.io/machiroku-web/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title></title>
+      <link>https://112books.github.io/machiroku-web/ca/categories/entrants/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/categories/entrants/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://112books.github.io/machiroku-web/ca/dishes/goma-wakame/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/dishes/goma-wakame/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://112books.github.io/machiroku-web/es/categories/entrants/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/es/categories/entrants/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://112books.github.io/machiroku-web/es/dishes/goma-wakame/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/es/dishes/goma-wakame/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Contact</title>
       <link>https://112books.github.io/machiroku-web/en/contacte/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -40,21 +68,35 @@
       <link>https://112books.github.io/machiroku-web/en/oferta/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/en/oferta/</guid>
-      <description>&lt;h1 id=&#34;menu&#34;&gt;Menu&lt;/h1&gt;&#xA;&lt;h2 id=&#34;lunch-menu-monday---friday&#34;&gt;Lunch Menu (Monday - Friday)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sushi Menu&lt;/strong&gt; - 16,00 € - 5 nigiri + 4 maki, Wafu sarada, Miso Soup&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Salmon Don Menu&lt;/strong&gt; - 16,00 € - Salmon Don, Kobachi, Miso Soup&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tendon Menu&lt;/strong&gt; - 16,00 € - Rice with tempura, Sashimi, Miso Soup&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Unaju Menu&lt;/strong&gt; - 17,50 € - Rice with eel, Sashimi, Miso Soup&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;starters&#34;&gt;Starters&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goma Wakame&lt;/strong&gt; - 5,00 € - Seaweed salad&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Yakitori&lt;/strong&gt; - 5,50 € - Chicken skewers&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Gyoza&lt;/strong&gt; - 5,50 € - 4 pork dumplings&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/en/reserves/&#34;&gt;Book a table&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;menu&#34;&gt;Menu&lt;/h1&gt;&#xA;&lt;h2 id=&#34;reservations&#34;&gt;Reservations&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/en/reserves/&#34;&gt;Book now →&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;lunch-menu-monday---friday&#34;&gt;Lunch Menu (Monday - Friday)&lt;/h2&gt;&#xA;&lt;p&gt;{{ range where .Site.RegularPages &amp;ldquo;Section&amp;rdquo; &amp;ldquo;menus&amp;rdquo; }}&#xA;{{ if .Params.available }}&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;{{ .Params.title_en | default .Title }}&lt;/strong&gt; - {{ .Params.price }} € - {{ .Params.description_en | default .Params.description }}&#xA;{{ end }}&#xA;{{ end }}&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;dinner-menu-thursday---saturday&#34;&gt;Dinner Menu (Thursday - Saturday)&lt;/h2&gt;&#xA;&lt;p&gt;{{ $categories := where .Site.RegularPages &amp;ldquo;Section&amp;rdquo; &amp;ldquo;categories&amp;rdquo; | sortByParam &amp;ldquo;order&amp;rdquo; }}&lt;/p&gt;&#xA;&lt;p&gt;{{ range $categories }}&lt;/p&gt;&#xA;&lt;h3 id=&#34;-paramsname_en--default-paramsname-&#34;&gt;{{ .Params.name_en | default .Params.name }}&lt;/h3&gt;&#xA;&lt;p&gt;{{ $dishes := where (where $.Site.RegularPages &amp;ldquo;Section&amp;rdquo; &amp;ldquo;dishes&amp;rdquo;) &amp;ldquo;Params.category&amp;rdquo; &amp;ldquo;==&amp;rdquo; (.Params.name) }}&#xA;{{ range $dishes }}&#xA;{{ if .Params.available }}&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menú Sushi</title>
+      <link>https://112books.github.io/machiroku-web/ca/menus/menu-sushi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/menus/menu-sushi/</guid>
+      <description>&lt;p&gt;Menú complet amb 5 nigiri, 4 maki, amanida i sopa de miso.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menú Sushi</title>
+      <link>https://112books.github.io/machiroku-web/es/menus/menu-sushi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/es/menus/menu-sushi/</guid>
+      <description></description>
     </item>
     <item>
       <title>Oferta gastronómica</title>
       <link>https://112books.github.io/machiroku-web/es/oferta/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/es/oferta/</guid>
-      <description>&lt;h1 id=&#34;oferta-gastronómica&#34;&gt;Oferta gastronómica&lt;/h1&gt;&#xA;&lt;h2 id=&#34;menú-del-día-lunes---viernes&#34;&gt;Menú del día (Lunes - Viernes)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Sushi&lt;/strong&gt; - 16,00 € - 5 nigiri + 4 maki, Wafu sarada, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Salmon Don&lt;/strong&gt; - 16,00 € - Salmón Don, Kobachi, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Tendon&lt;/strong&gt; - 16,00 € - Arroz con tempura, Sashimi, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Unaju&lt;/strong&gt; - 17,50 € - Arroz con anguila, Sashimi, Sopa de Miso&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;entrantes&#34;&gt;Entrantes&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goma Wakame&lt;/strong&gt; - 5,00 € - Ensalada de algas&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Yakitori&lt;/strong&gt; - 5,50 € - Brochetas de pollo&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Gyoza&lt;/strong&gt; - 5,50 € - 4 empanadillas de cerdo&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/es/reserves/&#34;&gt;Reservar mesa&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;oferta-gastronómica&#34;&gt;Oferta gastronómica&lt;/h1&gt;&#xA;&lt;h2 id=&#34;reservas&#34;&gt;Reservas&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/es/reserves/&#34;&gt;Reservar ahora →&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;menú-del-día-lunes---viernes&#34;&gt;Menú del día (Lunes - Viernes)&lt;/h2&gt;&#xA;&lt;p&gt;{{ range where .Site.RegularPages &amp;ldquo;Section&amp;rdquo; &amp;ldquo;menus&amp;rdquo; }}&#xA;{{ if .Params.available }}&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;{{ .Params.title_es | default .Title }}&lt;/strong&gt; - {{ .Params.price }} € - {{ .Params.description_es | default .Params.description }}&#xA;{{ end }}&#xA;{{ end }}&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;carta-de-noche-jueves---sábado&#34;&gt;Carta de noche (Jueves - Sábado)&lt;/h2&gt;&#xA;&lt;p&gt;{{ $categories := where .Site.RegularPages &amp;ldquo;Section&amp;rdquo; &amp;ldquo;categories&amp;rdquo; | sortByParam &amp;ldquo;order&amp;rdquo; }}&lt;/p&gt;&#xA;&lt;p&gt;{{ range $categories }}&lt;/p&gt;&#xA;&lt;h3 id=&#34;-paramsname_es--default-paramsname-&#34;&gt;{{ .Params.name_es | default .Params.name }}&lt;/h3&gt;&#xA;&lt;p&gt;{{ $dishes := where (where $.Site.RegularPages &amp;ldquo;Section&amp;rdquo; &amp;ldquo;dishes&amp;rdquo;) &amp;ldquo;Params.category&amp;rdquo; &amp;ldquo;==&amp;rdquo; (.Params.name) }}&#xA;{{ range $dishes }}&#xA;{{ if .Params.available }}&lt;/p&gt;</description>
     </item>
     <item>
       <title>Oferta gastronòmica</title>
       <link>https://112books.github.io/machiroku-web/ca/oferta/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/ca/oferta/</guid>
-      <description>&lt;h1 id=&#34;oferta-gastronòmica&#34;&gt;Oferta gastronòmica&lt;/h1&gt;&#xA;&lt;h2 id=&#34;menú-del-migdia-dilluns---divendres&#34;&gt;Menú del migdia (Dilluns - Divendres)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Sushi&lt;/strong&gt; - 16,00 € - 5 nigiri + 4 maki, Wafu sarada, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Salmon Don&lt;/strong&gt; - 16,00 € - Salmó Don, Kobachi, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Tendon&lt;/strong&gt; - 16,00 € - Arròs amb tempura, Sashimi, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Unaju&lt;/strong&gt; - 17,50 € - Arròs amb anguila, Sashimi, Sopa de Miso&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;entrants&#34;&gt;Entrants&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goma Wakame&lt;/strong&gt; - 5,00 € - Amanida d&amp;rsquo;algues&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Yakitori&lt;/strong&gt; - 5,50 € - Broquetes de pollastre&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Gyoza&lt;/strong&gt; - 5,50 € - 4 crestes de porc&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/ca/reserves/&#34;&gt;Reservar taula&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     <item>
       <title>Reservas</title>

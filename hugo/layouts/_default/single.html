@@ -1,4 +1,14 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ .Content }}
+<h1>Oferta gastronòmica</h1>
+
+{{ $allPages := .Site.RegularPages }}
+<p>RegularPages: {{ len $allPages }}</p>
+
+{{ range $allPages }}
+  <p>{{ .Title }} | {{ .Section }} | {{ .Kind }}</p>
+{{ end }}
+
+{{ $sections := .Site.Languages }}
+<p>Languages: {{ $sections }}</p>
+
 {{ end }}

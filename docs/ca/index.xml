@@ -8,6 +8,20 @@
     <language>ca-ES</language>
     <atom:link href="https://112books.github.io/machiroku-web/ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title></title>
+      <link>https://112books.github.io/machiroku-web/ca/categories/entrants/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/categories/entrants/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://112books.github.io/machiroku-web/ca/dishes/goma-wakame/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/dishes/goma-wakame/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Contacte</title>
       <link>https://112books.github.io/machiroku-web/ca/contacte/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -22,11 +36,18 @@
       <description>&lt;h1 id=&#34;machiroku&#34;&gt;Machiroku&lt;/h1&gt;&#xA;&lt;p&gt;Restaurant japonès al centre de Barcelona.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/ca/reserves/&#34;&gt;Fer una reserva&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Menú Sushi</title>
+      <link>https://112books.github.io/machiroku-web/ca/menus/menu-sushi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/menus/menu-sushi/</guid>
+      <description>&lt;p&gt;Menú complet amb 5 nigiri, 4 maki, amanida i sopa de miso.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Oferta gastronòmica</title>
       <link>https://112books.github.io/machiroku-web/ca/oferta/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/ca/oferta/</guid>
-      <description>&lt;h1 id=&#34;oferta-gastronòmica&#34;&gt;Oferta gastronòmica&lt;/h1&gt;&#xA;&lt;h2 id=&#34;menú-del-migdia-dilluns---divendres&#34;&gt;Menú del migdia (Dilluns - Divendres)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Sushi&lt;/strong&gt; - 16,00 € - 5 nigiri + 4 maki, Wafu sarada, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Salmon Don&lt;/strong&gt; - 16,00 € - Salmó Don, Kobachi, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Tendon&lt;/strong&gt; - 16,00 € - Arròs amb tempura, Sashimi, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Unaju&lt;/strong&gt; - 17,50 € - Arròs amb anguila, Sashimi, Sopa de Miso&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;entrants&#34;&gt;Entrants&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goma Wakame&lt;/strong&gt; - 5,00 € - Amanida d&amp;rsquo;algues&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Yakitori&lt;/strong&gt; - 5,50 € - Broquetes de pollastre&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Gyoza&lt;/strong&gt; - 5,50 € - 4 crestes de porc&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/ca/reserves/&#34;&gt;Reservar taula&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     <item>
       <title>Reserves</title>

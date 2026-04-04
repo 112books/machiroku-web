@@ -5,17 +5,32 @@ slug: "oferta"
 
 # Oferta gastronómica
 
+## Reservas
+
+[Reservar ahora →](/machiroku-web/es/reserves/)
+
 ## Menú del día (Lunes - Viernes)
 
-- **Menú Sushi** - 16,00 € - 5 nigiri + 4 maki, Wafu sarada, Sopa de Miso
-- **Menú Salmon Don** - 16,00 € - Salmón Don, Kobachi, Sopa de Miso
-- **Menú Tendon** - 16,00 € - Arroz con tempura, Sashimi, Sopa de Miso
-- **Menú Unaju** - 17,50 € - Arroz con anguila, Sashimi, Sopa de Miso
+{{ range where .Site.RegularPages "Section" "menus" }}
+{{ if .Params.available }}
+- **{{ .Params.title_es | default .Title }}** - {{ .Params.price }} € - {{ .Params.description_es | default .Params.description }}
+{{ end }}
+{{ end }}
 
-## Entrantes
+## Carta de noche (Jueves - Sábado)
 
-- **Goma Wakame** - 5,00 € - Ensalada de algas
-- **Yakitori** - 5,50 € - Brochetas de pollo
-- **Gyoza** - 5,50 € - 4 empanadillas de cerdo
+{{ $categories := where .Site.RegularPages "Section" "categories" | sortByParam "order" }}
 
-[Reservar mesa](/es/reserves/)
+{{ range $categories }}
+### {{ .Params.name_es | default .Params.name }}
+
+{{ $dishes := where (where $.Site.RegularPages "Section" "dishes") "Params.category" "==" (.Params.name) }}
+{{ range $dishes }}
+{{ if .Params.available }}
+- **{{ .Params.name_es | default .Params.name }}** {{ if .Params.description_es }}({{ .Params.description_es }}){{ end }} - {{ .Params.price }} €
+{{ end }}
+{{ end }}
+
+{{ end }}
+
+[Reservar una mesa](/machiroku-web/es/reserves/)

@@ -1,0 +1,51 @@
+backend:
+  name: github
+  repo: 112books/machiroku-web
+  branch: main
+  base_api: https://api.github.com
+
+media_folder: "static/images"
+public_folder: "/machiroku-web/images"
+
+collections:
+  - name: menus
+    label: "Menús (Mediodía)"
+    folder: "content/ca/menus"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {name: title, label: "Nom del menú", widget: string}
+      - {name: title_es, label: "Nom (Castellà)", widget: string}
+      - {name: title_en, label: "Nom (Anglès)", widget: string}
+      - {name: description, label: "Descripció (Català)", widget: text}
+      - {name: description_es, label: "Descripció (Castellà)", widget: text}
+      - {name: description_en, label: "Descripció (Anglès)", widget: text}
+      - {name: price, label: "Preu (€)", widget: number}
+      - {name: available, label: "Disponible", widget: boolean, default: true}
+
+  - name: categories
+    label: "Categories de plats"
+    folder: "content/ca/categories"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {name: name, label: "Nom de categoria", widget: string}
+      - {name: name_es, label: "Nom (Castellà)", widget: string}
+      - {name: name_en, label: "Nom (Anglès)", widget: string}
+      - {name: order, label: "Ordre", widget: number, default: 1}
+
+  - name: dishes
+    label: "Plats de la carta"
+    folder: "content/ca/dishes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {name: name, label: "Nom del plat", widget: string}
+      - {name: name_es, label: "Nom (Castellà)", widget: string}
+      - {name: name_en, label: "Nom (Anglès)", widget: string}
+      - {name: description, label: "Descripció (Català)", widget: text, required: false}
+      - {name: description_es, label: "Descripció (Castellà)", widget: text, required: false}
+      - {name: description_en, label: "Descripció (Anglès)", widget: text, required: false}
+      - {name: price, label: "Preu (€)", widget: number}
+      - {name: category, label: "Categoria", widget: relation, collection: "categories", value_field: "name", search_fields: ["name"]}
+      - {name: available, label: "Disponible", widget: boolean, default: true}

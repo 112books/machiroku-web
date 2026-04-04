@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://112books.github.io/machiroku-web/ca/categories/entrants/</loc>
+  </url><url>
+    <loc>https://112books.github.io/machiroku-web/ca/dishes/goma-wakame/</loc>
+  </url><url>
+    <loc>https://112books.github.io/machiroku-web/es/categories/entrants/</loc>
+  </url><url>
+    <loc>https://112books.github.io/machiroku-web/es/dishes/goma-wakame/</loc>
+  </url><url>
     <loc>https://112books.github.io/machiroku-web/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -52,6 +60,10 @@
   </url><url>
     <loc>https://112books.github.io/machiroku-web/en/oferta/</loc>
   </url><url>
+    <loc>https://112books.github.io/machiroku-web/ca/menus/menu-sushi/</loc>
+  </url><url>
+    <loc>https://112books.github.io/machiroku-web/es/menus/menu-sushi/</loc>
+  </url><url>
     <loc>https://112books.github.io/machiroku-web/es/oferta/</loc>
   </url><url>
     <loc>https://112books.github.io/machiroku-web/ca/oferta/</loc>
@@ -65,13 +77,13 @@
     <loc>https://112books.github.io/machiroku-web/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://112books.github.io/machiroku-web/en/tags/"
+                hreflang="es"
+                href="https://112books.github.io/machiroku-web/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="es"
-                href="https://112books.github.io/machiroku-web/es/tags/"
+                hreflang="en"
+                href="https://112books.github.io/machiroku-web/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"

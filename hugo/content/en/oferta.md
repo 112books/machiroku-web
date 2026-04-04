@@ -5,17 +5,32 @@ slug: "oferta"
 
 # Menu
 
+## Reservations
+
+[Book now →](/machiroku-web/en/reserves/)
+
 ## Lunch Menu (Monday - Friday)
 
-- **Sushi Menu** - 16,00 € - 5 nigiri + 4 maki, Wafu sarada, Miso Soup
-- **Salmon Don Menu** - 16,00 € - Salmon Don, Kobachi, Miso Soup
-- **Tendon Menu** - 16,00 € - Rice with tempura, Sashimi, Miso Soup
-- **Unaju Menu** - 17,50 € - Rice with eel, Sashimi, Miso Soup
+{{ range where .Site.RegularPages "Section" "menus" }}
+{{ if .Params.available }}
+- **{{ .Params.title_en | default .Title }}** - {{ .Params.price }} € - {{ .Params.description_en | default .Params.description }}
+{{ end }}
+{{ end }}
 
-## Starters
+## Dinner Menu (Thursday - Saturday)
 
-- **Goma Wakame** - 5,00 € - Seaweed salad
-- **Yakitori** - 5,50 € - Chicken skewers
-- **Gyoza** - 5,50 € - 4 pork dumplings
+{{ $categories := where .Site.RegularPages "Section" "categories" | sortByParam "order" }}
 
-[Book a table](/en/reserves/)
+{{ range $categories }}
+### {{ .Params.name_en | default .Params.name }}
+
+{{ $dishes := where (where $.Site.RegularPages "Section" "dishes") "Params.category" "==" (.Params.name) }}
+{{ range $dishes }}
+{{ if .Params.available }}
+- **{{ .Params.name_en | default .Params.name }}** {{ if .Params.description_en }}({{ .Params.description_en }}){{ end }} - {{ .Params.price }} €
+{{ end }}
+{{ end }}
+
+{{ end }}
+
+[Book a table](/machiroku-web/en/reserves/)

@@ -1,0 +1,35 @@
+{
+  "menus": [
+    {
+      "title": "Menú Sushi",
+      "title_es": "Menú Sushi",
+      "title_en": "Sushi Menu",
+      "description": "5 nigiri + 4 maki, Wafu sarada, Sopa de Miso",
+      "description_es": "5 nigiri + 4 maki, Wafu sarada, Sopa de Miso",
+      "description_en": "5 nigiri + 4 maki, Wafu sarada, Miso Soup",
+      "price": 16.00,
+      "available": true
+    }
+  ],
+  "categories": [
+    {
+      "name": "Entrants",
+      "name_es": "Entrantes", 
+      "name_en": "Starters",
+      "order": 1
+    }
+  ],
+  "dishes": [
+    {
+      "name": "Goma Wakame",
+      "name_es": "Goma Wakame",
+      "name_en": "Goma Wakame",
+      "description": "Amanida d'algues Wakame amb sèsam",
+      "description_es": "Ensalada de algas Wakame con sésamo",
+      "description_en": "Wakame seaweed salad with sesame",
+      "price": 5.00,
+      "category": "Entrants",
+      "available": true
+    }
+  ]
+}

@@ -1,8 +1,0 @@
-exceptions:
-  - date: "2026-04-05"
-    mode: "closed"
-    reason: "Festa local"
-
-  - date: "2026-04-10"
-    mode: "menu"
-    note: "Servei especial migdia tot el dia"

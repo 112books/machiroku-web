@@ -1,4 +1,5 @@
 baseURL = "https://112books.github.io/machiroku-web/"
+languageCode = "ca-ES"
 defaultContentLanguage = "ca"
 defaultContentLanguageInSubdir = true
 title = "Machiroku"
@@ -6,31 +7,10 @@ title = "Machiroku"
 [languages]
 [languages.ca]
 languageName = "Català"
-languageCode = "ca-ES"
+weight = 1
 [languages.es]
 languageName = "Español"
-languageCode = "es-ES"
+weight = 2
 [languages.en]
 languageName = "English"
-languageCode = "en-US"
-
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-
-[mediaTypes]
-  [mediaTypes."text/yaml"]
-    suffixes = ["yaml", "yml"]
-
-[outputFormats]
-  [outputFormats.YAML]
-    mediaType = "text/yaml"
-    isPlainText = true
-
-[build]
-  writeStats = true
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+weight = 3

@@ -1,5 +1,6 @@
 ---
 title: "Inici"
+slug: "inici"
 ---
 
 # Machiroku

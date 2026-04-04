@@ -1,28 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ .Title }} | Machiroku</title>
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+  <title>{{ .Title }}</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="{{ .Site.BaseURL }}">Inici</a>
-      <a href="{{ .Site.BaseURL }}ca/oferta/">Oferta</a>
-      <a href="{{ .Site.BaseURL }}ca/reserves/">Reserves</a>
-      <a href="{{ .Site.BaseURL }}ca/contacte/">Contacte</a>
-    </nav>
-  </header>
-  
-  <main>
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-  </main>
-  
-  <footer>
-    <p>&copy; {{ now.Year }} Machiroku</p>
-  </footer>
+  {{ block "main" . }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ end }}
 </body>
 </html>

@@ -9,28 +9,48 @@ slug: "oferta"
 
 [Book now →](/machiroku-web/en/reserves/)
 
+---
+
 ## Lunch Menu (Monday - Friday)
 
-{{ range where .Site.RegularPages "Section" "menus" }}
-{{ if .Params.available }}
-- **{{ .Params.title_en | default .Title }}** - {{ .Params.price }} € - {{ .Params.description_en | default .Params.description }}
-{{ end }}
-{{ end }}
+- **Sushi Menu** - 16,00 € - 5 nigiri + 4 maki, Wafu sarada, Miso Soup
+- **Salmon Don Menu** - 16,00 € - Salmon Don, Kobachi, Miso Soup
+- **Tendon Menu** - 16,00 € - Rice with tempura, Sashimi, Miso Soup
+- **Unaju Menu** - 17,50 € - Rice with eel, Sashimi, Miso Soup
+
+---
 
 ## Dinner Menu (Thursday - Saturday)
 
-{{ $categories := where .Site.RegularPages "Section" "categories" | sortByParam "order" }}
+### Starters
 
-{{ range $categories }}
-### {{ .Params.name_en | default .Params.name }}
+- **Goma Wakame** - Wakame seaweed salad with sesame - 5,00 €
+- **Yakitori** - Chicken skewers - 5,50 €
+- **Gyoza** - 4 pork dumplings - 5,50 €
 
-{{ $dishes := where (where $.Site.RegularPages "Section" "dishes") "Params.category" "==" (.Params.name) }}
-{{ range $dishes }}
-{{ if .Params.available }}
-- **{{ .Params.name_en | default .Params.name }}** {{ if .Params.description_en }}({{ .Params.description_en }}){{ end }} - {{ .Params.price }} €
-{{ end }}
-{{ end }}
+### Sashimi
 
-{{ end }}
+- **Maguro** (Tuna) - 5,60 €
+- **Salmon** - 5,60 €
+- **Hotate** (Scallop) - 6,50 €
 
-[Book a table](/machiroku-web/en/reserves/)
+### Nigiri Sushi
+
+- **Maguro Nigiri** - 2 pieces - 4,00 €
+- **Salmon Nigiri** - 2 pieces - 4,00 €
+- **Ebi Nigiri** - 2 pieces - 4,50 €
+
+### Maki Sushi
+
+- **Kappa Maki** - 4,00 €
+- **Tekka Maki** - 5,00 €
+- **California Roll** - 6,50 €
+
+### Desserts
+
+- **Mochi** - 3,50 €
+- **Tempura Ice Cream** - 4,50 €
+
+---
+
+[Book a table →](/machiroku-web/en/reserves/)

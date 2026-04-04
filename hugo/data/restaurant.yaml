@@ -1,0 +1,36 @@
+telefon: "+34 93 412 60 82"
+whatsapp: "+34 93 412 60 82"
+email: "mackiroku@machiroku.com"
+adreca:
+  ca: "Carrer de les Magdalenes, 23, 08003 Barcelona"
+  es: "Calle Magdalenas, 23, 08003 Barcelona"
+  en: "Calle Magdalenas, 23, 08003 Barcelona"
+google_maps_url: "https://maps.google.com/?q=Machiroku+Barcelona"
+
+horaris:
+  menu:
+    dies: ["dl", "dt", "dc", "dj", "dv"]
+    obertura: "13:00"
+    tancament: "15:30"
+  carta:
+    dies: ["dc", "dj", "dv", "ds"]
+    obertura: "20:00"
+    tancament: "23:00"
+
+excepcions: []
+
+avisos: []
+
+popup:
+  actiu: false
+  tema:
+    ca: ""
+    es: ""
+    en: ""
+  descripcio:
+    ca: ""
+    es: ""
+    en: ""
+  data_inici: ""
+  data_fi: ""
+  servei: []

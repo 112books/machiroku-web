@@ -1,0 +1,15 @@
+{{- $res := partial "get-status.html" . -}}
+{{- $status := index $res "status" -}}
+{{- $message := index $res "message" -}}
+
+{{- if eq $status "menu" -}}
+  <span class="status status--open">{{ i18n "menu_migdia" }}</span>
+{{- else if eq $status "carta" -}}
+  <span class="status status--open">{{ i18n "carta_nit" }}</span>
+{{- else -}}
+  <span class="status status--closed">{{ i18n "tancat" }}</span>
+{{- end -}}
+
+{{ with $message }}
+<span class="status-message">{{ . }}</span>
+{{ end }}

@@ -8,11 +8,74 @@
     <language>ca-ES</language>
     <atom:link href="https://112books.github.io/machiroku-web/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Contact</title>
+      <link>https://112books.github.io/machiroku-web/en/contacte/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/en/contacte/</guid>
+      <description>&lt;h1 id=&#34;contact&#34;&gt;Contact&lt;/h1&gt;&#xA;&lt;h2 id=&#34;address&#34;&gt;Address&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Machiroku&lt;/strong&gt;&#xA;Carrer de les Magdalenes 23&#xA;08003 Barcelona&lt;/p&gt;&#xA;&lt;h2 id=&#34;phone&#34;&gt;Phone&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#ZgotmplZ&#34;&gt;+34 934 126 082&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;email&#34;&gt;Email&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;mailto:machiroku@machiroku.com&#34;&gt;machiroku@machiroku.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;location&#34;&gt;Location&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://maps.google.com/?q=Machiroku&amp;#43;Barcelona&#34;&gt;View on Google Maps&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;where-we-are&#34;&gt;Where we are&lt;/h2&gt;&#xA;&lt;p&gt;We are in the Gothic Quarter, near Barcelona Cathedral.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contacte</title>
+      <link>https://112books.github.io/machiroku-web/ca/contacte/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/contacte/</guid>
+      <description>&lt;h1 id=&#34;contacte&#34;&gt;Contacte&lt;/h1&gt;&#xA;&lt;h2 id=&#34;adreça&#34;&gt;Adreça&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Machiroku&lt;/strong&gt;&#xA;Carrer de les Magdalenes 23&#xA;08003 Barcelona&lt;/p&gt;&#xA;&lt;h2 id=&#34;telèfon&#34;&gt;Telèfon&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#ZgotmplZ&#34;&gt;+34 934 126 082&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;correu-electrònic&#34;&gt;Correu electrònic&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;mailto:machiroku@machiroku.com&#34;&gt;machiroku@machiroku.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;ubicació&#34;&gt;Ubicació&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://maps.google.com/?q=Machiroku&amp;#43;Barcelona&#34;&gt;Pujar a Google Maps&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;on-som&#34;&gt;On som&lt;/h2&gt;&#xA;&lt;p&gt;Som al barri del Barri Gòtic, a prop de la Catedral de Barcelona.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contacto</title>
+      <link>https://112books.github.io/machiroku-web/es/contacte/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/es/contacte/</guid>
+      <description>&lt;h1 id=&#34;contacto&#34;&gt;Contacto&lt;/h1&gt;&#xA;&lt;h2 id=&#34;dirección&#34;&gt;Dirección&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Machiroku&lt;/strong&gt;&#xA;Carrer de les Magdalenes 23&#xA;08003 Barcelona&lt;/p&gt;&#xA;&lt;h2 id=&#34;teléfono&#34;&gt;Teléfono&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#ZgotmplZ&#34;&gt;+34 934 126 082&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;correo-electrónico&#34;&gt;Correo electrónico&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;mailto:machiroku@machiroku.com&#34;&gt;machiroku@machiroku.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;ubicación&#34;&gt;Ubicación&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://maps.google.com/?q=Machiroku&amp;#43;Barcelona&#34;&gt;Subir a Google Maps&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;dónde-estamos&#34;&gt;Dónde estamos&lt;/h2&gt;&#xA;&lt;p&gt;Estamos en el barrio del Gótico, cerca de la Catedral de Barcelona.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Inici</title>
       <link>https://112books.github.io/machiroku-web/ca/inici/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/ca/inici/</guid>
       <description>&lt;h1 id=&#34;machiroku&#34;&gt;Machiroku&lt;/h1&gt;&#xA;&lt;p&gt;Restaurant japonès al centre de Barcelona.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/ca/reserves/&#34;&gt;Fer una reserva&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menu</title>
+      <link>https://112books.github.io/machiroku-web/en/oferta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/en/oferta/</guid>
+      <description>&lt;h1 id=&#34;menu&#34;&gt;Menu&lt;/h1&gt;&#xA;&lt;h2 id=&#34;lunch-menu-monday---friday&#34;&gt;Lunch Menu (Monday - Friday)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sushi Menu&lt;/strong&gt; - 16,00 € - 5 nigiri + 4 maki, Wafu sarada, Miso Soup&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Salmon Don Menu&lt;/strong&gt; - 16,00 € - Salmon Don, Kobachi, Miso Soup&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tendon Menu&lt;/strong&gt; - 16,00 € - Rice with tempura, Sashimi, Miso Soup&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Unaju Menu&lt;/strong&gt; - 17,50 € - Rice with eel, Sashimi, Miso Soup&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;starters&#34;&gt;Starters&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goma Wakame&lt;/strong&gt; - 5,00 € - Seaweed salad&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Yakitori&lt;/strong&gt; - 5,50 € - Chicken skewers&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Gyoza&lt;/strong&gt; - 5,50 € - 4 pork dumplings&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/en/reserves/&#34;&gt;Book a table&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Oferta gastronómica</title>
+      <link>https://112books.github.io/machiroku-web/es/oferta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/es/oferta/</guid>
+      <description>&lt;h1 id=&#34;oferta-gastronómica&#34;&gt;Oferta gastronómica&lt;/h1&gt;&#xA;&lt;h2 id=&#34;menú-del-día-lunes---viernes&#34;&gt;Menú del día (Lunes - Viernes)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Sushi&lt;/strong&gt; - 16,00 € - 5 nigiri + 4 maki, Wafu sarada, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Salmon Don&lt;/strong&gt; - 16,00 € - Salmón Don, Kobachi, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Tendon&lt;/strong&gt; - 16,00 € - Arroz con tempura, Sashimi, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Unaju&lt;/strong&gt; - 17,50 € - Arroz con anguila, Sashimi, Sopa de Miso&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;entrantes&#34;&gt;Entrantes&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goma Wakame&lt;/strong&gt; - 5,00 € - Ensalada de algas&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Yakitori&lt;/strong&gt; - 5,50 € - Brochetas de pollo&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Gyoza&lt;/strong&gt; - 5,50 € - 4 empanadillas de cerdo&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/es/reserves/&#34;&gt;Reservar mesa&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Oferta gastronòmica</title>
+      <link>https://112books.github.io/machiroku-web/ca/oferta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/oferta/</guid>
+      <description>&lt;h1 id=&#34;oferta-gastronòmica&#34;&gt;Oferta gastronòmica&lt;/h1&gt;&#xA;&lt;h2 id=&#34;menú-del-migdia-dilluns---divendres&#34;&gt;Menú del migdia (Dilluns - Divendres)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Sushi&lt;/strong&gt; - 16,00 € - 5 nigiri + 4 maki, Wafu sarada, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Salmon Don&lt;/strong&gt; - 16,00 € - Salmó Don, Kobachi, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Tendon&lt;/strong&gt; - 16,00 € - Arròs amb tempura, Sashimi, Sopa de Miso&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Menú Unaju&lt;/strong&gt; - 17,50 € - Arròs amb anguila, Sashimi, Sopa de Miso&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;entrants&#34;&gt;Entrants&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Goma Wakame&lt;/strong&gt; - 5,00 € - Amanida d&amp;rsquo;algues&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Yakitori&lt;/strong&gt; - 5,50 € - Broquetes de pollastre&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Gyoza&lt;/strong&gt; - 5,50 € - 4 crestes de porc&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/ca/reserves/&#34;&gt;Reservar taula&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reservas</title>
+      <link>https://112books.github.io/machiroku-web/es/reserves/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/es/reserves/</guid>
+      <description>&lt;h1 id=&#34;hacer-una-reserva&#34;&gt;Hacer una reserva&lt;/h1&gt;&#xA;&lt;h2 id=&#34;reservas-por-teléfono&#34;&gt;Reservas por teléfono&lt;/h2&gt;&#xA;&lt;p&gt;Puedes llamar directamente al restaurante para hacer tu reserva:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tel:&lt;/strong&gt; &lt;a href=&#34;#ZgotmplZ&#34;&gt;+34 934 126 082&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;reservas-por-whatsapp&#34;&gt;Reservas por WhatsApp&lt;/h2&gt;&#xA;&lt;p&gt;También puedes contactarnos por WhatsApp:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://wa.me/34934126082&#34;&gt;WhatsApp&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;horario-del-restaurante&#34;&gt;Horario del restaurante&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Lunes y martes&lt;/strong&gt;: Cerrado&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Miércoles a sábado&lt;/strong&gt;: 13:00h - 15:30h y 20:00h - 23:00h&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Domingo&lt;/strong&gt;: Cerrado&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/es/contacte/&#34;&gt;Ver ubicación&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reservations</title>
+      <link>https://112books.github.io/machiroku-web/en/reserves/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/en/reserves/</guid>
+      <description>&lt;h1 id=&#34;make-a-reservation&#34;&gt;Make a reservation&lt;/h1&gt;&#xA;&lt;h2 id=&#34;reservations-by-phone&#34;&gt;Reservations by phone&lt;/h2&gt;&#xA;&lt;p&gt;You can call the restaurant directly to make your reservation:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tel:&lt;/strong&gt; &lt;a href=&#34;#ZgotmplZ&#34;&gt;+34 934 126 082&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;reservations-by-whatsapp&#34;&gt;Reservations by WhatsApp&lt;/h2&gt;&#xA;&lt;p&gt;You can also contact us via WhatsApp:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://wa.me/34934126082&#34;&gt;WhatsApp&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;restaurant-hours&#34;&gt;Restaurant hours&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Monday and Tuesday&lt;/strong&gt;: Closed&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Wednesday to Saturday&lt;/strong&gt;: 13:00h - 15:30h and 20:00h - 23:00h&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sunday&lt;/strong&gt;: Closed&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/en/contacte/&#34;&gt;See location&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reserves</title>
+      <link>https://112books.github.io/machiroku-web/ca/reserves/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/reserves/</guid>
+      <description>&lt;h1 id=&#34;fer-una-reserva&#34;&gt;Fer una reserva&lt;/h1&gt;&#xA;&lt;h2 id=&#34;reserves-per-telèfon&#34;&gt;Reserves per telèfon&lt;/h2&gt;&#xA;&lt;p&gt;Pots trucar directament al restaurant per fer la teva reserva:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tel:&lt;/strong&gt; &lt;a href=&#34;#ZgotmplZ&#34;&gt;+34 934 126 082&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;reserves-per-whatsapp&#34;&gt;Reserves per WhatsApp&lt;/h2&gt;&#xA;&lt;p&gt;També pots contactar-nos per WhatsApp:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://wa.me/34934126082&#34;&gt;WhatsApp&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;horari-del-restaurant&#34;&gt;Horari del restaurant&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Dilluns i dimarts&lt;/strong&gt;: Tancat&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Dimecres a dissabte&lt;/strong&gt;: 13:00h - 15:30h i 20:00h - 23:00h&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Diumenge&lt;/strong&gt;: Tancat&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/ca/contacte/&#34;&gt;Veure ubicació&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -84,7 +84,7 @@ body {
 }
 
 .hero-logo-square {
-  display: none;
+  display: block;
 }
 
 .hero-home h1 {
@@ -167,6 +167,13 @@ img {
   display: flex;
   gap: var(--spacing-lg);
   align-items: center;
+  margin-left: auto;
+}
+
+.lang-switch {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-left: var(--spacing-lg);
 }
 
 .nav-links a {

@@ -33,7 +33,7 @@
       <link>https://112books.github.io/machiroku-web/ca/inici/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/ca/inici/</guid>
-      <description>&lt;h1 id=&#34;machiroku&#34;&gt;Machiroku&lt;/h1&gt;&#xA;&lt;p&gt;Restaurant japonès al centre de Barcelona des del 2020.&lt;/p&gt;&#xA;&lt;p&gt;Oferim menú del migdia de dilluns a divendres i carta per la nit de dimecres a dissabte.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/ca/reserves/&#34;&gt;Fer una reserva&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;div class=&#34;hero-home&#34;&gt;&#xA;  &lt;img src=&#34;https://112books.github.io/machiroku-web/logos/Machiroku-logo-gran-vectoritzat.svg&#34; alt=&#34;Machiroku&#34; class=&#34;hero-logo-square&#34; style=&#34;max-width: 250px;&#34;&gt;&#xA;  &lt;p class=&#34;slogan&#34;&gt;Experiència japonesa autèntica al cor de Barcelona&lt;/p&gt;&#xA;  &lt;div class=&#34;hero-status&#34;&gt;&#xA;    &lt;span class=&#34;status-label&#34;&gt;Obert:&lt;/span&gt;&#xA;    &lt;span&gt;Dimecres - Dissabte&lt;/span&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;a href=&#34;https://112books.github.io/machiroku-web/ca/reserves/&#34; class=&#34;btn btn-primary&#34; style=&#34;margin-top: var(--spacing-md);&#34;&gt;Fer una reserva&lt;/a&gt;&#xA;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Menú Sushi</title>

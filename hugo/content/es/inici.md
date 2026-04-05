@@ -3,10 +3,12 @@ title: "Inicio"
 slug: "inici"
 ---
 
-# Machiroku
-
-Restaurante japonés en el centro de Barcelona desde 2020.
-
-Ofrecemos menú del día de lunes a viernes y carta por la noche de miércoles a sábado.
-
-[Hacer una reserva](/machiroku-web/es/reserves/)
+<div class="hero-home">
+  <img src="/machiroku-web/logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku" class="hero-logo-square" style="max-width: 250px;">
+  <p class="slogan">Experiencia japonesa auténtica en el corazón de Barcelona</p>
+  <div class="hero-status">
+    <span class="status-label">Abierto:</span>
+    <span>Miércoles - Sábado</span>
+  </div>
+  <a href="/machiroku-web/es/reserves/" class="btn btn-primary" style="margin-top: var(--spacing-md);">Hacer una reserva</a>
+</div>

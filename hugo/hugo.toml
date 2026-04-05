@@ -3,6 +3,9 @@ languageCode = "ca-ES"
 defaultContentLanguage = "ca"
 title = "Machiroku"
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [languages]
 [languages.ca]
 languageName = "Català"

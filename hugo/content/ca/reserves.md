@@ -23,4 +23,4 @@ També pots contactar-nos per WhatsApp:
 - **Dimecres a dissabte**: 13:00h - 15:30h i 20:00h - 23:00h
 - **Diumenge**: Tancat
 
-[Veure ubicació](/ca/contacte/)
+[Veure ubicació](/machiroku-web/ca/contacte/)

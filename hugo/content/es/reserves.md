@@ -23,4 +23,4 @@ También puedes contactarnos por WhatsApp:
 - **Miércoles a sábado**: 13:00h - 15:30h y 20:00h - 23:00h
 - **Domingo**: Cerrado
 
-[Ver ubicación](/es/contacte/)
+[Ver ubicación](/machiroku-web/es/contacte/)

@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
+base_url: https://merry-malabi-d77fc7.netlify.app
+
 media_folder: "static/images"
 public_folder: "/machiroku-web/images"
 

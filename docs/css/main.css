@@ -259,7 +259,23 @@ img {
 .nav-menu {
   display: flex;
   align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.nav-menu .nav-links {
+  display: flex;
   gap: var(--spacing-md);
+  align-items: center;
+}
+
+.nav-menu .nav-links a {
+  position: relative;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-light);
+  transition: color 0.2s ease;
 }
 
 .nav-menu .nav-links {
@@ -668,6 +684,65 @@ main {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
   }
+  
+  .hero-logo {
+    max-width: 150px;
+  }
+  
+  .site-nav {
+    position: relative;
+  }
+  
+  .nav-menu {
+    flex: 1;
+  }
+  
+  .nav-toggle {
+    display: flex;
+    z-index: 101;
+  }
+  
+  .nav-menu .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    right: -20px;
+    background: var(--color-black);
+    flex-direction: column;
+    padding: var(--spacing-sm);
+    gap: 2px;
+    border-top: 1px solid var(--color-border);
+  }
+  
+  .nav-menu .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-menu .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-menu .nav-links a {
+    display: block;
+    padding: var(--spacing-sm);
+    font-size: 14px;
+  }
+  
+  .lang-switch {
+    gap: 2px;
+  }
+  
+  .lang-switch a {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+  
+  .nav-status {
+    display: none;
+  }
+}
   
   .hero-logo {
     max-width: 150px;

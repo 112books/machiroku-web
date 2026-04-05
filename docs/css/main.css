@@ -72,46 +72,56 @@ main {
 }
 
 .hero-schedule {
-  background: rgba(0,0,0,0.5);
-  border: 1px solid var(--color-accent);
-  border-radius: 8px;
-  padding: var(--spacing-lg);
+  background: rgba(0,0,0,0.6);
+  border: 2px solid var(--color-accent);
+  border-radius: 12px;
+  padding: var(--spacing-lg) var(--spacing-xl);
   margin: var(--spacing-md) 0;
+  max-width: 500px;
 }
 
 .hero-schedule .schedule-title {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   color: var(--color-accent);
-  margin: 0 0 var(--spacing-md);
+  margin: 0 0 var(--spacing-lg);
   text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-sm);
 }
 
 .hero-schedule .schedule-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--spacing-lg);
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
 .hero-schedule .schedule-item {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  min-width: 140px;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-schedule .schedule-item:last-child {
+  border-bottom: none;
 }
 
 .hero-schedule .day {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 4px;
 }
 
 .hero-schedule .hours {
+  font-size: 14px;
+  font-family: var(--font-display);
+  text-align: right;
+}
   font-size: 14px;
   font-family: var(--font-display);
 }

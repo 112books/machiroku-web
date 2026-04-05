@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
         lunch: 'Menú',
         dinner: 'Carta',
         nextOpen: 'Obirim',
-        at: 'a les'
+        at: 'a les',
+        days: ['diumenge', 'dilluns', 'dimarts', 'dimecres', 'dijous', 'divendres', 'dissabte']
       },
       es: {
         open: 'ABIERTO',
@@ -35,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
         lunch: 'Menú',
         dinner: 'Carta',
         nextOpen: 'Abrimos',
-        at: 'a las'
+        at: 'a las',
+        days: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado']
       },
       en: {
         open: 'OPEN',
@@ -43,56 +45,33 @@ document.addEventListener('DOMContentLoaded', function() {
         lunch: 'Menu',
         dinner: 'Dinner',
         nextOpen: 'We open',
-        at: 'at'
+        at: 'at',
+        days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
       }
     };
     
     const t = labels[lang] || labels.ca;
     let status = '';
-    let nextDay = '';
+    let nextService = '';
     
-    // Day 0 = Sunday, 1 = Monday, etc.
-    if (day === 0) {
+    if (day === 0 || day === 1 || day === 2) {
       status = 'closed';
-      nextDay = lang === 'ca' ? 'dimecres' : lang === 'es' ? 'miércoles' : 'wednesday';
-    } else if (day === 1 || day === 2) {
-      status = 'closed';
-      nextDay = lang === 'ca' ? 'dimecres' : lang === 'es' ? 'miércoles' : 'wednesday';
-    } else if (day === 3) { // Wednesday
+      nextService = t.days[3] + ' ' + t.lunch.toLowerCase();
+    } else if (day === 3 || day === 4 || day === 5 || day === 6) {
       if (hour >= 13 && hour < 15.5) {
         status = 'open-lunch';
       } else if (hour >= 20 && hour < 23) {
         status = 'open-dinner';
       } else if (hour < 13) {
         status = 'closed';
-        nextDay = lang === 'ca' ? 'avui a les 13h' : lang === 'es' ? 'hoy a las 13h' : 'today at 1pm';
+        nextService = t.lunch;
       } else {
         status = 'closed';
-        nextDay = lang === 'ca' ? 'dissabte' : lang === 'es' ? 'sábado' : 'saturday';
-      }
-    } else if (day === 4 || day === 5) { // Thursday, Friday
-      if (hour >= 13 && hour < 15.5) {
-        status = 'open-lunch';
-      } else if (hour >= 20 && hour < 23) {
-        status = 'open-dinner';
-      } else if (hour < 13) {
-        status = 'closed';
-        nextDay = lang === 'ca' ? 'avui a les 13h' : lang === 'es' ? 'hoy a las 13h' : 'today at 1pm';
-      } else {
-        status = 'closed';
-        nextDay = lang === 'ca' ? 'dissabte' : lang === 'es' ? 'sábado' : 'saturday';
-      }
-    } else if (day === 6) { // Saturday
-      if (hour >= 13 && hour < 15.5) {
-        status = 'open-lunch';
-      } else if (hour >= 20 && hour < 23) {
-        status = 'open-dinner';
-      } else if (hour < 13) {
-        status = 'closed';
-        nextDay = lang === 'ca' ? 'avui a les 13h' : lang === 'es' ? 'hoy a las 13h' : 'today at 1pm';
-      } else {
-        status = 'closed';
-        nextDay = lang === 'ca' ? 'dimecres' : lang === 'es' ? 'miércoles' : 'wednesday';
+        if (day === 6) {
+          nextService = t.days[3] + ' ' + t.lunch.toLowerCase();
+        } else {
+          nextService = day === 3 ? t.lunch : 'dissabte ' + t.lunch.toLowerCase();
+        }
       }
     }
     
@@ -101,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (status === 'open-dinner') {
       statusEl.innerHTML = `<span class="status status--open">${t.open}: ${t.dinner}</span>`;
     } else {
-      statusEl.innerHTML = `<span class="status status--closed">${t.closed}</span>`;
+      statusEl.innerHTML = `<span class="status status--closed">${t.closed}</span><span class="next-service">${nextService}</span>`;
     }
   }
   

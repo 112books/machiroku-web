@@ -22,13 +22,13 @@
     <loc>https://112books.github.io/machiroku-web/es/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://112books.github.io/machiroku-web/en/"
+                hreflang="ca-ES"
+                href="https://112books.github.io/machiroku-web/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="ca-ES"
-                href="https://112books.github.io/machiroku-web/"
+                hreflang="en"
+                href="https://112books.github.io/machiroku-web/en/"
                 />
     <xhtml:link
                 rel="alternate"

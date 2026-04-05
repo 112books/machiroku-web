@@ -4,11 +4,11 @@ slug: "inici"
 ---
 
 <div class="hero-home">
-  <img src="/machiroku-web/logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku" class="hero-logo-square" style="max-width: 250px;">
+  <img src="/machiroku-web/logos/logo.svg" alt="Machiroku" style="max-width: 200px;">
   <p class="slogan">Experiencia japonesa auténtica en el corazón de Barcelona</p>
   <div class="hero-status">
-    <span class="status-label">Abierto:</span>
+    <span class="status-label">ABIERTO:</span>
     <span>Miércoles - Sábado</span>
   </div>
-  <a href="/machiroku-web/es/reserves/" class="btn btn-primary" style="margin-top: var(--spacing-md);">Hacer una reserva</a>
+  <a href="/machiroku-web/es/reserves/" class="btn btn-primary" style="margin-top: var(--spacing-md);">HACER UNA RESERVA</a>
 </div>

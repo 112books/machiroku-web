@@ -1,8 +1,12 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: 112books/machiroku-web
   branch: main
-
-base_url: https://merry-malabi-d77fc7.netlify.app
+  base_api: https://api.github.com
+  base_url: https://merry-malabi-d77fc7.netlify.app
+  auth_endpoint: OAuth
+  client_id: "Ov23lii0mHq5IoDhtynD"
+  client_secret: "7f74f920c56801153e3a9a2897cfe870dd4b6827"
 
 media_folder: "static/images"
 public_folder: "/images"

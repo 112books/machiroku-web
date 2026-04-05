@@ -1,12 +1,6 @@
 backend:
-  name: github
-  repo: 112books/machiroku-web
+  name: git-gateway
   branch: main
-  base_api: https://api.github.com
-  base_url: https://112books.github.io/machiroku-web
-  auth_endpoint: OAuth
-  client_id: "Ov23lii0mHq5IoDhtynD"
-  client_secret: "7f74f920c56801153e3a9a2897cfe870dd4b6827"
 
 media_folder: "static/images"
 public_folder: "/machiroku-web/images"

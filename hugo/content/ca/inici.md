@@ -5,17 +5,26 @@ slug: "inici"
 
 <div class="hero-home">
   <img src="/machiroku-web/logos/logo.svg" alt="Machiroku" style="max-width: 200px;">
-  <p class="slogan">Experiència japonesa autèntica al cor de Barcelona</p>
-  <div class="hero-status">
-    <span class="status-label">HORARIS</span>
-    <div class="schedule-inline">
-      <p><strong>Dilluns i dimarts</strong></p>
-      <p>13:00h - 15:30h</p>
-      <p><strong>Dimecres a dissabte</strong></p>
-      <p>13:00h - 15:30h i 20:00h - 23:00h</p>
-      <p><strong>Diumenge</strong></p>
-      <p>Tancat</p>
+  <p class="slogan">
+    Experiència japonesa autèntica<br>
+    <span style="font-size: 0.85em;">al cor de Barcelona</span>
+  </p>
+  <div class="hero-schedule">
+    <h3 class="schedule-title">HORARIS</h3>
+    <div class="schedule-grid">
+      <div class="schedule-item">
+        <span class="day">Dilluns i dimarts</span>
+        <span class="hours">13:00h - 15:30h</span>
+      </div>
+      <div class="schedule-item">
+        <span class="day">Dimecres a dissabte</span>
+        <span class="hours">13:00h - 15:30h<br>i 20:00h - 23:00h</span>
+      </div>
+      <div class="schedule-item">
+        <span class="day">Diumenge</span>
+        <span class="hours closed">Tancat</span>
+      </div>
     </div>
   </div>
-  <a href="/machiroku-web/ca/reserves/" class="btn btn-primary" style="margin-top: var(--spacing-md);">FER UNA RESERVA</a>
+  <a href="/machiroku-web/ca/reserves/" class="btn btn-primary" style="margin-top: var(--spacing-lg);">FER UNA RESERVA</a>
 </div>

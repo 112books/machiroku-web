@@ -4,7 +4,7 @@
 	<meta name="generator" content="Hugo 0.159.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Machiroku | Machiroku</title>
+  <title>Home | Machiroku</title>
   <link rel="stylesheet" href="/machiroku-web/css/main.css">
   <link rel="icon" type="image/svg+xml" href="/machiroku-web/favicon.svg">
 </head>
@@ -14,6 +14,7 @@
       <a href="/machiroku-web/ca/inici/" class="logo">
         <img src="/machiroku-web/logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku" style="height:38px;">
       </a>
+      <div class="nav-status" id="restaurant-status"></div>
     </div>
     <nav class="site-nav">
       <button class="nav-toggle" aria-label="Menu">
@@ -23,6 +24,7 @@
         <li><a href="/machiroku-web/ca/inici/">Inici</a></li>
         <li><a href="/machiroku-web/ca/oferta/">Oferta gastronòmica</a></li>
         <li><a href="/machiroku-web/ca/reserves/">Reserves</a></li>
+        <li><a href="/machiroku-web/ca/sobre-nosaltres/">Sobre nosaltres</a></li>
         <li><a href="/machiroku-web/ca/contacte/">Contacte</a></li>
         <li class="lang-switch">
           <a href="/machiroku-web/ca/inici/">CA</a>
@@ -35,8 +37,9 @@
 
   <main id="main-content">
     
-  <h1>Machiroku</h1>
-  
+  <h1>Home</h1>
+  <p>{{ .Content }}</p>
+
 
   </main>
 
@@ -100,5 +103,72 @@
     </div>
   </footer>
   <script src="/machiroku-web/js/main.js" defer></script>
+  
+  <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--color-black); border-top: 1px solid var(--color-border); padding: var(--spacing-md) var(--spacing-lg); z-index: 1000;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-md); flex-wrap: wrap;">
+      <p id="cookie-text" style="margin: 0; font-size: 14px; flex: 1; min-width: 200px;"></p>
+      <div style="display: flex; gap: var(--spacing-sm);">
+        <button onclick="rejectCookies()" class="btn" style="padding: 8px 16px; font-size: 12px;"></button>
+        <button onclick="acceptCookies()" class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;"></button>
+      </div>
+    </div>
+  </div>
+
+<script>
+const lang = document.documentElement.lang || 'ca';
+const texts = {
+  ca: {
+    text: 'Aquest lloc utilitza cookies per millorar la teva experiència.',
+    link: 'Més informació',
+    reject: 'Rebutjar',
+    accept: 'Acceptar'
+  },
+  es: {
+    text: 'Este sitio utiliza cookies para mejorar tu experiencia.',
+    link: 'Más información',
+    reject: 'Rechazar',
+    accept: 'Aceptar'
+  },
+  en: {
+    text: 'This site uses cookies to improve your experience.',
+    link: 'More info',
+    reject: 'Reject',
+    accept: 'Accept'
+  }
+};
+const t = texts[lang] || texts.ca;
+
+function getCookie(name) {
+  const value = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+  return value ? value.pop() : '';
+}
+
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = name + '=' + value + '; expires=' + expires + '; path=/';
+}
+
+function acceptCookies() {
+  setCookie('cookies_accepted', 'true', 365);
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+
+function rejectCookies() {
+  setCookie('cookies_accepted', 'false', 365);
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="/machiroku-web/' + lang + '/cookies/" style="color: var(--color-accent);">' + t.link + '</a>';
+  const btns = document.querySelectorAll('#cookie-banner .btn');
+  btns[0].textContent = t.reject;
+  btns[1].textContent = t.accept;
+  
+  const accepted = getCookie('cookies_accepted');
+  if (!accepted) {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+});
+</script>
 </body>
 </html>

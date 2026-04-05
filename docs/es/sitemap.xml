@@ -5,13 +5,13 @@
     <loc>https://merry-malabi-d77fc7.netlify.app/es/categories/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ca-ES"
-                href="https://merry-malabi-d77fc7.netlify.app/categories/"
+                hreflang="en"
+                href="https://merry-malabi-d77fc7.netlify.app/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://merry-malabi-d77fc7.netlify.app/en/categories/"
+                hreflang="ca-ES"
+                href="https://merry-malabi-d77fc7.netlify.app/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -39,13 +39,13 @@
     <loc>https://merry-malabi-d77fc7.netlify.app/es/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ca-ES"
-                href="https://merry-malabi-d77fc7.netlify.app/tags/"
+                hreflang="en"
+                href="https://merry-malabi-d77fc7.netlify.app/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://merry-malabi-d77fc7.netlify.app/en/tags/"
+                hreflang="ca-ES"
+                href="https://merry-malabi-d77fc7.netlify.app/tags/"
                 />
     <xhtml:link
                 rel="alternate"

@@ -23,7 +23,7 @@
 body {
   font-family: var(--font-sans);
   margin: 0;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://112books.github.io/machiroku-web/images/machiroku-web-background.svg');
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/machiroku-web-background.svg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -33,7 +33,7 @@ body {
 }
 
 .hero-home {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://112books.github.io/machiroku-web/images/machiroku-web-background.svg');
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/machiroku-web-background.svg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

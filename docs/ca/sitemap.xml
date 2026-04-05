@@ -21,13 +21,13 @@
     <loc>https://112books.github.io/machiroku-web/categories/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://112books.github.io/machiroku-web/en/categories/"
+                hreflang="es"
+                href="https://112books.github.io/machiroku-web/es/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="es"
-                href="https://112books.github.io/machiroku-web/es/categories/"
+                hreflang="en"
+                href="https://112books.github.io/machiroku-web/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -105,13 +105,13 @@
     <loc>https://112books.github.io/machiroku-web/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="es"
-                href="https://112books.github.io/machiroku-web/es/tags/"
+                hreflang="en"
+                href="https://112books.github.io/machiroku-web/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://112books.github.io/machiroku-web/en/tags/"
+                hreflang="es"
+                href="https://112books.github.io/machiroku-web/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"

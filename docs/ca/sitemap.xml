@@ -10,6 +10,10 @@
   </url><url>
     <loc>https://112books.github.io/machiroku-web/es/dishes/goma-wakame/</loc>
   </url><url>
+    <loc>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</loc>
+  </url><url>
+    <loc>https://112books.github.io/machiroku-web/es/sobre-nosaltres/</loc>
+  </url><url>
     <loc>https://112books.github.io/machiroku-web/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -77,6 +81,8 @@
     <loc>https://112books.github.io/machiroku-web/en/reserves/</loc>
   </url><url>
     <loc>https://112books.github.io/machiroku-web/ca/reserves/</loc>
+  </url><url>
+    <loc>https://112books.github.io/machiroku-web/ca/sobre-nosaltres/</loc>
   </url><url>
     <loc>https://112books.github.io/machiroku-web/tags/</loc>
     <xhtml:link

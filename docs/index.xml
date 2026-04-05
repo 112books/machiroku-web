@@ -36,6 +36,20 @@
       <description></description>
     </item>
     <item>
+      <title>About us</title>
+      <link>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</guid>
+      <description>&lt;div class=&#34;page-content&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h2 id=&#34;machiroku-restaurant&#34;&gt;Machiroku Restaurant&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Traditional Japanese cuisine since 2000 in the heart of Barcelona&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;In 2000 we opened the Machiroku restaurant at calle de les Molas 18, in the Gothic Quarter of Barcelona. Now, just before the state of alarm declared by the Government, we have moved to our new location, very close to the previous one, at calle Magdalenes number 23, just 400 meters from our old premises.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Acerca de</title>
+      <link>https://112books.github.io/machiroku-web/es/sobre-nosaltres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/es/sobre-nosaltres/</guid>
+      <description>&lt;div class=&#34;page-content&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h2 id=&#34;restaurante-machiroku&#34;&gt;Restaurante Machiroku&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Comida tradicional japonesa desde 2000 en el centro de Barcelona&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;En el año 2000 abrimos el restaurante Machiroku en la calle de les Molas 18, en el barrio gótico de Barcelona. Ahora, justo antes del estado de alarma declarado por el Gobierno, nos hemos trasladado a nuestro nuevo local, muy cerca del anterior, en la calle Magdalenes número 23, a escasos 400 metros de nuestro antiguo local.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Contact</title>
       <link>https://112books.github.io/machiroku-web/en/contacte/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -132,6 +146,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/ca/reserves/</guid>
       <description>&lt;h1 id=&#34;fer-una-reserva&#34;&gt;Fer una reserva&lt;/h1&gt;&#xA;&lt;h2 id=&#34;reserves-per-telèfon&#34;&gt;Reserves per telèfon&lt;/h2&gt;&#xA;&lt;p&gt;Pots trucar directament al restaurant per fer la teva reserva:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tel:&lt;/strong&gt; &lt;a href=&#34;#ZgotmplZ&#34;&gt;+34 934 126 082&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;reserves-per-whatsapp&#34;&gt;Reserves per WhatsApp&lt;/h2&gt;&#xA;&lt;p&gt;També pots contactar-nos per WhatsApp:&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://wa.me/34934126082&#34;&gt;WhatsApp&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;horari-del-restaurant&#34;&gt;Horari del restaurant&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Dilluns i dimarts&lt;/strong&gt;: Tancat&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Dimecres a dissabte&lt;/strong&gt;: 13:00h - 15:30h i 20:00h - 23:00h&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Diumenge&lt;/strong&gt;: Tancat&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://112books.github.io/machiroku-web/ca/contacte/&#34;&gt;Veure ubicació&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sobre nosaltres</title>
+      <link>https://112books.github.io/machiroku-web/ca/sobre-nosaltres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/ca/sobre-nosaltres/</guid>
+      <description>&lt;div class=&#34;page-content&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h2 id=&#34;restaurant-machiroku&#34;&gt;Restaurant Machiroku&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cuina tradicional japonesa des del 2000 al centre de Barcelona&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;L&amp;rsquo;any 2000 vam obrir el restaurant Machiroku al carrer de les Molas 18, al barri Gòtic de Barcelona. Ara, just abans de l&amp;rsquo;estat d&amp;rsquo;alarma declarat pel Govern, ens hem traslladat al nostre nou local, molt a prop de l&amp;rsquo;anterior, al carrer de les Magdalenes número 23, a escasos 400 metres del nostre antic local.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

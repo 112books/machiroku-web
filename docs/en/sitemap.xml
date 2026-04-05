@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://merry-malabi-d77fc7.netlify.app/en/categories/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://merry-malabi-d77fc7.netlify.app/categories/"
+                href="https://112books.github.io/machiroku-web/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://merry-malabi-d77fc7.netlify.app/es/categories/"
+                href="https://112books.github.io/machiroku-web/es/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://merry-malabi-d77fc7.netlify.app/en/categories/"
+                href="https://112books.github.io/machiroku-web/en/categories/"
                 />
   </url><url>
-    <loc>https://merry-malabi-d77fc7.netlify.app/en/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://merry-malabi-d77fc7.netlify.app/"
+                href="https://112books.github.io/machiroku-web/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://merry-malabi-d77fc7.netlify.app/es/"
+                href="https://112books.github.io/machiroku-web/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://merry-malabi-d77fc7.netlify.app/en/"
+                href="https://112books.github.io/machiroku-web/en/"
                 />
   </url><url>
-    <loc>https://merry-malabi-d77fc7.netlify.app/en/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ca-ES"
-                href="https://merry-malabi-d77fc7.netlify.app/tags/"
-                />
+    <loc>https://112books.github.io/machiroku-web/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://merry-malabi-d77fc7.netlify.app/es/tags/"
+                href="https://112books.github.io/machiroku-web/es/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="https://112books.github.io/machiroku-web/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://merry-malabi-d77fc7.netlify.app/en/tags/"
+                href="https://112books.github.io/machiroku-web/en/tags/"
                 />
   </url>
 </urlset>

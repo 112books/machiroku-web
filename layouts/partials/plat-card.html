@@ -39,7 +39,7 @@
     <div class="plat-alergics">
       {{ range $alergicId := $plat.alergics }}
         {{ $lang := $.Site.Language.Lang }}
-        {{ $alergicsData := index $.Site.Data $lang }}
+        {{ $alergicsData := $.Site.Data.ca }}
         {{ if $alergicsData }}
           {{ $alergicsLlista := $alergicsData.alergics.alergics }}
           {{ range $alergicsLlista }}

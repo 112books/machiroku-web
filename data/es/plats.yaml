@@ -111,7 +111,7 @@ plats:
     preu: 6.00
     foto: ""
     descripcio: "4 bolas de pulpo"
-    alergics: ["gluten", "mol·luscs"]
+    alergics: ["gluten", "mol·luscos"]
 
   - id: "wafu-salad"
     nom: "Wafu Salad"
@@ -188,7 +188,7 @@ plats:
     preu: 3.00
     foto: ""
     descripcio: "Sopa de miso"
-    alergics: ["soja", "mol·luscs"]
+    alergics: ["soja", "mol·luscos"]
 
   - id: "maguro-salmon-sashimi"
     nom: "Maguro to Salmon"
@@ -265,7 +265,7 @@ plats:
     preu: 4.00
     foto: ""
     descripcio: "Pulpo"
-    alergics: ["mol·luscs", "sesam"]
+    alergics: ["mol·luscos", "sesam"]
 
   - id: "nigiri-shimesaba"
     nom: "Shimesaba 2p"

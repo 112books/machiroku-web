@@ -60,7 +60,7 @@
 
       {{/* Al·lèrgens */}}
       {{ $lang := .Site.Language.Lang }}
-      {{ $alergicsData := index .Site.Data $lang "alergics" }}
+      {{ $alergicsData := .Site.Data.ca.alergics }}
       <div class="alergics-info">
         <h4>{{ i18n "info_alergics" }}</h4>
         <p>{{ i18n "consultar_alergics" }}</p>

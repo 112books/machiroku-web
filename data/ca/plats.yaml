@@ -130,7 +130,7 @@ plats:
     descripcio: "4 boles de pop"
     alergics:
       - "gluten"
-      - "mol·luscs"
+      - "mol·luscos"
 
   # AMANIDES
   - id: "wafu-salad"
@@ -223,7 +223,7 @@ plats:
     descripcio: "Sopa de miso"
     alergics:
       - "soja"
-      - "mol·luscs"
+      - "mol·luscos"
 
   # SASHIMI
   - id: "maguro-salmon-sashimi"
@@ -312,7 +312,7 @@ plats:
     foto: ""
     descripcio: "Pop"
     alergics:
-      - "mol·luscs"
+      - "mol·luscos"
       - "sesam"
 
   - id: "nigiri-shimesaba"

@@ -75,39 +75,38 @@
     {{/* Primera fila - 3 columnes */}}
     <div class="footer-grid">
       {{/* Columna 1: Horaris */}}
-      <div class="footer-col footer-horaris">
-        <h3>Horaris</h3>
-        <div class="footer-schedule-list">
-          {{/* Horaris dinàmics des de data/horaris.yaml */}}
-          {{ $horaris := .Site.Data.horaris.base }}
-          
-          {{/* Dilluns - Divendres (Menú migdia) */}}
-          {{ $primerMenu := index $horaris "dilluns" }}
-          {{ if $primerMenu }}
-          <div class="footer-schedule-item">
-            <span class="day">{{ i18n "dilluns" }}, {{ i18n "dimarts" }}, {{ i18n "dijous" }}, {{ i18n "divendres" }}</span>
-            <span class="hours">{{ (index $primerMenu 0).inici }} - {{ (index $primerMenu 0).fi }}</span>
-            <span class="service">{{ i18n "servei_menu" }}</span>
-          </div>
-          {{ end }}
-          
-          {{/* Divendres i Dissabte (Carta nit) */}}
-          {{ $divendres := index $horaris "divendres" }}
-          {{ if gt (len $divendres) 1 }}
-          <div class="footer-schedule-item">
-            <span class="day">{{ i18n "divendres" }}, {{ i18n "dissabte" }}</span>
-            <span class="hours">{{ (index $divendres 1).inici }} - {{ (index $divendres 1).fi }}</span>
-            <span class="service">{{ i18n "servei_carta" }}</span>
-          </div>
-          {{ end }}
-          
-          {{/* Dimecres i Diumenge (Tancat) */}}
-          <div class="footer-schedule-item">
-            <span class="day">{{ i18n "dimecres" }}, {{ i18n "diumenge" }}</span>
-            <span class="hours closed">{{ i18n "estat_tancat" }}</span>
-          </div>
-        </div>
-      </div>
+      
+        <div class="footer-col footer-horaris">
+          <h3>Horaris</h3>
+          <div class="footer-schedule-list">
+            {{ $horaris := (hugo.Data).horaris.base }}
+            {{ $serveis := (hugo.Data).horaris.serveis }}
+            {{ $lang := .Site.Language.Lang }}
+
+            {{ $dilluns := index $horaris "dilluns" }}
+            {{ if $dilluns }}
+            <div class="footer-schedule-item">
+              <span class="day">{{ i18n "dilluns" }}–{{ i18n "dissabte" }}</span>
+              <span class="hours">{{ (index $dilluns 0).inici }} – {{ (index $dilluns 0).fi }}</span>
+              <span class="service">{{ index (index $serveis "menu").nom $lang }}</span>
+            </div>
+            {{ end }}
+
+            {{ $dimecres := index $horaris "dimecres" }}
+            {{ if gt (len $dimecres) 1 }}
+            <div class="footer-schedule-item">
+              <span class="day">{{ i18n "dimecres" }}, {{ i18n "dijous" }}, {{ i18n "divendres" }}, {{ i18n "dissabte" }}</span>
+              <span class="hours">{{ (index $dimecres 1).inici }} – {{ (index $dimecres 1).fi }}</span>
+              <span class="service">{{ index (index $serveis "carta").nom $lang }}</span>
+            </div>
+            {{ end }}
+
+            <div class="footer-schedule-item">
+              <span class="day">{{ i18n "diumenge" }}</span>
+              <span class="hours closed">{{ i18n "estat_tancat" }}</span>
+            </div>
+          </div>  {{/* fi footer-schedule-list */}}
+        </div>  {{/* fi footer-col footer-horaris */}}
       
       {{/* Columna 2: Ubicació + Xarxes */}}
       <div class="footer-col footer-ubicacio">

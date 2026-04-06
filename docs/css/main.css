@@ -1,53 +1,80 @@
-/* Variables globals - Estil Taberna Japonesa */
+/* ============================================================
+   MACHIROKU · main.css
+   Estil Taberna Japonesa
+   ============================================================
+   ÍNDEX
+   1.  Variables globals
+   2.  Reset
+   3.  Tipografia base
+   4.  Botons
+   5.  Header
+   6.  Navegació
+   7.  Estat restaurant (header)
+   8.  Main content
+   9.  Hero – Pàgina d'inici
+   10. Footer – Grid principal
+   11. Footer – Horaris
+   12. Footer – Ubicació i xarxes
+   13. Footer – Reserves i Reviews
+   14. Footer – Fila inferior (legal + powered)
+   15. Responsive
+   ============================================================ */
+
+
+/* ============================================================
+   1. VARIABLES GLOBALS
+   ============================================================ */
 :root {
   /* Tipografia */
   --font-primary: 'Oswald', sans-serif;
-  --font-slogan: 'Caveat Brush', cursive; /* Manuscrita asiàtica */
-  
+  --font-slogan:  'Kaushan Script', cursive;
+
   /* Colors - Paleta Taberna Japonesa */
-  --color-black: #1a1a1a;
-  --color-white: #ffffff;
-  --color-accent: #8b1a1a; /* Vermell quasi negre */
+  --color-black:       #1a1a1a;
+  --color-white:       #ffffff;
+  --color-accent:      #8b1a1a; /* Vermell corporatiu */
   --color-accent-dark: #5a0f0f;
-  --color-gray-light: #f5f5f5;
-  --color-gray-mid: #9e9e9e;
-  --color-gray-dark: #424242;
-  --color-border: #e0e0e0;
-  
+  --color-gray-light:  #f5f5f5;
+  --color-gray-mid:    #9e9e9e;
+  --color-gray-dark:   #424242;
+  --color-border:      #e0e0e0;
+
   /* Transparències */
-  --bg-overlay: rgba(26, 26, 26, 0.55); /* Quasi negre transparent */
-  --card-overlay: rgba(245, 245, 245, 0.92); /* Blanc trencat transparent */
-  --header-overlay: rgba(30, 5, 5, 0.98); /* Vermell fosc transparent */
-  
-  /* Spacing - Més aire */
+  --bg-overlay:     rgba(26, 26, 26, 0.55); /* Overlay pàgina */
+  --card-overlay:   rgba(245, 245, 245, 0.92);
+  --header-overlay: rgba(30, 5, 5, 0.98);   /* Negre vermellós fosc */
+
+  /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 3rem;
   --spacing-xl: 5rem;
-  
+
   /* Transicions */
-  --transition-fast: 0.2s ease;
+  --transition-fast:   0.2s ease;
   --transition-normal: 0.4s ease;
-  
+
   /* Ombres */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-sm: 0 2px 8px  rgba(0, 0, 0, 0.15);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
-  
-  /* Border radius - Quadres estil logo */
-  --radius-card: 2px;
+
+  /* Border radius – estil logo quadrat */
+  --radius-card:  2px;
   --radius-small: 1px;
 }
 
-/* Reset bàsic */
+
+/* ============================================================
+   2. RESET
+   ============================================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* FONS FIX DE TOTA LA PÀGINA */
 html {
   min-height: 100%;
 }
@@ -59,30 +86,37 @@ body {
   color: var(--color-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-  /* Fons fix que no es mou */
+  min-height: 100vh;
+
+  /* Fons fix */
   background-image: url('/machiroku-web/images/machiroku-web-background.svg');
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
+  background-size: auto 100vh;
 }
 
-/* Overlay fosc general */
+/* Overlay fosc sobre el fons */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: var(--bg-overlay);
   z-index: -1;
   pointer-events: none;
 }
 
-/* Tipografia */
+/* Container genèric */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+
+/* ============================================================
+   3. TIPOGRAFIA BASE
+   ============================================================ */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-primary);
   font-weight: 600;
@@ -92,12 +126,12 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.05em;
 }
 
-h1 { font-size: 3rem; font-weight: 700; }
+h1 { font-size: 3rem;   font-weight: 700; }
 h2 { font-size: 2.5rem; font-weight: 600; }
-h3 { font-size: 2rem; font-weight: 600; }
+h3 { font-size: 2rem;   font-weight: 600; }
 h4 { font-size: 1.5rem; font-weight: 500; }
 h5 { font-size: 1.25rem; font-weight: 500; }
-h6 { font-size: 1rem; font-weight: 500; }
+h6 { font-size: 1rem;   font-weight: 500; }
 
 p {
   margin-bottom: var(--spacing-md);
@@ -113,7 +147,26 @@ a:hover {
   color: var(--color-accent-dark);
 }
 
-/* Botons */
+/* Cards amb transparència */
+.content-card,
+.menu-card,
+.plat-card,
+.horaris-bloc,
+.contacte-bloc,
+.info-card,
+.reserva-card {
+  background: var(--card-overlay);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 2px solid rgba(139, 26, 26, 0.3);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-md);
+}
+
+
+/* ============================================================
+   4. BOTONS
+   ============================================================ */
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
@@ -161,9 +214,12 @@ a:hover {
   color: var(--color-accent);
 }
 
-/* HEADER - Vermell negre transparent */
+
+/* ============================================================
+   5. HEADER
+   ============================================================ */
 .site-header {
-  background: rgba(20, 10, 10, 0.92); /* Negre vermellós molt fosc */
+  background: rgba(20, 10, 10, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(139, 26, 26, 0.3);
@@ -176,7 +232,7 @@ a:hover {
 .header-grid {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 var(--spacing-xl); /* Més marge lateral */
+  padding: 0 var(--spacing-xl);
 }
 
 .header-row {
@@ -186,20 +242,21 @@ a:hover {
 }
 
 .header-row--top {
-  padding: var(--spacing-md) 0; /* Més marge superior */
+  padding: var(--spacing-md) 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .header-row--bottom {
-  padding: var(--spacing-md) 0; /* Més marge inferior */
+  padding: var(--spacing-md) 0;
 }
 
+/* Logo header – colors naturals de l'SVG */
 .header-logo img {
   height: 50px;
   width: auto;
 }
 
-/* Selector d'idioma - Més discret */
+/* Selector d'idioma */
 .lang-switch {
   display: flex;
   gap: 0.5rem;
@@ -223,7 +280,28 @@ a:hover {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Navegació - HORITZONTAL */
+/* Botó hamburguesa (mòbil) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-white);
+  transition: all var(--transition-fast);
+}
+
+
+/* ============================================================
+   6. NAVEGACIÓ
+   ============================================================ */
 .header-nav {
   display: block;
 }
@@ -266,7 +344,10 @@ a:hover {
   width: 100%;
 }
 
-/* Estat restaurant - Millor contrast */
+
+/* ============================================================
+   7. ESTAT RESTAURANT (header)
+   ============================================================ */
 .header-status {
   display: flex;
   align-items: center;
@@ -312,71 +393,140 @@ a:hover {
   color: rgba(255, 255, 255, 0.9);
 }
 
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: var(--spacing-xs);
-}
 
-.nav-toggle span {
-  width: 24px;
-  height: 2px;
-  background: var(--color-white);
-  transition: all var(--transition-fast);
-}
-
-/* Main content - Card amb transparència */
+/* ============================================================
+   8. MAIN CONTENT
+   ============================================================ */
 #main-content {
   min-height: calc(100vh - 400px);
   padding: var(--spacing-xl) var(--spacing-md);
 }
 
-/* Container general per cards */
-.container {
-  max-width: 1400px;
+
+/* ============================================================
+   9. HERO – PÀGINA D'INICI
+   ============================================================ */
+.hero-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+/* Logo kanji */
+.hero-logo {
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-logo img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
 }
 
-/* Cards amb transparència i quadre estil logo */
-.content-card,
-.menu-card,
-.plat-card,
-.horaris-bloc,
-.contacte-bloc,
-.info-card,
-.reserva-card {
-  background: var(--card-overlay);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 2px solid rgba(139, 26, 26, 0.3);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-md);
+/* Eslogan – dues línies */
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin: var(--spacing-md) 0;
 }
 
-/* Footer - Estil Header (fosc transparent) */
+.slogan-line--1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2.6rem;
+  color: var(--color-white);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.slogan-line--2 {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Bloc d'horaris */
+.schedule-title {
+  text-transform: none !important;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Botó CTA reserva */
+.hero-cta {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-small);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: left 0.3s ease;
+}
+
+.hero-cta:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: var(--color-white);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 26, 26, 0.5);
+}
+
+.hero-cta:hover::before {
+  left: 100%;
+}
+
+
+/* ============================================================
+   10. FOOTER – GRID PRINCIPAL
+   ============================================================ */
 .site-footer {
   background: var(--header-overlay);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: var(--color-white);
-  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md);
+  padding: var(--spacing-md);
   border-top: 3px solid var(--color-accent);
   box-shadow: 0 -6px 24px rgba(139, 26, 26, 0.45);
 }
 
-/* Primera fila - 3 columnes */
 .footer-grid {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-lg);
-  margin-bottom: 0;
   padding: var(--spacing-md) var(--spacing-xl);
   border-bottom: 1px solid var(--color-accent);
 }
@@ -386,19 +536,22 @@ a:hover {
   font-weight: 600;
   margin-bottom: var(--spacing-md);
   color: var(--color-white);
-  text-transform: capitalize; /* NO tot majúscules */
+  text-transform: capitalize;
   letter-spacing: 0.05em;
 }
 
 .footer-col h4 {
   font-size: 0.95rem;
   font-weight: 600;
-  margin: var(--spacing-xs) 0 var(--spacing-xs) 0;
+  margin: var(--spacing-xs) 0;
   color: var(--color-white);
   text-transform: capitalize;
 }
 
-/* Horaris */
+
+/* ============================================================
+   11. FOOTER – HORARIS
+   ============================================================ */
 .footer-schedule-list {
   display: flex;
   flex-direction: column;
@@ -437,7 +590,10 @@ a:hover {
   font-style: italic;
 }
 
-/* Ubicació */
+
+/* ============================================================
+   12. FOOTER – UBICACIÓ I XARXES
+   ============================================================ */
 .footer-address {
   display: block;
   color: var(--color-white);
@@ -471,12 +627,16 @@ a:hover {
   transform: translateY(-2px);
 }
 
-/* Reserves + Reviews */
+
+/* ============================================================
+   13. FOOTER – RESERVES I REVIEWS
+   ============================================================ */
 .footer-reserves {
   display: flex;
   flex-direction: column;
 }
 
+/* Botó "Fer una reserva" – no tot l'ample */
 .btn-block {
   width: auto;
   display: inline-block;
@@ -511,7 +671,10 @@ a:hover {
   color: #FFC107;
 }
 
-/* Segona fila - Legal + Powered */
+
+/* ============================================================
+   14. FOOTER – FILA INFERIOR (legal + powered)
+   ============================================================ */
 .footer-bottom {
   max-width: 1400px;
   margin: 0 auto;
@@ -530,6 +693,7 @@ a:hover {
   gap: var(--spacing-lg);
 }
 
+/* Logo footer – color vermell corporatiu */
 .footer-logo {
   height: 60px;
   width: auto;
@@ -557,9 +721,10 @@ a:hover {
 }
 
 .footer-powered {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
+  line-height: 1.6;
 }
 
 .footer-powered a {
@@ -572,147 +737,67 @@ a:hover {
   color: var(--color-white);
 }
 
-/* Responsive */
+
+/* ============================================================
+   15. RESPONSIVE
+   ============================================================ */
 @media (max-width: 768px) {
   :root {
     --spacing-xl: 3rem;
     --spacing-lg: 2rem;
   }
-  
+
+  body {
+    background-size: cover;
+  }
+
   h1 { font-size: 2rem; }
   h2 { font-size: 1.75rem; }
   h3 { font-size: 1.5rem; }
-  
+
+  /* Header */
+  .header-grid {
+    padding: 0 var(--spacing-md);
+  }
+
   .header-logo img {
     height: 40px;
   }
-  
+
   .nav-toggle {
     display: flex;
   }
-  
+
   .header-nav {
     display: none;
   }
-  
+
   .nav-list {
     flex-direction: column;
     gap: var(--spacing-sm);
   }
-  
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-bottom {
-    flex-direction: column;
-  }
-}
 
-/* Logo kanji hero - limitar mida */
-.hero-logo img {
-  max-width: 200px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
+  /* Hero */
   .hero-logo img {
     max-width: 160px;
   }
-}
 
-.hero-home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: var(--spacing-xl) var(--spacing-md);
-  gap: var(--spacing-md);
-}
-
-.hero-logo {
-  margin-bottom: var(--spacing-sm);
-}
-
-
-.schedule-title {
-  text-transform: none !important;
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.6);
-  letter-spacing: 0.08em;
-  margin-bottom: var(--spacing-sm);
-}
-
-.hero-cta {
-  display: inline-block;
-  padding: 0.9rem 2.5rem;
-  background: var(--color-accent);
-  color: var(--color-white);
-  font-family: var(--font-primary);
-  font-weight: 600;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  border: 2px solid var(--color-accent);
-  border-radius: var(--radius-small);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-cta::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: rgba(255,255,255,0.15);
-  transition: left 0.3s ease;
-}
-
-.hero-cta:hover {
-  background: var(--color-accent-dark);
-  border-color: var(--color-accent-dark);
-  color: var(--color-white);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(139, 26, 26, 0.5);
-}
-
-.hero-cta:hover::before {
-  left: 100%;
-}
-
-.slogan {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  text-align: center;
-  margin: var(--spacing-md) 0;
-}
-
-.slogan-line--1 {
-  font-family: 'Kaushan Script', cursive;
-  font-size: 2.6rem;
-  color: var(--color-white);
-  text-shadow: 0 2px 16px rgba(0,0,0,0.6);
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-}
-
-.slogan-line--2 {
-  font-family: var(--font-primary);
-  font-weight: 300;
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.65);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
   .slogan-line--1 { font-size: 1.9rem; }
   .slogan-line--2 { font-size: 0.95rem; }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-md);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px var(--spacing-md);
+  }
+
+  .footer-bottom-right {
+    text-align: left;
+  }
 }

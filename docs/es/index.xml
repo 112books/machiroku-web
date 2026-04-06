@@ -22,13 +22,6 @@
       <description></description>
     </item>
     <item>
-      <title>Acerca de</title>
-      <link>https://112books.github.io/machiroku-web/es/sobre-nosaltres/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/es/sobre-nosaltres/</guid>
-      <description>&lt;div class=&#34;page-content&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h2 id=&#34;restaurante-machiroku&#34;&gt;Restaurante Machiroku&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Comida tradicional japonesa desde 2000 en el centro de Barcelona&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;En el año 2000 abrimos el restaurante Machiroku en la calle de les Molas 18, en el barrio gótico de Barcelona. Ahora, justo antes del estado de alarma declarado por el Gobierno, nos hemos trasladado a nuestro nuevo local, muy cerca del anterior, en la calle Magdalenes número 23, a escasos 400 metros de nuestro antiguo local.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Aviso legal</title>
       <link>https://112books.github.io/machiroku-web/es/legals/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -111,6 +104,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/es/reserves-es/</guid>
       <description></description>
+    </item>
+    <item>
+      <title>Restaurante Machiroku</title>
+      <link>https://112books.github.io/machiroku-web/es/sobre-nosaltres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/es/sobre-nosaltres/</guid>
+      <description>&lt;h2 id=&#34;cocina-japonesa-tradicional-en-el-centro-de-barcelona&#34;&gt;Cocina japonesa tradicional en el centro de Barcelona&lt;/h2&gt;&#xA;&lt;p&gt;Desde el año 2000, Machiroku forma parte del Gótico. Nacido en la calle de les Molas, hoy seguimos nuestro camino en la calle Magdalenes, a pocos pasos del lugar donde empezó todo.&lt;/p&gt;&#xA;&lt;p&gt;A mediodía, ofrecemos un menú ágil, pensado para comer bien sin renunciar al tiempo.&lt;/p&gt;&#xA;&lt;p&gt;Por la noche, el ritmo cambia. La carta se vuelve más pausada y elaborada, fiel a la tradición japonesa y al respeto por el producto.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

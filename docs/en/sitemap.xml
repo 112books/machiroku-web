@@ -2,23 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ca-ES"
-                href="https://112books.github.io/machiroku-web/ca/sobre-nosaltres/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="https://112books.github.io/machiroku-web/es/sobre-nosaltres/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-GB"
-                href="https://112books.github.io/machiroku-web/en/sobre-nosaltres/"
-                />
-  </url><url>
     <loc>https://112books.github.io/machiroku-web/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -123,6 +106,23 @@
                 rel="alternate"
                 hreflang="en-GB"
                 href="https://112books.github.io/machiroku-web/en/"
+                />
+  </url><url>
+    <loc>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="https://112books.github.io/machiroku-web/ca/sobre-nosaltres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="https://112books.github.io/machiroku-web/es/sobre-nosaltres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="https://112books.github.io/machiroku-web/en/sobre-nosaltres/"
                 />
   </url><url>
     <loc>https://112books.github.io/machiroku-web/en/oferta-en/</loc>

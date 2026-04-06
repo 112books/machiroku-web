@@ -97,7 +97,7 @@
 
 <script>
   
-  window.horarisData = {"base":{"dijous":[{"fi":"15:30","inici":"13:00","servei":"menu"}],"dilluns":[{"fi":"15:30","inici":"13:00","servei":"menu"}],"dimarts":[{"fi":"15:30","inici":"13:00","servei":"menu"}],"dimecres":[],"dissabte":[{"fi":"22:00","inici":"19:00","servei":"carta"}],"diumenge":[],"divendres":[{"fi":"15:30","inici":"13:00","servei":"menu"},{"fi":"22:00","inici":"19:00","servei":"carta"}]},"serveis":{"carta":{"descripcio":{"ca":"Producte de temporada elaborat","en":"Seasonal products carefully prepared","es":"Producto de temporada elaborado"},"nom":{"ca":"Carta de nit","en":"Evening à la carte","es":"Carta nocturna"}},"menu":{"descripcio":{"ca":"Menús tancats a preus assequibles","en":"Set menus at affordable prices","es":"Menús cerrados a precios asequibles"},"nom":{"ca":"Menú del migdia","en":"Lunch menu","es":"Menú del mediodía"}}}};
+  window.horarisData = {"base":{"dilluns":[{"fi":"15:30","inici":"13:00","servei":"menu"}],"dimarts":[{"fi":"15:30","inici":"13:00","servei":"menu"}],"dimecres":[{"fi":"15:30","inici":"13:00","servei":"menu"},{"fi":"22:00","inici":"19:00","servei":"carta"},{"fi":"15:30","inici":"13:00","servei":"menu"},{"fi":"22:00","inici":"19:00","servei":"carta"}],"diumenge":[],"divendres":[{"fi":"15:30","inici":"13:00","servei":"menu"},{"fi":"22:00","inici":"19:00","servei":"carta"},{"fi":"15:30","inici":"13:00","servei":"carta"},{"fi":"22:00","inici":"19:00","servei":"carta"}]},"serveis":{"carta":{"descripcio":{"ca":"Producte de temporada elaborat","en":"Seasonal products carefully prepared","es":"Producto de temporada elaborado"},"nom":{"ca":"Carta de nit","en":"Evening à la carte","es":"Carta nocturna"}},"menu":{"descripcio":{"ca":"Menús tancats a preus assequibles","en":"Set menus at affordable prices","es":"Menús cerrados a precios asequibles"},"nom":{"ca":"Menú del migdia","en":"Lunch menu","es":"Menú del mediodía"}}}};
   
   
   window.excepcionsData = [{"actiu":true,"data":"2026-09-24","estat":"obert","horari":{"fi":"15:30","inici":"13:00"},"missatge":{"ca":"Avui festiu: només oferim carta","en":"Holiday: à la carte only","es":"Hoy festivo: solo ofrecemos carta"},"servei":"carta"},{"actiu":false,"data":"2026-01-01","estat":"tancat","missatge":{"ca":"Tancat per Cap d'Any","en":"Closed for New Year","es":"Cerrado por Año Nuevo"}},{"actiu":false,"data":"","estat":"tancat","horari":{"fi":"","inici":""},"missatge":{"ca":"","en":"","es":""},"servei":""}];
@@ -201,18 +201,8 @@
           </div>
           
           
-          <div class="horari-fila horari-fila--tancat">
-            <span class="horari-dia">Dimecres</span>
-            <div class="horari-detall">
-              
-                <span class="horari-tancat">Tancat</span>
-              
-            </div>
-          </div>
-          
-          
           <div class="horari-fila ">
-            <span class="horari-dia">Dijous</span>
+            <span class="horari-dia">Dimecres</span>
             <div class="horari-detall">
               
                 
@@ -221,6 +211,31 @@
                   <span class="horari-servei">Menú del migdia</span>
                 </div>
                 
+                <div class="horari-franja">
+                  <span class="horari-hores">19:00–22:00</span>
+                  <span class="horari-servei">Carta de nit</span>
+                </div>
+                
+                <div class="horari-franja">
+                  <span class="horari-hores">13:00–15:30</span>
+                  <span class="horari-servei">Menú del migdia</span>
+                </div>
+                
+                <div class="horari-franja">
+                  <span class="horari-hores">19:00–22:00</span>
+                  <span class="horari-servei">Carta de nit</span>
+                </div>
+                
+              
+            </div>
+          </div>
+          
+          
+          <div class="horari-fila horari-fila--tancat">
+            <span class="horari-dia">Dijous</span>
+            <div class="horari-detall">
+              
+                <span class="horari-tancat">Tancat</span>
               
             </div>
           </div>
@@ -241,21 +256,26 @@
                   <span class="horari-servei">Carta de nit</span>
                 </div>
                 
-              
-            </div>
-          </div>
-          
-          
-          <div class="horari-fila ">
-            <span class="horari-dia">Dissabte</span>
-            <div class="horari-detall">
-              
+                <div class="horari-franja">
+                  <span class="horari-hores">13:00–15:30</span>
+                  <span class="horari-servei">Carta de nit</span>
+                </div>
                 
                 <div class="horari-franja">
                   <span class="horari-hores">19:00–22:00</span>
                   <span class="horari-servei">Carta de nit</span>
                 </div>
                 
+              
+            </div>
+          </div>
+          
+          
+          <div class="horari-fila horari-fila--tancat">
+            <span class="horari-dia">Dissabte</span>
+            <div class="horari-detall">
+              
+                <span class="horari-tancat">Tancat</span>
               
             </div>
           </div>

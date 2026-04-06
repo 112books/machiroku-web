@@ -8,13 +8,6 @@
     <language>en-GB</language>
     <atom:link href="https://112books.github.io/machiroku-web/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About us</title>
-      <link>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</guid>
-      <description>&lt;div class=&#34;page-content&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h2 id=&#34;machiroku-restaurant&#34;&gt;Machiroku Restaurant&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Traditional Japanese cuisine since 2000 in the heart of Barcelona&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;In 2000 we opened the Machiroku restaurant at calle de les Molas 18, in the Gothic Quarter of Barcelona. Now, just before the state of alarm declared by the Government, we have moved to our new location, very close to the previous one, at calle Magdalenes number 23, just 400 meters from our old premises.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Contact</title>
       <link>https://112books.github.io/machiroku-web/en/contacte-en/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -55,6 +48,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/en/legals/</guid>
       <description>&lt;div class=&#34;legal-page&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h2 id=&#34;legal-notice&#34;&gt;Legal Notice&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-owner-identification&#34;&gt;1. Owner identification&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Business name:&lt;/strong&gt; Machiroku&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Address:&lt;/strong&gt; Carrer de les Magdalenes, 23 - 08003 Barcelona&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Phone:&lt;/strong&gt; +34 93 412 60 82&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:machiroku@machiroku.com&#34;&gt;machiroku@machiroku.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-terms-of-use&#34;&gt;2. Terms of use&lt;/h3&gt;&#xA;&lt;p&gt;Access to this website implies acceptance without reservation of the terms of use described in this legal notice. The user agrees to make proper and legitimate use of the website and its contents.&lt;/p&gt;&#xA;&lt;h3 id=&#34;3-intellectual-property&#34;&gt;3. Intellectual property&lt;/h3&gt;&#xA;&lt;p&gt;All contents of this website (texts, graphics, logos, images, code) are property of Machiroku or third parties who have authorized their use. Reproduction, distribution or modification without prior authorization is prohibited.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Machiroku Restaurant</title>
+      <link>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</guid>
+      <description>&lt;h2 id=&#34;traditional-japanese-cuisine-in-the-heart-of-barcelona&#34;&gt;Traditional Japanese cuisine in the heart of Barcelona&lt;/h2&gt;&#xA;&lt;p&gt;Since 2000, Machiroku has been part of the Gothic Quarter. Originally on Carrer de les Molas, we continue our journey on Carrer de les Magdalenes, just steps from where it all began.&lt;/p&gt;&#xA;&lt;p&gt;At lunchtime, we offer a quick, balanced menu — designed to eat well without taking too much time.&lt;/p&gt;&#xA;&lt;p&gt;In the evening, the pace shifts. The menu becomes more refined and elaborate, rooted in Japanese tradition and respect for the product.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Menu</title>

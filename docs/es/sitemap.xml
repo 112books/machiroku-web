@@ -26,23 +26,6 @@
                 href="https://112books.github.io/machiroku-web/es/dishes/goma-wakame/"
                 />
   </url><url>
-    <loc>https://112books.github.io/machiroku-web/es/sobre-nosaltres/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ca-ES"
-                href="https://112books.github.io/machiroku-web/ca/sobre-nosaltres/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-GB"
-                href="https://112books.github.io/machiroku-web/en/sobre-nosaltres/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="https://112books.github.io/machiroku-web/es/sobre-nosaltres/"
-                />
-  </url><url>
     <loc>https://112books.github.io/machiroku-web/es/legals/</loc>
     <xhtml:link
                 rel="alternate"
@@ -239,6 +222,23 @@
                 />
   </url><url>
     <loc>https://112books.github.io/machiroku-web/es/reserves-es/</loc>
+  </url><url>
+    <loc>https://112books.github.io/machiroku-web/es/sobre-nosaltres/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="https://112books.github.io/machiroku-web/ca/sobre-nosaltres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="https://112books.github.io/machiroku-web/en/sobre-nosaltres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="https://112books.github.io/machiroku-web/es/sobre-nosaltres/"
+                />
   </url><url>
     <loc>https://112books.github.io/machiroku-web/es/tags/</loc>
     <xhtml:link

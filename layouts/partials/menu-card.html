@@ -11,7 +11,8 @@
   {{/* Foto opcional */}}
   {{ if $menu.foto }}
   <div class="menu-foto">
-    <img src="{{ $menu.foto }}" alt="{{ $menu.nom }}" loading="lazy">
+    <img src="{{ $menu.foto }}" alt="{{ $menu.nom }}" loading="lazy"
+     onerror="this.closest('.menu-foto').style.display='none'">
   </div>
   {{ end }}
 

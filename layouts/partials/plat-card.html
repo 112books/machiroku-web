@@ -14,7 +14,8 @@
   {{/* Foto opcional */}}
   {{ if $plat.foto }}
   <div class="plat-foto">
-    <img src="{{ $plat.foto }}" alt="{{ $plat.nom }}" loading="lazy">
+    <img src="{{ $plat.foto }}" alt="{{ $plat.nom }}" loading="lazy"
+     onerror="this.closest('.plat-foto').style.display='none'">
     {{ if $plat.destacat }}
     <span class="plat-badge-destacat">{{ i18n "destacat" | default "Destacat" }}</span>
     {{ end }}

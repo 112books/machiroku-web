@@ -15,9 +15,9 @@
   --color-border: #e0e0e0;
   
   /* Transparències */
-  --bg-overlay: rgba(26, 26, 26, 0.85); /* Quasi negre transparent */
+  --bg-overlay: rgba(26, 26, 26, 0.55); /* Quasi negre transparent */
   --card-overlay: rgba(245, 245, 245, 0.92); /* Blanc trencat transparent */
-  --header-overlay: rgba(139, 26, 26, 0.95); /* Vermell fosc transparent */
+  --header-overlay: rgba(30, 5, 5, 0.98); /* Vermell fosc transparent */
   
   /* Spacing - Més aire */
   --spacing-xs: 0.5rem;
@@ -197,7 +197,6 @@ a:hover {
 .header-logo img {
   height: 50px;
   width: auto;
-  filter: brightness(0) invert(1); /* Logo blanc */
 }
 
 /* Selector d'idioma - Més discret */
@@ -408,11 +407,9 @@ a:hover {
 .footer-schedule-item {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: var(--spacing-sm);
-  background: rgba(0, 0, 0, 0.3);
-  border-left: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: var(--radius-small);
+  gap: 0.15rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-schedule-item .day {
@@ -528,9 +525,9 @@ a:hover {
 }
 
 .footer-logo {
-  height: 60px; /* Doble mida */
+  height: 60px;
   width: auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) saturate(100%) invert(15%) sepia(90%) saturate(800%) hue-rotate(340deg);
 }
 
 .footer-links {
@@ -604,4 +601,13 @@ a:hover {
   .footer-bottom {
     flex-direction: column;
   }
+}
+
+/* Logo kanji hero - limitar mida */
+.hero-logo img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }

@@ -11,10 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
   
   
-  <link rel="stylesheet" href="http://localhost:1313/css/main.css">
-  <link rel="stylesheet" href="http://localhost:1313/css/estat-restaurant.css">
+  <link rel="stylesheet" href="http://localhost:1313/machiroku-web/css/main.css">
+  <link rel="stylesheet" href="http://localhost:1313/machiroku-web/css/estat-restaurant.css">
   
-  <link rel="icon" type="image/svg+xml" href="http://localhost:1313/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="http://localhost:1313/machiroku-web/favicon.svg">
   
   
   <meta name="description" content="Japanese restaurant in the heart of Barcelona. Lunch menu and evening à la carte with seasonal products.">
@@ -23,26 +23,26 @@
   <header class="site-header">
     <div class="header-grid">
       <div class="header-row header-row--top">
-        <a href="http://localhost:1313/en/inici/" class="header-logo">
-          <img src="http://localhost:1313/logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku">
+        <a href="http://localhost:1313/machiroku-web/en/inici/" class="header-logo">
+          <img src="http://localhost:1313/machiroku-web/logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku">
         </a>
         
         
         <div class="lang-switch">
           
-          <a href="http://localhost:1313/ca/inici/" 
+          <a href="http://localhost:1313/machiroku-web/ca/inici/" 
              class=""
              hreflang="ca">
             CA
           </a>
           
-          <a href="http://localhost:1313/es/inici/" 
+          <a href="http://localhost:1313/machiroku-web/es/inici/" 
              class=""
              hreflang="es">
             ES
           </a>
           
-          <a href="http://localhost:1313/en/inici/" 
+          <a href="http://localhost:1313/machiroku-web/en/inici/" 
              class="active"
              hreflang="en">
             EN
@@ -60,23 +60,23 @@
           <ul class="nav-list">
             
             <li>
-              <a href="http://localhost:1313/en/inici/">Home</a>
+              <a href="http://localhost:1313/machiroku-web/en/inici/">Home</a>
             </li>
             
             <li>
-              <a href="http://localhost:1313/en/oferta/">Menu</a>
+              <a href="http://localhost:1313/machiroku-web/en/oferta/">Menu</a>
             </li>
             
             <li>
-              <a href="http://localhost:1313/en/reserves/">Reservations</a>
+              <a href="http://localhost:1313/machiroku-web/en/reserves/">Reservations</a>
             </li>
             
             <li>
-              <a href="http://localhost:1313/en/sobre-nosaltres/">About us</a>
+              <a href="http://localhost:1313/machiroku-web/en/sobre-nosaltres/">About us</a>
             </li>
             
             <li>
-              <a href="http://localhost:1313/en/contacte/">Contact</a>
+              <a href="http://localhost:1313/machiroku-web/en/contacte/">Contact</a>
             </li>
             
           </ul>
@@ -191,7 +191,7 @@
       
       
       <div class="footer-col footer-reserves">
-        <a href="http://localhost:1313/en/reserves/" class="btn btn-primary btn-block">
+        <a href="http://localhost:1313/machiroku-web/en/reserves/" class="btn btn-primary btn-block">
           Fer una reserva
         </a>
         
@@ -209,11 +209,11 @@
     
     <div class="footer-bottom">
       <div class="footer-bottom-left">
-        <img src="http://localhost:1313/logos/logo.svg" alt="Machiroku" class="footer-logo">
+        <img src="http://localhost:1313/machiroku-web/logos/logo.svg" alt="Machiroku" class="footer-logo">
         <div class="footer-links">
-          <a href="http://localhost:1313/en/legals/">Avís legal</a>
-          <a href="http://localhost:1313/en/privacitat/">Política de privacitat</a>
-          <a href="http://localhost:1313/en/cookies/">Política de cookies</a>
+          <a href="http://localhost:1313/machiroku-web/en/legals/">Avís legal</a>
+          <a href="http://localhost:1313/machiroku-web/en/privacitat/">Política de privacitat</a>
+          <a href="http://localhost:1313/machiroku-web/en/cookies/">Política de cookies</a>
         </div>
       </div>
       
@@ -226,8 +226,8 @@
   </footer>
   
   
-  <script src="http://localhost:1313/js/main.js" defer></script>
-  <script src="http://localhost:1313/js/estat-restaurant.js" defer></script>
+  <script src="http://localhost:1313/machiroku-web/js/main.js" defer></script>
+  <script src="http://localhost:1313/machiroku-web/js/estat-restaurant.js" defer></script>
   
   
   <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--color-black); border-top: 1px solid var(--color-border); padding: var(--spacing-md) var(--spacing-lg); z-index: 1000;">
@@ -285,7 +285,7 @@ function rejectCookies() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="' + 'http:\/\/localhost:1313\/' + lang + '/cookies/" style="color: var(--color-accent);">' + t.link + '</a>';
+  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="' + 'http:\/\/localhost:1313\/machiroku-web\/' + lang + '/cookies/" style="color: var(--color-accent);">' + t.link + '</a>';
   const btns = document.querySelectorAll('#cookie-banner .btn');
   btns[0].textContent = t.reject;
   btns[1].textContent = t.accept;

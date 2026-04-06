@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   const navToggle = document.querySelector('.nav-toggle');
-  const navList = document.querySelector('.nav-list');
-  
-  if (navToggle && navList) {
-    navToggle.addEventListener('click', function() {
-      navList.classList.toggle('active');
-      navToggle.classList.toggle('active');
+  const headerNav = document.querySelector('.header-nav');
+
+if (navToggle && headerNav) {
+  navToggle.addEventListener('click', function() {
+    headerNav.classList.toggle('active');
+        navToggle.classList.toggle('active');
       navToggle.setAttribute('aria-expanded', 
         navToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
       );

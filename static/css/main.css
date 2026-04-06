@@ -18,6 +18,8 @@
    13. Footer – Reserves i Reviews
    14. Footer – Fila inferior (legal + powered)
    15. Responsive
+   16. PÀGINA DE RESERVES
+   17. PÀGINA DE CONTACTE
    ============================================================ */
 
 
@@ -1013,5 +1015,265 @@ a:hover {
 
   .mapa-embed {
     height: 260px;
+  }
+}
+
+/* ============================================================
+   17. PÀGINA DE CONTACTE
+   ============================================================ */
+.contacte-section {
+  padding: var(--spacing-xl) 0;
+}
+
+.contacte-header h1 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Card base */
+.contacte-card {
+  background: var(--card-overlay);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(139, 26, 26, 0.2);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* Fila superior: contacte + horaris costat a costat */
+.contacte-row-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Card contacte */
+.contacte-card--contacte h2,
+.contacte-card--horaris h2,
+.contacte-card--arribar h2 {
+  font-size: 1.4rem;
+  color: var(--color-black);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contacte-intro {
+  color: var(--color-gray-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.contacte-dades {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.contacte-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contacte-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.contacte-valor {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.contacte-email {
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  word-break: break-all;
+}
+
+.contacte-email:hover {
+  color: var(--color-accent-dark);
+}
+
+.btn-sm {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.85rem;
+  width: fit-content;
+}
+
+.contacte-social-bloc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(139, 26, 26, 0.15);
+}
+
+.contacte-social {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  background: rgba(139, 26, 26, 0.08);
+  border: 1px solid rgba(139, 26, 26, 0.25);
+  border-radius: 20px;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.social-pill:hover {
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+}
+
+/* Card horaris */
+.horaris-taula {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.horari-fila {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: var(--spacing-sm);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(139, 26, 26, 0.1);
+  align-items: start;
+}
+
+.horari-fila:last-child {
+  border-bottom: none;
+}
+
+.horari-fila--tancat .horari-dia {
+  color: var(--color-gray-mid);
+}
+
+.horari-dia {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-black);
+  text-transform: capitalize;
+}
+
+.horari-detall {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.horari-franja {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.horari-hores {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-black);
+}
+
+.horari-servei {
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.horari-tancat {
+  font-size: 0.85rem;
+  color: var(--color-gray-mid);
+  font-style: italic;
+}
+
+/* Card mapa */
+.contacte-card--mapa {
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg);
+}
+
+.mapa-embed iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+}
+
+/* Card com arribar */
+.contacte-card--mapa,
+.contacte-card--arribar {
+  margin-bottom: var(--spacing-lg);
+}
+
+.arribar-intro {
+  color: var(--color-gray-dark);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(139, 26, 26, 0.15);
+}
+
+.arribar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+.arribar-subcard {
+  background: rgba(139, 26, 26, 0.04);
+  border: 1px solid rgba(139, 26, 26, 0.12);
+  border-radius: 6px;
+  padding: var(--spacing-md);
+}
+
+.arribar-icona {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.arribar-subcard h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.arribar-subcard p {
+  font-size: 0.85rem;
+  color: var(--color-gray-dark);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive contacte */
+@media (max-width: 768px) {
+  .contacte-row-top {
+    grid-template-columns: 1fr;
+  }
+
+  .arribar-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

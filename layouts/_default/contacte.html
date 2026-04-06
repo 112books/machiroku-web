@@ -1,118 +1,53 @@
 {{ define "main" }}
 {{ $restaurant := .Site.Data.restaurant }}
 {{ $lang := .Site.Language.Lang }}
+{{ $horaris := .Site.Data.horaris.base }}
 
 <section class="contacte-section">
   <div class="container">
 
     <div class="contacte-header">
       <h1>{{ i18n "nav_contacte" }}</h1>
-      <p class="contacte-intro">{{ i18n "contacte_intro" | default "Vine a veure'ns o posa't en contacte amb nosaltres" }}</p>
     </div>
 
-    <div class="contacte-grid">
+    {{/* FILA 1+2: Contacte + Horaris costat a costat */}}
+    <div class="contacte-row-top">
 
-      {{/* Columna esquerra: info de contacte */}}
-      <div class="contacte-info">
+      {{/* Card 001 - Contacte */}}
+      <div class="contacte-card contacte-card--contacte">
+        <h2>{{ i18n "nav_contacte" }}</h2>
+        <p class="contacte-intro">{{ i18n "contacte_intro" }}</p>
 
-        <div class="contacte-card">
-          <span class="contacte-icona">📍</span>
-          <div>
-            <h3>{{ i18n "on_som" }}</h3>
-            <p>{{ index $restaurant.adreca.complet $lang }}</p>
-            <a href="{{ $restaurant.google_maps.url }}" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-              {{ i18n "veure_mapa" }}
+        <div class="contacte-dades">
+          <div class="contacte-item">
+            <span class="contacte-label">📞 {{ i18n "telefon" }}</span>
+            <span class="contacte-valor">{{ $restaurant.telefon }}</span>
+            <a href="tel:{{ $restaurant.telefon }}" class="btn btn-primary btn-sm">
+              {{ i18n "trucar_ara" }}
+            </a>
+          </div>
+
+          <div class="contacte-item">
+            <span class="contacte-label">✉️ Email</span>
+            <a href="mailto:{{ $restaurant.email }}" class="contacte-valor contacte-email">
+              {{ $restaurant.email }}
             </a>
           </div>
         </div>
 
-        <div class="contacte-card">
-          <span class="contacte-icona">📞</span>
-          <div>
-            <h3>{{ i18n "telefon" }}</h3>
-            <a href="tel:{{ $restaurant.telefon }}" class="contacte-link">{{ $restaurant.telefon }}</a>
-            <a href="tel:{{ $restaurant.telefon }}" class="btn btn-primary btn-sm">{{ i18n "trucar_ara" }}</a>
+        <div class="contacte-social-bloc">
+          <span class="contacte-label">🌐 {{ i18n "segueix_nos" }}</span>
+          <div class="contacte-social">
+            {{ if $restaurant.xarxes.instagram.actiu }}
+            <a href="{{ $restaurant.xarxes.instagram.url }}" target="_blank" rel="noopener" class="social-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.8v8.4C4 18.39 5.61 20 7.8 20h8.4a3.6 3.6 0 0 0 3.6-3.6V7.8C20 5.61 18.39 4 16.2 4H7.8m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+              Instagram
+            </a>
+            {{ end }}
+            {{ if $restaurant.xarxes.facebook.actiu }}
+            <a href="{{ $restaurant.xarxes.facebook.url }}" target="_blank" rel="noopener" class="social-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+              Facebook
+            </a>
+            {{ end }}
           </div>
-        </div>
-
-        <div class="contacte-card">
-          <span class="contacte-icona">✉️</span>
-          <div>
-            <h3>Email</h3>
-            <a href="mailto:{{ $restaurant.email }}" class="contacte-link">{{ $restaurant.email }}</a>
-          </div>
-        </div>
-
-        <div class="contacte-card">
-          <span class="contacte-icona">🌐</span>
-          <div>
-            <h3>{{ i18n "segueix_nos" }}</h3>
-            <div class="contacte-social">
-              {{ if $restaurant.xarxes.instagram.actiu }}
-              <a href="{{ $restaurant.xarxes.instagram.url }}" target="_blank" rel="noopener" class="social-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.8v8.4C4 18.39 5.61 20 7.8 20h8.4a3.6 3.6 0 0 0 3.6-3.6V7.8C20 5.61 18.39 4 16.2 4H7.8m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
-                Instagram
-              </a>
-              {{ end }}
-              {{ if $restaurant.xarxes.facebook.actiu }}
-              <a href="{{ $restaurant.xarxes.facebook.url }}" target="_blank" rel="noopener" class="social-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
-                Facebook
-              </a>
-              {{ end }}
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      {{/* Columna dreta: horaris */}}
-      <div class="contacte-horaris">
-        <h3>{{ i18n "horaris" }}</h3>
-        {{ $horaris := .Site.Data.horaris.base }}
-        <div class="horaris-taula">
-          {{ range $dia := slice "dilluns" "dimarts" "dimecres" "dijous" "divendres" "dissabte" "diumenge" }}
-          {{ $franges := index $horaris $dia }}
-          <div class="horari-fila {{ if not $franges }}horari-fila--tancat{{ end }}">
-            <span class="horari-dia">{{ i18n $dia }}</span>
-            <div class="horari-detall">
-              {{ if $franges }}
-                {{ range $franges }}
-                <span class="horari-hores">{{ .inici }}–{{ .fi }}</span>
-                <span class="horari-servei">{{ if eq .servei "menu" }}{{ i18n "servei_menu" }}{{ else }}{{ i18n "servei_carta" }}{{ end }}</span>
-                {{ end }}
-              {{ else }}
-                <span class="horari-tancat">{{ i18n "estat_tancat" }}</span>
-              {{ end }}
-            </div>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-
-    </div>
-
-    {{/* Mapa */}}
-    <div class="contacte-mapa">
-      <h3>{{ i18n "com_arribar" }}</h3>
-      <div class="mapa-container">
-        <iframe
-          src="{{ $restaurant.google_maps.embed }}"
-          width="100%"
-          height="420"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-      <div class="transport-info">
-        <span>🚇 <strong>Metro:</strong> L4 Jaume I · 3 min</span>
-        <span>🚌 <strong>Bus:</strong> 45, 120, V15, V17</span>
-        <span>🅿️ <strong>Pàrquing:</strong> BSM Moll de la Fusta · 5 min</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-{{ end }}

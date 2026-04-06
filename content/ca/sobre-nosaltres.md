@@ -1,18 +1,15 @@
 ---
-title: "Sobre nosaltres"
-slug: "sobre-nosaltres"
+title: "Machiroku"
+description: "Cuina japonesa tradicional al centre de Barcelona des de l'any 2000."
+layout: "sobre-nosaltres"
 ---
 
-<div class="page-content" style="max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);">
+## Cuina japonesa tradicional al centre de Barcelona
 
-## Restaurant Machiroku
+Des de l'any 2000, Machiroku forma part del Gòtic. Nascut al carrer de les Molas, avui continuem el nostre camí al carrer Magdalenes, a pocs passos d'on tot va començar.
 
-**Cuina tradicional japonesa des del 2000 al centre de Barcelona**
+Al migdia, oferim un menú àgil, pensat per menjar bé sense renunciar al temps.
 
-L'any 2000 vam obrir el restaurant Machiroku al carrer de les Molas 18, al barri Gòtic de Barcelona. Ara, just abans de l'estat d'alarma declarat pel Govern, ens hem traslladat al nostre nou local, molt a prop de l'anterior, al carrer de les Magdalenes número 23, a escasos 400 metres del nostre antic local.
+A la nit, el ritme canvia. La carta esdevé més pausada i elaborada, fidel a la tradició japonesa i al respecte pel producte.
 
-Durant aquests 20 anys hem estat orgullosos de poder atendre els nostres clients oferint-los un menú assequible i original per menjar sa i ràpid durant el descans laboral del migdia.
-
-A la nit el nostre local canvia totalment i offrim una selecta i elaborada carta tradicional japonesa. Sempre amb la màxima qualitat en les nostres matèries primeres i tot cuinat amb la saviesa del nostre chef Mashahiro Tottori.
-
-</div>
+Treballem amb matèries primeres de màxima qualitat, sota la direcció del xef Masahiro Tottori.

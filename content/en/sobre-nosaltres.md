@@ -1,18 +1,15 @@
 ---
-title: "About us"
-slug: "sobre-nosaltres"
+title: "Machiroku Restaurant"
+description: "Traditional Japanese cuisine in the heart of Barcelona since 2000."
+layout: "sobre-nosaltres"
 ---
 
-<div class="page-content" style="max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);">
+## Traditional Japanese cuisine in the heart of Barcelona
 
-## Machiroku Restaurant
+Since 2000, Machiroku has been part of the Gothic Quarter. Originally on Carrer de les Molas, we continue our journey on Carrer de les Magdalenes, just steps from where it all began.
 
-**Traditional Japanese cuisine since 2000 in the heart of Barcelona**
+At lunchtime, we offer a quick, balanced menu — designed to eat well without taking too much time.
 
-In 2000 we opened the Machiroku restaurant at calle de les Molas 18, in the Gothic Quarter of Barcelona. Now, just before the state of alarm declared by the Government, we have moved to our new location, very close to the previous one, at calle Magdalenes number 23, just 400 meters from our old premises.
+In the evening, the pace shifts. The menu becomes more refined and elaborate, rooted in Japanese tradition and respect for the product.
 
-During this long period of 20 years we have been proud to be able to serve our clients offering them an affordable and original menu to eat healthy and fast during the lunch break.
-
-At night our venue changes completely and we offer a select and elaborate traditional Japanese menu. Always with the highest quality in our raw materials and everything cooked with the expertise of our chef Mashahiro Tottori.
-
-</div>
+We work with top-quality ingredients under the direction of chef Masahiro Tottori.

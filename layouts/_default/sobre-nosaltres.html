@@ -1,0 +1,44 @@
+{{ define "main" }}
+{{ $lang := .Site.Language.Lang }}
+
+<section class="sobre-section">
+  <div class="container">
+
+    {{/* Capçalera amb foto gran */}}
+    <div class="sobre-hero">
+      <img
+        src="{{ .Site.BaseURL }}images/machiroku-acercade-01.jpeg.webp"
+        alt="Entrada del restaurant Machiroku"
+        class="sobre-hero-foto"
+        onerror="this.closest('.sobre-hero').classList.add('sobre-hero--sense-foto')"
+      >
+      <div class="sobre-hero-overlay">
+        <h1>{{ .Title }}</h1>
+        <p class="sobre-subtitol">{{ i18n "sobre_subtitol" }}</p>
+        <span class="sobre-any">{{ i18n "sobre_des_de" }}</span>
+      </div>
+    </div>
+
+    {{/* Cos principal: foto petita + text */}}
+    <div class="sobre-card">
+      <div class="sobre-cos">
+
+        <div class="sobre-foto-xef">
+          <img
+            src="{{ .Site.BaseURL }}images/machiroku-acercade-02.jpeg.webp"
+            alt="Sachie i Masahiro Tottori"
+            onerror="this.style.display='none'"
+          >
+          <p class="sobre-foto-peu">Sachie i Masahiro Tottori</p>
+        </div>
+
+        <div class="sobre-text">
+          {{ .Content }}
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+{{ end }}

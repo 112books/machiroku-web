@@ -80,9 +80,12 @@ persona: "persona"
 iva_inclòs: "IVA inclòs"
 
 # Sobre nosaltres
+sobre_subtitol: "Cuina japonesa tradicional al centre de Barcelona"
+sobre_des_de: "Des de l'any 2000"
 el_nostre_xef: "El nostre xef"
 la_nostra_historia: "La nostra història"
 filosofia: "Filosofia"
+
 
 # Contacte
 contacte_intro: "Vine a veure'ns! Pots trucar-nos o escriure'ns per correu si vols resoldre qualsevol dubte abans de venir."

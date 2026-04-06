@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machiroku - Restaurant Japonès</title>
-    <link>https://112books.github.io/machiroku-web/ca/</link>
+    <link>//localhost:1313/ca/</link>
     <description>Recent content on Machiroku - Restaurant Japonès</description>
     <generator>Hugo</generator>
     <language>ca-ES</language>
-    <atom:link href="https://112books.github.io/machiroku-web/ca/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/ca/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://112books.github.io/machiroku-web/ca/categories/entrants/</link>
+      <link>//localhost:1313/ca/categories/entrants/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/categories/entrants/</guid>
+      <guid>//localhost:1313/ca/categories/entrants/</guid>
       <description></description>
     </item>
     <item>
       <title></title>
-      <link>https://112books.github.io/machiroku-web/ca/dishes/goma-wakame/</link>
+      <link>//localhost:1313/ca/dishes/goma-wakame/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/dishes/goma-wakame/</guid>
+      <guid>//localhost:1313/ca/dishes/goma-wakame/</guid>
       <description></description>
     </item>
     <item>
       <title>Avís legal</title>
-      <link>https://112books.github.io/machiroku-web/ca/legals/</link>
+      <link>//localhost:1313/ca/legals/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/legals/</guid>
+      <guid>//localhost:1313/ca/legals/</guid>
       <description>&lt;div class=&#34;legal-page&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h2 id=&#34;avís-legal&#34;&gt;Avís Legal&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-identificació-del-titular&#34;&gt;1. Identificació del titular&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Denominació social:&lt;/strong&gt; Machiroku&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Adreça:&lt;/strong&gt; Carrer de les Magdalenes, 23 - 08003 Barcelona&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Telèfon:&lt;/strong&gt; +34 93 412 60 82&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:machiroku@machiroku.com&#34;&gt;machiroku@machiroku.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-condicions-dús&#34;&gt;2. Condicions d&amp;rsquo;ús&lt;/h3&gt;&#xA;&lt;p&gt;L&amp;rsquo;accés a aquest lloc web implica l&amp;rsquo;acceptació sense reserves de les condicions d&amp;rsquo;ús descrites en aquest avís legal. L&amp;rsquo;usuari es compromet a fer un ús adequat i llegítim del lloc web i dels seus continguts.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Contacte</title>
-      <link>https://112books.github.io/machiroku-web/ca/contacte/</link>
+      <link>//localhost:1313/ca/contacte/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/contacte/</guid>
+      <guid>//localhost:1313/ca/contacte/</guid>
       <description></description>
     </item>
     <item>
       <title>Cookies</title>
-      <link>https://112books.github.io/machiroku-web/ca/cookies/</link>
+      <link>//localhost:1313/ca/cookies/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/cookies/</guid>
+      <guid>//localhost:1313/ca/cookies/</guid>
       <description>&lt;div class=&#34;legal-page&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h2 id=&#34;política-de-cookies&#34;&gt;Política de cookies&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-què-son-les-cookies&#34;&gt;1. Què son les cookies?&lt;/h3&gt;&#xA;&lt;p&gt;Les cookies són petits fitxers de text que s&amp;rsquo;emmagatzemen al teu dispositiu quan navegues per un lloc web. S&amp;rsquo;utilitzen per recordar les teves preferències i millorar la teva experiència.&lt;/p&gt;&#xA;&lt;h3 id=&#34;2-tipus-de-cookies-que-utilitzem&#34;&gt;2. Tipus de cookies que utilitzem&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cookies essencials:&lt;/strong&gt; Necessàries per al funcionament del lloc web.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cookies analítiques:&lt;/strong&gt; Ens permeten analitzar com els usuaris utilitzen el lloc per millorar-lo.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;3-gestió-de-les-cookies&#34;&gt;3. Gestió de les cookies&lt;/h3&gt;&#xA;&lt;p&gt;Pots configurar el teu navegador per acceptar o rebutjar les cookies. Si rebutges les cookies, és possible que algunes funcions del lloc no funcionin correctament.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Inici</title>
-      <link>https://112books.github.io/machiroku-web/ca/inici/</link>
+      <link>//localhost:1313/ca/inici/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/inici/</guid>
-      <description>&lt;div class=&#34;hero-home&#34;&gt;&#xA;  &lt;div class=&#34;hero-logo&#34;&gt;&#xA;    &lt;img src=&#34;https://112books.github.io/machiroku-web/logos/logo.svg&#34; alt=&#34;Machiroku&#34;&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;p class=&#34;slogan&#34;&gt;&#xA;&lt;span class=&#34;slogan-line slogan-line--1&#34;&gt;Japó de veritat al centre de Barcelona&lt;/span&gt;&#xA;&lt;span class=&#34;slogan-line slogan-line--2&#34;&gt;Migdies àgils. Nits amb calma.&lt;/span&gt;&#xA;  &lt;/p&gt;&#xA;  &lt;div class=&#34;hero-schedule&#34;&gt;&#xA;    &lt;h3 class=&#34;schedule-title&#34;&gt;Horaris&lt;/h3&gt;&#xA;    &lt;div class=&#34;schedule-group&#34;&gt;&#xA;      &lt;span class=&#34;day&#34;&gt;Dilluns i dimarts&lt;/span&gt;&#xA;      &lt;span class=&#34;hours&#34;&gt;13:00h - 15:30h&lt;/span&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;schedule-group&#34;&gt;&#xA;      &lt;span class=&#34;day&#34;&gt;Dimecres a dissabte&lt;/span&gt;&#xA;      &lt;span class=&#34;hours&#34;&gt;13:00h - 15:30h&lt;/span&gt;&#xA;      &lt;span class=&#34;hours&#34;&gt;20:00h - 23:00h&lt;/span&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;schedule-group&#34;&gt;&#xA;      &lt;span class=&#34;day&#34;&gt;Diumenge&lt;/span&gt;&#xA;      &lt;span class=&#34;hours closed&#34;&gt;Tancat&lt;/span&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;a href=&#34;https://112books.github.io/machiroku-web/ca/reserves/&#34; class=&#34;hero-cta&#34;&gt;Reserva taula&lt;/a&gt;&#xA;&lt;/div&gt;</description>
+      <guid>//localhost:1313/ca/inici/</guid>
+      <description>&lt;div class=&#34;hero-home&#34;&gt;&#xA;  &lt;div class=&#34;hero-logo&#34;&gt;&#xA;    &lt;img src=&#34;//localhost:1313/machiroku-web/logos/logo.svg&#34; alt=&#34;Machiroku&#34;&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;p class=&#34;slogan&#34;&gt;&#xA;&lt;span class=&#34;slogan-line slogan-line--1&#34;&gt;Japó de veritat al centre de Barcelona&lt;/span&gt;&#xA;&lt;span class=&#34;slogan-line slogan-line--2&#34;&gt;Migdies àgils. Nits amb calma.&lt;/span&gt;&#xA;  &lt;/p&gt;&#xA;  &lt;div class=&#34;hero-schedule&#34;&gt;&#xA;    &lt;h3 class=&#34;schedule-title&#34;&gt;Horaris&lt;/h3&gt;&#xA;    &lt;div class=&#34;schedule-group&#34;&gt;&#xA;      &lt;span class=&#34;day&#34;&gt;Dilluns i dimarts&lt;/span&gt;&#xA;      &lt;span class=&#34;hours&#34;&gt;13:00h - 15:30h&lt;/span&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;schedule-group&#34;&gt;&#xA;      &lt;span class=&#34;day&#34;&gt;Dimecres a dissabte&lt;/span&gt;&#xA;      &lt;span class=&#34;hours&#34;&gt;13:00h - 15:30h&lt;/span&gt;&#xA;      &lt;span class=&#34;hours&#34;&gt;20:00h - 23:00h&lt;/span&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;schedule-group&#34;&gt;&#xA;      &lt;span class=&#34;day&#34;&gt;Diumenge&lt;/span&gt;&#xA;      &lt;span class=&#34;hours closed&#34;&gt;Tancat&lt;/span&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;a href=&#34;//localhost:1313/machiroku-web/ca/reserves/&#34; class=&#34;hero-cta&#34;&gt;Reserva taula&lt;/a&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Machiroku</title>
+      <link>//localhost:1313/ca/sobre-nosaltres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/ca/sobre-nosaltres/</guid>
+      <description>&lt;h2 id=&#34;cuina-japonesa-tradicional-al-centre-de-barcelona&#34;&gt;Cuina japonesa tradicional al centre de Barcelona&lt;/h2&gt;&#xA;&lt;p&gt;Des de l&amp;rsquo;any 2000, Machiroku forma part del Gòtic. Nascut al carrer de les Molas, avui continuem el nostre camí al carrer Magdalenes, a pocs passos d&amp;rsquo;on tot va començar.&lt;/p&gt;&#xA;&lt;p&gt;Al migdia, oferim un menú àgil, pensat per menjar bé sense renunciar al temps.&lt;/p&gt;&#xA;&lt;p&gt;A la nit, el ritme canvia. La carta esdevé més pausada i elaborada, fidel a la tradició japonesa i al respecte pel producte.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Menú Sushi</title>
-      <link>https://112books.github.io/machiroku-web/ca/menus/menu-sushi/</link>
+      <link>//localhost:1313/ca/menus/menu-sushi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/menus/menu-sushi/</guid>
+      <guid>//localhost:1313/ca/menus/menu-sushi/</guid>
       <description>&lt;p&gt;Menú complet amb 5 nigiri, 4 maki, amanida i sopa de miso.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Oferta gastronòmica</title>
-      <link>https://112books.github.io/machiroku-web/ca/oferta/</link>
+      <link>//localhost:1313/ca/oferta/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/oferta/</guid>
+      <guid>//localhost:1313/ca/oferta/</guid>
       <description></description>
     </item>
     <item>
       <title>Privacitat</title>
-      <link>https://112books.github.io/machiroku-web/ca/privacitat/</link>
+      <link>//localhost:1313/ca/privacitat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/privacitat/</guid>
+      <guid>//localhost:1313/ca/privacitat/</guid>
       <description>&lt;div class=&#34;legal-page&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h2 id=&#34;política-de-privacitat&#34;&gt;Política de privacitat&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-responsable-del-tractament&#34;&gt;1. Responsable del tractament&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Denominació social:&lt;/strong&gt; Machiroku&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Adreça:&lt;/strong&gt; Carrer de les Magdalenes, 23 - 08003 Barcelona&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:machiroku@machiroku.com&#34;&gt;machiroku@machiroku.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-finalitat&#34;&gt;2. Finalitat&lt;/h3&gt;&#xA;&lt;p&gt;Les dades personals que ens proporcionis s&amp;rsquo;utilitzaran exclusivament per:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Atendre la teva sol·licitud de reserva&lt;/li&gt;&#xA;&lt;li&gt;Contactar amb tu per qüestions relacionades amb el restaurant&lt;/li&gt;&#xA;&lt;li&gt;Complir amb les obligacions legals&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;3-base-jurídica&#34;&gt;3. Base jurídica&lt;/h3&gt;&#xA;&lt;p&gt;El tractament de les teves dades es basa en el teu consentiment i/o en l&amp;rsquo;execució d&amp;rsquo;un contracte.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reserves</title>
-      <link>https://112books.github.io/machiroku-web/ca/reserves/</link>
+      <link>//localhost:1313/ca/reserves/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/reserves/</guid>
+      <guid>//localhost:1313/ca/reserves/</guid>
       <description></description>
-    </item>
-    <item>
-      <title>Sobre nosaltres</title>
-      <link>https://112books.github.io/machiroku-web/ca/sobre-nosaltres/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/ca/sobre-nosaltres/</guid>
-      <description>&lt;div class=&#34;page-content&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h2 id=&#34;restaurant-machiroku&#34;&gt;Restaurant Machiroku&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cuina tradicional japonesa des del 2000 al centre de Barcelona&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;L&amp;rsquo;any 2000 vam obrir el restaurant Machiroku al carrer de les Molas 18, al barri Gòtic de Barcelona. Ara, just abans de l&amp;rsquo;estat d&amp;rsquo;alarma declarat pel Govern, ens hem traslladat al nostre nou local, molt a prop de l&amp;rsquo;anterior, al carrer de les Magdalenes número 23, a escasos 400 metres del nostre antic local.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

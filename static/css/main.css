@@ -20,6 +20,7 @@
    15. Responsive
    16. PÀGINA DE RESERVES
    17. PÀGINA DE CONTACTE
+   18. PÀGINA SOBRE NOSALTRES
    ============================================================ */
 
 
@@ -403,6 +404,23 @@ a:hover {
 #main-content {
   min-height: calc(100vh - 400px);
   padding: var(--spacing-xl) var(--spacing-md);
+}
+/* Títol de pàgina — uniforme a totes les pàgines */
+.page-title,
+#main-content > section > .container > h1,
+#main-content > section > div > h1,
+.reserves-header h1,
+.contacte-header h1,
+.oferta-page h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 3px solid var(--color-accent);
+  display: inline-block;
 }
 
 
@@ -1275,5 +1293,152 @@ a:hover {
 
   .arribar-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   18. PÀGINA SOBRE NOSALTRES
+   ============================================================ */
+.sobre-section {
+  padding: var(--spacing-xl) 0;
+}
+
+/* Hero amb foto gran */
+.sobre-hero {
+  position: relative;
+  height: 420px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.sobre-hero-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sobre-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,0,0,0.85) 0%, rgba(10,0,0,0.3) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--spacing-lg);
+}
+
+.sobre-hero-overlay h1 {
+  color: var(--color-white);
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sobre-subtitol {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.1rem;
+  font-family: var(--font-primary);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.sobre-any {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.3rem 1rem;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+/* Card principal */
+.sobre-card {
+  background: var(--card-overlay);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(139, 26, 26, 0.2);
+  border-radius: 8px;
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.sobre-cos {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+/* Foto xef */
+.sobre-foto-xef {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.sobre-foto-xef img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: var(--shadow-md);
+  border: 3px solid rgba(139, 26, 26, 0.2);
+}
+
+.sobre-foto-peu {
+  font-size: 0.8rem;
+  color: var(--color-gray-dark);
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Text */
+.sobre-text h2 {
+  font-size: 1.6rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+  text-transform: none;
+  letter-spacing: 0;
+  border-bottom: 2px solid rgba(139, 26, 26, 0.2);
+  padding-bottom: var(--spacing-sm);
+}
+
+.sobre-text p {
+  color: var(--color-gray-dark);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.sobre-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sobre-hero {
+    height: 280px;
+  }
+
+  .sobre-hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .sobre-cos {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-foto-xef img {
+    max-width: 240px;
+    margin: 0 auto;
   }
 }

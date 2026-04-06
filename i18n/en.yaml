@@ -34,6 +34,10 @@ divendres: "Friday"
 dissabte: "Saturday"
 diumenge: "Sunday"
 
+horari_fins: "Until"
+avui: "today"
+telefon: "Phone"
+
 # Dies abreviats
 dl: "Mon"
 dt: "Tue"

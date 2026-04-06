@@ -34,6 +34,10 @@ divendres: "Viernes"
 dissabte: "Sábado"
 diumenge: "Domingo"
 
+horari_fins: "Hasta las"
+avui: "hoy"
+telefon: "Teléfono"
+
 # Dies abreviats
 dl: "Lu"
 dt: "Ma"

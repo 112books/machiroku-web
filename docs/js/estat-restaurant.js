@@ -165,50 +165,50 @@ class EstatRestaurant {
   }
 
   mostrarEstat(estat) {
-    const container = document.getElementById('estat-restaurant');
-    if (!container) return;
+  const container = document.getElementById('estat-restaurant');
+  if (!container) return;
 
-    let html = '';
-    
-    if (estat.obert) {
-      const serveiNom = estat.servei === 'menu' ? 
-        '<span data-i18n="servei_menu">Menú del migdia</span>' : 
-        '<span data-i18n="servei_carta">Carta de nit</span>';
-      
-      html = `
-        <div class="estat estat-obert">
-          <span class="estat-badge obert" data-i18n="estat_obert">Obert</span>
-          <span class="estat-servei">${serveiNom}</span>
-          <span class="estat-horari">Fins les ${estat.tancaA}</span>
-        </div>
-      `;
-    } else {
-      html = `
-        <div class="estat estat-tancat">
-          <span class="estat-badge tancat" data-i18n="estat_tancat">Tancat</span>
-      `;
-      
-      if (estat.properServei) {
-        const diaText = estat.properServei.dia === 'avui' ? 
-          '<span data-i18n="msg_obrim_a">Obrim a les</span>' :
-          `<span data-i18n="msg_tornem">Tornem</span> ${estat.properServei.dia}`;
-        
-        const serveiNom = estat.properServei.servei === 'menu' ? 
-          '<span data-i18n="servei_menu">Menú del migdia</span>' : 
-          '<span data-i18n="servei_carta">Carta de nit</span>';
-        
-        html += `
-          <span class="estat-proper">
-            ${diaText} ${estat.properServei.hora} - ${serveiNom}
-          </span>
-        `;
-      }
-      
-      html += `</div>`;
+  const t = window.i18nEstat || {
+    estat_obert:  'Obert',
+    estat_tancat: 'Tancat',
+    servei_menu:  'Menú del migdia',
+    servei_carta: 'Carta de nit',
+    msg_obrim_a:  'Obrim a les',
+    msg_tornem:   'Tornem',
+    horari_fins:  'Fins les',
+    avui:         'avui'
+  };
+
+  let html = '';
+
+  if (estat.obert) {
+    const serveiNom = estat.servei === 'menu' ? t.servei_menu : t.servei_carta;
+    html = `
+      <div class="estat estat-obert">
+        <span class="estat-badge obert">${t.estat_obert}</span>
+        <span class="estat-servei">${serveiNom}</span>
+        <span class="estat-horari">${t.horari_fins} ${estat.tancaA}</span>
+      </div>
+    `;
+  } else {
+    html = `
+      <div class="estat estat-tancat">
+        <span class="estat-badge tancat">${t.estat_tancat}</span>
+    `;
+
+    if (estat.properServei) {
+      const serveiNom = estat.properServei.servei === 'menu' ? t.servei_menu : t.servei_carta;
+      const diaText = estat.properServei.dia === 'avui'
+        ? `${t.msg_obrim_a} ${estat.properServei.hora}`
+        : `${t.msg_tornem} ${estat.properServei.dia} ${estat.properServei.hora}`;
+
+      html += `<span class="estat-proper">${diaText} · ${serveiNom}</span>`;
     }
 
-    container.innerHTML = html;
+    html += `</div>`;
   }
+
+  container.innerHTML = html;
 }
 
 // Inicialitzar quan el DOM estigui carregat

@@ -1,18 +1,21 @@
 {{/* layouts/partials/estat-restaurant.html */}}
-{{/* Component per mostrar estat obert/tancat del restaurant */}}
-
 <div id="estat-restaurant" class="estat-restaurant-container">
-  {{/* El contingut es genera dinàmicament via JavaScript */}}
   <div class="estat estat-loading">
-    <span class="estat-badge">Carregant...</span>
+    <span class="estat-badge">·····</span>
   </div>
 </div>
 
-{{/* Injectar dades dels YAML com a JSON per JavaScript */}}
 <script>
-  // Horaris base
-  window.horarisData = {{ .Site.Data.horaris | jsonify | safeJS }};
-  
-  // Excepcions
-  window.excepcionsData = {{ .Site.Data.excepcions.excepcions | jsonify | safeJS }};
+  window.horarisData    = {{ (hugo.Data).horaris | jsonify | safeJS }};
+  window.excepcionsData = {{ (hugo.Data).excepcions.excepcions | jsonify | safeJS }};
+  window.i18nEstat = {
+    estat_obert:  "{{ i18n "estat_obert" }}",
+    estat_tancat: "{{ i18n "estat_tancat" }}",
+    servei_menu:  "{{ i18n "servei_menu" }}",
+    servei_carta: "{{ i18n "servei_carta" }}",
+    msg_obrim_a:  "{{ i18n "msg_obrim_a" }}",
+    msg_tornem:   "{{ i18n "msg_tornem" }}",
+    horari_fins:  "{{ i18n "horari_fins" }}",
+    avui:         "{{ i18n "avui" }}"
+  };
 </script>

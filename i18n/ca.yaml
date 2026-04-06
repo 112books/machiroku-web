@@ -34,6 +34,10 @@ divendres: "Divendres"
 dissabte: "Dissabte"
 diumenge: "Diumenge"
 
+horari_fins: "Fins les"
+avui: "avui"
+telefon: "Telèfon"
+
 # Dies abreviats
 dl: "Dl"
 dt: "Dt"

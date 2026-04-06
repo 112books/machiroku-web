@@ -85,24 +85,26 @@
         
         <div class="header-status">
           
-
-
 <div id="estat-restaurant" class="estat-restaurant-container">
-  
   <div class="estat estat-loading">
-    <span class="estat-badge">Carregant...</span>
+    <span class="estat-badge">·····</span>
   </div>
 </div>
 
-
 <script>
-  
-  window.horarisData = {"base":{"dijous":[{"fi":"15:30","inici":"13:00","servei":"menu"},{"fi":"22:00","inici":"19:00","servei":"carta"}],"dilluns":[{"fi":"15:30","inici":"13:00","servei":"menu"}],"dimarts":[{"fi":"15:30","inici":"13:00","servei":"menu"}],"dimecres":[{"fi":"15:30","inici":"13:00","servei":"menu"},{"fi":"22:00","inici":"19:00","servei":"carta"}],"dissabte":[{"fi":"15:30","inici":"13:00","servei":"carta"},{"fi":"22:00","inici":"19:00","servei":"carta"}],"diumenge":[],"divendres":[{"fi":"15:30","inici":"13:00","servei":"menu"},{"fi":"22:00","inici":"19:00","servei":"carta"}]},"serveis":{"carta":{"descripcio":{"ca":"Producte de temporada elaborat","en":"Seasonal products carefully prepared","es":"Producto de temporada elaborado"},"nom":{"ca":"Carta de nit","en":"Evening à la carte","es":"Carta nocturna"}},"menu":{"descripcio":{"ca":"Menús tancats a preus assequibles","en":"Set menus at affordable prices","es":"Menús cerrados a precios asequibles"},"nom":{"ca":"Menú del migdia","en":"Lunch menu","es":"Menú del mediodía"}}}};
-  
-  
+  window.horarisData    = {"base":{"dijous":[{"fi":"15:30","inici":"13:00","servei":"menu"},{"fi":"22:00","inici":"19:00","servei":"carta"}],"dilluns":[{"fi":"15:30","inici":"13:00","servei":"menu"}],"dimarts":[{"fi":"15:30","inici":"13:00","servei":"menu"}],"dimecres":[{"fi":"15:30","inici":"13:00","servei":"menu"},{"fi":"22:00","inici":"19:00","servei":"carta"}],"dissabte":[{"fi":"15:30","inici":"13:00","servei":"carta"},{"fi":"22:00","inici":"19:00","servei":"carta"}],"diumenge":[],"divendres":[{"fi":"15:30","inici":"13:00","servei":"menu"},{"fi":"22:00","inici":"19:00","servei":"carta"}]},"serveis":{"carta":{"descripcio":{"ca":"Producte de temporada elaborat","en":"Seasonal products carefully prepared","es":"Producto de temporada elaborado"},"nom":{"ca":"Carta de nit","en":"Evening à la carte","es":"Carta nocturna"}},"menu":{"descripcio":{"ca":"Menús tancats a preus assequibles","en":"Set menus at affordable prices","es":"Menús cerrados a precios asequibles"},"nom":{"ca":"Menú del migdia","en":"Lunch menu","es":"Menú del mediodía"}}}};
   window.excepcionsData = [{"actiu":true,"data":"2026-09-24","estat":"obert","horari":{"fi":"15:30","inici":"13:00"},"missatge":{"ca":"Avui festiu: només oferim carta","en":"Holiday: à la carte only","es":"Hoy festivo: solo ofrecemos carta"},"servei":"carta"},{"actiu":false,"data":"2026-01-01","estat":"tancat","missatge":{"ca":"Tancat per Cap d'Any","en":"Closed for New Year","es":"Cerrado por Año Nuevo"}},{"actiu":false,"data":"","estat":"tancat","horari":{"fi":"","inici":""},"missatge":{"ca":"","en":"","es":""},"servei":""}];
+  window.i18nEstat = {
+    estat_obert:  "Open",
+    estat_tancat: "Closed",
+    servei_menu:  "Lunch menu",
+    servei_carta: "Evening à la carte",
+    msg_obrim_a:  "We open at",
+    msg_tornem:   "We\u0027ll be back",
+    horari_fins:  "Until",
+    avui:         "today"
+  };
 </script>
-
         </div>
       </div>
     </div>
@@ -152,7 +154,7 @@
     <div class="container">
       <div class="section-header">
         <h1 class="page-title">Gastronomic menu</h1>
-        <h2>Menú del migdia</h2>
+        <h2>Lunch menu</h2>
         <p class="section-intro"></p>
       </div>
       <div class="menus-grid">
@@ -195,7 +197,7 @@
     
     
     <div class="menu-alergics">
-      <span class="alergics-label">Al·lèrgens:</span>
+      <span class="alergics-label">Allergens:</span>
       <div class="alergics-llista">
         
           
@@ -273,7 +275,7 @@
     
     
     <div class="menu-alergics">
-      <span class="alergics-label">Al·lèrgens:</span>
+      <span class="alergics-label">Allergens:</span>
       <div class="alergics-llista">
         
           
@@ -351,7 +353,7 @@
     
     
     <div class="menu-alergics">
-      <span class="alergics-label">Al·lèrgens:</span>
+      <span class="alergics-label">Allergens:</span>
       <div class="alergics-llista">
         
           
@@ -429,7 +431,7 @@
     
     
     <div class="menu-alergics">
-      <span class="alergics-label">Al·lèrgens:</span>
+      <span class="alergics-label">Allergens:</span>
       <div class="alergics-llista">
         
           
@@ -480,11 +482,11 @@
   <section class="oferta-section carta-section">
     <div class="container">
       <div class="section-header">
-        <h2>Carta de nit</h2>
+        <h2>Evening à la carte</h2>
         <p class="section-intro"></p>
         <div class="cta-reserves">
           <a href="https://112books.github.io/machiroku-web/en/reserves/" class="btn btn-primary">
-            Fer una reserva
+            Make a reservation
           </a>
         </div>
       </div>
@@ -2362,8 +2364,8 @@
       
       
       <div class="alergics-info">
-        <h4>Informació d&#39;al·lèrgens</h4>
-        <p>Si tens al·lèrgies o intoleràncies, consulta&#39;ns abans de demanar.</p>
+        <h4>Allergen information</h4>
+        <p>If you have allergies or intolerances, please ask us before ordering.</p>
         <div class="alergics-llegenda">
           
           <span class="alergic-item">
@@ -2461,7 +2463,7 @@
             
             
             <div class="footer-schedule-item">
-              <span class="day">Dilluns–Dissabte</span>
+              <span class="day">Monday–Saturday</span>
               <span class="hours">13:00 – 15:30</span>
               <span class="service">Lunch menu</span>
             </div>
@@ -2470,15 +2472,15 @@
             
             
             <div class="footer-schedule-item">
-              <span class="day">Dimecres, Dijous, Divendres, Dissabte</span>
+              <span class="day">Wednesday, Thursday, Friday, Saturday</span>
               <span class="hours">19:00 – 22:00</span>
               <span class="service">Evening à la carte</span>
             </div>
             
 
             <div class="footer-schedule-item">
-              <span class="day">Diumenge</span>
-              <span class="hours closed">Tancat</span>
+              <span class="day">Sunday</span>
+              <span class="hours closed">Closed</span>
             </div>
           </div>  
         </div>  
@@ -2494,7 +2496,7 @@
         </a>
         
         <div class="footer-social">
-          <a href="tel:&#43;34%2093%20412%2060%2082" aria-label="" title="">
+          <a href="tel:&#43;34%2093%20412%2060%2082" aria-label="Phone" title="Phone">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           </a>
           <a href="mailto:mackiroku@machiroku.com" aria-label="Email" title="Email">
@@ -2516,7 +2518,7 @@
       
       <div class="footer-col footer-reserves">
         <a href="https://112books.github.io/machiroku-web/en/reserves/" class="btn btn-primary btn-block">
-          Fer una reserva
+          Make a reservation
         </a>
         
         <div class="footer-reviews">
@@ -2524,7 +2526,7 @@
           <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="google-reviews-link">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
             <span class="rating">4.7</span>
-            <span class="reviews-link">Veure més</span>
+            <span class="reviews-link">See more</span>
           </a>
         </div>
       </div>
@@ -2535,9 +2537,9 @@
       <div class="footer-bottom-left">
         <img src="https://112books.github.io/machiroku-web/logos/logo.svg" alt="Machiroku" class="footer-logo">
         <div class="footer-links">
-          <a href="https://112books.github.io/machiroku-web/en/legals/">Avís legal</a>
-          <a href="https://112books.github.io/machiroku-web/en/privacitat/">Política de privacitat</a>
-          <a href="https://112books.github.io/machiroku-web/en/cookies/">Política de cookies</a>
+          <a href="https://112books.github.io/machiroku-web/en/legals/">Legal notice</a>
+          <a href="https://112books.github.io/machiroku-web/en/privacitat/">Privacy policy</a>
+          <a href="https://112books.github.io/machiroku-web/en/cookies/">Cookie policy</a>
         </div>
       </div>
       

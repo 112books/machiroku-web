@@ -1,101 +1,83 @@
 # Lunch menus - ENGLISH
+# Available Monday to Friday 13:00 to 15:30
 
 menus:
   - id: "menu-sushi"
     nom: "Sushi Menu"
     ordre: 1
     actiu: true
-    preu: 14.50
-    foto: "/images/menus/sushi.jpg"
-    descripcio: "Our classic Japanese menu with a variety of fresh sushi"
+    preu: 16.00
+    foto: ""
+    descripcio: "Classic Japanese menu with fresh assorted sushi"
     plats:
+      - "Sushi moriawase (5 nigiri and 4 maki)"
+      - "Wafu sarada (salad with Japanese dressing)"
       - "Miso soup"
-      - "Wakame salad"
-      - "8 pieces of assorted sushi (nigiri and maki)"
-      - "Homemade dessert"
-      - "Green tea"
     alergics:
       - "peix"
       - "gluten"
       - "soja"
       - "sesam"
     disponibilitat:
-      dies: ["monday", "tuesday", "thursday", "friday"]
-      horari: "1:00 PM - 3:30 PM"
-
-  - id: "menu-tendon"
-    nom: "Tendon Menu"
-    ordre: 2
-    actiu: true
-    preu: 13.50
-    foto: "/images/menus/tendon.jpg"
-    descripcio: "Crispy tempura on a bed of rice with special sauce"
-    plats:
-      - "Miso soup"
-      - "Japanese cabbage and celery salad"
-      - "Tendon (prawn and vegetable tempura on rice)"
-      - "Green tea"
-    alergics:
-      - "gluten"
-      - "ou"
-      - "crustacis"
-      - "soja"
-    disponibilitat:
-      dies: ["monday", "tuesday", "thursday", "friday"]
-      horari: "1:00 PM - 3:30 PM"
+      dies: ["dilluns", "dimarts", "dimecres", "dijous", "divendres"]
+      horari: "13:00 - 15:30"
 
   - id: "menu-salmon-don"
     nom: "Salmon Don Menu"
-    ordre: 3
+    ordre: 2
     actiu: true
-    preu: 14.00
-    foto: "/images/menus/salmon-don.jpg"
-    descripcio: "Fresh salmon on rice with sesame and teriyaki sauce"
+    preu: 16.00
+    foto: ""
+    descripcio: "Salmon sashimi over sushi rice with kobachi and miso soup"
     plats:
+      - "Salmon Don (salmon sashimi over sushi rice)"
+      - "Kobachi (fried noodles)"
       - "Miso soup"
-      - "Wakame salad"
-      - "Salmon don (salmon on rice with egg and sesame)"
-      - "Green tea"
     alergics:
       - "peix"
       - "gluten"
       - "soja"
       - "sesam"
-      - "ou"
     disponibilitat:
-      dies: ["monday", "tuesday", "thursday", "friday"]
-      horari: "1:00 PM - 3:30 PM"
+      dies: ["dilluns", "dimarts", "dimecres", "dijous", "divendres"]
+      horari: "13:00 - 15:30"
+
+  - id: "menu-tendon"
+    nom: "Tendon Menu"
+    ordre: 3
+    actiu: true
+    preu: 16.00
+    foto: ""
+    descripcio: "Japanese rice box with shrimp and vegetable tempura, sashimi and miso soup"
+    plats:
+      - "Tendon (japanese rice box with tempura of shrimps and vegetables)"
+      - "Sashimi moriawase (tuna, salmon and squid)"
+      - "Miso soup"
+    alergics:
+      - "peix"
+      - "gluten"
+      - "crustacis"
+      - "soja"
+    disponibilitat:
+      dies: ["dilluns", "dimarts", "dimecres", "dijous", "divendres"]
+      horari: "13:00 - 15:30"
 
   - id: "menu-unaju"
     nom: "Unaju Menu"
     ordre: 4
     actiu: true
-    preu: 15.50
-    foto: "/images/menus/unaju.jpg"
-    descripcio: "Glazed eel with kabayaki sauce, Japanese tradition"
+    preu: 17.50
+    foto: ""
+    descripcio: "Japanese rice box with cooked eel in kabayaki sauce and assorted sashimi"
     plats:
+      - "Unaju (japanese rice box of cooked eel with sauce)"
+      - "Sashimi moriawase (tuna, salmon and squid)"
       - "Miso soup"
-      - "Japanese pickles"
-      - "Unaju (glazed eel on rice)"
-      - "Green tea"
     alergics:
       - "peix"
       - "gluten"
       - "soja"
       - "sesam"
     disponibilitat:
-      dies: ["monday", "tuesday", "thursday", "friday"]
-      horari: "1:00 PM - 3:30 PM"
-
-  - id: "plat-dia"
-    nom: "Daily special"
-    ordre: 10
-    actiu: true
-    preu: 0
-    descripcio: "Daily proposal according to market produce. Ask for availability."
-    plats:
-      - "According to daily market"
-    nota: "Variable price and content. Please ask at the restaurant."
-    disponibilitat:
-      dies: ["monday", "tuesday", "thursday", "friday"]
-      horari: "1:00 PM - 3:30 PM"
+      dies: ["dilluns", "dimarts", "dimecres", "dijous", "divendres"]
+      horari: "13:00 - 15:30"

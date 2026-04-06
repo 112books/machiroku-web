@@ -1,37 +1,30 @@
-# Plats a la carta - CATALÀ
-# Disponibles de dijous a dissabte a la nit
+# À la carte dishes - ENGLISH
+# Available Thursday to Saturday evenings
 
 categories:
   - id: "entrants"
-    nom: "Entrants"
+    nom: "Starters"
     ordre: 1
-
   - id: "amanides"
-    nom: "Amanides"
+    nom: "Salads"
     ordre: 2
-
   - id: "carn"
-    nom: "Carn"
+    nom: "Meat"
     ordre: 3
-
   - id: "arros"
-    nom: "Arròs"
+    nom: "Rice"
     ordre: 4
-
   - id: "sashimi"
     nom: "Sashimi"
     ordre: 5
-
   - id: "nigiri"
     nom: "Nigiri Sushi"
     ordre: 6
-
   - id: "maki"
     nom: "Maki Sushi"
     ordre: 7
 
 plats:
-  # ENTRANTS
   - id: "edamame"
     nom: "Edamame"
     categoria: "entrants"
@@ -40,9 +33,8 @@ plats:
     destacat: false
     preu: 3.80
     foto: ""
-    descripcio: "Mongetes verdes bullides amb sal"
-    alergics:
-      - "soja"
+    descripcio: "Boiled green soybeans with salt"
+    alergics: ["soja"]
 
   - id: "yakko"
     nom: "Yakko"
@@ -52,9 +44,8 @@ plats:
     destacat: false
     preu: 4.20
     foto: ""
-    descripcio: "Tofu fred"
-    alergics:
-      - "soja"
+    descripcio: "Cold tofu"
+    alergics: ["soja"]
 
   - id: "kimchi"
     nom: "Kimchi"
@@ -64,7 +55,7 @@ plats:
     destacat: false
     preu: 3.80
     foto: ""
-    descripcio: "Verdura picant fermentada"
+    descripcio: "Spicy fermented vegetables"
     alergics: []
 
   - id: "goma-wakame"
@@ -75,10 +66,8 @@ plats:
     destacat: false
     preu: 5.00
     foto: ""
-    descripcio: "Amanida d'algues Wakame amb sèsam"
-    alergics:
-      - "sesam"
-      - "soja"
+    descripcio: "Wakame seaweed salad with sesame"
+    alergics: ["sesam", "soja"]
 
   - id: "yakitori"
     nom: "Yakitori"
@@ -88,10 +77,8 @@ plats:
     destacat: false
     preu: 5.50
     foto: ""
-    descripcio: "Broquetes de pollastre a la graella"
-    alergics:
-      - "soja"
-      - "gluten"
+    descripcio: "Grilled chicken skewers"
+    alergics: ["soja", "gluten"]
 
   - id: "yakisoba"
     nom: "Yakisoba"
@@ -101,10 +88,8 @@ plats:
     destacat: false
     preu: 5.50
     foto: ""
-    descripcio: "Fideus saltats amb verdures"
-    alergics:
-      - "gluten"
-      - "soja"
+    descripcio: "Fried noodles with vegetables"
+    alergics: ["gluten", "soja"]
 
   - id: "gyoza"
     nom: "Gyoza"
@@ -114,10 +99,8 @@ plats:
     destacat: false
     preu: 5.50
     foto: ""
-    descripcio: "4 crestes de porc"
-    alergics:
-      - "gluten"
-      - "soja"
+    descripcio: "4 pork dumplings"
+    alergics: ["gluten", "soja"]
 
   - id: "takoyaki"
     nom: "Takoyaki"
@@ -127,12 +110,9 @@ plats:
     destacat: false
     preu: 6.00
     foto: ""
-    descripcio: "4 boles de pop"
-    alergics:
-      - "gluten"
-      - "mol·luscs"
+    descripcio: "4 octopus balls"
+    alergics: ["gluten", "mol·luscs"]
 
-  # AMANIDES
   - id: "wafu-salad"
     nom: "Wafu Salad"
     categoria: "amanides"
@@ -141,10 +121,8 @@ plats:
     destacat: false
     preu: 4.90
     foto: ""
-    descripcio: "Amanida amb salsa japonesa"
-    alergics:
-      - "soja"
-      - "sesam"
+    descripcio: "Sweet Japanese dressing salad"
+    alergics: ["soja", "sesam"]
 
   - id: "tofu-salad"
     nom: "Tofu Salad"
@@ -154,11 +132,9 @@ plats:
     destacat: false
     preu: 5.80
     foto: ""
-    descripcio: "Amanida amb tofu"
-    alergics:
-      - "soja"
+    descripcio: "Tofu salad"
+    alergics: ["soja"]
 
-  # CARN
   - id: "gyu-tataki"
     nom: "Gyu Tataki"
     categoria: "carn"
@@ -167,12 +143,9 @@ plats:
     destacat: true
     preu: 8.00
     foto: ""
-    descripcio: "Carpaccio de vedella semi feta"
-    alergics:
-      - "soja"
-      - "gluten"
+    descripcio: "Beef carpaccio, lightly seared"
+    alergics: ["soja", "gluten"]
 
-  # ARRÒS
   - id: "tendon"
     nom: "Tendon"
     categoria: "arros"
@@ -181,11 +154,8 @@ plats:
     destacat: false
     preu: 14.00
     foto: ""
-    descripcio: "Caixa d'arròs amb tempura de llagostins i verdures"
-    alergics:
-      - "gluten"
-      - "crustacis"
-      - "soja"
+    descripcio: "Japanese rice box with shrimp and vegetable tempura"
+    alergics: ["gluten", "crustacis", "soja"]
 
   - id: "unaju"
     nom: "Unaju"
@@ -195,11 +165,8 @@ plats:
     destacat: true
     preu: 15.00
     foto: ""
-    descripcio: "Caixa d'arròs amb anguila cuita amb salsa"
-    alergics:
-      - "peix"
-      - "gluten"
-      - "soja"
+    descripcio: "Japanese rice box of cooked eel with sauce"
+    alergics: ["peix", "gluten", "soja"]
 
   - id: "gohan"
     nom: "Gohan"
@@ -209,7 +176,7 @@ plats:
     destacat: false
     preu: 3.00
     foto: ""
-    descripcio: "Arròs blanc japonès"
+    descripcio: "White Japanese rice"
     alergics: []
 
   - id: "miso-shiru"
@@ -220,12 +187,9 @@ plats:
     destacat: false
     preu: 3.00
     foto: ""
-    descripcio: "Sopa de miso"
-    alergics:
-      - "soja"
-      - "mol·luscs"
+    descripcio: "Miso soup"
+    alergics: ["soja", "mol·luscs"]
 
-  # SASHIMI
   - id: "maguro-salmon-sashimi"
     nom: "Maguro to Salmon"
     categoria: "sashimi"
@@ -234,21 +198,19 @@ plats:
     destacat: false
     preu: 17.50
     foto: ""
-    descripcio: "Tonyina i salmó"
-    alergics:
-      - "peix"
+    descripcio: "Tuna and salmon"
+    alergics: ["peix"]
 
   - id: "salmon-sashimi"
-    nom: "Salmó"
+    nom: "Salmon"
     categoria: "sashimi"
     ordre: 2
     actiu: true
     destacat: false
     preu: 16.00
     foto: ""
-    descripcio: "Sashimi de salmó"
-    alergics:
-      - "peix"
+    descripcio: "Salmon sashimi"
+    alergics: ["peix"]
 
   - id: "shimesaba-sashimi"
     nom: "Shimesaba"
@@ -258,11 +220,9 @@ plats:
     destacat: false
     preu: 14.00
     foto: ""
-    descripcio: "Verat marinat"
-    alergics:
-      - "peix"
+    descripcio: "Vinegared mackerel"
+    alergics: ["peix"]
 
-  # NIGIRI SUSHI
   - id: "nigiri-maguro"
     nom: "Maguro 2p"
     categoria: "nigiri"
@@ -271,10 +231,8 @@ plats:
     destacat: false
     preu: 5.60
     foto: ""
-    descripcio: "Tonyina"
-    alergics:
-      - "peix"
-      - "sesam"
+    descripcio: "Tuna"
+    alergics: ["peix", "sesam"]
 
   - id: "nigiri-ebi"
     nom: "Ebi 2p"
@@ -284,10 +242,8 @@ plats:
     destacat: false
     preu: 4.80
     foto: ""
-    descripcio: "Llagostí"
-    alergics:
-      - "crustacis"
-      - "sesam"
+    descripcio: "Shrimp"
+    alergics: ["crustacis", "sesam"]
 
   - id: "nigiri-sake"
     nom: "Sake 2p"
@@ -297,10 +253,8 @@ plats:
     destacat: false
     preu: 5.20
     foto: ""
-    descripcio: "Salmó"
-    alergics:
-      - "peix"
-      - "sesam"
+    descripcio: "Salmon"
+    alergics: ["peix", "sesam"]
 
   - id: "nigiri-tako"
     nom: "Tako 2p"
@@ -310,10 +264,8 @@ plats:
     destacat: false
     preu: 4.00
     foto: ""
-    descripcio: "Pop"
-    alergics:
-      - "mol·luscs"
-      - "sesam"
+    descripcio: "Octopus"
+    alergics: ["mol·luscs", "sesam"]
 
   - id: "nigiri-shimesaba"
     nom: "Shimesaba 2p"
@@ -323,10 +275,8 @@ plats:
     destacat: false
     preu: 4.80
     foto: ""
-    descripcio: "Verat marinat"
-    alergics:
-      - "peix"
-      - "sesam"
+    descripcio: "Vinegared mackerel"
+    alergics: ["peix", "sesam"]
 
   - id: "nigiri-tobikko"
     nom: "Tobikko Gunkan 2p"
@@ -336,10 +286,8 @@ plats:
     destacat: false
     preu: 6.20
     foto: ""
-    descripcio: "Ous de peix volador"
-    alergics:
-      - "peix"
-      - "sesam"
+    descripcio: "Flying-fish roe"
+    alergics: ["peix", "sesam"]
 
   - id: "nigiri-ikura"
     nom: "Ikura Gunkan 2p"
@@ -349,10 +297,8 @@ plats:
     destacat: true
     preu: 8.00
     foto: ""
-    descripcio: "Ous de salmó"
-    alergics:
-      - "peix"
-      - "sesam"
+    descripcio: "Salmon roe"
+    alergics: ["peix", "sesam"]
 
   - id: "nigiri-unagi"
     nom: "Unagi 2p"
@@ -362,11 +308,8 @@ plats:
     destacat: false
     preu: 6.50
     foto: ""
-    descripcio: "Anguila"
-    alergics:
-      - "peix"
-      - "sesam"
-      - "soja"
+    descripcio: "Cooked eel"
+    alergics: ["peix", "sesam", "soja"]
 
   - id: "nigiri-5kan"
     nom: "Nigiri 5 kan"
@@ -376,10 +319,8 @@ plats:
     destacat: false
     preu: 10.50
     foto: ""
-    descripcio: "Variat (5 peces)"
-    alergics:
-      - "peix"
-      - "sesam"
+    descripcio: "Combination 5 nigiri"
+    alergics: ["peix", "sesam"]
 
   - id: "nigiri-7kan"
     nom: "Nigiri 7 kan"
@@ -389,10 +330,8 @@ plats:
     destacat: false
     preu: 16.00
     foto: ""
-    descripcio: "Variat (7 peces)"
-    alergics:
-      - "peix"
-      - "sesam"
+    descripcio: "Combination 7 nigiri"
+    alergics: ["peix", "sesam"]
 
   - id: "nigiri-maki-moriawase"
     nom: "Nigiri to Maki no Moriawase"
@@ -402,13 +341,9 @@ plats:
     destacat: true
     preu: 16.00
     foto: ""
-    descripcio: "Variat (5 nigiri + 6 maki)"
-    alergics:
-      - "peix"
-      - "sesam"
-      - "gluten"
+    descripcio: "Combination 5 nigiri + 6 maki"
+    alergics: ["peix", "sesam", "gluten"]
 
-  # MAKI SUSHI
   - id: "maki-tekka"
     nom: "Tekka 6p"
     categoria: "maki"
@@ -417,11 +352,8 @@ plats:
     destacat: false
     preu: 6.00
     foto: ""
-    descripcio: "Tonyina"
-    alergics:
-      - "peix"
-      - "sesam"
-      - "gluten"
+    descripcio: "Tuna"
+    alergics: ["peix", "sesam", "gluten"]
 
   - id: "maki-sake"
     nom: "Sake Maki 6p"
@@ -431,11 +363,8 @@ plats:
     destacat: false
     preu: 5.50
     foto: ""
-    descripcio: "Salmó"
-    alergics:
-      - "peix"
-      - "sesam"
-      - "gluten"
+    descripcio: "Salmon"
+    alergics: ["peix", "sesam", "gluten"]
 
   - id: "maki-negitoromaki"
     nom: "Negitoromaki 6p"
@@ -445,11 +374,8 @@ plats:
     destacat: false
     preu: 6.50
     foto: ""
-    descripcio: "Ventresca amb ceba tendra"
-    alergics:
-      - "peix"
-      - "sesam"
-      - "gluten"
+    descripcio: "Minced fatty tuna with spring onion"
+    alergics: ["peix", "sesam", "gluten"]
 
   - id: "maki-ikura"
     nom: "Ikura Maki 6p"
@@ -459,11 +385,8 @@ plats:
     destacat: false
     preu: 8.50
     foto: ""
-    descripcio: "Ous de salmó"
-    alergics:
-      - "peix"
-      - "sesam"
-      - "gluten"
+    descripcio: "Salmon roe"
+    alergics: ["peix", "sesam", "gluten"]
 
   - id: "maki-new-york"
     nom: "New York 6p"
@@ -473,13 +396,8 @@ plats:
     destacat: false
     preu: 7.00
     foto: ""
-    descripcio: "Salmó, pal de cranc i maionesa"
-    alergics:
-      - "peix"
-      - "crustacis"
-      - "ou"
-      - "sesam"
-      - "gluten"
+    descripcio: "Salmon, crab stick and mayonnaise"
+    alergics: ["peix", "crustacis", "ou", "sesam", "gluten"]
 
   - id: "maki-california"
     nom: "California 6p"
@@ -489,12 +407,8 @@ plats:
     destacat: false
     preu: 7.00
     foto: ""
-    descripcio: "Alvocat, pal de cranc i maionesa"
-    alergics:
-      - "crustacis"
-      - "ou"
-      - "sesam"
-      - "gluten"
+    descripcio: "Avocado, crab stick and mayonnaise"
+    alergics: ["crustacis", "ou", "sesam", "gluten"]
 
   - id: "maki-futomaki"
     nom: "Futomaki 6p"
@@ -504,13 +418,8 @@ plats:
     destacat: false
     preu: 8.00
     foto: ""
-    descripcio: "Rotlle gran de salmó, alvocat, pal de cranc, ous de masago i cogombre"
-    alergics:
-      - "peix"
-      - "crustacis"
-      - "ou"
-      - "sesam"
-      - "gluten"
+    descripcio: "Big roll of salmon, avocado, crab stick, masago and cucumber"
+    alergics: ["peix", "crustacis", "ou", "sesam", "gluten"]
 
   - id: "maki-alaska"
     nom: "Alaska 6p"
@@ -520,11 +429,8 @@ plats:
     destacat: false
     preu: 8.30
     foto: ""
-    descripcio: "Salmó i alvocat"
-    alergics:
-      - "peix"
-      - "sesam"
-      - "gluten"
+    descripcio: "Salmon and avocado"
+    alergics: ["peix", "sesam", "gluten"]
 
   - id: "maki-honolulu"
     nom: "Honolulu 6p"
@@ -534,11 +440,8 @@ plats:
     destacat: false
     preu: 8.50
     foto: ""
-    descripcio: "Tonyina i alvocat"
-    alergics:
-      - "peix"
-      - "sesam"
-      - "gluten"
+    descripcio: "Tuna and avocado"
+    alergics: ["peix", "sesam", "gluten"]
 
   - id: "maki-florida"
     nom: "Florida 6p"
@@ -548,12 +451,8 @@ plats:
     destacat: false
     preu: 8.30
     foto: ""
-    descripcio: "Anguila i alvocat"
-    alergics:
-      - "peix"
-      - "sesam"
-      - "gluten"
-      - "soja"
+    descripcio: "Cooked eel and avocado"
+    alergics: ["peix", "sesam", "gluten", "soja"]
 
   - id: "maki-ebisu"
     nom: "Ebisu 6p"
@@ -563,12 +462,8 @@ plats:
     destacat: false
     preu: 8.00
     foto: ""
-    descripcio: "Llagostí cuit, alvocat, pal de cranc i ous de peix volador"
-    alergics:
-      - "peix"
-      - "crustacis"
-      - "sesam"
-      - "gluten"
+    descripcio: "Cooked shrimp, avocado, crab stick and flying-fish roe"
+    alergics: ["peix", "crustacis", "sesam", "gluten"]
 
   - id: "maki-karaage"
     nom: "Karaage Maki 6p"
@@ -578,10 +473,8 @@ plats:
     destacat: false
     preu: 7.00
     foto: ""
-    descripcio: "Pollastre arrebossat"
-    alergics:
-      - "gluten"
-      - "soja"
+    descripcio: "Fried chicken"
+    alergics: ["gluten", "soja"]
 
   - id: "maki-ebi-ten"
     nom: "Ebi Ten Maki 8p"
@@ -591,9 +484,5 @@ plats:
     destacat: false
     preu: 8.00
     foto: ""
-    descripcio: "Tempura de llagostí amb maionesa"
-    alergics:
-      - "crustacis"
-      - "ou"
-      - "gluten"
-      - "sesam"
+    descripcio: "Shrimp tempura with mayonnaise"
+    alergics: ["crustacis", "ou", "gluten", "sesam"]

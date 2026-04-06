@@ -211,6 +211,8 @@ class EstatRestaurant {
   container.innerHTML = html;
 }
 
+}
+
 // Inicialitzar quan el DOM estigui carregat
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {

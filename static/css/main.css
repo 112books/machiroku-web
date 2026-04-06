@@ -406,11 +406,9 @@ a:hover {
   padding: var(--spacing-xl) var(--spacing-md);
 }
 /* Títol de pàgina — uniforme a totes les pàgines */
-.page-title,
-#main-content > section > .container > h1,
-#main-content > section > div > h1,
 .reserves-header h1,
 .contacte-header h1,
+.sobre-hero-overlay h1,
 .oferta-page h1 {
   font-size: 2.8rem;
   font-weight: 700;
@@ -758,6 +756,30 @@ a:hover {
   color: var(--color-white);
 }
 
+/* ============================================================
+   16. PÀGINA D'OFERTA
+   ============================================================ */
+
+/* Separador entre Menú migdia i Carta nocturna */
+.oferta-section + .oferta-section {
+  border-top: 2px solid var(--color-accent);
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+}
+
+/* Separador abans d'al·lèrgens */
+.alergics-info {
+  border-top: 1px solid rgba(139, 26, 26, 0.3);
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+}
+
+/* Separador entre categories de carta */
+.categoria-section + .categoria-section {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(139, 26, 26, 0.15);
+}
 
 /* ============================================================
    15. RESPONSIVE
@@ -858,8 +880,8 @@ a:hover {
 
 .reserves-intro-text {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.1rem;
-  max-width: 700px;
+  font-size: 1.05rem;
+  max-width: 100%;          /* era 700px, ara tot l'ample */
   line-height: 1.7;
 }
 
@@ -1093,20 +1115,21 @@ a:hover {
 
 .contacte-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  flex-direction: row;     
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .contacte-label {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
   color: var(--color-accent);
+  white-space: nowrap;
 }
 
 .contacte-valor {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-black);
 }
@@ -1296,6 +1319,20 @@ a:hover {
   }
 }
 
+.contacte-intro-linia1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 0.25rem;
+}
+
+.contacte-intro-linia2 {
+  color: var(--color-gray-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
 /* ============================================================
    18. PÀGINA SOBRE NOSALTRES
    ============================================================ */
@@ -1306,7 +1343,7 @@ a:hover {
 /* Hero amb foto gran */
 .sobre-hero {
   position: relative;
-  height: 420px;
+  height: 560px;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: var(--spacing-lg);
@@ -1422,6 +1459,8 @@ a:hover {
 .sobre-text p:last-child {
   margin-bottom: 0;
 }
+
+
 
 /* Responsive */
 @media (max-width: 768px) {

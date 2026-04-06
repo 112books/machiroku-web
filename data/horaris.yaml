@@ -14,7 +14,7 @@ base:
       fi: "15:30"
       servei: "menu"
 
-  # Dimecres (TANCAT)
+  # Dimecres
   dimecres:
     - inici: "13:00"
       fi: "15:30"
@@ -23,8 +23,8 @@ base:
       fi: "22:00"
       servei: "carta"
 
-
   # Dijous
+  dijous:
     - inici: "13:00"
       fi: "15:30"
       servei: "menu"
@@ -42,6 +42,7 @@ base:
       servei: "carta"
 
   # Dissabte
+  dissabte:
     - inici: "13:00"
       fi: "15:30"
       servei: "carta"

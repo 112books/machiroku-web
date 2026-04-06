@@ -88,7 +88,8 @@ filosofia: "Filosofia"
 
 
 # Contacte
-contacte_intro: "Vine a veure'ns! Pots trucar-nos o escriure'ns per correu si vols resoldre qualsevol dubte abans de venir."
+contacte_vine: "Vine a veure'ns!"
+contacte_dubtes: "Pots trucar-nos o escriure'ns per correu si vols resoldre qualsevol dubte abans de venir."
 arribar_intro: "A 5 minuts de Plaça Catalunya i Urquinaona. Fàcil accés amb metro, tren i autobusos."
 
 # Legal

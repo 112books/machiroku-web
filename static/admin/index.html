@@ -1,11 +1,773 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ca">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin - Machiroku</title>
+  <title>Admin · Machiroku</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --red:      #ff3333;
+      --red-dim:  #cc2222;
+      --red-dark: #330a0a;
+      --amber:    #ffb300;
+      --blue:     #00aaff;
+      --green:    #44cc44;
+      --bg:       #0a0a0a;
+      --bg2:      #111;
+      --bg3:      #161616;
+      --border:   #331515;
+      --text:     #ffd4d4;
+      --text-dim: #7a4a4a;
+      --gold:     #c9a84c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      min-height: 100vh;
+    }
+
+    /* ── Topbar ── */
+    .topbar {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: .6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .75rem;
+      color: var(--text-dim);
+    }
+    .topbar a { color: var(--red-dim); text-decoration: none; }
+    .topbar a:hover { color: var(--red); }
+    .topbar-nav { display: flex; gap: 1.5rem; align-items: center; }
+
+    /* ── Login ── */
+    #login-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .login-ascii {
+      color: var(--red-dim);
+      font-size: .62rem;
+      line-height: 1.2;
+      text-align: center;
+      opacity: .5;
+      white-space: pre;
+    }
+
+    .login-box {
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 2rem 2.5rem;
+      width: 100%;
+      max-width: 420px;
+    }
+    .login-box h2 {
+      color: var(--red);
+      font-size: 1rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin: 0 0 .5rem;
+    }
+    .login-box p {
+      color: var(--text-dim);
+      font-size: .9rem;
+      margin: 0 0 1.5rem;
+      line-height: 1.5;
+    }
+
+    .token-input-wrap { display: flex; }
+    .token-input-wrap input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-right: none;
+      color: var(--red);
+      font-family: inherit;
+      font-size: .9rem;
+      padding: .6rem .8rem;
+      outline: none;
+      min-width: 0;
+    }
+    .token-input-wrap input:focus { border-color: var(--red-dim); }
+
+    .btn-connect {
+      background: var(--red-dark);
+      border: 1px solid var(--red-dim);
+      color: var(--red);
+      font-family: inherit;
+      font-size: .85rem;
+      padding: .6rem 1.2rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-connect:hover { background: #550000; }
+
+    .login-hint { font-size: .8rem; color: var(--text-dim); margin-top: .75rem; }
+    .login-hint a { color: var(--red-dim); }
+
+    /* ── Dashboard ── */
+    #dashboard { display: none; padding: 1.5rem; max-width: 1100px; margin: 0 auto; }
+
+    .dash-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 2px solid var(--border);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .dash-title { font-size: 1rem; color: var(--text-dim); letter-spacing: .2em; text-transform: uppercase; }
+    .dash-title span { color: var(--red); display: block; font-size: 1.8rem; margin-top: .3rem; letter-spacing: .05em; }
+
+    .btn-logout {
+      background: 0;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      font-family: inherit;
+      font-size: .85rem;
+      padding: .5rem 1.2rem;
+      cursor: pointer;
+      white-space: nowrap;
+      min-height: 44px;
+    }
+    .btn-logout:hover { border-color: var(--red); color: var(--red); }
+
+    /* ── Pestanyes ── */
+    .tabs {
+      display: flex;
+      gap: .25rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab-btn {
+      background: none;
+      border: 1px solid transparent;
+      border-bottom: none;
+      color: var(--text-dim);
+      font-family: inherit;
+      font-size: .85rem;
+      padding: .5rem 1.2rem;
+      cursor: pointer;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      position: relative;
+      bottom: -1px;
+      transition: all .15s;
+    }
+    .tab-btn:hover { color: var(--red); }
+    .tab-btn.active {
+      border-color: var(--border);
+      border-bottom-color: var(--bg);
+      color: var(--red);
+      background: var(--bg);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Període ── */
+    .period-wrap { display: flex; align-items: center; gap: .5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .period-label { font-size: .8rem; color: var(--text-dim); letter-spacing: .1em; margin-right: .5rem; }
+    #period-selector { display: flex; gap: .25rem; flex-wrap: wrap; }
+
+    .period-btn {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      font-family: inherit;
+      font-size: .8rem;
+      padding: .4rem .9rem;
+      cursor: pointer;
+      transition: all .15s;
+      min-height: 44px;
+      min-width: 44px;
+    }
+    .period-btn:hover { border-color: var(--red-dim); color: var(--red); }
+    .period-btn.active { background: var(--red-dark); border-color: var(--red); color: var(--red); font-weight: 700; }
+
+    /* ── Stats ── */
+    .period-header { margin-bottom: 1rem; }
+    .period-range { font-size: .85rem; color: var(--text-dim); }
+    .period-note { font-size: .75rem; color: var(--amber); opacity: .7; }
+
+    .stats-total { font-size: 1rem; color: var(--text-dim); margin-bottom: 2.5rem; }
+    .stats-total strong { color: var(--red); font-size: 4rem; display: block; font-weight: 900; letter-spacing: -.02em; line-height: 1; margin-top: .3rem; }
+
+    .section-title {
+      font-size: .95rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: .6rem 0;
+      border-bottom: 1px solid var(--border);
+      margin: 2.5rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .section-title::before { content: '▸'; color: var(--red); }
+
+    .chart { display: flex; flex-direction: column; gap: .8rem; }
+    .chart-row { display: grid; grid-template-columns: 150px 1fr 55px; align-items: center; gap: .8rem; }
+    .chart-label { font-size: .95rem; color: var(--text-dim); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .chart-bar-wrap { background: var(--bg3); height: 28px; position: relative; border: 1px solid var(--border); overflow: hidden; }
+    .chart-bar { height: 100%; position: relative; display: flex; align-items: center; width: 0; }
+    .chart-bar.animate { transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+    .chart-bar--lang-ca  { background: linear-gradient(90deg, #4d0000, var(--red-dim)); }
+    .chart-bar--lang-es  { background: linear-gradient(90deg, #4d3800, var(--amber)); }
+    .chart-bar--lang-en  { background: linear-gradient(90deg, #003d4d, var(--blue)); }
+    .chart-bar--section  { background: linear-gradient(90deg, #331515, var(--red)); }
+    .chart-bar--browser  { background: linear-gradient(90deg, #003d4d, var(--blue)); }
+    .chart-bar--system   { background: linear-gradient(90deg, #331515, var(--red-dim)); }
+    .chart-bar--size     { background: linear-gradient(90deg, #4d3800, var(--amber)); }
+    .chart-bar--location { background: linear-gradient(90deg, #2a1a3a, #aa77ff); }
+    .chart-pct { font-size: .75rem; color: rgba(255,255,255,.6); position: absolute; right: 6px; font-weight: 700; }
+    .chart-value { font-size: .95rem; color: var(--text); text-align: right; font-weight: 600; }
+
+    .icon-row { display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: center; gap: 1.5rem; margin: 1.2rem 0 1.5rem; padding: 1.2rem; background: var(--bg2); border: 1px solid var(--border); }
+    .icon-item { display: flex; flex-direction: column; align-items: center; gap: .4rem; }
+    .icon-item svg { display: block; color: var(--red-dim); }
+    .icon-item--browser svg { color: var(--blue); }
+    .icon-item--system svg  { color: var(--red-dim); }
+    .icon-item--size svg    { color: var(--amber); }
+    .icon-item__pct   { font-size: .95rem; color: var(--red); font-weight: 700; }
+    .icon-item__name  { font-size: .75rem; color: var(--text-dim); text-align: center; }
+    .icon-item__count { font-size: .75rem; color: var(--text-dim); }
+
+    .insight-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--red);
+      padding: 1.2rem 1.5rem;
+      margin-top: 2.5rem;
+      font-size: .95rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+    }
+    .insight-box .label { color: var(--red); font-size: .85rem; letter-spacing: .2em; text-transform: uppercase; display: block; margin-bottom: .8rem; }
+    .insight-item { display: flex; gap: .6rem; align-items: baseline; margin-bottom: .3rem; }
+    .insight-item::before { content: '→'; color: var(--red); flex-shrink: 0; }
+
+    .loading { color: var(--text-dim); font-size: .9rem; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .blink { animation: blink 1s step-end infinite; }
+
+    .dash-footer { margin-top: 1.5rem; font-size: .78rem; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: .8rem; }
+
+    /* ── Manual ── */
+    .manual-content {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      line-height: 1.8;
+      font-size: .9rem;
+      color: var(--text-dim);
+    }
+    .manual-content h2 {
+      color: var(--red);
+      font-size: 1rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin: 2rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .manual-content h2:first-child { margin-top: 0; }
+    .manual-content h3 { color: var(--text); font-size: .9rem; margin: 1.5rem 0 .5rem; letter-spacing: .1em; }
+    .manual-content p { margin-bottom: .75rem; }
+    .manual-content code {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--red-dim);
+      padding: .1rem .4rem;
+      font-family: inherit;
+      font-size: .85rem;
+    }
+    .manual-content pre {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--red-dark);
+      padding: 1rem 1.2rem;
+      margin: .75rem 0 1rem;
+      overflow-x: auto;
+      font-size: .82rem;
+      line-height: 1.6;
+      color: var(--text-dim);
+    }
+    .manual-content ul { padding-left: 1.5rem; margin-bottom: .75rem; }
+    .manual-content li { margin-bottom: .3rem; }
+    .manual-content .tip {
+      background: var(--red-dark);
+      border-left: 3px solid var(--red-dim);
+      padding: .75rem 1rem;
+      margin: 1rem 0;
+      font-size: .85rem;
+    }
+    .manual-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: .85rem;
+    }
+    .manual-content th {
+      background: var(--red-dark);
+      color: var(--red);
+      padding: .5rem .75rem;
+      text-align: left;
+      letter-spacing: .1em;
+      font-size: .8rem;
+    }
+    .manual-content td {
+      padding: .4rem .75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+    .manual-content td code { font-size: .8rem; }
+
+    /* ── Footer ── */
+    .admin-footer {
+      text-align: center;
+      font-size: .75rem;
+      color: var(--text-dim);
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    .admin-footer a { color: var(--red-dim); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      #dashboard { padding: 1rem; }
+      .chart-row { grid-template-columns: 90px 1fr 40px; gap: .5rem; }
+      .chart-label { font-size: .78rem; }
+      .dash-title span { font-size: 1.3rem; }
+      .stats-total strong { font-size: 3rem; }
+      .login-ascii { font-size: .48rem; }
+      .login-box { padding: 1.5rem 1.2rem; }
+    }
+  </style>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div>
+      <a href="https://linuxbcn.com" target="_blank">LinuxBCN.com</a>
+      · Admin · Machiroku
+    </div>
+    <div class="topbar-nav">
+      <a href="/machiroku-web/ca/inici/">← Anar al web</a>
+    </div>
+  </div>
+
+  <!-- URL de dades (GoatCounter) -->
+  <div id="analytics-data-url" data-url="/machiroku-web/admin/analytics.json" style="display:none"></div>
+
+  <!-- LOGIN -->
+  <div id="login-screen">
+    <pre class="login-ascii">
+ ███╗   ███╗ █████╗  ██████╗██╗  ██╗██╗██████╗  ██████╗ ██╗  ██╗██╗   ██╗
+ ████╗ ████║██╔══██╗██╔════╝██║  ██║██║██╔══██╗██╔═══██╗██║ ██╔╝██║   ██║
+ ██╔████╔██║███████║██║     ███████║██║██████╔╝██║   ██║█████╔╝ ██║   ██║
+ ██║╚██╔╝██║██╔══██║██║     ██╔══██║██║██╔══██╗██║   ██║██╔═██╗ ██║   ██║
+ ██║ ╚═╝ ██║██║  ██║╚██████╗██║  ██║██║██║  ██║╚██████╔╝██║  ██╗╚██████╔╝
+ ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝</pre>
+
+    <div class="login-box">
+      <h2>// analytics console</h2>
+      <p>Introdueix el token de l'API de GoatCounter per accedir al dashboard.</p>
+      <div class="token-input-wrap">
+        <input type="password" id="token-input" placeholder="token GoatCounter" autocomplete="off">
+        <button class="btn-connect" onclick="connect()">CONNECT_</button>
+      </div>
+      <p class="login-hint">
+        Token a <a href="https://machiroku.goatcounter.com/settings/api" target="_blank">GoatCounter → API tokens</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard">
+
+    <div class="dash-header">
+      <div class="dash-title">
+        analytics_console
+        <span>MACHIROKU</span>
+      </div>
+      <button class="btn-logout" onclick="logout()">[ DISCONNECT ]</button>
+    </div>
+
+    <!-- Pestanyes -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('stats')">📊 Estadístiques</button>
+      <button class="tab-btn" onclick="showTab('manual')">📖 Manual d'edició</button>
+    </div>
+
+    <!-- TAB: Estadístiques -->
+    <div id="tab-stats" class="tab-panel active">
+      <div class="period-wrap">
+        <span class="period-label">període //</span>
+        <div id="period-selector"></div>
+      </div>
+      <div id="dash-content">
+        <div class="loading">carregant dades<span class="blink">_</span></div>
+      </div>
+    </div>
+
+    <!-- TAB: Manual -->
+    <div id="tab-manual" class="tab-panel">
+      <div class="manual-content">
+
+        <h2>1. Flux de treball diari</h2>
+        <p>Per publicar qualsevol canvi al web, el flux és sempre el mateix:</p>
+        <pre>cd ~/Documents/Obsidian/machiroku_hugo
+./symc-machiroku.sh
+→ Opció 4 (Deploy)</pre>
+        <div class="tip">⚠️ Sempre opció 4 (Deploy) per publicar. L'opció 3 (Push) només guarda el codi sense reconstruir el web.</div>
+
+        <h2>2. Editar menús del migdia</h2>
+        <p>Fitxer: <code>data/ca/menus.yaml</code> (i els equivalents <code>data/es/</code> i <code>data/en/</code>)</p>
+        <h3>Canviar un preu</h3>
+        <pre>- id: "menu-sushi"
+  preu: 17.00   ← canviar aquí</pre>
+        <h3>Desactivar un menú temporalment</h3>
+        <pre>actiu: false   ← no apareix al web, però es conserva</pre>
+        <h3>Canviar els plats inclosos</h3>
+        <pre>plats:
+  - "Sopa miso"
+  - "Nou plat aquí"   ← afegir o modificar
+  - "Te verd"</pre>
+
+        <h2>3. Editar la carta nocturna</h2>
+        <p>Fitxer: <code>data/ca/plats.yaml</code> (i els equivalents ES i EN)</p>
+        <h3>Afegir un plat nou</h3>
+        <pre>- id: "nom-unic"          ← sense espais ni accents
+  nom: "Nom del plat"
+  categoria: "entrants"   ← veure taula de categories
+  ordre: 5               ← ordre dins la categoria
+  actiu: true
+  destacat: false        ← true = badge "Destacat"
+  preu: 6.50
+  foto: ""               ← deixar buit fins tenir foto
+  descripcio: "Descripció breu del plat"
+  alergics:
+    - "soja"             ← veure taula d'al·lèrgens</pre>
+
+        <h3>Categories disponibles</h3>
+        <table>
+          <tr><th>id</th><th>Nom CA</th><th>Nom ES</th><th>Nom EN</th></tr>
+          <tr><td><code>entrants</code></td><td>Entrants</td><td>Entrantes</td><td>Starters</td></tr>
+          <tr><td><code>amanides</code></td><td>Amanides</td><td>Ensaladas</td><td>Salads</td></tr>
+          <tr><td><code>carn</code></td><td>Carn</td><td>Carne</td><td>Meat</td></tr>
+          <tr><td><code>arros</code></td><td>Arròs</td><td>Arroz</td><td>Rice</td></tr>
+          <tr><td><code>sashimi</code></td><td>Sashimi</td><td>Sashimi</td><td>Sashimi</td></tr>
+          <tr><td><code>nigiri</code></td><td>Nigiri Sushi</td><td>Nigiri Sushi</td><td>Nigiri Sushi</td></tr>
+          <tr><td><code>maki</code></td><td>Maki Sushi</td><td>Maki Sushi</td><td>Maki Sushi</td></tr>
+        </table>
+
+        <h2>4. Al·lèrgens</h2>
+        <p>Al camp <code>alergics</code> de cada plat o menú, usa exactament aquests identificadors:</p>
+        <table>
+          <tr><th>id</th><th>Icona</th><th>Al·lèrgen</th></tr>
+          <tr><td><code>gluten</code></td><td>🌾</td><td>Gluten (blat, civada...)</td></tr>
+          <tr><td><code>crustacis</code></td><td>🦐</td><td>Crustacis</td></tr>
+          <tr><td><code>ou</code></td><td>🥚</td><td>Ou</td></tr>
+          <tr><td><code>peix</code></td><td>🐟</td><td>Peix</td></tr>
+          <tr><td><code>cacauets</code></td><td>🥜</td><td>Cacauets</td></tr>
+          <tr><td><code>soja</code></td><td>🫘</td><td>Soja</td></tr>
+          <tr><td><code>lactis</code></td><td>🥛</td><td>Làctics</td></tr>
+          <tr><td><code>fruits-secs</code></td><td>🌰</td><td>Fruits secs</td></tr>
+          <tr><td><code>api</code></td><td>🥬</td><td>Api</td></tr>
+          <tr><td><code>mostassa</code></td><td>🌭</td><td>Mostassa</td></tr>
+          <tr><td><code>sesam</code></td><td>⚪</td><td>Sèsam</td></tr>
+          <tr><td><code>sulfits</code></td><td>🍷</td><td>Sulfits</td></tr>
+          <tr><td><code>mol·luscos</code></td><td>🐚</td><td>Mol·luscos</td></tr>
+          <tr><td><code>altramossos</code></td><td>🫛</td><td>Altramossos</td></tr>
+        </table>
+        <div class="tip">⚠️ L'id ha de coincidir EXACTAMENT (incloses les majúscules i caràcters especials). Si no coincideix, la icona no apareixerà.</div>
+
+        <h2>5. Avisos temporals</h2>
+        <p>Fitxer: <code>data/avisos.yaml</code></p>
+        <p>Per activar un avís de tancament o especial:</p>
+        <pre>- id: "tancat-setmana-santa"
+  actiu: true              ← canviar a true per activar
+  des_de: "2026-04-01"    ← data inici (YYYY-MM-DD)
+  fins_a: "2026-04-06"    ← data fi (YYYY-MM-DD)
+  prioritat: "alta"       ← alta (vermell) | mitjana (groc) | baixa (verd)
+  tipus: "banner"         ← banner (barra) | popup (modal)
+  titol:
+    ca: "Tancats per Setmana Santa"
+    es: "Cerrados por Semana Santa"
+    en: "Closed for Easter"
+  text:
+    ca: "Tornem el dimarts 7 d'abril."
+    es: "Volvemos el martes 7 de abril."
+    en: "We reopen on Tuesday 7 April."
+  cta:
+    ca: ""
+    es: ""
+    en: ""
+  link: ""</pre>
+        <div class="tip">✓ Quan passin les dates, l'avís desapareix sol. No cal desactivar-lo manualment.</div>
+
+        <h2>6. Fotos de plats</h2>
+        <ul>
+          <li>Mida recomanada: <code>800×600 px</code> (proporció 4:3)</li>
+          <li>Format: <code>.jpg</code> o <code>.webp</code></li>
+          <li>Pes màxim: <code>200 KB</code></li>
+          <li>Carpeta: <code>static/images/menus/</code> o <code>static/images/plats/</code></li>
+        </ul>
+        <pre>foto: "/images/plats/nom-del-fitxer.jpg"</pre>
+        <div class="tip">✓ Si la foto no existeix, la card es mostra igualment sense imatge — no dona error.</div>
+
+        <h2>7. Horaris del restaurant</h2>
+        <p>Fitxer: <code>data/horaris.yaml</code> — canviant aquest fitxer s'actualitzen els horaris a tot el web (header, footer, pàgina de contacte).</p>
+
+        <h2>8. Informació del restaurant</h2>
+        <p>Fitxer: <code>data/restaurant.yaml</code> — telèfon, email, adreça, xarxes socials, Google Maps.</p>
+
+      </div>
+    </div>
+
+    <div class="admin-footer">
+      Powered by <a href="https://linuxbcn.com" target="_blank">LinuxBCN.com</a>
+      · Consultancy · Development · Hosting · Design · Hugo SSG
+    </div>
+  </div>
+
+  <script>
+    var DATA_URL = document.getElementById('analytics-data-url').dataset.url;
+
+    /* ── Períodes ── */
+    var PERIODS = [
+      { id: '7d',  label: '7 dies',  days: 7   },
+      { id: '30d', label: '30 dies', days: 30  },
+      { id: '90d', label: '3 mesos', days: 90  },
+      { id: '1y',  label: '1 any',   days: 365 },
+      { id: 'all', label: 'Total',   days: null }
+    ];
+    var activePeriod = '30d';
+
+    /* ── Auth ── */
+    function connect() {
+      var token = document.getElementById('token-input').value.trim();
+      if (!token) return;
+      sessionStorage.setItem('gc_token', token);
+      showDashboard();
+    }
+
+    function logout() {
+      sessionStorage.removeItem('gc_token');
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('login-screen').style.display = 'flex';
+      document.getElementById('token-input').value = '';
+    }
+
+    function showDashboard() {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      renderPeriodSelector();
+      loadData();
+    }
+
+    /* ── Pestanyes ── */
+    function showTab(id) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+      document.getElementById('tab-' + id).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    /* ── Selector de període ── */
+    function renderPeriodSelector() {
+      var wrap = document.getElementById('period-selector');
+      if (!wrap) return;
+      wrap.innerHTML = PERIODS.map(function(p) {
+        return '<button class="period-btn' + (p.id === activePeriod ? ' active' : '') + '" ' +
+          'onclick="setPeriod(\'' + p.id + '\')">' + p.label + '</button>';
+      }).join('');
+    }
+
+    function setPeriod(id) { activePeriod = id; renderPeriodSelector(); loadData(); }
+
+    function fmtDate(str) {
+      if (!str) return '';
+      var d = new Date(str + 'T00:00:00');
+      return d.toLocaleDateString('ca-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+
+    function periodLabel(start, end) { return fmtDate(start) + ' → ' + fmtDate(end); }
+
+    function filterByPeriod(data) {
+      var p = PERIODS.find(function(x){ return x.id === activePeriod; });
+      if (!p || !p.days) return data;
+      var now = new Date();
+      var cutoff = new Date(now);
+      cutoff.setDate(cutoff.getDate() - p.days);
+      var cutoffStr = cutoff.toISOString().slice(0, 10);
+      var dataStart = (data.period || {}).start || '';
+      if (dataStart >= cutoffStr) return data;
+      var totalStart = new Date(dataStart + 'T00:00:00');
+      var totalEnd   = new Date(((data.period || {}).end || now.toISOString().slice(0,10)) + 'T00:00:00');
+      var totalDays  = Math.max(1, Math.round((totalEnd - totalStart) / 86400000));
+      var ratio      = Math.min(1, p.days / totalDays);
+      function scale(obj) { var out = {}; Object.keys(obj).forEach(function(k){ out[k] = Math.round(obj[k] * ratio); }); return out; }
+      function scaleArr(arr) { return (arr || []).map(function(i){ return Object.assign({}, i, { count: Math.round(i.count * ratio) }); }); }
+      var newStart = new Date(Math.max(totalStart, cutoff));
+      return Object.assign({}, data, {
+        total: Math.round((data.total || 0) * ratio),
+        by_lang: scale(data.by_lang || {}), by_section: scale(data.by_section || {}),
+        browsers: scaleArr(data.browsers), systems: scaleArr(data.systems),
+        sizes: scaleArr(data.sizes), locations: scaleArr(data.locations),
+        period: { start: newStart.toISOString().slice(0, 10), end: (data.period || {}).end || now.toISOString().slice(0, 10) }
+      });
+    }
+
+    function loadData() {
+      var content = document.getElementById('dash-content');
+      content.innerHTML = '<div class="loading">carregant dades<span class="blink">_</span></div>';
+      fetch(DATA_URL + '?t=' + Date.now())
+        .then(function(res) { if (!res.ok) throw new Error('No es pot carregar analytics.json'); return res.json(); })
+        .then(function(data) { renderDashboard(filterByPeriod(data)); })
+        .catch(function(err) { content.innerHTML = '<div style="color:var(--red)">ERROR: ' + err.message + '<br><br>Configura GoatCounter i el GitHub Action per generar analytics.json</div>'; });
+    }
+
+    function bar(value, max, cls) {
+      var p = max > 0 ? Math.round((value / max) * 100) : 0;
+      return '<div class="chart-bar-wrap"><div class="chart-bar ' + cls + '" data-width="' + p + '" style="width:0%">' +
+        (p > 8 ? '<span class="chart-pct">' + p + '%</span>' : '') + '</div></div>';
+    }
+
+    var BROWSER_ICONS = {
+      'Safari':  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>',
+      'Chrome':  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>',
+      'Firefox': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M17 12a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/></svg>',
+      'Edge':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.9 0 3.7-.5 5.2-1.5"/><path d="M22 12c0-2.5-1-4.8-2.7-6.5C17.7 4 15.5 3 13 3"/></svg>'
+    };
+    var SYSTEM_ICONS = {
+      'macOS':   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+      'iOS':     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>',
+      'Windows': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5l8-1v8H3z"/><path d="M13 4l8-1v9h-8z"/><path d="M3 13h8v8l-8-1z"/><path d="M13 13h8v9l-8-1z"/></svg>',
+      'Android': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 16a7 7 0 0 1 14 0"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/><line x1="4" y1="8" x2="4" y2="14"/><line x1="20" y1="8" x2="20" y2="14"/></svg>',
+      'Linux':   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a5 5 0 0 0-5 5v5l-2 4h14l-2-4V7a5 5 0 0 0-5-5z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>'
+    };
+    var SIZE_ICONS = {
+      'phone':     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>',
+      'tablet':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>',
+      'desktop':   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+      'desktophd': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+      'larger':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="22" height="14" rx="2"/><line x1="7" y1="21" x2="17" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    };
+    var SIZE_LABELS   = { phone: 'Mòbil', tablet: 'Tauleta', desktop: 'Escriptori', desktophd: 'Escriptori HD', larger: 'Pantalla gran' };
+    var LANG_NAMES    = { ca: 'Català', es: 'Castellà', en: 'Anglès' };
+    var SECTION_NAMES = {
+      'inici': 'Inici', 'oferta': 'Oferta gastronòmica',
+      'reserves': 'Reserves', 'sobre-nosaltres': 'Sobre nosaltres', 'contacte': 'Contacte'
+    };
+
+    function iconRowVisual(items, icons, cls) {
+      if (!items || !items.length) return '';
+      var total = items.reduce(function(s, i){ return s + i.count; }, 0);
+      var MAX_SIZE = 64, MIN_SIZE = 18;
+      var maxCount = Math.max.apply(null, items.map(function(i){ return i.count; }));
+      var html = '<div class="icon-row">';
+      items.forEach(function(item) {
+        var pct  = total > 0 ? Math.round((item.count / total) * 100) : 0;
+        var size = Math.max(MIN_SIZE, Math.round((item.count / maxCount) * MAX_SIZE));
+        var icon = icons[item.id] || icons[item.name] || '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/></svg>';
+        var label = SIZE_LABELS[item.id] || item.name;
+        html += '<div class="icon-item icon-item--' + cls + '">' +
+          '<div style="width:' + MAX_SIZE + 'px;display:flex;align-items:flex-end;justify-content:center">' +
+          '<span style="width:' + size + 'px;height:' + size + 'px;display:block;color:inherit">' + icon + '</span></div>' +
+          '<div class="icon-item__pct">' + pct + '%</div>' +
+          '<div class="icon-item__name">' + label + '</div>' +
+          '<div class="icon-item__count">' + item.count + '</div></div>';
+      });
+      return html + '</div>';
+    }
+
+    function statSection(title, items, cls, icons) {
+      if (!items || !items.length) return '';
+      var max = Math.max.apply(null, items.map(function(i){ return i.count; }));
+      var vis = icons ? iconRowVisual(items, icons, cls.replace('chart-bar--', '')) : '';
+      var rows = items.map(function(item) {
+        return '<div class="chart-row"><div class="chart-label">' + (SIZE_LABELS[item.id] || item.name) + '</div>' +
+          bar(item.count, max, cls) + '<div class="chart-value">' + item.count + '</div></div>';
+      }).join('');
+      return '<div class="section-title">' + title + '</div>' + vis + '<div class="chart">' + rows + '</div>';
+    }
+
+    function renderDashboard(data) {
+      var total     = data.total || 0;
+      var byLang    = data.by_lang    || {};
+      var bySection = data.by_section || {};
+      var period    = data.period     || {};
+      var generated = data.generated
+        ? new Date(data.generated).toLocaleString('ca-ES', { dateStyle: 'medium', timeStyle: 'short' }) : '';
+
+      var langMax    = Math.max.apply(null, Object.values(byLang).concat([1]));
+      var sectionMax = Math.max.apply(null, Object.values(bySection).concat([1]));
+
+      var langRows = Object.entries(byLang).sort(function(a,b){ return b[1]-a[1]; })
+        .map(function(e) {
+          return '<div class="chart-row"><div class="chart-label">' + (LANG_NAMES[e[0]] || e[0]) + '</div>' +
+            bar(e[1], langMax, 'chart-bar--lang-' + e[0]) + '<div class="chart-value">' + e[1] + '</div></div>';
+        }).join('');
+
+      var sectionRows = Object.entries(bySection).sort(function(a,b){ return b[1]-a[1]; })
+        .map(function(e) {
+          return '<div class="chart-row"><div class="chart-label">' + (SECTION_NAMES[e[0]] || e[0]) + '</div>' +
+            bar(e[1], sectionMax, 'chart-bar--section') + '<div class="chart-value">' + e[1] + '</div></div>';
+        }).join('');
+
+      var topLang    = Object.entries(byLang).sort(function(a,b){return b[1]-a[1];})[0];
+      var topSection = Object.entries(bySection).sort(function(a,b){return b[1]-a[1];})[0];
+      var insights   = [];
+      if (topLang) insights.push('L\'idioma més usat és el <strong style="color:var(--red)">' + (LANG_NAMES[topLang[0]] || topLang[0]) + '</strong> amb ' + topLang[1] + ' visites (' + Math.round(topLang[1]/total*100) + '% del total).');
+      if (topSection) insights.push('La secció més visitada és <strong style="color:var(--red)">' + (SECTION_NAMES[topSection[0]] || topSection[0]) + '</strong> amb ' + topSection[1] + ' visites.');
+
+      document.getElementById('dash-content').innerHTML =
+        '<div class="period-header"><div class="period-range">' + periodLabel(period.start, period.end) + '</div></div>' +
+        '<div class="stats-total">visites totals<strong>' + total.toLocaleString('ca-ES') + '</strong></div>' +
+        '<div class="section-title">visites per idioma</div><div class="chart">' + langRows + '</div>' +
+        '<div class="section-title">visites per secció</div><div class="chart">' + sectionRows + '</div>' +
+        statSection('navegadors', data.browsers, 'chart-bar--browser', BROWSER_ICONS) +
+        statSection('sistemes operatius', data.systems, 'chart-bar--system', SYSTEM_ICONS) +
+        statSection('tipus de dispositiu', data.sizes, 'chart-bar--size', SIZE_ICONS) +
+        statSection('ubicacions', data.locations, 'chart-bar--location', null) +
+        '<div class="insight-box"><span class="label">// interpretació automàtica</span>' +
+        insights.map(function(i){ return '<div class="insight-item">' + i + '</div>'; }).join('') + '</div>' +
+        '<div class="dash-footer">dades actualitzades: ' + generated + ' · font: GoatCounter</div>';
+
+      setTimeout(function() {
+        document.querySelectorAll('.chart-bar').forEach(function(b) {
+          b.classList.add('animate');
+          setTimeout(function(){ b.style.width = b.getAttribute('data-width') + '%'; }, 50);
+        });
+      }, 100);
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      if (sessionStorage.getItem('gc_token')) showDashboard();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && document.getElementById('login-screen').style.display !== 'none') connect();
+    });
+  </script>
 </body>
 </html>

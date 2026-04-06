@@ -108,7 +108,9 @@
       "site-footer",
       "site-header",
       "slogan",
-      "slogan-line"
+      "slogan-line",
+      "slogan-line--1",
+      "slogan-line--2"
     ],
     "ids": [
       "1-data-controller",

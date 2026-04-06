@@ -366,7 +366,7 @@ a:hover {
   color: var(--color-white);
   padding: var(--spacing-md) var(--spacing-md) var(--spacing-md);
   border-top: 3px solid var(--color-accent);
-  box-shadow: 0 -4px 20px rgba(139, 26, 26, 0.4);
+  box-shadow: 0 -6px 24px rgba(139, 26, 26, 0.45);
 }
 
 /* Primera fila - 3 columnes */
@@ -376,7 +376,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 0;
   padding: var(--spacing-md) var(--spacing-xl);
   border-bottom: 1px solid var(--color-accent);
 }
@@ -391,9 +391,9 @@ a:hover {
 }
 
 .footer-col h4 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  margin: var(--spacing-sm) 0 var(--spacing-xs) 0;
+  margin: var(--spacing-xs) 0 var(--spacing-xs) 0;
   color: var(--color-white);
   text-transform: capitalize;
 }
@@ -480,8 +480,10 @@ a:hover {
 .btn-block {
   width: auto;
   display: inline-block;
-  margin-bottom: var(--spacing-sm);
+  padding: 0.6rem 1.8rem;
+  font-size: 0.9rem;
   text-transform: capitalize;
+  margin-bottom: var(--spacing-xs);
 }
 
 .footer-reviews {
@@ -637,11 +639,11 @@ a:hover {
 
 
 .schedule-title {
-  text-transform: none;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.7);
-  letter-spacing: 0.05em;
+  text-transform: none !important;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.08em;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -681,4 +683,36 @@ a:hover {
 
 .hero-cta:hover::before {
   left: 100%;
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin: var(--spacing-md) 0;
+}
+
+.slogan-line--1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2.6rem;
+  color: var(--color-white);
+  text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.slogan-line--2 {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .slogan-line--1 { font-size: 1.9rem; }
+  .slogan-line--2 { font-size: 0.95rem; }
 }

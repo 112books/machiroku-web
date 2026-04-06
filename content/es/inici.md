@@ -8,8 +8,8 @@ slug: "inici"
     <img src="/machiroku-web/logos/logo.svg" alt="Machiroku">
   </div>
   <p class="slogan">
-    <span class="slogan-line">Experiència japonesa</span>
-    <span class="slogan-line">al cor de Barcelona</span>
+    <span class="slogan-line slogan-line--1">Japón de verdad en el centro de Barcelona</span>
+    <span class="slogan-line slogan-line--2">Mediodías ágiles. Noches con calma.</span>
   </p>
   <div class="hero-schedule">
     <h3 class="schedule-title">Horarios</h3>

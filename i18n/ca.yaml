@@ -52,11 +52,17 @@ plats_principals: "Plats principals"
 postres: "Postres"
 begudes: "Begudes"
 
-# Reserves
+# Reserves i contacte
 fer_reserva: "Fer una reserva"
 trucar_ara: "Trucar ara"
 obrir_whatsapp: "Obrir WhatsApp"
 veure_mapa: "Veure al mapa"
+com_arribar: "Com arribar"
+horaris: "Horaris"
+on_som: "On som"
+reserves_recomanades: "Reserves recomanades"
+reserves_intro: "Machiroku és un restaurant petit i familiar al cor de Barcelona. Per mantenir la nostra essència i la qualitat del servei, seguim aquestes pautes de reserva."
+reserves_carta_text: "Acceptem reserves per a sopars (divendres i dissabte). Truca'ns o escriu per WhatsApp."
 reserves_menu_text: "No cal reserva prèvia. Atenem per ordre d'arribada."
 telefon_descripcio: "La manera més ràpida i directa"
 whatsapp_descripcio: "Envia'ns un missatge"
@@ -73,12 +79,6 @@ preu: "Preu"
 persona: "persona"
 iva_inclòs: "IVA inclòs"
 
-# Contacte
-on_som: "On som"
-veure_mapa: "Veure al mapa"
-com_arribar: "Com arribar"
-horaris: "Horaris"
-
 # Sobre nosaltres
 el_nostre_xef: "El nostre xef"
 la_nostra_historia: "La nostra història"
@@ -90,7 +90,7 @@ politica_privacitat: "Política de privacitat"
 politica_cookies: "Política de cookies"
 configuracio_cookies: "Configuració de cookies"
 
-# Botones
+# Botons
 veure_mes: "Veure més"
 veure_carta: "Veure la carta"
 tornar: "Tornar"

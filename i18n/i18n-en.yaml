@@ -52,12 +52,15 @@ plats_principals: "Main courses"
 postres: "Desserts"
 begudes: "Drinks"
 
-# Reserves
+# Reserves i contacte
 fer_reserva: "Make a reservation"
 trucar_ara: "Call now"
 obrir_whatsapp: "Open WhatsApp"
 veure_mapa: "View on map"
-estat_tancat: "Closed"
+com_arribar: "How to get here"
+horaris: "Opening hours"
+on_som: "Where we are"
+reserves_recomanades: "Reservations recommended"
 reserves_intro: "Machiroku is a small, family-run restaurant in the heart of Barcelona. To maintain our essence and quality of service, we follow these reservation guidelines."
 reserves_carta_text: "We accept reservations for dinner (Friday and Saturday). Call us or message us on WhatsApp."
 reserves_menu_text: "No prior reservation needed. We serve customers in order of arrival."
@@ -76,12 +79,6 @@ preu: "Price"
 persona: "person"
 iva_inclòs: "VAT included"
 
-# Contacte
-on_som: "Where we are"
-veure_mapa: "View on map"
-com_arribar: "How to get here"
-horaris: "Opening hours"
-
 # Sobre nosaltres
 el_nostre_xef: "Our chef"
 la_nostra_historia: "Our story"
@@ -93,7 +90,7 @@ politica_privacitat: "Privacy policy"
 politica_cookies: "Cookie policy"
 configuracio_cookies: "Cookie settings"
 
-# Botones
+# Botons
 veure_mes: "See more"
 veure_carta: "See the menu"
 tornar: "Back"
@@ -110,10 +107,3 @@ temporalment_tancat: "Temporarily closed"
 # Footer
 segueix_nos: "Follow us"
 drets_reservats: "All rights reserved"
-obrir_whatsapp: "Open WhatsApp"
-veure_mapa: "View on map"
-reserves_intro: "Machiroku is a small, family-run restaurant in the heart of Barcelona. To maintain our essence and quality of service, we follow these reservation guidelines."
-reserves_carta_text: "We accept reservations for dinner (Friday and Saturday). Call us or message us on WhatsApp."
-reserves_menu_text: "No prior reservation needed. We serve customers in order of arrival."
-telefon_descripcio: "The fastest and most direct way"
-whatsapp_descripcio: "Send us a message"

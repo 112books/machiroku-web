@@ -1,0 +1,38 @@
+# Excepcions d'horari per dies especials
+# Format: YYYY-MM-DD
+
+excepcions:
+  # Exemple: La Mercè 2026
+  - data: "2026-09-24"
+    actiu: true
+    estat: "obert"
+    servei: "carta"  # només carta, sense menú
+    horari:
+      inici: "13:00"
+      fi: "15:30"
+    missatge:
+      ca: "Avui festiu: només oferim carta"
+      es: "Hoy festivo: solo ofrecemos carta"
+      en: "Holiday: à la carte only"
+
+  # Exemple: Cap d'Any
+  - data: "2026-01-01"
+    actiu: false  # Desactivat de moment
+    estat: "tancat"
+    missatge:
+      ca: "Tancat per Cap d'Any"
+      es: "Cerrado por Año Nuevo"
+      en: "Closed for New Year"
+
+  # Plantilla per copiar
+  - data: ""
+    actiu: false
+    estat: "tancat"  # obert | tancat
+    servei: ""  # menu | carta | (buit si tancat)
+    horari:
+      inici: ""
+      fi: ""
+    missatge:
+      ca: ""
+      es: ""
+      en: ""

@@ -1,0 +1,108 @@
+# Traduccions UI - Català
+
+# Navegació
+nav_home: "Inici"
+nav_oferta: "Oferta"
+nav_reserves: "Reserves"
+nav_about: "Sobre nosaltres"
+nav_contacte: "Contacte"
+
+# Estats del restaurant
+estat_obert: "Obert"
+estat_tancat: "Tancat"
+estat_aviat: "Obrim aviat"
+
+# Serveis
+servei_menu: "Menú del migdia"
+servei_carta: "Carta de nit"
+
+# Missatges d'estat
+msg_obert_ara: "Ara estem oberts"
+msg_tancat_ara: "Ara estem tancats"
+msg_obrim_a: "Obrim a les"
+msg_tornem: "Tornem"
+msg_proper_servei: "Proper servei:"
+
+# Horaris
+horari_migdia: "Migdia"
+horari_nit: "Nit"
+dilluns: "Dilluns"
+dimarts: "Dimarts"
+dimecres: "Dimecres"
+dijous: "Dijous"
+divendres: "Divendres"
+dissabte: "Dissabte"
+diumenge: "Diumenge"
+
+# Dies abreviats
+dl: "Dl"
+dt: "Dt"
+dc: "Dc"
+dj: "Dj"
+dv: "Dv"
+ds: "Ds"
+dg: "Dg"
+
+# Oferta gastronòmica
+menu_del_dia: "Menú del dia"
+carta_completa: "Carta completa"
+entrants: "Entrants"
+amanides: "Amanides"
+plats_principals: "Plats principals"
+postres: "Postres"
+begudes: "Begudes"
+
+# Reserves
+fer_reserva: "Fer una reserva"
+trucar_ara: "Trucar ara"
+whatsapp: "WhatsApp"
+telefon: "Telèfon"
+email: "Correu electrònic"
+reserves_recomanades: "Reserves recomanades"
+
+# Al·lèrgens
+alergics: "Al·lèrgens"
+conte: "Conté"
+pot_contenir: "Pot contenir traces de"
+info_alergics: "Informació d'al·lèrgens"
+consultar_alergics: "Si tens al·lèrgies o intoleràncies, consulta'ns abans de demanar."
+
+# Preus
+preu: "Preu"
+persona: "persona"
+iva_inclòs: "IVA inclòs"
+
+# Contacte
+on_som: "On som"
+veure_mapa: "Veure al mapa"
+com_arribar: "Com arribar"
+horaris: "Horaris"
+
+# Sobre nosaltres
+el_nostre_xef: "El nostre xef"
+la_nostra_historia: "La nostra història"
+filosofia: "Filosofia"
+
+# Legal
+avis_legal: "Avís legal"
+politica_privacitat: "Política de privacitat"
+politica_cookies: "Política de cookies"
+configuracio_cookies: "Configuració de cookies"
+
+# Botones
+veure_mes: "Veure més"
+veure_carta: "Veure la carta"
+tornar: "Tornar"
+tancar: "Tancar"
+acceptar: "Acceptar"
+rebutjar: "Rebutjar"
+
+# Avisos
+atencio: "Atenció"
+important: "Important"
+nota: "Nota"
+temporalment_tancat: "Temporalment tancat"
+
+# Footer
+segueix_nos: "Segueix-nos"
+drets_reservats: "Tots els drets reservats"

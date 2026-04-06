@@ -1,0 +1,73 @@
+# Dades generals de Machiroku
+
+# Contacte
+telefon: "+34 93 412 60 82"
+whatsapp: "+34 93 412 60 82"
+email: "mackiroku@machiroku.com"
+
+# Ubicació
+adreca:
+  carrer: "Carrer de les Magdalenes, 23"
+  codi_postal: "08003"
+  ciutat: "Barcelona"
+  provincia: "Barcelona"
+  pais: "Espanya"
+  
+  # Textos complets per idioma
+  complet:
+    ca: "Carrer de les Magdalenes, 23, 08003 Barcelona"
+    es: "Calle Magdalenas, 23, 08003 Barcelona"
+    en: "Magdalenas Street, 23, 08003 Barcelona"
+
+# Google Maps
+google_maps:
+  url: "https://maps.google.com/?q=Machiroku+Barcelona"
+  embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.5!2d2.1766!3d41.3851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIzJzA2LjQiTiAywrAxMCczNS44IkU!5e0!3m2!1sca!2ses!4v1234567890"
+  lat: 41.3851
+  lng: 2.1766
+
+# Xarxes socials
+xarxes:
+  instagram:
+    url: "https://www.instagram.com/machiroku_bcn/"
+    username: "@machiroku_bcn"
+    actiu: true
+  
+  facebook:
+    url: "https://www.facebook.com/machiroku"
+    actiu: true
+  
+  tripadvisor:
+    url: ""
+    actiu: false
+
+# Informació del restaurant
+info:
+  nom: "Machiroku"
+  xef: "Masahiro Tottori"
+  gestio: "Sachie"
+  any_obertura: 2020
+  capacitat: 25  # Nombre de comensals
+  
+# Slogan editable
+slogan:
+  ca: "Autèntica cuina japonesa al cor de Barcelona"
+  es: "Auténtica cocina japonesa en el corazón de Barcelona"
+  en: "Authentic Japanese cuisine in the heart of Barcelona"
+
+# Configuració de reserves
+reserves:
+  sistemes:
+    telefon: true
+    whatsapp: true
+    formulari: false  # De moment desactivat
+  
+  missatge_whatsapp:
+    ca: "Hola, voldria reservar per {persones} persones el dia {data} a les {hora}."
+    es: "Hola, querría reservar para {personas} personas el día {fecha} a las {hora}."
+    en: "Hello, I would like to book for {people} people on {date} at {time}."
+  
+  nota:
+    ca: "Les reserves només són necessàries per a sopars (divendres i dissabte)"
+    es: "Las reservas solo son necesarias para cenas (viernes y sábado)"
+    en: "Reservations only needed for dinners (Friday and Saturday)"

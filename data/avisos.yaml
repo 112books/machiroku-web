@@ -1,0 +1,45 @@
+# Avisos temporals
+# Poden ser popup o banner al header
+
+avisos:
+  # Exemple: Festa Major de Gràcia
+  - id: "festa-gracia-2026"
+    actiu: false  # Activar quan calgui
+    des_de: "2026-08-15"
+    fins_a: "2026-08-21"
+    prioritat: "alta"  # alta | mitjana | baixa
+    tipus: "popup"  # popup | banner
+    titol:
+      ca: "Festa Major de Gràcia"
+      es: "Fiesta Mayor de Gràcia"
+      en: "Gràcia Festival"
+    text:
+      ca: "Durant la Festa Major estarem oberts amb carta al migdia i a la nit. Reserves recomanades!"
+      es: "Durante la Fiesta Mayor estaremos abiertos con carta al mediodía y por la noche. ¡Reservas recomendadas!"
+      en: "During the festival we'll be open with à la carte menu at lunch and dinner. Reservations recommended!"
+    cta:
+      ca: "Reservar ara"
+      es: "Reservar ahora"
+      en: "Book now"
+    link: "/reserves/"
+
+  # Plantilla per copiar
+  - id: ""
+    actiu: false
+    des_de: ""  # YYYY-MM-DD
+    fins_a: ""  # YYYY-MM-DD
+    prioritat: "mitjana"
+    tipus: "banner"
+    titol:
+      ca: ""
+      es: ""
+      en: ""
+    text:
+      ca: ""
+      es: ""
+      en: ""
+    cta:
+      ca: ""
+      es: ""
+      en: ""
+    link: ""

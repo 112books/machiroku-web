@@ -1,0 +1,56 @@
+{{/* layouts/partials/plat-card.html */}}
+{{/* 
+  Component per mostrar un plat a la carta com a card
+  Ús: {{ partial "plat-card.html" . }}
+  On . és un plat individual del data/[lang]/plats.yaml
+*/}}
+
+{{ $plat := . }}
+
+<article class="plat-card {{ if not $plat.actiu }}plat-inactiu{{ end }} {{ if $plat.destacat }}plat-destacat{{ end }}" 
+         data-plat-id="{{ $plat.id }}"
+         data-categoria="{{ $plat.categoria }}">
+  
+  {{/* Foto opcional */}}
+  {{ if $plat.foto }}
+  <div class="plat-foto">
+    <img src="{{ $plat.foto }}" alt="{{ $plat.nom }}" loading="lazy">
+    {{ if $plat.destacat }}
+    <span class="plat-badge-destacat">{{ i18n "destacat" | default "Destacat" }}</span>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <div class="plat-contingut">
+    {{/* Nom i preu */}}
+    <div class="plat-header">
+      <h4 class="plat-nom">{{ $plat.nom }}</h4>
+      <span class="plat-preu">{{ $plat.preu }}€</span>
+    </div>
+
+    {{/* Descripció */}}
+    {{ if $plat.descripcio }}
+    <p class="plat-descripcio">{{ $plat.descripcio }}</p>
+    {{ end }}
+
+    {{/* Al·lèrgens */}}
+    {{ if $plat.alergics }}
+    <div class="plat-alergics">
+      {{ range $alergicId := $plat.alergics }}
+        {{ $lang := $.Site.Language.Lang }}
+        {{ $alergicsData := index $.Site.Data $lang }}
+        {{ if $alergicsData }}
+          {{ $alergicsLlista := $alergicsData.alergics.alergics }}
+          {{ range $alergicsLlista }}
+            {{ if eq .id $alergicId }}
+        <span class="alergic-icona" title="{{ index .nom $lang }}">
+          {{ .icona }}
+        </span>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</article>

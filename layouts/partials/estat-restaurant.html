@@ -1,0 +1,18 @@
+{{/* layouts/partials/estat-restaurant.html */}}
+{{/* Component per mostrar estat obert/tancat del restaurant */}}
+
+<div id="estat-restaurant" class="estat-restaurant-container">
+  {{/* El contingut es genera dinàmicament via JavaScript */}}
+  <div class="estat estat-loading">
+    <span class="estat-badge">Carregant...</span>
+  </div>
+</div>
+
+{{/* Injectar dades dels YAML com a JSON per JavaScript */}}
+<script>
+  // Horaris base
+  window.horarisData = {{ .Site.Data.horaris | jsonify | safeJS }};
+  
+  // Excepcions
+  window.excepcionsData = {{ .Site.Data.excepcions.excepcions | jsonify | safeJS }};
+</script>

@@ -1,0 +1,80 @@
+{{/* layouts/partials/menu-card.html */}}
+{{/* 
+  Component per mostrar un menú com a card
+  Ús: {{ partial "menu-card.html" . }}
+  On . és un menú individual del data/[lang]/menus.yaml
+*/}}
+
+{{ $menu := . }}
+
+<article class="menu-card {{ if not $menu.actiu }}menu-inactiu{{ end }}" data-menu-id="{{ $menu.id }}">
+  {{/* Foto opcional */}}
+  {{ if $menu.foto }}
+  <div class="menu-foto">
+    <img src="{{ $menu.foto }}" alt="{{ $menu.nom }}" loading="lazy">
+  </div>
+  {{ end }}
+
+  <div class="menu-contingut">
+    {{/* Nom del menú */}}
+    <h3 class="menu-nom">{{ $menu.nom }}</h3>
+
+    {{/* Descripció */}}
+    {{ if $menu.descripcio }}
+    <p class="menu-descripcio">{{ $menu.descripcio }}</p>
+    {{ end }}
+
+    {{/* Plats inclosos */}}
+    {{ if $menu.plats }}
+    <ul class="menu-plats">
+      {{ range $menu.plats }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+    {{/* Al·lèrgens */}}
+    {{ if $menu.alergics }}
+    <div class="menu-alergics">
+      <span class="alergics-label">{{ i18n "alergics" }}:</span>
+      <div class="alergics-llista">
+        {{ range $alergicId := $menu.alergics }}
+          {{ $lang := $.Site.Language.Lang }}
+          {{ $alergicsData := index $.Site.Data $lang }}
+          {{ if $alergicsData }}
+            {{ $alergicsLlista := $alergicsData.alergics.alergics }}
+            {{ range $alergicsLlista }}
+              {{ if eq .id $alergicId }}
+          <span class="alergic-badge" title="{{ index .descripcio $lang }}">
+            {{ .icona }} {{ index .nom $lang }}
+          </span>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* Preu */}}
+    <div class="menu-footer">
+      {{ if gt $menu.preu 0.0 }}
+      <span class="menu-preu">{{ $menu.preu }}€</span>
+      {{ else }}
+      <span class="menu-preu-variable">{{ i18n "consultar_alergics" }}</span>
+      {{ end }}
+
+      {{/* Disponibilitat */}}
+      {{ if $menu.disponibilitat }}
+      <span class="menu-disponibilitat">
+        {{ $menu.disponibilitat.horari }}
+      </span>
+      {{ end }}
+    </div>
+
+    {{/* Nota addicional */}}
+    {{ if $menu.nota }}
+    <p class="menu-nota">{{ $menu.nota }}</p>
+    {{ end }}
+  </div>
+</article>

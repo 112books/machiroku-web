@@ -1,0 +1,157 @@
+# Al·lèrgens segons Reglament UE 1169/2011
+# 14 al·lèrgens d'obligada declaració
+
+alergics:
+  - id: "gluten"
+    icona: "🌾"
+    nom:
+      ca: "Gluten"
+      es: "Gluten"
+      en: "Gluten"
+    descripcio:
+      ca: "Cereals amb gluten (blat, sègol, ordi, civada, espelta, kamut)"
+      es: "Cereales con gluten (trigo, centeno, cebada, avena, espelta, kamut)"
+      en: "Gluten-containing cereals (wheat, rye, barley, oats, spelt, kamut)"
+
+  - id: "crustacis"
+    icona: "🦐"
+    nom:
+      ca: "Crustacis"
+      es: "Crustáceos"
+      en: "Crustaceans"
+    descripcio:
+      ca: "Gambes, llagosta, cranc, gambes..."
+      es: "Gambas, langosta, cangrejo, cigalas..."
+      en: "Prawns, lobster, crab, crayfish..."
+
+  - id: "ou"
+    icona: "🥚"
+    nom:
+      ca: "Ou"
+      es: "Huevo"
+      en: "Egg"
+    descripcio:
+      ca: "Ou i productes derivats"
+      es: "Huevo y productos derivados"
+      en: "Egg and egg products"
+
+  - id: "peix"
+    icona: "🐟"
+    nom:
+      ca: "Peix"
+      es: "Pescado"
+      en: "Fish"
+    descripcio:
+      ca: "Peix i productes derivats"
+      es: "Pescado y productos derivados"
+      en: "Fish and fish products"
+
+  - id: "cacauets"
+    icona: "🥜"
+    nom:
+      ca: "Cacauets"
+      es: "Cacahuetes"
+      en: "Peanuts"
+    descripcio:
+      ca: "Cacauets i productes derivats"
+      es: "Cacahuetes y productos derivados"
+      en: "Peanuts and peanut products"
+
+  - id: "soja"
+    icona: "🫘"
+    nom:
+      ca: "Soja"
+      es: "Soja"
+      en: "Soy"
+    descripcio:
+      ca: "Soja i productes derivats"
+      es: "Soja y productos derivados"
+      en: "Soy and soy products"
+
+  - id: "lactis"
+    icona: "🥛"
+    nom:
+      ca: "Làctics"
+      es: "Lácteos"
+      en: "Dairy"
+    descripcio:
+      ca: "Llet i derivats (incloent lactosa)"
+      es: "Leche y derivados (incluyendo lactosa)"
+      en: "Milk and dairy products (including lactose)"
+
+  - id: "fruits-secs"
+    icona: "🌰"
+    nom:
+      ca: "Fruits secs"
+      es: "Frutos secos"
+      en: "Nuts"
+    descripcio:
+      ca: "Ametlles, avellanes, nous, festucs, anacards..."
+      es: "Almendras, avellanas, nueces, pistachos, anacardos..."
+      en: "Almonds, hazelnuts, walnuts, pistachios, cashews..."
+
+  - id: "api"
+    icona: "🥬"
+    nom:
+      ca: "Api"
+      es: "Apio"
+      en: "Celery"
+    descripcio:
+      ca: "Api i productes derivats"
+      es: "Apio y productos derivados"
+      en: "Celery and celery products"
+
+  - id: "mostassa"
+    icona: "🌭"
+    nom:
+      ca: "Mostassa"
+      es: "Mostaza"
+      en: "Mustard"
+    descripcio:
+      ca: "Mostassa i productes derivats"
+      es: "Mostaza y productos derivados"
+      en: "Mustard and mustard products"
+
+  - id: "sesam"
+    icona: "⚪"
+    nom:
+      ca: "Sèsam"
+      es: "Sésamo"
+      en: "Sesame"
+    descripcio:
+      ca: "Llavors de sèsam i productes derivats"
+      es: "Semillas de sésamo y productos derivados"
+      en: "Sesame seeds and sesame products"
+
+  - id: "sulfits"
+    icona: "🍷"
+    nom:
+      ca: "Sulfits"
+      es: "Sulfitos"
+      en: "Sulphites"
+    descripcio:
+      ca: "Diòxid de sofre i sulfits (>10 mg/kg)"
+      es: "Dióxido de azufre y sulfitos (>10 mg/kg)"
+      en: "Sulphur dioxide and sulphites (>10 mg/kg)"
+
+  - id: "mol·luscos"
+    icona: "🐚"
+    nom:
+      ca: "Mol·luscos"
+      es: "Moluscos"
+      en: "Molluscs"
+    descripcio:
+      ca: "Cloïsses, musclos, cargols, calamar, pop..."
+      es: "Almejas, mejillones, caracoles, calamar, pulpo..."
+      en: "Clams, mussels, snails, squid, octopus..."
+
+  - id: "altramossos"
+    icona: "🫛"
+    nom:
+      ca: "Altramossos"
+      es: "Altramuces"
+      en: "Lupin"
+    descripcio:
+      ca: "Altramossos i productes derivats"
+      es: "Altramuces y productos derivados"
+      en: "Lupin and lupin products"

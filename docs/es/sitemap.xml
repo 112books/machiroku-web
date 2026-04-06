@@ -2,55 +2,259 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://112books.github.io/machiroku-web/es/categories/</loc>
+    <loc>http://localhost:1313/es/categories/entrants/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://112books.github.io/machiroku-web/categories/"
+                href="http://localhost:1313/categories/entrants/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://112books.github.io/machiroku-web/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://112books.github.io/machiroku-web/es/categories/"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/categories/entrants/"
                 />
   </url><url>
-    <loc>https://112books.github.io/machiroku-web/es/</loc>
+    <loc>http://localhost:1313/es/dishes/goma-wakame/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://112books.github.io/machiroku-web/"
+                href="http://localhost:1313/dishes/goma-wakame/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://112books.github.io/machiroku-web/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://112books.github.io/machiroku-web/es/"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/dishes/goma-wakame/"
                 />
   </url><url>
-    <loc>https://112books.github.io/machiroku-web/es/tags/</loc>
+    <loc>http://localhost:1313/es/sobre-nosaltres/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://112books.github.io/machiroku-web/tags/"
+                href="http://localhost:1313/sobre-nosaltres/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://112books.github.io/machiroku-web/en/tags/"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/sobre-nosaltres/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="es"
-                href="https://112books.github.io/machiroku-web/es/tags/"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/sobre-nosaltres/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/legals/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/legals/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/legals/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/legals/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/categories/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/contacte-es/</loc>
+  </url><url>
+    <loc>http://localhost:1313/es/contacte/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/contacte/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/contacte/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/contacte/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/cookies/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/cookies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/cookies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/cookies/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/dishes/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/dishes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/dishes/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/inici-es/</loc>
+  </url><url>
+    <loc>http://localhost:1313/es/inici/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/inici/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/inici/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/inici/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/menus/menu-sushi/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/menus/menu-sushi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/menus/menu-sushi/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/menus/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/menus/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/menus/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/oferta-es/</loc>
+  </url><url>
+    <loc>http://localhost:1313/es/oferta/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/oferta/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/oferta/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/oferta/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/privacitat/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/privacitat/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/privacitat/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/privacitat/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/reserves-es/</loc>
+  </url><url>
+    <loc>http://localhost:1313/es/reserves/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/reserves/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/reserves/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/reserves/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/es/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="http://localhost:1313/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="http://localhost:1313/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/es/tags/"
                 />
   </url>
 </urlset>

@@ -1,0 +1,248 @@
+# Plats a la carta - CATALÀ
+# Sistema de categories + ordre dins categoria
+
+categories:
+  - id: "entrants"
+    nom: "Entrants"
+    nom_en: "Starters"
+    nom_es: "Entrantes"
+    ordre: 1
+    
+  - id: "amanides"
+    nom: "Amanides"
+    nom_en: "Salads"
+    nom_es: "Ensaladas"
+    ordre: 2
+    
+  - id: "sashimi"
+    nom: "Sashimi"
+    nom_en: "Sashimi"
+    nom_es: "Sashimi"
+    ordre: 3
+    
+  - id: "nigiri-maki"
+    nom: "Nigiri i Maki"
+    nom_en: "Nigiri & Maki"
+    nom_es: "Nigiri y Maki"
+    ordre: 4
+    
+  - id: "calents"
+    nom: "Plats calents"
+    nom_en: "Hot dishes"
+    nom_es: "Platos calientes"
+    ordre: 5
+    
+  - id: "postres"
+    nom: "Postres"
+    nom_en: "Desserts"
+    nom_es: "Postres"
+    ordre: 6
+
+plats:
+  # ENTRANTS
+  - id: "edamame"
+    nom: "Edamame"
+    categoria: "entrants"
+    ordre: 1
+    preu: 4.50
+    descripcio: "Soja verda al vapor amb sal marina de Mallorca"
+    foto: ""  # Opcional
+    destacat: false
+    actiu: true
+    alergics:
+      - "soja"
+
+  - id: "gyozas-porc"
+    nom: "Gyozas de porc"
+    categoria: "entrants"
+    ordre: 2
+    preu: 7.80
+    descripcio: "6 gyozas farcides de porc amb verdures, servides amb salsa ponzu"
+    foto: ""
+    destacat: true
+    actiu: true
+    alergics:
+      - "gluten"
+      - "soja"
+      - "sesam"
+
+  - id: "takoyaki"
+    nom: "Takoyaki"
+    categoria: "entrants"
+    ordre: 3
+    preu: 8.50
+    descripcio: "Boletes de polp a l'estil d'Osaka amb bonito i maionesa japonesa"
+    foto: ""
+    destacat: false
+    actiu: true
+    alergics:
+      - "gluten"
+      - "ou"
+      - "mol·luscos"
+      - "peix"
+
+  # AMANIDES
+  - id: "wakame"
+    nom: "Amanida wakame"
+    categoria: "amanides"
+    ordre: 1
+    preu: 5.50
+    descripcio: "Alga wakame amb vinagreta de sèsam"
+    foto: ""
+    destacat: false
+    actiu: true
+    alergics:
+      - "sesam"
+      - "soja"
+
+  - id: "amanida-tataki"
+    nom: "Amanida amb tataki de tonyina"
+    categoria: "amanides"
+    ordre: 2
+    preu: 12.50
+    descripcio: "Mescla de fulles fresques amb tonyina sellada i vinagreta de yuzu"
+    foto: ""
+    destacat: true
+    actiu: true
+    alergics:
+      - "peix"
+      - "sesam"
+      - "soja"
+
+  # SASHIMI
+  - id: "sashimi-salmon"
+    nom: "Sashimi de salmó"
+    categoria: "sashimi"
+    ordre: 1
+    preu: 16.50
+    descripcio: "8 talls de salmó fresc de Noruega"
+    foto: ""
+    destacat: true
+    actiu: true
+    alergics:
+      - "peix"
+
+  - id: "sashimi-tonyina"
+    nom: "Sashimi de tonyina"
+    categoria: "sashimi"
+    ordre: 2
+    preu: 18.00
+    descripcio: "8 talls de tonyina vermella de qualitat superior"
+    foto: ""
+    destacat: true
+    actiu: true
+    alergics:
+      - "peix"
+
+  - id: "sashimi-mix"
+    nom: "Sashimi variats"
+    categoria: "sashimi"
+    ordre: 3
+    preu: 19.50
+    descripcio: "Selecció de 12 peces: salmó, tonyina, lluç i daurada"
+    foto: ""
+    destacat: false
+    actiu: true
+    alergics:
+      - "peix"
+
+  # NIGIRI I MAKI
+  - id: "nigiri-mix"
+    nom: "Nigiri variats"
+    categoria: "nigiri-maki"
+    ordre: 1
+    preu: 14.00
+    descripcio: "8 peces de nigiri amb peixos del dia"
+    foto: ""
+    destacat: false
+    actiu: true
+    alergics:
+      - "peix"
+      - "gluten"
+      - "soja"
+
+  - id: "california-roll"
+    nom: "California roll"
+    categoria: "nigiri-maki"
+    ordre: 2
+    preu: 9.50
+    descripcio: "8 peces amb crab, alvocat i maionesa japonesa"
+    foto: ""
+    destacat: false
+    actiu: true
+    alergics:
+      - "peix"
+      - "gluten"
+      - "ou"
+      - "crustacis"
+
+  # PLATS CALENTS
+  - id: "tempura-mix"
+    nom: "Tempura variada"
+    categoria: "calents"
+    ordre: 1
+    preu: 13.50
+    descripcio: "Gambeta, calamar i verdures de temporada amb salsa tentsuyu"
+    foto: ""
+    destacat: false
+    actiu: true
+    alergics:
+      - "gluten"
+      - "ou"
+      - "crustacis"
+      - "mol·luscos"
+
+  - id: "yakisoba"
+    nom: "Yakisoba de vedella"
+    categoria: "calents"
+    ordre: 2
+    preu: 12.00
+    descripcio: "Fideus sallejats amb vedella, col i bròquil"
+    foto: ""
+    destacat: false
+    actiu: true
+    alergics:
+      - "gluten"
+      - "soja"
+
+  - id: "teriyaki-salmon"
+    nom: "Salmó teriyaki"
+    categoria: "calents"
+    ordre: 3
+    preu: 16.00
+    descripcio: "Llom de salmó amb salsa teriyaki casolana i verdures"
+    foto: ""
+    destacat: true
+    actiu: true
+    alergics:
+      - "peix"
+      - "gluten"
+      - "soja"
+      - "sesam"
+
+  # POSTRES
+  - id: "mochi"
+    nom: "Mochi"
+    categoria: "postres"
+    ordre: 1
+    preu: 5.00
+    descripcio: "3 unitats de mochi amb farcits variats"
+    foto: ""
+    destacat: false
+    actiu: true
+    alergics:
+      - "lactis"
+      - "fruits-secs"
+
+  - id: "dorayaki"
+    nom: "Dorayaki casolà"
+    categoria: "postres"
+    ordre: 2
+    preu: 4.50
+    descripcio: "Pastís tradicional farcit de pasta de mongeta vermella"
+    foto: ""
+    destacat: false
+    actiu: true
+    alergics:
+      - "gluten"
+      - "ou"

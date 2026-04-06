@@ -1,0 +1,64 @@
+# Sistema d'horaris de Machiroku
+# Format: dies de la setmana amb abreviatures catalanes
+
+base:
+  # Dilluns
+  dilluns:
+    - inici: "13:00"
+      fi: "15:30"
+      servei: "menu"
+
+  # Dimarts
+  dimarts:
+    - inici: "13:00"
+      fi: "15:30"
+      servei: "menu"
+
+  # Dimecres (TANCAT)
+  dimecres: []
+
+  # Dijous
+  dijous:
+    - inici: "13:00"
+      fi: "15:30"
+      servei: "menu"
+
+  # Divendres
+  divendres:
+    - inici: "13:00"
+      fi: "15:30"
+      servei: "menu"
+    - inici: "19:00"
+      fi: "22:00"
+      servei: "carta"
+
+  # Dissabte
+  dissabte:
+    - inici: "19:00"
+      fi: "22:00"
+      servei: "carta"
+
+  # Diumenge (TANCAT)
+  diumenge: []
+
+# Mapa de serveis
+serveis:
+  menu:
+    nom:
+      ca: "Menú del migdia"
+      es: "Menú del mediodía"
+      en: "Lunch menu"
+    descripcio:
+      ca: "Menús tancats a preus assequibles"
+      es: "Menús cerrados a precios asequibles"
+      en: "Set menus at affordable prices"
+    
+  carta:
+    nom:
+      ca: "Carta de nit"
+      es: "Carta nocturna"
+      en: "Evening à la carte"
+    descripcio:
+      ca: "Producte de temporada elaborat"
+      es: "Producto de temporada elaborado"
+      en: "Seasonal products carefully prepared"

@@ -1,0 +1,108 @@
+# Traduccions UI - English
+
+# Navegació
+nav_home: "Home"
+nav_oferta: "Menu"
+nav_reserves: "Reservations"
+nav_about: "About us"
+nav_contacte: "Contact"
+
+# Estats del restaurant
+estat_obert: "Open"
+estat_tancat: "Closed"
+estat_aviat: "Opening soon"
+
+# Serveis
+servei_menu: "Lunch menu"
+servei_carta: "Evening à la carte"
+
+# Missatges d'estat
+msg_obert_ara: "We are now open"
+msg_tancat_ara: "We are now closed"
+msg_obrim_a: "We open at"
+msg_tornem: "We'll be back"
+msg_proper_servei: "Next service:"
+
+# Horaris
+horari_migdia: "Lunch"
+horari_nit: "Dinner"
+dilluns: "Monday"
+dimarts: "Tuesday"
+dimecres: "Wednesday"
+dijous: "Thursday"
+divendres: "Friday"
+dissabte: "Saturday"
+diumenge: "Sunday"
+
+# Dies abreviats
+dl: "Mon"
+dt: "Tue"
+dc: "Wed"
+dj: "Thu"
+dv: "Fri"
+ds: "Sat"
+dg: "Sun"
+
+# Oferta gastronòmica
+menu_del_dia: "Daily menu"
+carta_completa: "Full menu"
+entrants: "Starters"
+amanides: "Salads"
+plats_principals: "Main courses"
+postres: "Desserts"
+begudes: "Drinks"
+
+# Reserves
+fer_reserva: "Make a reservation"
+trucar_ara: "Call now"
+whatsapp: "WhatsApp"
+telefon: "Phone"
+email: "Email"
+reserves_recomanades: "Reservations recommended"
+
+# Al·lèrgens
+alergics: "Allergens"
+conte: "Contains"
+pot_contenir: "May contain traces of"
+info_alergics: "Allergen information"
+consultar_alergics: "If you have allergies or intolerances, please ask us before ordering."
+
+# Preus
+preu: "Price"
+persona: "person"
+iva_inclòs: "VAT included"
+
+# Contacte
+on_som: "Where we are"
+veure_mapa: "View on map"
+com_arribar: "How to get here"
+horaris: "Opening hours"
+
+# Sobre nosaltres
+el_nostre_xef: "Our chef"
+la_nostra_historia: "Our story"
+filosofia: "Philosophy"
+
+# Legal
+avis_legal: "Legal notice"
+politica_privacitat: "Privacy policy"
+politica_cookies: "Cookie policy"
+configuracio_cookies: "Cookie settings"
+
+# Botones
+veure_mes: "See more"
+veure_carta: "See the menu"
+tornar: "Back"
+tancar: "Close"
+acceptar: "Accept"
+rebutjar: "Reject"
+
+# Avisos
+atencio: "Attention"
+important: "Important"
+nota: "Note"
+temporalment_tancat: "Temporarily closed"
+
+# Footer
+segueix_nos: "Follow us"
+drets_reservats: "All rights reserved"

@@ -1,0 +1,101 @@
+# Menús del mediodía - ESPAÑOL
+
+menus:
+  - id: "menu-sushi"
+    nom: "Menú Sushi"
+    ordre: 1
+    actiu: true
+    preu: 14.50
+    foto: "/images/menus/sushi.jpg"
+    descripcio: "Nuestro clásico menú japonés con variedad de sushi fresco"
+    plats:
+      - "Sopa miso"
+      - "Ensalada wakame"
+      - "8 piezas de sushi variados (nigiri y maki)"
+      - "Postre casero"
+      - "Té verde"
+    alergics:
+      - "peix"
+      - "gluten"
+      - "soja"
+      - "sesam"
+    disponibilitat:
+      dies: ["lunes", "martes", "jueves", "viernes"]
+      horari: "13:00 - 15:30"
+
+  - id: "menu-tendon"
+    nom: "Menú Tendon"
+    ordre: 2
+    actiu: true
+    preu: 13.50
+    foto: "/images/menus/tendon.jpg"
+    descripcio: "Tempura crujiente sobre lecho de arroz con salsa especial"
+    plats:
+      - "Sopa miso"
+      - "Ensalada de col y apio japonés"
+      - "Tendon (tempura de langostino y verduras sobre arroz)"
+      - "Té verde"
+    alergics:
+      - "gluten"
+      - "ou"
+      - "crustacis"
+      - "soja"
+    disponibilitat:
+      dies: ["lunes", "martes", "jueves", "viernes"]
+      horari: "13:00 - 15:30"
+
+  - id: "menu-salmon-don"
+    nom: "Menú Salmon Don"
+    ordre: 3
+    actiu: true
+    preu: 14.00
+    foto: "/images/menus/salmon-don.jpg"
+    descripcio: "Salmón fresco sobre arroz con toques de sésamo y salsa teriyaki"
+    plats:
+      - "Sopa miso"
+      - "Ensalada wakame"
+      - "Salmon don (salmón sobre arroz con huevo y sésamo)"
+      - "Té verde"
+    alergics:
+      - "peix"
+      - "gluten"
+      - "soja"
+      - "sesam"
+      - "ou"
+    disponibilitat:
+      dies: ["lunes", "martes", "jueves", "viernes"]
+      horari: "13:00 - 15:30"
+
+  - id: "menu-unaju"
+    nom: "Menú Unaju"
+    ordre: 4
+    actiu: true
+    preu: 15.50
+    foto: "/images/menus/unaju.jpg"
+    descripcio: "Anguila glaseada con salsa kabayaki, tradición japonesa"
+    plats:
+      - "Sopa miso"
+      - "Encurtidos japoneses"
+      - "Unaju (anguila glaseada sobre arroz)"
+      - "Té verde"
+    alergics:
+      - "peix"
+      - "gluten"
+      - "soja"
+      - "sesam"
+    disponibilitat:
+      dies: ["lunes", "martes", "jueves", "viernes"]
+      horari: "13:00 - 15:30"
+
+  - id: "plat-dia"
+    nom: "Plato del día"
+    ordre: 10
+    actiu: true
+    preu: 0
+    descripcio: "Propuesta diaria según producto de mercado. Consultar disponibilidad."
+    plats:
+      - "Según mercado del día"
+    nota: "Precio y contenido variable. Preguntar en el restaurante."
+    disponibilitat:
+      dies: ["lunes", "martes", "jueves", "viernes"]
+      horari: "13:00 - 15:30"

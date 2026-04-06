@@ -1,0 +1,4 @@
+---
+title: "Machiroku"
+layout: "home"
+---

@@ -1,7 +1,21 @@
-/public/
-/resources/
-/.DS_Store
-.hugo_build.lock/public/
-/resources/
-.DS_Store
+# Hugo
+public/
+resources/
 .hugo_build.lock
+
+# Docs (GitHub Pages output)
+docs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# Temporals
+*.swp
+*.swo
+*~

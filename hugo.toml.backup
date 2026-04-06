@@ -1,0 +1,165 @@
+baseURL = "https://112books.github.io/machiroku-web/"
+languageCode = "ca-ES"
+defaultContentLanguage = "ca"
+title = "Machiroku"
+
+# Output
+publishDir = "docs"
+canonifyURLs = true
+
+# Markup
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.goldmark.parser.attribute]
+block = true
+title = true
+
+# Multiidioma
+[languages.ca]
+languageName = "Català"
+languageCode = "ca-ES"
+weight = 1
+contentDir = "content/ca"
+title = "Machiroku - Restaurant Japonès"
+
+[languages.ca.params]
+description = "Restaurant japonès al cor de Barcelona. Menú del migdia i carta nocturna amb producte de temporada."
+slogan = "Autèntica cuina japonesa al cor de Barcelona"
+
+[[languages.ca.menu.main]]
+identifier = "inici"
+name = "Inici"
+url = "/ca/inici/"
+weight = 1
+
+[[languages.ca.menu.main]]
+identifier = "oferta"
+name = "Oferta"
+url = "/ca/oferta/"
+weight = 2
+
+[[languages.ca.menu.main]]
+identifier = "reserves"
+name = "Reserves"
+url = "/ca/reserves/"
+weight = 3
+
+[[languages.ca.menu.main]]
+identifier = "sobre-nosaltres"
+name = "Sobre nosaltres"
+url = "/ca/sobre-nosaltres/"
+weight = 4
+
+[[languages.ca.menu.main]]
+identifier = "contacte"
+name = "Contacte"
+url = "/ca/contacte/"
+weight = 5
+
+[languages.es]
+languageName = "Español"
+languageCode = "es-ES"
+weight = 2
+contentDir = "content/es"
+title = "Machiroku - Restaurante Japonés"
+
+[languages.es.params]
+description = "Restaurante japonés en el corazón de Barcelona. Menú del mediodía y carta nocturna con producto de temporada."
+slogan = "Auténtica cocina japonesa en el corazón de Barcelona"
+
+[[languages.es.menu.main]]
+identifier = "inici"
+name = "Inicio"
+url = "/es/inici/"
+weight = 1
+
+[[languages.es.menu.main]]
+identifier = "oferta"
+name = "Oferta"
+url = "/es/oferta/"
+weight = 2
+
+[[languages.es.menu.main]]
+identifier = "reserves"
+name = "Reservas"
+url = "/es/reserves/"
+weight = 3
+
+[[languages.es.menu.main]]
+identifier = "sobre-nosaltres"
+name = "Sobre nosotros"
+url = "/es/sobre-nosaltres/"
+weight = 4
+
+[[languages.es.menu.main]]
+identifier = "contacte"
+name = "Contacto"
+url = "/es/contacte/"
+weight = 5
+
+[languages.en]
+languageName = "English"
+languageCode = "en-GB"
+weight = 3
+contentDir = "content/en"
+title = "Machiroku - Japanese Restaurant"
+
+[languages.en.params]
+description = "Japanese restaurant in the heart of Barcelona. Lunch menu and evening à la carte with seasonal products."
+slogan = "Authentic Japanese cuisine in the heart of Barcelona"
+
+[[languages.en.menu.main]]
+identifier = "inici"
+name = "Home"
+url = "/en/inici/"
+weight = 1
+
+[[languages.en.menu.main]]
+identifier = "oferta"
+name = "Menu"
+url = "/en/oferta/"
+weight = 2
+
+[[languages.en.menu.main]]
+identifier = "reserves"
+name = "Reservations"
+url = "/en/reserves/"
+weight = 3
+
+[[languages.en.menu.main]]
+identifier = "sobre-nosaltres"
+name = "About us"
+url = "/en/sobre-nosaltres/"
+weight = 4
+
+[[languages.en.menu.main]]
+identifier = "contacte"
+name = "Contact"
+url = "/en/contacte/"
+weight = 5
+
+# Paràmetres globals
+[params]
+author = "Machiroku"
+siteName = "Machiroku"
+
+# Dades de contacte
+[params.contact]
+phone = "+34 93 412 60 82"
+whatsapp = "+34 93 412 60 82"
+email = "mackiroku@machiroku.com"
+
+# Xarxes socials
+[params.social]
+instagram = "https://www.instagram.com/machiroku_bcn/"
+facebook = "https://www.facebook.com/machiroku"
+
+# Google Maps
+[params.maps]
+embed_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.5!2d2.1766!3d41.3851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIzJzA2LjQiTiAywrAxMCczNS44IkU!5e0!3m2!1sca!2ses!4v1234567890"
+url = "https://maps.google.com/?q=Machiroku+Barcelona"
+
+# Build
+[build]
+writeStats = true

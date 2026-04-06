@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dishes on Machiroku - Restaurant Japonès</title>
+    <link>http://localhost:1313/machiroku-web/dishes/</link>
+    <description>Recent content in Dishes on Machiroku - Restaurant Japonès</description>
+    <generator>Hugo</generator>
+    <language>ca-ES</language>
+    <atom:link href="http://localhost:1313/machiroku-web/dishes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/machiroku-web/dishes/goma-wakame/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/machiroku-web/dishes/goma-wakame/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,319 @@
+/* estat-restaurant.css */
+/* Estils per l'estat obert/tancat del restaurant */
+
+.estat-restaurant-container {
+  padding: 1rem;
+  text-align: center;
+}
+
+.estat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.estat-badge {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+
+.estat-obert {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.estat-badge.obert {
+  color: #1b5e20;
+}
+
+.estat-tancat {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.estat-badge.tancat {
+  color: #b71c1c;
+}
+
+.estat-servei {
+  font-weight: 500;
+}
+
+.estat-horari,
+.estat-proper {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.estat-loading {
+  background-color: #f5f5f5;
+  color: #757575;
+}
+
+/* Cards de menús */
+.menu-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.menu-card.menu-inactiu {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.menu-foto {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.menu-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-contingut {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-nom {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #212121;
+}
+
+.menu-descripcio {
+  font-size: 0.95rem;
+  color: #616161;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.menu-plats {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  flex: 1;
+}
+
+.menu-plats li {
+  padding: 0.4rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+  font-size: 0.9rem;
+  color: #424242;
+}
+
+.menu-plats li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.menu-alergics {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: #fafafa;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.alergics-label {
+  font-weight: 600;
+  color: #616161;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.alergics-llista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.alergic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.menu-preu {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #d32f2f;
+}
+
+.menu-preu-variable {
+  font-size: 0.9rem;
+  color: #757575;
+  font-style: italic;
+}
+
+.menu-disponibilitat {
+  font-size: 0.85rem;
+  color: #757575;
+}
+
+.menu-nota {
+  font-size: 0.85rem;
+  color: #757575;
+  font-style: italic;
+  margin: 0.75rem 0 0 0;
+}
+
+/* Cards de plats */
+.plat-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.plat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.plat-card.plat-destacat {
+  border: 2px solid #d32f2f;
+}
+
+.plat-card.plat-inactiu {
+  opacity: 0.5;
+}
+
+.plat-foto {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f5f5f5;
+  position: relative;
+}
+
+.plat-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plat-badge-destacat {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: #d32f2f;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.plat-contingut {
+  padding: 1rem;
+}
+
+.plat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.plat-nom {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #212121;
+  flex: 1;
+}
+
+.plat-preu {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #d32f2f;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.plat-descripcio {
+  font-size: 0.9rem;
+  color: #616161;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.plat-alergics {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.alergic-icona {
+  cursor: help;
+}
+
+/* Grid de menús i plats */
+.menus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.plats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menus-grid,
+  .plats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .estat {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

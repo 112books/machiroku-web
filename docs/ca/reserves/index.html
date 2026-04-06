@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ca">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reserves | Machiroku</title>
@@ -11,10 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Caveat+Brush&family=Kaushan+Script&display=swap" rel="stylesheet">
 
   
-  <link rel="stylesheet" href="https://112books.github.io/machiroku-web/css/main.css">
-  <link rel="stylesheet" href="https://112books.github.io/machiroku-web/css/estat-restaurant.css">
+  <link rel="stylesheet" href="//localhost:1313/css/main.css">
+  <link rel="stylesheet" href="//localhost:1313/css/estat-restaurant.css">
   
-  <link rel="icon" type="image/svg+xml" href="https://112books.github.io/machiroku-web/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="//localhost:1313/favicon.svg">
   
   
   <meta name="description" content="Restaurant japonès al cor de Barcelona. Menú del migdia i carta nocturna amb producte de temporada.">
@@ -23,26 +23,26 @@
   <header class="site-header">
     <div class="header-grid">
       <div class="header-row header-row--top">
-        <a href="https://112books.github.io/machiroku-web/ca/inici/" class="header-logo">
-          <img src="https://112books.github.io/machiroku-web/logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku">
+        <a href="//localhost:1313/ca/inici/" class="header-logo">
+          <img src="//localhost:1313/logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku">
         </a>
         
         
         <div class="lang-switch">
           
-          <a href="https://112books.github.io/machiroku-web/ca/inici/" 
+          <a href="//localhost:1313/ca/inici/" 
              class="active"
              hreflang="ca">
             CA
           </a>
           
-          <a href="https://112books.github.io/machiroku-web/es/inici/" 
+          <a href="//localhost:1313/es/inici/" 
              class=""
              hreflang="es">
             ES
           </a>
           
-          <a href="https://112books.github.io/machiroku-web/en/inici/" 
+          <a href="//localhost:1313/en/inici/" 
              class=""
              hreflang="en">
             EN
@@ -60,23 +60,23 @@
           <ul class="nav-list">
             
             <li>
-              <a href="https://112books.github.io/machiroku-web/ca/inici/">Inici</a>
+              <a href="//localhost:1313/ca/inici/">Inici</a>
             </li>
             
             <li>
-              <a href="https://112books.github.io/machiroku-web/ca/oferta/">Oferta gastronòmica</a>
+              <a href="//localhost:1313/ca/oferta/">Oferta gastronòmica</a>
             </li>
             
             <li>
-              <a href="https://112books.github.io/machiroku-web/ca/reserves/">Reserves</a>
+              <a href="//localhost:1313/ca/reserves/">Reserves</a>
             </li>
             
             <li>
-              <a href="https://112books.github.io/machiroku-web/ca/sobre-nosaltres/">Sobre nosaltres</a>
+              <a href="//localhost:1313/ca/sobre-nosaltres/">Sobre nosaltres</a>
             </li>
             
             <li>
-              <a href="https://112books.github.io/machiroku-web/ca/contacte/">Contacte</a>
+              <a href="//localhost:1313/ca/contacte/">Contacte</a>
             </li>
             
           </ul>
@@ -112,291 +112,104 @@
     
 <section class="reserves-section">
   <div class="container">
+
     <div class="reserves-header">
-      <h1>{{ i18n "fer_reserva" }}</h1>
-      <p class="reserves-intro">{{ .Site.Data.restaurant.reserves.nota.ca }}</p>
+      <h1>Fer una reserva</h1>
+      <p class="reserves-intro">Les reserves només són necessàries per a sopars (divendres i dissabte)</p>
     </div>
-<pre><code>{{/* Mètodes de reserva */}}
-&lt;div class=&quot;reserves-metodes&quot;&gt;
-  {{ $restaurant := .Site.Data.restaurant }}
-  
-  {{/* Telèfon */}}
-  {{ if $restaurant.reserves.sistemes.telefon }}
-  &lt;div class=&quot;reserva-card reserva-telefon&quot;&gt;
-    &lt;div class=&quot;reserva-icona&quot;&gt;📞&lt;/div&gt;
-    &lt;h3&gt;{{ i18n &quot;telefon&quot; }}&lt;/h3&gt;
-    &lt;p class=&quot;reserva-descripcio&quot;&gt;La manera més ràpida i directa&lt;/p&gt;
-    
-    &lt;a href=&quot;tel:{{ $restaurant.telefon }}&quot; class=&quot;btn btn-primary btn-large&quot;&gt;
-      {{ i18n &quot;trucar_ara&quot; }}
-    &lt;/a&gt;
-    
-    &lt;p class=&quot;reserva-numero&quot;&gt;{{ $restaurant.telefon }}&lt;/p&gt;
-  &lt;/div&gt;
-  {{ end }}
 
-  {{/* WhatsApp */}}
-  {{ if $restaurant.reserves.sistemes.whatsapp }}
-  &lt;div class=&quot;reserva-card reserva-whatsapp&quot;&gt;
-    &lt;div class=&quot;reserva-icona&quot;&gt;💬&lt;/div&gt;
-    &lt;h3&gt;WhatsApp&lt;/h3&gt;
-    &lt;p class=&quot;reserva-descripcio&quot;&gt;Envia'ns un missatge&lt;/p&gt;
     
-    {{ $missatge := replace (replace (replace $restaurant.reserves.missatge_whatsapp.ca &quot;{persones}&quot; &quot;X&quot;) &quot;{data}&quot; &quot;DD/MM/YYYY&quot;) &quot;{hora}&quot; &quot;HH:MM&quot; }}
-    {{ $whatsappUrl := printf &quot;https://wa.me/%s?text=%s&quot; (replace $restaurant.whatsapp &quot;+&quot; &quot;&quot;) (querify &quot;text&quot; $missatge | replaceRE &quot;text=&quot; &quot;&quot;) }}
-    
-    &lt;a href=&quot;{{ $whatsappUrl }}&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;btn btn-primary btn-large&quot;&gt;
-      Obrir WhatsApp
-    &lt;/a&gt;
-    
-    &lt;p class=&quot;reserva-numero&quot;&gt;{{ $restaurant.whatsapp }}&lt;/p&gt;
-  &lt;/div&gt;
-  {{ end }}
-&lt;/div&gt;
-
-{{/* Informació addicional */}}
-&lt;div class=&quot;reserves-info&quot;&gt;
-  &lt;div class=&quot;info-card&quot;&gt;
-    &lt;h3&gt;🕐 Horari de reserves&lt;/h3&gt;
-    &lt;div class=&quot;info-content&quot;&gt;
-      {{ $horaris := .Site.Data.horaris.base }}
+    <div class="reserves-metodes">
       
-      &lt;div class=&quot;info-item&quot;&gt;
-        &lt;strong&gt;{{ i18n &quot;servei_menu&quot; }}&lt;/strong&gt;
-        &lt;p&gt;No cal reserva prèvia&lt;/p&gt;
-        &lt;p class=&quot;info-detail&quot;&gt;Dl, Dt, Dj, Dv: 13:00 - 15:30&lt;/p&gt;
-      &lt;/div&gt;
-      
-      &lt;div class=&quot;info-item&quot;&gt;
-        &lt;strong&gt;{{ i18n &quot;servei_carta&quot; }}&lt;/strong&gt;
-        &lt;p&gt;{{ i18n &quot;reserves_recomanades&quot; }}&lt;/p&gt;
-        &lt;p class=&quot;info-detail&quot;&gt;Dv, Ds: 19:00 - 22:00&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
 
-  &lt;div class=&quot;info-card&quot;&gt;
-    &lt;h3&gt;ℹ️ Informació important&lt;/h3&gt;
-    &lt;div class=&quot;info-content&quot;&gt;
-      &lt;ul class=&quot;info-llista&quot;&gt;
-        &lt;li&gt;Les reserves es confirmen per ordre d'arribada&lt;/li&gt;
-        &lt;li&gt;Taules per a grups de més de 6 persones, contactar directament&lt;/li&gt;
-        &lt;li&gt;Si no pots assistir, agrairem que ens ho comuniquis&lt;/li&gt;
-        &lt;li&gt;Màxim 2 hores de taula per grup&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class=&quot;info-card&quot;&gt;
-    &lt;h3&gt;📍 Com arribar&lt;/h3&gt;
-    &lt;div class=&quot;info-content&quot;&gt;
-      {{ $lang := .Site.Language.Lang }}
-      &lt;p&gt;&lt;strong&gt;{{ index $restaurant.adreca.complet $lang }}&lt;/strong&gt;&lt;/p&gt;
       
-      &lt;div class=&quot;transport-info&quot;&gt;
-        &lt;p&gt;&lt;strong&gt;Metro:&lt;/strong&gt; L4 (Jaume I) - 3 min caminant&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;Bus:&lt;/strong&gt; 45, 120, V15, V17&lt;/p&gt;
-      &lt;/div&gt;
+      <div class="reserva-card reserva-telefon">
+        <div class="reserva-icona">📞</div>
+        <h3>Telèfon</h3>
+        <p class="reserva-descripcio">La manera més ràpida i directa</p>
+        <a href="tel:&#43;34%2093%20412%2060%2082" class="btn btn-primary btn-large">
+          Trucar ara
+        </a>
+        <p class="reserva-numero">&#43;34 93 412 60 82</p>
+      </div>
       
-      &lt;a href=&quot;{{ $restaurant.google_maps.url }}&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; class=&quot;btn btn-outline&quot;&gt;
-        {{ i18n &quot;veure_mapa&quot; }}
-      &lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
 
-{{/* CTA final */}}
-&lt;div class=&quot;reserves-cta&quot;&gt;
-  &lt;p&gt;Tens alguna pregunta o petició especial?&lt;/p&gt;
-  &lt;a href=&quot;{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/contacte/&quot; class=&quot;btn btn-outline&quot;&gt;
-    {{ i18n &quot;contacte&quot; }}
-  &lt;/a&gt;
-&lt;/div&gt;
-</code></pre>
+      
+      <div class="reserva-card reserva-whatsapp">
+        <div class="reserva-icona">💬</div>
+        <h3>WhatsApp</h3>
+        <p class="reserva-descripcio">Envia&#39;ns un missatge</p>
+        
+        
+        
+        
+        
+        <a href="https://wa.me/34%2093%20412%2060%2082?text=Hola%2C&#43;voldria&#43;reservar&#43;per&#43;X&#43;persones&#43;el&#43;dia&#43;DD%2FMM%2FYYYY&#43;a&#43;les&#43;HH%3AMM."
+           target="_blank" rel="noopener" class="btn btn-primary btn-large">
+          Obrir WhatsApp
+        </a>
+        <p class="reserva-numero">&#43;34 93 412 60 82</p>
+      </div>
+      
+    </div>
+
+    
+    <div class="reserves-info">
+      <div class="info-card">
+        <h3>🕐 Horari de reserves</h3>
+        <div class="info-content">
+          <div class="info-item">
+            <strong>Menú del migdia</strong>
+            <p>No cal reserva prèvia</p>
+            <p class="info-detail">Dl, Dt, Dj, Dv: 13:00 - 15:30</p>
+          </div>
+          <div class="info-item">
+            <strong>Carta de nit</strong>
+            <p>Reserves recomanades</p>
+            <p class="info-detail">Dv, Ds: 19:00 - 22:00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>ℹ️ Informació important</h3>
+        <div class="info-content">
+          <ul class="info-llista">
+            
+            <li>
+</li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>📍 Com arribar</h3>
+        <div class="info-content">
+          
+          
+          <p><strong>Carrer de les Magdalenes, 23, 08003 Barcelona</strong></p>
+          <div class="transport-info">
+            <p><strong>Metro:</strong> L4 (Jaume I) - 3 min caminant</p>
+            <p><strong>Bus:</strong> 45, 120, V15, V17</p>
+          </div>
+          <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="btn btn-outline">
+            Veure al mapa
+          </a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="reserves-cta">
+      <p>Tens alguna pregunta o petició especial?</p>
+      <a href="//localhost:1313/ca/contacte/" class="btn btn-outline">
+        
+      </a>
+    </div>
+
   </div>
 </section>
-<style>
-.reserves-section {
-  padding: var(--spacing-xl) var(--spacing-md);
-  background: var(--color-gray-light);
-  min-height: 70vh;
-}
-
-.reserves-header {
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
-}
-
-.reserves-header h1 {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-.reserves-intro {
-  font-size: 1.125rem;
-  color: var(--color-gray-dark);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Mètodes de reserva */
-.reserves-metodes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.reserva-card {
-  background: white;
-  padding: var(--spacing-xl);
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  transition: transform var(--transition-normal);
-}
-
-.reserva-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.reserva-icona {
-  font-size: 4rem;
-  margin-bottom: var(--spacing-md);
-}
-
-.reserva-card h3 {
-  font-size: 1.75rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-.reserva-descripcio {
-  color: var(--color-gray-dark);
-  margin-bottom: var(--spacing-lg);
-}
-
-.reserva-numero {
-  margin-top: var(--spacing-md);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-gray-dark);
-}
-
-/* Informació addicional */
-.reserves-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
-}
-
-.info-card {
-  background: white;
-  padding: var(--spacing-lg);
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
-}
-
-.info-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: var(--spacing-md);
-  color: var(--color-black);
-}
-
-.info-content {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.info-item {
-  margin-bottom: var(--spacing-md);
-}
-
-.info-item:last-child {
-  margin-bottom: 0;
-}
-
-.info-item strong {
-  display: block;
-  font-size: 1.125rem;
-  margin-bottom: 0.25rem;
-  color: var(--color-accent);
-}
-
-.info-detail {
-  font-size: 0.9rem;
-  color: var(--color-gray-dark);
-  margin-top: 0.25rem;
-}
-
-.info-llista {
-  list-style: none;
-  padding: 0;
-}
-
-.info-llista li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.info-llista li:before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--color-accent);
-  font-weight: bold;
-}
-
-.transport-info {
-  margin: var(--spacing-md) 0;
-  padding: var(--spacing-md);
-  background: var(--color-gray-light);
-  border-radius: 6px;
-}
-
-.transport-info p {
-  margin-bottom: 0.5rem;
-}
-
-.transport-info p:last-child {
-  margin-bottom: 0;
-}
-
-/* CTA final */
-.reserves-cta {
-  text-align: center;
-  padding: var(--spacing-xl);
-  background: white;
-  border-radius: 12px;
-  box-shadow: var(--shadow-sm);
-}
-
-.reserves-cta p {
-  font-size: 1.25rem;
-  margin-bottom: var(--spacing-md);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .reserves-header h1 {
-    font-size: 2rem;
-  }
-  
-  .reserves-metodes {
-    grid-template-columns: 1fr;
-  }
-  
-  .reserves-info {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-
 
   </main>
 
@@ -470,7 +283,7 @@
       
       
       <div class="footer-col footer-reserves">
-        <a href="https://112books.github.io/machiroku-web/ca/reserves/" class="btn btn-primary btn-block">
+        <a href="//localhost:1313/ca/reserves/" class="btn btn-primary btn-block">
           Fer una reserva
         </a>
         
@@ -488,11 +301,11 @@
     
     <div class="footer-bottom">
       <div class="footer-bottom-left">
-        <img src="https://112books.github.io/machiroku-web/logos/logo.svg" alt="Machiroku" class="footer-logo">
+        <img src="//localhost:1313/logos/logo.svg" alt="Machiroku" class="footer-logo">
         <div class="footer-links">
-          <a href="https://112books.github.io/machiroku-web/ca/legals/">Avís legal</a>
-          <a href="https://112books.github.io/machiroku-web/ca/privacitat/">Política de privacitat</a>
-          <a href="https://112books.github.io/machiroku-web/ca/cookies/">Política de cookies</a>
+          <a href="//localhost:1313/ca/legals/">Avís legal</a>
+          <a href="//localhost:1313/ca/privacitat/">Política de privacitat</a>
+          <a href="//localhost:1313/ca/cookies/">Política de cookies</a>
         </div>
       </div>
       
@@ -506,8 +319,8 @@
   </footer>
   
   
-  <script src="https://112books.github.io/machiroku-web/js/main.js" defer></script>
-  <script src="https://112books.github.io/machiroku-web/js/estat-restaurant.js" defer></script>
+  <script src="//localhost:1313/js/main.js" defer></script>
+  <script src="//localhost:1313/js/estat-restaurant.js" defer></script>
   
   
   <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--color-black); border-top: 1px solid var(--color-border); padding: var(--spacing-md) var(--spacing-lg); z-index: 1000;">
@@ -565,7 +378,7 @@ function rejectCookies() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="' + 'https:\/\/112books.github.io\/machiroku-web\/' + lang + '/cookies/" style="color: var(--color-accent);">' + t.link + '</a>';
+  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="' + '\/\/localhost:1313\/' + lang + '/cookies/" style="color: var(--color-accent);">' + t.link + '</a>';
   const btns = document.querySelectorAll('#cookie-banner .btn');
   btns[0].textContent = t.reject;
   btns[1].textContent = t.accept;

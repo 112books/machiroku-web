@@ -820,3 +820,198 @@ a:hover {
     text-align: left;
   }
 }
+/* ============================================================
+   16. PÀGINA DE RESERVES
+   ============================================================ */
+.reserves-section {
+  padding: var(--spacing-xl) 0;
+}
+
+.reserves-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.reserves-header h1 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.reserves-intro-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+/* 3 cards horitzontals */
+.reserves-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.reserva-card {
+  background: var(--card-overlay);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(139, 26, 26, 0.3);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-sm);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.reserva-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.reserva-icona {
+  font-size: 2.5rem;
+}
+
+.reserva-card h3 {
+  font-size: 1.3rem;
+  color: var(--color-black);
+  margin-bottom: 0;
+}
+
+.reserva-descripcio {
+  color: var(--color-gray-dark);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-sm);
+  flex: 1;
+}
+
+/* Horaris dins la card */
+.horaris-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: var(--spacing-xs);
+}
+
+.horari-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid var(--color-accent);
+  text-align: left;
+  gap: 0.1rem;
+}
+
+.horari-dies {
+  font-size: 0.8rem;
+  color: var(--color-gray-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.horari-hores {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.horari-servei {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.horari-tancat .horari-hores {
+  color: var(--color-gray-mid);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.horari-tancat {
+  border-left-color: var(--color-gray-mid);
+}
+
+/* Mapa + info */
+.reserves-mapa {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: var(--spacing-lg);
+  align-items: start;
+  background: var(--card-overlay);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(139, 26, 26, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.mapa-embed {
+  height: 380px;
+}
+
+.mapa-embed iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mapa-info {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.mapa-info h3 {
+  font-size: 1.2rem;
+  color: var(--color-black);
+  margin-bottom: 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.mapa-adreca {
+  font-size: 1rem;
+  color: var(--color-gray-dark);
+  margin: 0;
+}
+
+.transport-info {
+  padding: var(--spacing-sm);
+  background: rgba(139, 26, 26, 0.06);
+  border-radius: 6px;
+  border-left: 3px solid var(--color-accent);
+}
+
+.transport-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-gray-dark);
+  padding: 0.2rem 0;
+}
+
+/* Botons arrodonits a tot el web */
+.btn {
+  border-radius: 6px !important;
+}
+
+/* Responsive reserves */
+@media (max-width: 768px) {
+  .reserves-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .reserves-mapa {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa-embed {
+    height: 260px;
+  }
+}

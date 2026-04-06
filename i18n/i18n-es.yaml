@@ -55,10 +55,14 @@ begudes: "Bebidas"
 # Reserves
 fer_reserva: "Hacer una reserva"
 trucar_ara: "Llamar ahora"
-whatsapp: "WhatsApp"
-telefon: "Teléfono"
-email: "Correo electrónico"
-reserves_recomanades: "Reservas recomendadas"
+obrir_whatsapp: "Abrir WhatsApp"
+veure_mapa: "Ver en el mapa"
+estat_tancat: "Cerrado"
+reserves_intro: "Machiroku es un restaurante pequeño y familiar en el corazón de Barcelona. Para mantener nuestra esencia y la calidad del servicio, seguimos estas pautas de reserva."
+reserves_carta_text: "Aceptamos reservas para cenas (viernes y sábado). Llámanos o escríbenos por WhatsApp."
+reserves_menu_text: "No es necesaria reserva previa. Atendemos por orden de llegada."
+telefon_descripcio: "La manera más rápida y directa"
+whatsapp_descripcio: "Envíanos un mensaje"
 
 # Al·lèrgens
 alergics: "Alérgenos"

@@ -161,8 +161,6 @@
                 href="https://112books.github.io/machiroku-web/en/privacitat/"
                 />
   </url><url>
-    <loc>https://112books.github.io/machiroku-web/en/reserves-en/</loc>
-  </url><url>
     <loc>https://112books.github.io/machiroku-web/en/reserves/</loc>
     <xhtml:link
                 rel="alternate"
@@ -179,6 +177,8 @@
                 hreflang="en-GB"
                 href="https://112books.github.io/machiroku-web/en/reserves/"
                 />
+  </url><url>
+    <loc>https://112books.github.io/machiroku-web/en/reserves-en/</loc>
   </url><url>
     <loc>https://112books.github.io/machiroku-web/en/tags/</loc>
     <xhtml:link

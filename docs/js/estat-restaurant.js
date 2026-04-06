@@ -87,7 +87,7 @@ class EstatRestaurant {
     const dia = this.getDiaSetmana();
     const horaActual = this.getHoraActual();
     
-    let horarisDia = this.horaris?.base?.[dia] || [];
+    let horarisDia = this.horaris && this.horaris.base && this.horaris.base[dia] || [];
     
     // Si hi ha excepció amb horari especial, usar-lo
     if (excepcio && excepcio.estat === 'excepcio') {
@@ -128,7 +128,7 @@ class EstatRestaurant {
     const dies = ['dilluns', 'dimarts', 'dimecres', 'dijous', 'divendres', 'dissabte', 'diumenge'];
     
     // Buscar avui
-    const horarisDiaActual = this.horaris?.base?.[diaActual] || [];
+    const horarisDiaActual = this.horaris && this.horaris.base && this.horaris.base[diaActual] || [];
     for (const franja of horarisDiaActual) {
       const inici = this.parseHora(franja.inici);
       if (inici > horaActual) {
@@ -145,7 +145,7 @@ class EstatRestaurant {
     for (let i = 1; i <= 7; i++) {
       const indexDia = (indexDiaActual + i) % 7;
       const nomDia = dies[indexDia];
-      const horarisDia = this.horaris?.base?.[nomDia] || [];
+      const horarisDia = this.horaris && this.horaris.base && this.horaris.base[nomDia] || [];
       
       if (horarisDia.length > 0) {
         return {

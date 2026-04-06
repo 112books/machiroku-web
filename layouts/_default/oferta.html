@@ -15,7 +15,7 @@
         {{ $menus := $menusData.menus }}
         {{ range sort $menus "ordre" }}
           {{ if .actiu }}
-            {{ partial "menu-card.html" . }}
+            {{ partial "menu-card.html" (dict "menu" . "lang" $.Site.Language.Lang) }}
           {{ end }}
         {{ end }}
       </div>
@@ -51,7 +51,7 @@
           <h3 class="categoria-nom">{{ $categoriaNom }}</h3>
           <div class="plats-grid">
             {{ range sort $platsActius "ordre" }}
-              {{ partial "plat-card.html" . }}
+              {{ partial "plat-card.html" (dict "plat" . "lang" $.Site.Language.Lang) }}
             {{ end }}
           </div>
         </div>

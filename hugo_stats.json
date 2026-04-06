@@ -37,6 +37,8 @@
     ],
     "classes": [
       "active",
+      "alergic-badge",
+      "alergic-icona",
       "alergic-item",
       "alergics-info",
       "alergics-label",

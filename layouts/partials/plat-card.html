@@ -5,7 +5,8 @@
   On . és un plat individual del data/[lang]/plats.yaml
 */}}
 
-{{ $plat := . }}
+{{ $plat := .plat }}
+{{ $lang := .lang }}
 
 <article class="plat-card {{ if not $plat.actiu }}plat-inactiu{{ end }} {{ if $plat.destacat }}plat-destacat{{ end }}" 
          data-plat-id="{{ $plat.id }}"
@@ -37,21 +38,18 @@
     {{/* Al·lèrgens */}}
     {{ if $plat.alergics }}
     <div class="plat-alergics">
+      {{ $alergicsLlista := (index (hugo.Data) $lang).alergics.alergics }}
       {{ range $alergicId := $plat.alergics }}
-        {{ $lang := $.Site.Language.Lang }}
-        {{ $alergicsData := $.Site.Data.ca }}
-        {{ if $alergicsData }}
-          {{ $alergicsLlista := $alergicsData.alergics.alergics }}
-          {{ range $alergicsLlista }}
-            {{ if eq .id $alergicId }}
-        <span class="alergic-icona" title="{{ index .nom $lang }}">
-          {{ .icona }}
-        </span>
-            {{ end }}
+        {{ range $alergicsLlista }}
+          {{ if eq .id $alergicId }}
+          <span class="alergic-icona" title="{{ index .nom $lang }}">
+            {{ .icona }}
+          </span>
           {{ end }}
         {{ end }}
       {{ end }}
     </div>
     {{ end }}
+
   </div>
 </article>

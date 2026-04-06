@@ -5,7 +5,8 @@
   On . és un menú individual del data/[lang]/menus.yaml
 */}}
 
-{{ $menu := . }}
+{{ $menu := .menu }}
+{{ $lang := .lang }}
 
 <article class="menu-card {{ if not $menu.actiu }}menu-inactiu{{ end }}" data-menu-id="{{ $menu.id }}">
   {{/* Foto opcional */}}
@@ -39,17 +40,13 @@
     <div class="menu-alergics">
       <span class="alergics-label">{{ i18n "alergics" }}:</span>
       <div class="alergics-llista">
+        {{ $alergicsLlista := (index (hugo.Data) $lang).alergics.alergics }}
         {{ range $alergicId := $menu.alergics }}
-          {{ $lang := $.Site.Language.Lang }}
-          {{ $alergicsData := $.Site.Data.ca }}   
-          {{ if $alergicsData }}
-            {{ $alergicsLlista := $alergicsData.alergics.alergics }}
-            {{ range $alergicsLlista }}
-              {{ if eq .id $alergicId }}
-          <span class="alergic-badge" title="{{ index .descripcio $lang }}">
-            {{ .icona }} {{ index .nom $lang }}
-          </span>
-              {{ end }}
+          {{ range $alergicsLlista }}
+            {{ if eq .id $alergicId }}
+            <span class="alergic-badge" title="{{ index .descripcio $lang }}">
+              {{ .icona }} {{ index .nom $lang }}
+            </span>
             {{ end }}
           {{ end }}
         {{ end }}

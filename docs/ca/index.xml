@@ -61,7 +61,7 @@
       <link>https://112books.github.io/machiroku-web/ca/oferta/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/ca/oferta/</guid>
-      <description>&lt;p&gt;{{/* Secció de menús del migdia */}}&lt;/p&gt;&#xA;&lt;section class=&#34;oferta-section menus-section&#34;&gt;&#xA;  &lt;div class=&#34;container&#34;&gt;&#xA;    &lt;div class=&#34;section-header&#34;&gt;&#xA;      &lt;h2&gt;{{ i18n &#34;servei_menu&#34; }}&lt;/h2&gt;&#xA;      &lt;p class=&#34;section-intro&#34;&gt;De dilluns a divendres de 13:00 a 15:30h&lt;/p&gt;&#xA;    &lt;/div&gt;&#xA;&lt;pre&gt;&lt;code&gt;{{/* Grid de menús */}}&#xA;&amp;lt;div class=&amp;quot;menus-grid&amp;quot;&amp;gt;&#xA;  {{ $lang := .Site.Language.Lang }}&#xA;  {{ $menusData := index .Site.Data $lang &amp;quot;menus&amp;quot; }}&#xA;  {{ $menus := $menusData.menus }}&#xA;  &#xA;  {{ range sort $menus &amp;quot;ordre&amp;quot; }}&#xA;    {{ if .actiu }}&#xA;      {{ partial &amp;quot;menu-card.html&amp;quot; . }}&#xA;    {{ end }}&#xA;  {{ end }}&#xA;&amp;lt;/div&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/section&gt;&#xA;&lt;p&gt;{{/* Secció de carta nocturna */}}&lt;/p&gt;</description>
+      <description></description>
     </item>
     <item>
       <title>Privacitat</title>

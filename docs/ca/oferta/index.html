@@ -110,179 +110,1246 @@
 
   <main id="main-content">
     
-<p>{{/* Secció de menús del migdia */}}</p>
-<section class="oferta-section menus-section">
-  <div class="container">
-    <div class="section-header">
-      <h2>{{ i18n "servei_menu" }}</h2>
-      <p class="section-intro">De dilluns a divendres de 13:00 a 15:30h</p>
-    </div>
-<pre><code>{{/* Grid de menús */}}
-&lt;div class=&quot;menus-grid&quot;&gt;
-  {{ $lang := .Site.Language.Lang }}
-  {{ $menusData := index .Site.Data $lang &quot;menus&quot; }}
-  {{ $menus := $menusData.menus }}
+<div class="oferta-page">
+
   
-  {{ range sort $menus &quot;ordre&quot; }}
-    {{ if .actiu }}
-      {{ partial &quot;menu-card.html&quot; . }}
-    {{ end }}
-  {{ end }}
-&lt;/div&gt;
-</code></pre>
+  <section class="oferta-section menus-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Menú del migdia</h2>
+        <p class="section-intro"></p>
+      </div>
+      <div class="menus-grid">
+        
+        
+        
+        
+          
+            
+
+
+
+
+<article class="menu-card " data-menu-id="menu-sushi">
+  
+  
+  <div class="menu-foto">
+    <img src="https://112books.github.io/machiroku-web/images/menus/sushi.jpg" alt="Menú Sushi" loading="lazy">
   </div>
-</section>
-<p>{{/* Secció de carta nocturna */}}</p>
-<section class="oferta-section carta-section">
-  <div class="container">
-    <div class="section-header">
-      <h2>{{ i18n "servei_carta" }}</h2>
-      <p class="section-intro">Divendres i dissabte de 19:00 a 22:00h</p>
-<pre><code>  &lt;div class=&quot;cta-reserves&quot;&gt;
-    &lt;a href=&quot;{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/reserves/&quot; class=&quot;btn btn-primary&quot;&gt;
-      {{ i18n &quot;fer_reserva&quot; }}
-    &lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-{{/* Mostrar plats per categoria */}}
-{{ $lang := .Site.Language.Lang }}
-{{ $platsData := index .Site.Data $lang &quot;plats&quot; }}
-{{ $categories := $platsData.categories }}
-{{ $plats := $platsData.plats }}
-
-{{ range sort $categories &quot;ordre&quot; }}
-  {{ $categoriaId := .id }}
-  {{ $categoriaNom := .nom }}
   
-  {{/* Filtrar plats d'aquesta categoria */}}
-  {{ $platsCategoria := where $plats &quot;categoria&quot; $categoriaId }}
-  {{ $platsActius := where $platsCategoria &quot;actiu&quot; true }}
-  
-  {{ if $platsActius }}
-  &lt;div class=&quot;categoria-section&quot;&gt;
-    &lt;h3 class=&quot;categoria-nom&quot;&gt;{{ $categoriaNom }}&lt;/h3&gt;
+
+  <div class="menu-contingut">
     
-    &lt;div class=&quot;plats-grid&quot;&gt;
-      {{ range sort $platsActius &quot;ordre&quot; }}
-        {{ partial &quot;plat-card.html&quot; . }}
-      {{ end }}
-    &lt;/div&gt;
-  &lt;/div&gt;
-  {{ end }}
-{{ end }}
+    <h3 class="menu-nom">Menú Sushi</h3>
 
-{{/* Informació d'al·lèrgens */}}
-&lt;div class=&quot;alergics-info&quot;&gt;
-  &lt;h4&gt;{{ i18n &quot;info_alergics&quot; }}&lt;/h4&gt;
-  &lt;p&gt;{{ i18n &quot;consultar_alergics&quot; }}&lt;/p&gt;
-  
-  {{/* Llegenda d'al·lèrgens */}}
-  &lt;div class=&quot;alergics-llegenda&quot;&gt;
-    {{ $alergicsData := index .Site.Data $lang &quot;alergics&quot; }}
-    {{ range $alergicsData.alergics }}
-    &lt;span class=&quot;alergic-item&quot;&gt;
-      &lt;span class=&quot;icona&quot;&gt;{{ .icona }}&lt;/span&gt;
-      &lt;span class=&quot;nom&quot;&gt;{{ index .nom $lang }}&lt;/span&gt;
-    &lt;/span&gt;
-    {{ end }}
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+    
+    
+    <p class="menu-descripcio">El nostre clàssic menú japonès amb varietat de sushi fresc</p>
+    
+
+    
+    
+    <ul class="menu-plats">
+      
+      <li>Sopa miso</li>
+      
+      <li>Amanida wakame</li>
+      
+      <li>8 peces de sushi variats (nigiri i maki)</li>
+      
+      <li>Postre casolà</li>
+      
+      <li>Te verd</li>
+      
+    </ul>
+    
+
+    
+    
+    <div class="menu-alergics">
+      <span class="alergics-label">Al·lèrgens:</span>
+      <div class="alergics-llista">
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    
+
+    
+    <div class="menu-footer">
+      
+      <span class="menu-preu">14.5€</span>
+      
+
+      
+      
+      <span class="menu-disponibilitat">
+        13:00 - 15:30
+      </span>
+      
+    </div>
+
+    
+    
   </div>
-</section>
-<style>
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
+</article>
+          
+        
+          
+            
 
-.oferta-section {
-  padding: var(--spacing-xl) 0;
-}
 
-.carta-section {
-  background: var(--color-gray-light);
-}
 
-.section-header {
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
-}
 
-.section-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-.section-intro {
-  font-size: 1.125rem;
-  color: var(--color-gray-dark);
-  margin-bottom: var(--spacing-md);
-}
-
-.cta-reserves {
-  margin-top: var(--spacing-lg);
-}
-
-.categoria-section {
-  margin-bottom: var(--spacing-xl);
-}
-
-.categoria-nom {
-  font-size: 2rem;
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--color-accent);
-  display: inline-block;
-}
-
-.alergics-info {
-  margin-top: var(--spacing-xl);
-  padding: var(--spacing-lg);
-  background: white;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.alergics-info h4 {
-  font-size: 1.5rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-.alergics-llegenda {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--spacing-md);
-  margin-top: var(--spacing-md);
-}
-
-.alergic-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: var(--color-gray-light);
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-
-.alergic-item .icona {
-  font-size: 1.25rem;
-}
-
-@media (max-width: 768px) {
-  .section-header h2 {
-    font-size: 2rem;
-  }
+<article class="menu-card " data-menu-id="menu-tendon">
   
-  .categoria-nom {
-    font-size: 1.5rem;
-  }
-}
-</style>
+  
+  <div class="menu-foto">
+    <img src="https://112books.github.io/machiroku-web/images/menus/tendon.jpg" alt="Menú Tendon" loading="lazy">
+  </div>
+  
+
+  <div class="menu-contingut">
+    
+    <h3 class="menu-nom">Menú Tendon</h3>
+
+    
+    
+    <p class="menu-descripcio">Tempura cruixent sobre llit d&#39;arròs amb salsa especial</p>
+    
+
+    
+    
+    <ul class="menu-plats">
+      
+      <li>Sopa miso</li>
+      
+      <li>Amanida de col i api japonès</li>
+      
+      <li>Tendon (tempura de gambeta i verdures sobre arròs)</li>
+      
+      <li>Te verd</li>
+      
+    </ul>
+    
+
+    
+    
+    <div class="menu-alergics">
+      <span class="alergics-label">Al·lèrgens:</span>
+      <div class="alergics-llista">
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    
+
+    
+    <div class="menu-footer">
+      
+      <span class="menu-preu">13.5€</span>
+      
+
+      
+      
+      <span class="menu-disponibilitat">
+        13:00 - 15:30
+      </span>
+      
+    </div>
+
+    
+    
+  </div>
+</article>
+          
+        
+          
+            
+
+
+
+
+<article class="menu-card " data-menu-id="menu-salmon-don">
+  
+  
+  <div class="menu-foto">
+    <img src="https://112books.github.io/machiroku-web/images/menus/salmon-don.jpg" alt="Menú Salmon Don" loading="lazy">
+  </div>
+  
+
+  <div class="menu-contingut">
+    
+    <h3 class="menu-nom">Menú Salmon Don</h3>
+
+    
+    
+    <p class="menu-descripcio">Salmó fresc sobre arròs amb tocs de sèsam i salsa teriyaki</p>
+    
+
+    
+    
+    <ul class="menu-plats">
+      
+      <li>Sopa miso</li>
+      
+      <li>Amanida wakame</li>
+      
+      <li>Salmon don (salmó sobre arròs amb ou i sèsam)</li>
+      
+      <li>Te verd</li>
+      
+    </ul>
+    
+
+    
+    
+    <div class="menu-alergics">
+      <span class="alergics-label">Al·lèrgens:</span>
+      <div class="alergics-llista">
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    
+
+    
+    <div class="menu-footer">
+      
+      <span class="menu-preu">14€</span>
+      
+
+      
+      
+      <span class="menu-disponibilitat">
+        13:00 - 15:30
+      </span>
+      
+    </div>
+
+    
+    
+  </div>
+</article>
+          
+        
+          
+            
+
+
+
+
+<article class="menu-card " data-menu-id="menu-unaju">
+  
+  
+  <div class="menu-foto">
+    <img src="https://112books.github.io/machiroku-web/images/menus/unaju.jpg" alt="Menú Unaju" loading="lazy">
+  </div>
+  
+
+  <div class="menu-contingut">
+    
+    <h3 class="menu-nom">Menú Unaju</h3>
+
+    
+    
+    <p class="menu-descripcio">Anguila glassada amb salsa kabayaki, tradició japonesa</p>
+    
+
+    
+    
+    <ul class="menu-plats">
+      
+      <li>Sopa miso</li>
+      
+      <li>Encurtits japonesos</li>
+      
+      <li>Unaju (anguila glassada sobre arròs)</li>
+      
+      <li>Te verd</li>
+      
+    </ul>
+    
+
+    
+    
+    <div class="menu-alergics">
+      <span class="alergics-label">Al·lèrgens:</span>
+      <div class="alergics-llista">
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    
+
+    
+    <div class="menu-footer">
+      
+      <span class="menu-preu">15.5€</span>
+      
+
+      
+      
+      <span class="menu-disponibilitat">
+        13:00 - 15:30
+      </span>
+      
+    </div>
+
+    
+    
+  </div>
+</article>
+          
+        
+          
+            
+
+
+
+
+<article class="menu-card " data-menu-id="plat-dia">
+  
+  
+
+  <div class="menu-contingut">
+    
+    <h3 class="menu-nom">Plat del dia</h3>
+
+    
+    
+    <p class="menu-descripcio">Proposta diària segons producte de mercat. Consultar disponibilitat.</p>
+    
+
+    
+    
+    <ul class="menu-plats">
+      
+      <li>Segons mercat del dia</li>
+      
+    </ul>
+    
+
+    
+    
+
+    
+    <div class="menu-footer">
+      
+      <span class="menu-preu-variable">Si tens al·lèrgies o intoleràncies, consulta&#39;ns abans de demanar.</span>
+      
+
+      
+      
+      <span class="menu-disponibilitat">
+        13:00 - 15:30
+      </span>
+      
+    </div>
+
+    
+    
+    <p class="menu-nota">Preu i contingut variable. Preguntar al restaurant.</p>
+    
+  </div>
+</article>
+          
+        
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="oferta-section carta-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Carta de nit</h2>
+        <p class="section-intro"></p>
+        <div class="cta-reserves">
+          <a href="https://112books.github.io/machiroku-web/ca/reserves/" class="btn btn-primary">
+            Fer una reserva
+          </a>
+        </div>
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+        
+        
+        
+        
+        
+        <div class="categoria-section">
+          <h3 class="categoria-nom">Entrants</h3>
+          <div class="plats-grid">
+            
+              
+
+
+
+
+<article class="plat-card  " 
+         data-plat-id="edamame"
+         data-categoria="entrants">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Edamame</h4>
+      <span class="plat-preu">4.5€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">Soja verda al vapor amb sal marina de Mallorca</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+              
+
+
+
+
+<article class="plat-card  plat-destacat" 
+         data-plat-id="gyozas-porc"
+         data-categoria="entrants">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Gyozas de porc</h4>
+      <span class="plat-preu">7.8€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">6 gyozas farcides de porc amb verdures, servides amb salsa ponzu</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+              
+
+
+
+
+<article class="plat-card  " 
+         data-plat-id="takoyaki"
+         data-categoria="entrants">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Takoyaki</h4>
+      <span class="plat-preu">8.5€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">Boletes de polp a l&#39;estil d&#39;Osaka amb bonito i maionesa japonesa</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+          </div>
+        </div>
+        
+      
+        
+        
+        
+        
+        
+        <div class="categoria-section">
+          <h3 class="categoria-nom">Amanides</h3>
+          <div class="plats-grid">
+            
+              
+
+
+
+
+<article class="plat-card  " 
+         data-plat-id="wakame"
+         data-categoria="amanides">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Amanida wakame</h4>
+      <span class="plat-preu">5.5€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">Alga wakame amb vinagreta de sèsam</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+              
+
+
+
+
+<article class="plat-card  plat-destacat" 
+         data-plat-id="amanida-tataki"
+         data-categoria="amanides">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Amanida amb tataki de tonyina</h4>
+      <span class="plat-preu">12.5€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">Mescla de fulles fresques amb tonyina sellada i vinagreta de yuzu</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+          </div>
+        </div>
+        
+      
+        
+        
+        
+        
+        
+        <div class="categoria-section">
+          <h3 class="categoria-nom">Sashimi</h3>
+          <div class="plats-grid">
+            
+              
+
+
+
+
+<article class="plat-card  plat-destacat" 
+         data-plat-id="sashimi-salmon"
+         data-categoria="sashimi">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Sashimi de salmó</h4>
+      <span class="plat-preu">16.5€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">8 talls de salmó fresc de Noruega</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+              
+
+
+
+
+<article class="plat-card  plat-destacat" 
+         data-plat-id="sashimi-tonyina"
+         data-categoria="sashimi">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Sashimi de tonyina</h4>
+      <span class="plat-preu">18€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">8 talls de tonyina vermella de qualitat superior</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+              
+
+
+
+
+<article class="plat-card  " 
+         data-plat-id="sashimi-mix"
+         data-categoria="sashimi">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Sashimi variats</h4>
+      <span class="plat-preu">19.5€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">Selecció de 12 peces: salmó, tonyina, lluç i daurada</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+          </div>
+        </div>
+        
+      
+        
+        
+        
+        
+        
+        <div class="categoria-section">
+          <h3 class="categoria-nom">Nigiri i Maki</h3>
+          <div class="plats-grid">
+            
+              
+
+
+
+
+<article class="plat-card  " 
+         data-plat-id="nigiri-mix"
+         data-categoria="nigiri-maki">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Nigiri variats</h4>
+      <span class="plat-preu">14€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">8 peces de nigiri amb peixos del dia</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+              
+
+
+
+
+<article class="plat-card  " 
+         data-plat-id="california-roll"
+         data-categoria="nigiri-maki">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">California roll</h4>
+      <span class="plat-preu">9.5€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">8 peces amb crab, alvocat i maionesa japonesa</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+          </div>
+        </div>
+        
+      
+        
+        
+        
+        
+        
+        <div class="categoria-section">
+          <h3 class="categoria-nom">Plats calents</h3>
+          <div class="plats-grid">
+            
+              
+
+
+
+
+<article class="plat-card  " 
+         data-plat-id="tempura-mix"
+         data-categoria="calents">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Tempura variada</h4>
+      <span class="plat-preu">13.5€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">Gambeta, calamar i verdures de temporada amb salsa tentsuyu</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+              
+
+
+
+
+<article class="plat-card  " 
+         data-plat-id="yakisoba"
+         data-categoria="calents">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Yakisoba de vedella</h4>
+      <span class="plat-preu">12€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">Fideus sallejats amb vedella, col i bròquil</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+              
+
+
+
+
+<article class="plat-card  plat-destacat" 
+         data-plat-id="teriyaki-salmon"
+         data-categoria="calents">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Salmó teriyaki</h4>
+      <span class="plat-preu">16€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">Llom de salmó amb salsa teriyaki casolana i verdures</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+          </div>
+        </div>
+        
+      
+        
+        
+        
+        
+        
+        <div class="categoria-section">
+          <h3 class="categoria-nom">Postres</h3>
+          <div class="plats-grid">
+            
+              
+
+
+
+
+<article class="plat-card  " 
+         data-plat-id="mochi"
+         data-categoria="postres">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Mochi</h4>
+      <span class="plat-preu">5€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">3 unitats de mochi amb farcits variats</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+              
+
+
+
+
+<article class="plat-card  " 
+         data-plat-id="dorayaki"
+         data-categoria="postres">
+  
+  
+  
+
+  <div class="plat-contingut">
+    
+    <div class="plat-header">
+      <h4 class="plat-nom">Dorayaki casolà</h4>
+      <span class="plat-preu">4.5€</span>
+    </div>
+
+    
+    
+    <p class="plat-descripcio">Pastís tradicional farcit de pasta de mongeta vermella</p>
+    
+
+    
+    
+    <div class="plat-alergics">
+      
+        
+        
+        
+      
+        
+        
+        
+      
+    </div>
+    
+  </div>
+</article>
+            
+          </div>
+        </div>
+        
+      
+
+      
+      
+      
+      <div class="alergics-info">
+        <h4>Informació d&#39;al·lèrgens</h4>
+        <p>Si tens al·lèrgies o intoleràncies, consulta&#39;ns abans de demanar.</p>
+        <div class="alergics-llegenda">
+          
+          <span class="alergic-item">
+            <span class="icona">🌾</span>
+            <span class="nom">Gluten</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🦐</span>
+            <span class="nom">Crustacis</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🥚</span>
+            <span class="nom">Ou</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🐟</span>
+            <span class="nom">Peix</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🥜</span>
+            <span class="nom">Cacauets</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🫘</span>
+            <span class="nom">Soja</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🥛</span>
+            <span class="nom">Làctics</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🌰</span>
+            <span class="nom">Fruits secs</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🥬</span>
+            <span class="nom">Api</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🌭</span>
+            <span class="nom">Mostassa</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">⚪</span>
+            <span class="nom">Sèsam</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🍷</span>
+            <span class="nom">Sulfits</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🐚</span>
+            <span class="nom">Mol·luscos</span>
+          </span>
+          
+          <span class="alergic-item">
+            <span class="icona">🫛</span>
+            <span class="nom">Altramossos</span>
+          </span>
+          
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
 
   </main>
 

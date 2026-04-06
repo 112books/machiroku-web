@@ -41,7 +41,7 @@
       <div class="alergics-llista">
         {{ range $alergicId := $menu.alergics }}
           {{ $lang := $.Site.Language.Lang }}
-          {{ $alergicsData := index $.Site.Data $lang }}
+          {{ $alergicsData := $.Site.Data.ca }}   
           {{ if $alergicsData }}
             {{ $alergicsLlista := $alergicsData.alergics.alergics }}
             {{ range $alergicsLlista }}

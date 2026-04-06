@@ -22,11 +22,11 @@
       <description>&lt;p&gt;{{/* Mateix contingut que contacte.md en català - usa i18n */}}&#xA;{{ .Content }}&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Contact</title>
+      <title>Contacte</title>
       <link>https://112books.github.io/machiroku-web/en/contacte/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://112books.github.io/machiroku-web/en/contacte/</guid>
-      <description>&lt;h1 id=&#34;contact&#34;&gt;Contact&lt;/h1&gt;&#xA;&lt;h2 id=&#34;address&#34;&gt;Address&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Machiroku&lt;/strong&gt;&#xA;Carrer de les Magdalenes 23&#xA;08003 Barcelona&lt;/p&gt;&#xA;&lt;h2 id=&#34;phone&#34;&gt;Phone&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#ZgotmplZ&#34;&gt;+34 934 126 082&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;email&#34;&gt;Email&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;mailto:machiroku@machiroku.com&#34;&gt;machiroku@machiroku.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;location&#34;&gt;Location&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://maps.google.com/?q=Machiroku&amp;#43;Barcelona&#34;&gt;View on Google Maps&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;where-we-are&#34;&gt;Where we are&lt;/h2&gt;&#xA;&lt;p&gt;We are in the Gothic Quarter, near Barcelona Cathedral.&lt;/p&gt;</description>
+      <description></description>
     </item>
     <item>
       <title>Cookies</title>

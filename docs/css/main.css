@@ -406,16 +406,15 @@ a:hover {
   padding: var(--spacing-xl) var(--spacing-md);
 }
 /* Títol de pàgina — uniforme a totes les pàgines */
+.page-title,
 .reserves-header h1,
-.contacte-header h1,
-.sobre-hero-overlay h1,
-.oferta-page h1 {
+.contacte-header h1 {
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-white) !important;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-sm);
   border-bottom: 3px solid var(--color-accent);
   display: inline-block;

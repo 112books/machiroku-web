@@ -1,102 +1,83 @@
 # Menús del migdia - CATALÀ
-# Cada menú es mostra com a card a /oferta/
+# Disponibles de dilluns a divendres de 13:00 a 15:30h
 
 menus:
   - id: "menu-sushi"
     nom: "Menú Sushi"
     ordre: 1
     actiu: true
-    preu: 14.50
-    foto: "/images/menus/sushi.jpg"  # Opcional
-    descripcio: "El nostre clàssic menú japonès amb varietat de sushi fresc"
+    preu: 16.00
+    foto: ""
+    descripcio: "Clàssic menú japonès amb sushi fresc variat"
     plats:
-      - "Sopa miso"
-      - "Amanida wakame"
-      - "8 peces de sushi variats (nigiri i maki)"
-      - "Postre casolà"
-      - "Te verd"
+      - "Sushi moriawase (5 nigiri i 4 maki)"
+      - "Wafu sarada (amanida amb salsa japonesa)"
+      - "Sopa de miso"
     alergics:
       - "peix"
       - "gluten"
       - "soja"
       - "sesam"
     disponibilitat:
-      dies: ["dilluns", "dimarts", "dijous", "divendres"]
-      horari: "13:00 - 15:30"
-
-  - id: "menu-tendon"
-    nom: "Menú Tendon"
-    ordre: 2
-    actiu: true
-    preu: 13.50
-    foto: "/images/menus/tendon.jpg"
-    descripcio: "Tempura cruixent sobre llit d'arròs amb salsa especial"
-    plats:
-      - "Sopa miso"
-      - "Amanida de col i api japonès"
-      - "Tendon (tempura de gambeta i verdures sobre arròs)"
-      - "Te verd"
-    alergics:
-      - "gluten"
-      - "ou"
-      - "crustacis"
-      - "soja"
-    disponibilitat:
-      dies: ["dilluns", "dimarts", "dijous", "divendres"]
+      dies: ["dilluns", "dimarts", "dimecres", "dijous", "divendres"]
       horari: "13:00 - 15:30"
 
   - id: "menu-salmon-don"
     nom: "Menú Salmon Don"
-    ordre: 3
+    ordre: 2
     actiu: true
-    preu: 14.00
-    foto: "/images/menus/salmon-don.jpg"
-    descripcio: "Salmó fresc sobre arròs amb tocs de sèsam i salsa teriyaki"
+    preu: 16.00
+    foto: ""
+    descripcio: "Sashimi de salmó sobre arròs de sushi amb kobachi i sopa de miso"
     plats:
-      - "Sopa miso"
-      - "Amanida wakame"
-      - "Salmon don (salmó sobre arròs amb ou i sèsam)"
-      - "Te verd"
+      - "Salmon Don (sashimi de salmó sobre arròs de sushi)"
+      - "Kobachi (fideus saltejats)"
+      - "Sopa de miso"
     alergics:
       - "peix"
       - "gluten"
       - "soja"
       - "sesam"
-      - "ou"
     disponibilitat:
-      dies: ["dilluns", "dimarts", "dijous", "divendres"]
+      dies: ["dilluns", "dimarts", "dimecres", "dijous", "divendres"]
+      horari: "13:00 - 15:30"
+
+  - id: "menu-tendon"
+    nom: "Menú Tendon"
+    ordre: 3
+    actiu: true
+    preu: 16.00
+    foto: ""
+    descripcio: "Caixa d'arròs amb tempura de llagostins i verdures, sashimi i sopa de miso"
+    plats:
+      - "Tendon (caixa d'arròs amb tempura de llagostins i verduretes)"
+      - "Sashimi moriawase (tonyina, salmó i calamar)"
+      - "Sopa de miso"
+    alergics:
+      - "peix"
+      - "gluten"
+      - "crustacis"
+      - "soja"
+    disponibilitat:
+      dies: ["dilluns", "dimarts", "dimecres", "dijous", "divendres"]
       horari: "13:00 - 15:30"
 
   - id: "menu-unaju"
     nom: "Menú Unaju"
     ordre: 4
     actiu: true
-    preu: 15.50
-    foto: "/images/menus/unaju.jpg"
-    descripcio: "Anguila glassada amb salsa kabayaki, tradició japonesa"
+    preu: 17.50
+    foto: ""
+    descripcio: "Caixa d'arròs amb anguila cuita amb salsa kabayaki i sashimi variat"
     plats:
-      - "Sopa miso"
-      - "Encurtits japonesos"
-      - "Unaju (anguila glassada sobre arròs)"
-      - "Te verd"
+      - "Unaju (caixa d'arròs amb anguila cuita amb salsa)"
+      - "Sashimi moriawase (tonyina, salmó i calamar)"
+      - "Sopa de miso"
     alergics:
       - "peix"
       - "gluten"
       - "soja"
       - "sesam"
     disponibilitat:
-      dies: ["dilluns", "dimarts", "dijous", "divendres"]
-      horari: "13:00 - 15:30"
-
-  - id: "plat-dia"
-    nom: "Plat del dia"
-    ordre: 10
-    actiu: true
-    preu: 0  # Variable segons mercat
-    descripcio: "Proposta diària segons producte de mercat. Consultar disponibilitat."
-    plats:
-      - "Segons mercat del dia"
-    nota: "Preu i contingut variable. Preguntar al restaurant."
-    disponibilitat:
-      dies: ["dilluns", "dimarts", "dijous", "divendres"]
+      dies: ["dilluns", "dimarts", "dimecres", "dijous", "divendres"]
       horari: "13:00 - 15:30"

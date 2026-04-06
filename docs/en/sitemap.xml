@@ -2,199 +2,199 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/en/sobre-nosaltres/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/sobre-nosaltres/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/sobre-nosaltres/"
+                href="https://112books.github.io/machiroku-web/ca/sobre-nosaltres/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/sobre-nosaltres/"
+                href="https://112books.github.io/machiroku-web/es/sobre-nosaltres/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/sobre-nosaltres/"
+                href="https://112books.github.io/machiroku-web/en/sobre-nosaltres/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/categories/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/categories/"
+                href="https://112books.github.io/machiroku-web/ca/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/categories/"
+                href="https://112books.github.io/machiroku-web/es/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/categories/"
+                href="https://112books.github.io/machiroku-web/en/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/contacte-en/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/contacte-en/</loc>
   </url><url>
-    <loc>//localhost:1313/en/contacte/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/contacte/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/contacte/"
+                href="https://112books.github.io/machiroku-web/ca/contacte/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/contacte/"
+                href="https://112books.github.io/machiroku-web/es/contacte/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/contacte/"
+                href="https://112books.github.io/machiroku-web/en/contacte/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/cookies/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/cookies/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/cookies/"
+                href="https://112books.github.io/machiroku-web/ca/cookies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/cookies/"
+                href="https://112books.github.io/machiroku-web/es/cookies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/cookies/"
+                href="https://112books.github.io/machiroku-web/en/cookies/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/inici-en/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/inici-en/</loc>
   </url><url>
-    <loc>//localhost:1313/en/inici/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/inici/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/inici/"
+                href="https://112books.github.io/machiroku-web/ca/inici/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/inici/"
+                href="https://112books.github.io/machiroku-web/es/inici/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/inici/"
+                href="https://112books.github.io/machiroku-web/en/inici/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/legals/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/legals/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/legals/"
+                href="https://112books.github.io/machiroku-web/ca/legals/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/legals/"
+                href="https://112books.github.io/machiroku-web/es/legals/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/legals/"
+                href="https://112books.github.io/machiroku-web/en/legals/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/"
+                href="https://112books.github.io/machiroku-web/ca/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/"
+                href="https://112books.github.io/machiroku-web/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/"
+                href="https://112books.github.io/machiroku-web/en/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/oferta-en/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/oferta-en/</loc>
   </url><url>
-    <loc>//localhost:1313/en/oferta/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/oferta/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/oferta/"
+                href="https://112books.github.io/machiroku-web/ca/oferta/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/oferta/"
+                href="https://112books.github.io/machiroku-web/es/oferta/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/oferta/"
+                href="https://112books.github.io/machiroku-web/en/oferta/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/privacitat/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/privacitat/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/privacitat/"
+                href="https://112books.github.io/machiroku-web/ca/privacitat/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/privacitat/"
+                href="https://112books.github.io/machiroku-web/es/privacitat/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/privacitat/"
+                href="https://112books.github.io/machiroku-web/en/privacitat/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/reserves-en/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/reserves-en/</loc>
   </url><url>
-    <loc>//localhost:1313/en/reserves/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/reserves/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/reserves/"
+                href="https://112books.github.io/machiroku-web/ca/reserves/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/reserves/"
+                href="https://112books.github.io/machiroku-web/es/reserves/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/reserves/"
+                href="https://112books.github.io/machiroku-web/en/reserves/"
                 />
   </url><url>
-    <loc>//localhost:1313/en/tags/</loc>
+    <loc>https://112books.github.io/machiroku-web/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="//localhost:1313/ca/tags/"
+                href="https://112books.github.io/machiroku-web/ca/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="//localhost:1313/es/tags/"
+                href="https://112books.github.io/machiroku-web/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="//localhost:1313/en/tags/"
+                href="https://112books.github.io/machiroku-web/en/tags/"
                 />
   </url>
 </urlset>

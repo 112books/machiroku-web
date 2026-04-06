@@ -21,6 +21,7 @@
    16. PÀGINA DE RESERVES
    17. PÀGINA DE CONTACTE
    18. PÀGINA SOBRE NOSALTRES
+   19. AVISOS TEMPORALS
    ============================================================ */
 
 
@@ -1478,5 +1479,143 @@ a:hover {
   .sobre-foto-xef img {
     max-width: 240px;
     margin: 0 auto;
+  }
+}
+
+/* ============================================================
+   19. AVISOS TEMPORALS
+   ============================================================ */
+
+/* Banner */
+.aviso-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: 0.75rem var(--spacing-xl);
+  z-index: 90;
+}
+
+.aviso-banner--alta {
+  background: rgba(139, 26, 26, 0.95);
+  color: var(--color-white);
+}
+
+.aviso-banner--mitjana {
+  background: rgba(180, 120, 0, 0.95);
+  color: var(--color-white);
+}
+
+.aviso-banner--baixa {
+  background: rgba(30, 100, 30, 0.95);
+  color: var(--color-white);
+}
+
+.aviso-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.aviso-banner-titol {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.aviso-banner-text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.aviso-cta {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.5);
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+.aviso-cta:hover {
+  background: var(--color-white);
+  color: var(--color-accent);
+}
+
+.aviso-tancar {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.25rem 0.5rem;
+  transition: color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.aviso-tancar:hover {
+  color: var(--color-white);
+}
+
+/* Popup */
+.aviso-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+}
+
+.aviso-popup {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: var(--spacing-xl);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.aviso-popup-tancar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--color-gray-dark);
+  transition: color var(--transition-fast);
+}
+
+.aviso-popup-tancar:hover {
+  color: var(--color-accent);
+}
+
+.aviso-popup-titol {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+  text-transform: none;
+}
+
+.aviso-popup-text {
+  color: var(--color-gray-dark);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .aviso-banner {
+    padding: 0.75rem var(--spacing-md);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 }

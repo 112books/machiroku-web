@@ -1,0 +1,45 @@
+{{/* layouts/partials/avisos.html */}}
+{{/* Mostra avisos actius: banner o popup */}}
+
+{{ $lang := .Site.Language.Lang }}
+{{ $avui := now.Format "2006-01-02" }}
+
+{{ range .Site.Data.avisos.avisos }}
+  {{ if .actiu }}
+    {{ if and (ge $avui .des_de) (le $avui .fins_a) }}
+
+      {{ if eq .tipus "banner" }}
+      {{/* BANNER — barra sota el header */}}
+      <div class="aviso-banner aviso-banner--{{ .prioritat }}" id="aviso-{{ .id }}">
+        <div class="aviso-banner-inner">
+          <span class="aviso-banner-titol">{{ index .titol $lang }}</span>
+          <span class="aviso-banner-text">{{ index .text $lang }}</span>
+          {{ if .link }}
+          <a href="{{ .Site.BaseURL }}{{ $lang }}{{ .link }}" class="btn btn-sm aviso-cta">
+            {{ index .cta $lang }}
+          </a>
+          {{ end }}
+        </div>
+        <button class="aviso-tancar" onclick="document.getElementById('aviso-{{ .id }}').style.display='none'" aria-label="Tancar">✕</button>
+      </div>
+      {{ end }}
+
+      {{ if eq .tipus "popup" }}
+      {{/* POPUP — modal centrat */}}
+      <div class="aviso-popup-overlay" id="aviso-{{ .id }}">
+        <div class="aviso-popup">
+          <button class="aviso-popup-tancar" onclick="document.getElementById('aviso-{{ .id }}').style.display='none'" aria-label="Tancar">✕</button>
+          <h3 class="aviso-popup-titol">{{ index .titol $lang }}</h3>
+          <p class="aviso-popup-text">{{ index .text $lang }}</p>
+          {{ if .link }}
+          <a href="{{ $.Site.BaseURL }}{{ $lang }}{{ .link }}" class="btn btn-primary">
+            {{ index .cta $lang }}
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+    {{ end }}
+  {{ end }}
+{{ end }}

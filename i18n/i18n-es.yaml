@@ -84,6 +84,10 @@ el_nostre_xef: "Nuestro chef"
 la_nostra_historia: "Nuestra historia"
 filosofia: "Filosofía"
 
+# Contacte
+contacte_intro: "Ven a vernos. Puedes llamarnos o escribirnos por correo si quieres resolver cualquier duda antes de venir."
+arribar_intro: "A 5 minutos de Plaça Catalunya y Urquinaona. Fácil acceso en metro, tren y autobuses."
+
 # Legal
 avis_legal: "Aviso legal"
 politica_privacitat: "Política de privacidad"

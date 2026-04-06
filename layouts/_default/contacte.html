@@ -10,7 +10,7 @@
       <h1>{{ i18n "nav_contacte" }}</h1>
     </div>
 
-    {{/* FILA 1+2: Contacte + Horaris costat a costat */}}
+    {{/* FILA SUPERIOR: Contacte + Horaris costat a costat */}}
     <div class="contacte-row-top">
 
       {{/* Card 001 - Contacte */}}
@@ -51,3 +51,106 @@
             </a>
             {{ end }}
           </div>
+        </div>
+      </div>
+
+      {{/* Card 002 - Horaris (des de data/horaris.yaml) */}}
+      <div class="contacte-card contacte-card--horaris">
+        <h2>{{ i18n "horaris" }}</h2>
+        <div class="horaris-taula">
+          {{ range $dia := slice "dilluns" "dimarts" "dimecres" "dijous" "divendres" "dissabte" "diumenge" }}
+          {{ $franges := index $horaris $dia }}
+          <div class="horari-fila {{ if not $franges }}horari-fila--tancat{{ end }}">
+            <span class="horari-dia">{{ i18n $dia }}</span>
+            <div class="horari-detall">
+              {{ if $franges }}
+                {{ range $franges }}
+                <div class="horari-franja">
+                  <span class="horari-hores">{{ .inici }}–{{ .fi }}</span>
+                  <span class="horari-servei">{{ if eq .servei "menu" }}{{ i18n "servei_menu" }}{{ else }}{{ i18n "servei_carta" }}{{ end }}</span>
+                </div>
+                {{ end }}
+              {{ else }}
+                <span class="horari-tancat">{{ i18n "estat_tancat" }}</span>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+
+    {{/* Card 003 - Mapa a tota l'amplada */}}
+    <div class="contacte-card contacte-card--mapa">
+      <div class="mapa-embed">
+        <iframe
+          src="{{ $restaurant.google_maps.embed }}"
+          width="100%"
+          height="420"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    {{/* Card 004 - Com arribar a tota l'amplada amb sub-cards */}}
+    <div class="contacte-card contacte-card--arribar">
+      <h2>{{ i18n "com_arribar" }}</h2>
+      <p class="arribar-intro">{{ i18n "arribar_intro" }}</p>
+
+      <div class="arribar-grid">
+        <div class="arribar-subcard">
+          <span class="arribar-icona">🚇</span>
+          <h4>Metro</h4>
+          <p>Urquinaona (L1, L4) · 3–4 min</p>
+          <p>Jaume I (L4) · 5 min</p>
+          <p>Catalunya (L1, L3) · 6–7 min</p>
+        </div>
+
+        <div class="arribar-subcard">
+          <span class="arribar-icona">🚆</span>
+          <h4>Tren</h4>
+          <p>Rodalies (Plaça Catalunya) · 6–7 min</p>
+          <p>FGC (Catalunya) · 6–7 min</p>
+        </div>
+
+        <div class="arribar-subcard">
+          <span class="arribar-icona">🚌</span>
+          <h4>Bus</h4>
+          <p>V15, V17, 45, 120 · 2–5 min</p>
+        </div>
+
+        <div class="arribar-subcard">
+          <span class="arribar-icona">🚲</span>
+          <h4>Bicing</h4>
+          <p>Estacions a 2–3 minuts a peu</p>
+        </div>
+
+        <div class="arribar-subcard">
+          <span class="arribar-icona">✈️</span>
+          <h4>Aeroport</h4>
+          <p>Tren R2 fins a Catalunya · ~35 min</p>
+          <p>Taxi · 20–30 min</p>
+        </div>
+
+        <div class="arribar-subcard">
+          <span class="arribar-icona">🚢</span>
+          <h4>Port / Terminals</h4>
+          <p>Taxi · 10–15 min</p>
+          <p>Transport públic · 25–30 min</p>
+        </div>
+
+        <div class="arribar-subcard">
+          <span class="arribar-icona">🅿️</span>
+          <h4>Pàrquing</h4>
+          <p>Via Laietana i Plaça Catalunya · 3–5 min</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{{ end }}

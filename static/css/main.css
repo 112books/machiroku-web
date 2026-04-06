@@ -950,6 +950,28 @@ a:hover {
   border-top: 1px solid rgba(139, 26, 26, 0.15);
 }
 
+/* ← AQUÍ el nou CSS */
+.cta-reserves {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Oferta */
+/* CTA Reserves — oferta */
+.carta-section .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.cta-reserves {
+  margin-top: 0;
+  text-align: right;
+  align-self: flex-end;
+}
+
 
 /* ============================================================
    13. PÀGINA RESERVES
@@ -1526,6 +1548,12 @@ a:hover {
   }
 }
 
+/* Oferta */
+.cta-reserves {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
+
 /* ── MÒBIL (≤ 768px) ── */
 @media (max-width: 768px) {
 
@@ -1664,6 +1692,11 @@ a:hover {
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-lg);
   }
+
+  .cta-reserves {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
 
   /* Reserves */
   .reserves-cards {

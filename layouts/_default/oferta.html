@@ -28,11 +28,6 @@
       <div class="section-header">
         <h2>{{ i18n "servei_carta" }}</h2>
         <p class="section-intro">{{ i18n "horari_carta" }}</p>
-        <div class="cta-reserves">
-          <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/reserves/" class="btn btn-primary">
-            {{ i18n "fer_reserva" }}
-          </a>
-        </div>
       </div>
 
       {{/* Plats per categoria */}}
@@ -74,8 +69,16 @@
         </div>
       </div>
 
+      <div class="cta-reserves">
+        <a href="{{ .Site.BaseURL }}{{ .Site.Language.Lang }}/reserves/" class="btn btn-primary">
+          {{ i18n "fer_reserva" }}
+        </a>
+      </div>
+
     </div>
   </section>
 
 </div>
 {{ end }}
+
+

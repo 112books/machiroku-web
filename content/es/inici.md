@@ -1,6 +1,7 @@
 ---
 title: "Inicio"
 slug: "inici"
+schema: true
 ---
 
 <div class="hero-home">

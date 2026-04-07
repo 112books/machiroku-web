@@ -70,6 +70,6 @@
 <meta name="twitter:image"       content="{{ $ogImage }}">
 
 {{/* --- Schema.org Restaurant (JSON-LD) — només a la home i pàgines principals --- */}}
-{{ if or .IsHome (in (slice "oferta" "contacte" "reserves") .Layout) }}
+{{ if or .IsHome .Params.schema }}
 {{ partial "schema.html" . }}
 {{ end }}

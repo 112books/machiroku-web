@@ -2,6 +2,7 @@
 title: "Inici"
 slug: "inici"
 description: "Machiroku, restaurant japonès al centre de Barcelona. Menús del migdia i carta de nit amb producte fresc. Reserva taula ara."
+schema: true
 og_image: "images/og-machiroku.jpg"
 ---
 

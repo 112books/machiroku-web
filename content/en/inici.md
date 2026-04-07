@@ -2,6 +2,8 @@
 title: "Home"
 slug: "inici"
 schema: true
+description: "Machiroku, Japanese restaurant in the heart of Barcelona. Fresh lunch menus and dinner à la carte. Book your table now."
+og_image: "images/og-machiroku.jpg"
 ---
 
 <div class="hero-home">

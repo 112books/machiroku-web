@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Machiroku - Restaurant Japonès</title>
-    <link>//localhost:1313/ca/categories/</link>
+    <link>https://112books.github.io/machiroku-web/ca/categories/</link>
     <description>Recent content in Categories on Machiroku - Restaurant Japonès</description>
     <generator>Hugo</generator>
     <language>ca-ES</language>
-    <atom:link href="//localhost:1313/ca/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://112books.github.io/machiroku-web/ca/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

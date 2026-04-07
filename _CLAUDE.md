@@ -278,6 +278,7 @@ Prioritat baixa (poliment)
  Accessibilitat: alt text a totes les imatges
  Accessibilitat: navegació per teclat completa
  humans.txt a static/humans.txt
+ og:type "website" a pàgines d'inici (frontmatter + seo.html)
 
 Pendent de client
 
@@ -323,6 +324,20 @@ GoatCounter integrat
 ✅ CSS reorganitzat: 16 seccions, 1 bloc responsive, focus-visible, prefixos webkit
 ✅ Fitxers i18n renombrats: es.yaml, en.yaml (eren i18n-es.yaml, i18n-en.yaml)
 ✅ CTA "Fer una reserva" reposicionat a oferta
+
+
+### 2026-04-07 (tarda)
+
+- ✅ SEO: partial `seo.html` amb title, description, canonical, hreflang, og:*, twitter:*
+- ✅ SEO: partial `schema.html` amb JSON-LD schema.org Restaurant
+- ✅ SEO: `robots.txt` a `static/`
+- ✅ SEO: `og:image` — `og-machiroku.jpg` (1200×630px) amb logo oficial
+- ✅ SEO: hreflang ca/es/en/x-default validat
+- ✅ SEO: Schema.org validat a Google Rich Results (Empresa local + Organització)
+- ✅ SEO: og:image validat al Facebook Sharing Debugger
+- ✅ Fix: `.nojekyll` a `static/` — desactiva Jekyll a GitHub Pages
+- ✅ Fix: `.File nil` a `seo.html` — protegit per pàgines virtuals (list pages)
+- ✅ Frontmatter: `description`, `og_image`, `schema: true` a inici.md (ca/es/en)
 
 
 🔑 ACCESOS

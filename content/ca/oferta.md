@@ -1,5 +1,6 @@
 ---
 title: "Oferta gastronòmica"
-description: "Menús del migdia i carta nocturna del restaurant Machiroku"
+description: "Descobreix els nostres menús del migdia des de 16€ i la carta de nit: sushi, sashimi, nigiri i molt més. Machiroku, Barcelona."
 layout: "oferta"
+og_image: "images/og-machiroku.jpg"
 ---

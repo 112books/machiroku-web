@@ -1,0 +1,62 @@
+{{/* ==============================================
+     SCHEMA.ORG — Restaurant (JSON-LD)
+     ============================================== */}}
+{{ $r    := (hugo.Data).restaurant }}
+{{ $h    := (hugo.Data).horaris }}
+{{ $lang := .Site.Language.Lang }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Machiroku",
+  "description": {{ index $r.slogan $lang | jsonify }},
+  "url": {{ .Site.BaseURL | jsonify }},
+  "telephone": {{ $r.telefon | jsonify }},
+  "email": {{ $r.email | jsonify }},
+  "servesCuisine": "Japanese",
+  "priceRange": "€€",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Cash, Credit Card",
+  "image": "{{ .Site.BaseURL }}images/og-machiroku.jpg",
+  "logo": "{{ .Site.BaseURL }}logos/Machiroku-logo-gran-vectoritzat.svg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": {{ $r.adreca.carrer | jsonify }},
+    "postalCode": {{ $r.adreca.codi_postal | jsonify }},
+    "addressLocality": {{ $r.adreca.ciutat | jsonify }},
+    "addressRegion": {{ $r.adreca.provincia | jsonify }},
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ $r.google_maps.lat }},
+    "longitude": {{ $r.google_maps.lng }}
+  },
+  "hasMap": {{ $r.google_maps.url | jsonify }},
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday"],
+      "opens": "13:00",
+      "closes": "15:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "13:00",
+      "closes": "15:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "20:00",
+      "closes": "23:00"
+    }
+  ],
+  "sameAs": [
+    {{ $r.xarxes.instagram.url | jsonify }},
+    {{ $r.xarxes.facebook.url | jsonify }}
+  ]
+}
+</script>

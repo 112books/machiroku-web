@@ -24,7 +24,7 @@ contentDir = "content/ca"
 title = "Machiroku - Restaurant Japonès"
 
 [languages.ca.params]
-description = "Restaurant japonès al cor de Barcelona. Menú del migdia i carta nocturna amb producte de temporada."
+description = "Machiroku, restaurant japonès al centre de Barcelona. Cuina japonesa autèntica, menús del migdia i carta de nit."
 slogan = "Autèntica cuina japonesa al cor de Barcelona"
 
 [[languages.ca.menu.main]]
@@ -65,7 +65,7 @@ contentDir = "content/es"
 title = "Machiroku - Restaurante Japonés"
 
 [languages.es.params]
-description = "Restaurante japonés en el corazón de Barcelona. Menú del mediodía y carta nocturna con producto de temporada."
+description = "Machiroku, restaurante japonés en el centro de Barcelona. Cocina japonesa auténtica, menús de mediodía y carta de noche."
 slogan = "Auténtica cocina japonesa en el corazón de Barcelona"
 
 [[languages.es.menu.main]]
@@ -106,7 +106,7 @@ contentDir = "content/en"
 title = "Machiroku - Japanese Restaurant"
 
 [languages.en.params]
-description = "Japanese restaurant in the heart of Barcelona. Lunch menu and evening à la carte with seasonal products."
+description = "Machiroku, Japanese restaurant in the heart of Barcelona. Authentic Japanese cuisine, lunch menus and dinner à la carte."
 slogan = "Authentic Japanese cuisine in the heart of Barcelona"
 
 [[languages.en.menu.main]]

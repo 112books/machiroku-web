@@ -1,0 +1,75 @@
+{{/* ==============================================
+     SEO PARTIAL — Machiroku
+     Inclou: title, description, canonical,
+             hreflang, og:*, twitter:*, JSON-LD
+     ============================================== */}}
+
+{{/* --- Dades base --- */}}
+{{ $restaurant := (hugo.Data).restaurant }}
+{{ $lang       := .Site.Language.Lang }}
+{{ $baseURL    := .Site.BaseURL }}
+
+{{/* --- Title --- */}}
+{{ $title := .Title }}
+{{ if .IsHome }}
+  {{ $title = printf "%s | %s" (index $restaurant.slogan $lang) "Machiroku" }}
+{{ else }}
+  {{ $title = printf "%s | Machiroku" .Title }}
+{{ end }}
+
+{{/* --- Description --- */}}
+{{ $description := "" }}
+{{ if .Params.description }}
+  {{ $description = .Params.description }}
+{{ else if .Site.Language.Params.description }}
+  {{ $description = .Site.Language.Params.description }}
+{{ end }}
+
+{{/* --- OG Image --- */}}
+{{ $ogImage := "" }}
+{{ if .Params.og_image }}
+  {{ $ogImage = printf "%s%s" $baseURL .Params.og_image }}
+{{ else }}
+  {{ $ogImage = printf "%simages/og-machiroku.jpg" $baseURL }}
+{{ end }}
+
+{{/* --- Canonical URL --- */}}
+{{ $canonical := .Permalink }}
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<link rel="canonical" href="{{ $canonical }}">
+
+{{/* --- hreflang (multiidioma) --- */}}
+{{ range .Site.Languages }}
+  {{ $altLang := .Lang }}
+  {{ $altURL  := printf "%s%s/inici/" $baseURL $altLang }}
+  {{ if $.File }}
+    {{ $altPage := $.GetPage (printf "/%s/%s" $altLang ($.File.Path | path.Dir)) }}
+    {{ if $altPage }}{{ $altURL = $altPage.Permalink }}{{ end }}
+  {{ end }}
+  <link rel="alternate" hreflang="{{ $altLang }}" href="{{ $altURL }}">
+{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ $baseURL }}ca/inici/">
+
+{{/* --- Open Graph --- */}}
+<meta property="og:type"        content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:url"         content="{{ $canonical }}">
+<meta property="og:title"       content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:image"       content="{{ $ogImage }}">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name"   content="Machiroku">
+<meta property="og:locale"      content="{{ .Site.Language.Lang }}_{{ upper .Site.Language.Lang }}">
+
+{{/* --- Twitter Card --- */}}
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image"       content="{{ $ogImage }}">
+
+{{/* --- Schema.org Restaurant (JSON-LD) — només a la home i pàgines principals --- */}}
+{{ if or .IsHome (in (slice "oferta" "contacte" "reserves") .Layout) }}
+{{ partial "schema.html" . }}
+{{ end }}

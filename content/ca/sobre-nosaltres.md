@@ -1,7 +1,8 @@
 ---
 title: "Machiroku"
-description: "Cuina japonesa tradicional al centre de Barcelona des de l'any 2000."
+description: "Machiroku és un restaurant japonès familiar al cor de Barcelona, obert el 2020 pel xef Masahiro Tottori i la Sachie."
 layout: "sobre-nosaltres"
+og_image: "images/og-machiroku.jpg"
 ---
 
 ## Cuina japonesa tradicional al centre de Barcelona

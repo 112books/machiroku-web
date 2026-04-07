@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ .Title }} | Machiroku</title>
-  
-  {{/* Tipografia Oswald + Caveat Brush */}}
+
+  {{/* SEO — title, description, og:*, hreflang, schema.org */}}
+  {{ partial "seo.html" . }}
+
+  {{/* Tipografia */}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Caveat+Brush&family=Kaushan+Script&display=swap" rel="stylesheet">
@@ -13,11 +15,9 @@
   {{/* CSS */}}
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/estat-restaurant.css">
-  
+
+  {{/* Favicon */}}
   <link rel="icon" type="image/svg+xml" href="{{ .Site.BaseURL }}favicon.svg">
-  
-  {{/* Meta tags */}}
-  <meta name="description" content="{{ .Site.Language.Params.description }}">
 </head>
 <body>
   <header class="site-header">

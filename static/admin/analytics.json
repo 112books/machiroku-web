@@ -1,16 +1,12 @@
 {
-  "generated": "2026-04-09T19:17:47.903096Z",
+  "generated": "2026-04-09T20:58:41.267804Z",
   "period": {
     "start": "2025-04-09",
     "end": "2026-04-09"
   },
   "total": 0,
-  "by_lang": {
-    "ca": 0
-  },
-  "by_section": {
-    "inici": 0
-  },
+  "by_lang": {},
+  "by_section": {},
   "browsers": [],
   "systems": [],
   "sizes": [],

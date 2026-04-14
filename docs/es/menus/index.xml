@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Menuses on Machiroku - Restaurante Japonés</title>
-    <link>https://112books.github.io/machiroku-web/es/menus/</link>
+    <link>https://machiroku.com/es/menus/</link>
     <description>Recent content in Menuses on Machiroku - Restaurante Japonés</description>
     <generator>Hugo</generator>
     <language>es-ES</language>
-    <atom:link href="https://112books.github.io/machiroku-web/es/menus/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://machiroku.com/es/menus/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Menú Sushi</title>
-      <link>https://112books.github.io/machiroku-web/es/menus/menu-sushi/</link>
+      <link>https://machiroku.com/es/menus/menu-sushi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://112books.github.io/machiroku-web/es/menus/menu-sushi/</guid>
+      <guid>https://machiroku.com/es/menus/menu-sushi/</guid>
       <description></description>
     </item>
   </channel>

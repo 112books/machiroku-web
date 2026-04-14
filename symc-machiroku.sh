@@ -102,18 +102,18 @@ do_sync() {
     print_success "Push correcte"
 }
 
-# Deploy a GitHub Pages (staging)
+# Deploy a GitHub Pages (production)
 do_deploy() {
-    print_message "Deploy a GitHub Pages (staging)"
-    print_message "Entorn: staging (config/staging/hugo.toml)"
-    print_message "URL destí: https://112books.github.io/machiroku-web/"
+    print_message "Deploy a GitHub Pages (production)"
+    print_message "Entorn: production (config/production/hugo.toml)"
+    print_message "URL destí: https://machiroku.com/"
     echo ""
 
-    hugo --environment staging --destination $BUILD_DIR || exit 1
+    hugo --environment production --destination $BUILD_DIR || exit 1
     print_success "Build completat a /$BUILD_DIR"
 
     do_sync
-    print_success "Deploy completat → https://112books.github.io/machiroku-web/"
+    print_success "Deploy completat → https://machiroku.com/"
 }
 
 # Publish al servidor real de producció
@@ -159,7 +159,7 @@ interactive_menu() {
     echo "2) Server    → Servidor local  [development → localhost:1313]"
     echo "3) Pull      → Descarregar canvis de GitHub"
     echo "4) Push      → Pujar canvis locals a GitHub"
-    echo "5) Deploy    → Build + publicar a GitHub Pages  [staging]"
+    echo "5) Deploy    → Build + publicar a GitHub Pages  [production → machiroku.com]"
     echo "6) Publish   → Publicar al servidor real  [production — pendent]"
     echo "7) Force     → Forçar push (perillós)"
     echo "0) Sortir"

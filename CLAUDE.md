@@ -19,10 +19,10 @@ Corporate website for Machiroku, a Japanese restaurant in Barcelona. Built with 
 # o directament:
 hugo server --environment development
 
-# Build and deploy to GitHub Pages (staging)
-./symc-machiroku.sh deploy        # opció 5 — environment: staging
+# Build and deploy to GitHub Pages (production → machiroku.com)
+./symc-machiroku.sh deploy        # opció 5 — environment: production
 # o directament:
-hugo --environment staging --destination docs
+hugo --environment production --destination docs
 ```
 
 **Important**: Sempre usar `deploy` (opció 5) per publicar a GitHub Pages — `push` (opció 4) no reconstrueix `docs/`.

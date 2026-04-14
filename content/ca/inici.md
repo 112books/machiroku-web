@@ -8,7 +8,7 @@ og_image: "images/og-machiroku.jpg"
 
 <div class="hero-home">
   <div class="hero-logo">
-    <img src="/machiroku-web/logos/logo.svg" alt="Machiroku">
+    <img src="/logos/logo.svg" alt="Machiroku">
   </div>
   <p class="slogan">
 <span class="slogan-line slogan-line--1">Japó de veritat al centre de Barcelona</span>
@@ -30,5 +30,5 @@ og_image: "images/og-machiroku.jpg"
       <span class="hours closed">Tancat</span>
     </div>
   </div>
-  <a href="/machiroku-web/ca/reserves/" class="hero-cta">Reserva taula</a>
+  <a href="/ca/reserves/" class="hero-cta">Reserva taula</a>
 </div>

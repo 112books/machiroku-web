@@ -8,7 +8,7 @@ og_image: "images/og-machiroku.jpg"
 
 <div class="hero-home">
   <div class="hero-logo">
-    <img src="/machiroku-web/logos/logo.svg" alt="Machiroku">
+    <img src="/logos/logo.svg" alt="Machiroku">
   </div>
   <p class="slogan">
     <span class="slogan-line slogan-line--1">Japón de verdad en el centro de Barcelona</span>
@@ -30,5 +30,5 @@ og_image: "images/og-machiroku.jpg"
       <span class="hours closed">Cerrado</span>
     </div>
   </div>
-  <a href="/machiroku-web/es/reserves/" class="hero-cta">Hacer una reserva</a>
+  <a href="/es/reserves/" class="hero-cta">Hacer una reserva</a>
 </div>

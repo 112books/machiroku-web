@@ -67,11 +67,11 @@ do_server() {
 # Pull
 do_pull() {
     print_message "Pull..."
-    git pull $REMOTE $BRANCH --rebase || exit 1
+    git pull $REMOTE $BRANCH --no-rebase || exit 1
     print_success "Pull correcte"
 }
 
-# Sync: commit (si cal) + pull --rebase + push
+# Sync: commit (si cal) + pull (merge) + push
 do_sync() {
     print_message "Sincronitzant amb el remot..."
 
@@ -87,9 +87,9 @@ do_sync() {
         git commit -m "$msg"
     fi
 
-    print_message "Pull --rebase..."
-    if ! git pull $REMOTE $BRANCH --rebase; then
-        print_error "Error en el pull --rebase. Resol els conflictes i torna a intentar-ho."
+    print_message "Pull (merge)..."
+    if ! git pull $REMOTE $BRANCH --no-rebase; then
+        print_error "Error en el pull. Resol els conflictes i torna a intentar-ho."
         exit 1
     fi
 

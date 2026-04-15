@@ -257,6 +257,34 @@ a:hover {
 /* ============================================================
    05. HEADER
    ============================================================ */
+
+/* Skip link — accessibilitat teclat */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.5rem;
+  z-index: 9999;
+  text-decoration: none;
+}
+.skip-link:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  outline: 3px solid var(--color-white);
+  outline-offset: -3px;
+}
 .site-header {
   background: rgba(20, 10, 10, 0.92);
   backdrop-filter: blur(10px);
@@ -313,7 +341,7 @@ a:hover {
   font-weight: 500;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-small);
   transition: all var(--transition-fast);

@@ -18,7 +18,8 @@
 {{ end }}
 
 {{/* --- Description --- */}}
-{{ $description := "" }}
+{{ $descDefault := "Restaurant japonès al cor de Barcelona. Cuina tradicional japonesa, menú del migdia i carta nocturna. Reserves per telèfon." }}
+{{ $description := $descDefault }}
 {{ if .Params.description }}
   {{ $description = .Params.description }}
 {{ else if .Site.Language.Params.description }}

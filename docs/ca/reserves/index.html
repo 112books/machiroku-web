@@ -21,6 +21,7 @@
 
 
 
+
   
 
 
@@ -98,6 +99,7 @@
   <link rel="icon" type="image/svg+xml" href="https://machiroku.com/favicon.svg">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contingut principal</a>
   <header class="site-header">
     <div class="header-grid">
       <div class="header-row header-row--top">
@@ -130,11 +132,11 @@
       </div>
       
       <div class="header-row header-row--bottom">
-        <button class="nav-toggle" aria-label="Menu">
+        <button class="nav-toggle" aria-label="Obrir menú de navegació" aria-expanded="false" aria-controls="header-nav">
           <span></span><span></span><span></span>
         </button>
         
-        <nav class="header-nav">
+        <nav class="header-nav" id="header-nav" aria-label="Navegació principal">
           <ul class="nav-list">
             
             <li>
@@ -267,6 +269,7 @@
       <div class="mapa-embed">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.5!2d2.1766!3d41.3851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIzJzA2LjQiTiAywrAxMCczNS44IkU!5e0!3m2!1sca!2ses!4v1234567890"
+          title="Ubicació del restaurant Machiroku a Google Maps"
           width="100%"
           height="380"
           style="border:0;"
@@ -276,11 +279,11 @@
         </iframe>
       </div>
       <div class="mapa-info">
-        <h3>📍 Com arribar</h3>
+        <h3><span aria-hidden="true">📍 </span>Com arribar</h3>
         <p class="mapa-adreca">Carrer de les Magdalenes, 23, 08003 Barcelona</p>
         <div class="transport-info">
-          <p>🚇 <strong>Metro:</strong> L4 Jaume I · 3 min</p>
-          <p>🚌 <strong>Bus:</strong> 45, 120, V15, V17</p>
+          <p><span aria-hidden="true">🚇 </span><strong>Metro:</strong> L4 Jaume I · 3 min</p>
+          <p><span aria-hidden="true">🚌 </span><strong>Bus:</strong> 45, 120, V15, V17</p>
         </div>
         <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="btn btn-primary">
           Veure al mapa
@@ -342,19 +345,19 @@
         
         <div class="footer-social">
           <a href="tel:&#43;34%2093%20412%2060%2082" aria-label="Telèfon" title="Telèfon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           </a>
           <a href="mailto:mackiroku@machiroku.com" aria-label="Email" title="Email">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 1L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-1.99.9-1.99 1L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
           
-          <a href="https://www.instagram.com/machiroku_bcn/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.8v8.4C4 18.39 5.61 20 7.8 20h8.4a3.6 3.6 0 0 0 3.6-3.6V7.8C20 5.61 18.39 4 16.2 4H7.8m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+          <a href="https://www.instagram.com/machiroku_bcn/" target="_blank" rel="noopener" aria-label="Instagram (obre en una finestra nova)" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.8v8.4C4 18.39 5.61 20 7.8 20h8.4a3.6 3.6 0 0 0 3.6-3.6V7.8C20 5.61 18.39 4 16.2 4H7.8m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
           </a>
           
           
-          <a href="https://www.facebook.com/machiroku" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          <a href="https://www.facebook.com/machiroku" target="_blank" rel="noopener" aria-label="Facebook (obre en una finestra nova)" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
           </a>
           
         </div>
@@ -368,9 +371,9 @@
         
         <div class="footer-reviews">
           <h4>Google Reviews</h4>
-          <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="google-reviews-link">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
-            <span class="rating">4.7</span>
+          <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="google-reviews-link" aria-label="Veure valoracions a Google Maps (4.7 estrelles, obre en una finestra nova)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#4285F4" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
+            <span class="rating" aria-hidden="true">4.7</span>
             <span class="reviews-link">Veure més</span>
           </a>
         </div>
@@ -381,11 +384,11 @@
     <div class="footer-bottom">
       <div class="footer-bottom-left">
         <img src="https://machiroku.com/logos/logo.svg" alt="Machiroku" class="footer-logo">
-        <div class="footer-links">
+        <nav class="footer-links" aria-label="Enllaços legals">
           <a href="https://machiroku.com/ca/legals/">Avís legal</a>
           <a href="https://machiroku.com/ca/privacitat/">Política de privacitat</a>
           <a href="https://machiroku.com/ca/cookies/">Política de cookies</a>
-        </div>
+        </nav>
       </div>
       
       <div class="footer-bottom-right">
@@ -406,8 +409,8 @@
     <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-md); flex-wrap: wrap;">
       <p id="cookie-text" style="margin: 0; font-size: 14px; flex: 1; min-width: 200px; color: #ffffff;"></p>
       <div style="display: flex; gap: var(--spacing-sm);">
-        <button onclick="rejectCookies()" class="btn" style="padding: 8px 16px; font-size: 12px;"></button>
-        <button onclick="acceptCookies()" class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;"></button>
+        <button type="button" onclick="rejectCookies()" class="btn" style="padding: 8px 16px; font-size: 12px;"></button>
+        <button type="button" onclick="acceptCookies()" class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;"></button>
       </div>
     </div>
   </div>

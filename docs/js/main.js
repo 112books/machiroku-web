@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 if (navToggle && headerNav) {
   navToggle.addEventListener('click', function() {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
     headerNav.classList.toggle('active');
-        navToggle.classList.toggle('active');
-      navToggle.setAttribute('aria-expanded', 
-        navToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
-      );
-    });
-  }
+    navToggle.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    navToggle.setAttribute('aria-label', expanded ? 'Obrir menú de navegació' : 'Tancar menú de navegació');
+  });
+}
   
   const statusEl = document.getElementById('restaurant-status');
   if (statusEl) {

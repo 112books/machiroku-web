@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin · Machiroku</title>
+  <title>Estadístiques · Machiroku</title>
   <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     :root {
-      --red:      #ff3333;
-      --red-dim:  #cc2222;
-      --red-dark: #330a0a;
-      --amber:    #ffb300;
-      --blue:     #00aaff;
-      --green:    #44cc44;
-      --bg:       #0a0a0a;
-      --bg2:      #111;
-      --bg3:      #161616;
-      --border:   #331515;
-      --text:     #ffd4d4;
-      --text-dim: #7a4a4a;
-      --gold:     #c9a84c;
+      --accent:       #8b1a1a;
+      --accent-dark:  #5a0f0f;
+      --accent-light: #b02020;
+      --accent-glow:  rgba(139,26,26,.25);
+      --gold:         #c9a84c;
+      --blue:         #4a90b8;
+      --green:        #4a8b5a;
+      --bg:           #111010;
+      --bg2:          #1c1818;
+      --bg3:          #241e1e;
+      --border:       #3a1e1e;
+      --text:         #f0ddd0;
+      --text-dim:     #8a6a5a;
+      --text-muted:   #5a4a3a;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,337 +32,466 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 300;
       min-height: 100vh;
+      letter-spacing: .02em;
     }
 
     /* ── Topbar ── */
     .topbar {
       background: var(--bg2);
       border-bottom: 1px solid var(--border);
-      padding: .6rem 1.5rem;
+      padding: .55rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: .75rem;
-      color: var(--text-dim);
+      font-size: .8rem;
+      color: var(--text-muted);
+      letter-spacing: .08em;
     }
-    .topbar a { color: var(--red-dim); text-decoration: none; }
-    .topbar a:hover { color: var(--red); }
-    .topbar-nav { display: flex; gap: 1.5rem; align-items: center; }
+    .topbar a { color: var(--text-dim); text-decoration: none; transition: color .2s; }
+    .topbar a:hover { color: var(--accent-light); }
+    .topbar-brand { font-weight: 600; color: var(--accent-light); letter-spacing: .15em; }
 
-    /* ── Login ── */
+    /* ── LOGIN ── */
     #login-screen {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 80vh;
-      gap: 2rem;
-      padding: 1rem;
+      min-height: 90vh;
+      gap: 2.5rem;
+      padding: 2rem 1rem;
     }
 
-    .login-ascii {
-      color: var(--red-dim);
-      font-size: .62rem;
-      line-height: 1.2;
+    .login-logo {
       text-align: center;
-      opacity: .5;
-      white-space: pre;
+    }
+    .login-logo .kanji {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: .1em;
+      line-height: 1;
+      display: block;
+      text-shadow: 0 0 40px var(--accent-glow);
+    }
+    .login-logo .sub {
+      font-size: .75rem;
+      color: var(--text-muted);
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      margin-top: .5rem;
+      display: block;
     }
 
     .login-box {
-      border: 1px solid var(--border);
       background: var(--bg2);
-      padding: 2rem 2.5rem;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      padding: 2.5rem 3rem;
       width: 100%;
-      max-width: 420px;
+      max-width: 440px;
     }
     .login-box h2 {
-      color: var(--red);
       font-size: 1rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      margin: 0 0 .5rem;
-    }
-    .login-box p {
+      font-weight: 500;
       color: var(--text-dim);
-      font-size: .9rem;
-      margin: 0 0 1.5rem;
-      line-height: 1.5;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
     }
+    .login-box h2 span { color: var(--accent-light); }
 
-    .token-input-wrap { display: flex; }
-    .token-input-wrap input {
+    .pw-wrap { display: flex; gap: 0; }
+    .pw-wrap input {
       flex: 1;
       background: var(--bg);
       border: 1px solid var(--border);
       border-right: none;
-      color: var(--red);
+      color: var(--text);
       font-family: inherit;
-      font-size: .9rem;
-      padding: .6rem .8rem;
+      font-size: .95rem;
+      font-weight: 300;
+      padding: .7rem 1rem;
       outline: none;
-      min-width: 0;
+      transition: border-color .2s;
+      letter-spacing: .05em;
     }
-    .token-input-wrap input:focus { border-color: var(--red-dim); }
+    .pw-wrap input:focus { border-color: var(--accent); }
+    .pw-wrap input::placeholder { color: var(--text-muted); }
 
-    .btn-connect {
-      background: var(--red-dark);
-      border: 1px solid var(--red-dim);
-      color: var(--red);
+    .btn-enter {
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: #fff;
       font-family: inherit;
       font-size: .85rem;
-      padding: .6rem 1.2rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .7rem 1.4rem;
       cursor: pointer;
+      transition: background .2s;
       white-space: nowrap;
     }
-    .btn-connect:hover { background: #550000; }
+    .btn-enter:hover { background: var(--accent-light); }
 
-    .login-hint { font-size: .8rem; color: var(--text-dim); margin-top: .75rem; }
-    .login-hint a { color: var(--red-dim); }
+    .login-error {
+      font-size: .82rem;
+      color: var(--accent-light);
+      margin-top: .75rem;
+      display: none;
+      letter-spacing: .05em;
+    }
 
-    /* ── Dashboard ── */
-    #dashboard { display: none; padding: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    /* ── DASHBOARD ── */
+    #dashboard {
+      display: none;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
 
     .dash-header {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       padding-bottom: 1.2rem;
       border-bottom: 2px solid var(--border);
       gap: 1rem;
       flex-wrap: wrap;
     }
-    .dash-title { font-size: 1rem; color: var(--text-dim); letter-spacing: .2em; text-transform: uppercase; }
-    .dash-title span { color: var(--red); display: block; font-size: 1.8rem; margin-top: .3rem; letter-spacing: .05em; }
+    .dash-title-block {}
+    .dash-title-sup {
+      font-size: .75rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: .3em;
+      text-transform: uppercase;
+    }
+    .dash-title-main {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      letter-spacing: .1em;
+      line-height: 1;
+      margin-top: .3rem;
+    }
+    .dash-title-gen {
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-top: .5rem;
+      letter-spacing: .05em;
+    }
+    .dash-title-gen span { color: var(--text-dim); }
 
     .btn-logout {
-      background: 0;
+      background: none;
       border: 1px solid var(--border);
       color: var(--text-dim);
       font-family: inherit;
-      font-size: .85rem;
-      padding: .5rem 1.2rem;
+      font-size: .8rem;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .55rem 1.2rem;
       cursor: pointer;
-      white-space: nowrap;
+      transition: all .2s;
       min-height: 44px;
     }
-    .btn-logout:hover { border-color: var(--red); color: var(--red); }
+    .btn-logout:hover { border-color: var(--accent); color: var(--accent-light); }
+
+    /* ── KPI Cards ── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .kpi-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent-dark);
+      padding: 1.2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 60px; height: 60px;
+      background: radial-gradient(circle at bottom right, var(--accent-glow), transparent 70%);
+    }
+    .kpi-label {
+      font-size: .72rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+    .kpi-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      letter-spacing: -.01em;
+    }
+    .kpi-value.accent { color: var(--accent-light); }
+    .kpi-sub {
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-top: .4rem;
+      letter-spacing: .05em;
+    }
 
     /* ── Pestanyes ── */
     .tabs {
       display: flex;
-      gap: .25rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
+      gap: 0;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--border);
     }
     .tab-btn {
       background: none;
-      border: 1px solid transparent;
-      border-bottom: none;
+      border: none;
+      border-bottom: 2px solid transparent;
       color: var(--text-dim);
       font-family: inherit;
       font-size: .85rem;
-      padding: .5rem 1.2rem;
-      cursor: pointer;
-      letter-spacing: .1em;
+      font-weight: 400;
+      letter-spacing: .2em;
       text-transform: uppercase;
+      padding: .7rem 1.5rem;
+      cursor: pointer;
       position: relative;
-      bottom: -1px;
-      transition: all .15s;
+      bottom: -2px;
+      transition: all .2s;
     }
-    .tab-btn:hover { color: var(--red); }
+    .tab-btn:hover { color: var(--text); }
     .tab-btn.active {
-      border-color: var(--border);
-      border-bottom-color: var(--bg);
-      color: var(--red);
-      background: var(--bg);
+      color: var(--accent-light);
+      border-bottom-color: var(--accent-light);
     }
 
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    /* ── Període ── */
-    .period-wrap { display: flex; align-items: center; gap: .5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-    .period-label { font-size: .8rem; color: var(--text-dim); letter-spacing: .1em; margin-right: .5rem; }
-    #period-selector { display: flex; gap: .25rem; flex-wrap: wrap; }
+    /* ── Secció títol ── */
+    .section-title {
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: .6rem;
+      border-bottom: 1px solid var(--border);
+      margin: 2.5rem 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    .section-title .accent-mark { color: var(--accent); font-size: 1.1em; }
 
-    .period-btn {
+    /* ── Gràfic temporal ── */
+    .chart-controls {
+      display: flex;
+      gap: .4rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .chart-period-btn {
       background: var(--bg2);
       border: 1px solid var(--border);
       color: var(--text-dim);
       font-family: inherit;
-      font-size: .8rem;
+      font-size: .78rem;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
       padding: .4rem .9rem;
       cursor: pointer;
       transition: all .15s;
-      min-height: 44px;
-      min-width: 44px;
+      min-height: 36px;
     }
-    .period-btn:hover { border-color: var(--red-dim); color: var(--red); }
-    .period-btn.active { background: var(--red-dark); border-color: var(--red); color: var(--red); font-weight: 700; }
-
-    /* ── Stats ── */
-    .period-header { margin-bottom: 1rem; }
-    .period-range { font-size: .85rem; color: var(--text-dim); }
-    .period-note { font-size: .75rem; color: var(--amber); opacity: .7; }
-
-    .stats-total { font-size: 1rem; color: var(--text-dim); margin-bottom: 2.5rem; }
-    .stats-total strong { color: var(--red); font-size: 4rem; display: block; font-weight: 900; letter-spacing: -.02em; line-height: 1; margin-top: .3rem; }
-
-    .section-title {
-      font-size: .95rem;
-      letter-spacing: .2em;
+    .chart-period-btn:hover { border-color: var(--accent); color: var(--text); }
+    .chart-period-btn.active {
+      background: var(--accent-dark);
+      border-color: var(--accent);
+      color: var(--text);
+    }
+    .chart-group-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: .75rem;
+      font-weight: 400;
+      letter-spacing: .12em;
       text-transform: uppercase;
+      padding: .4rem .8rem;
+      cursor: pointer;
+      transition: all .15s;
+      min-height: 36px;
+    }
+    .chart-group-btn:hover { color: var(--text); }
+    .chart-group-btn.active { color: var(--accent-light); border-color: var(--accent); }
+
+    .chart-sep { width: 1px; background: var(--border); margin: .2rem .3rem; }
+
+    .chart-container {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 1.5rem 1.5rem 1rem;
+      position: relative;
+      height: 280px;
+    }
+
+    /* ── Barres CSS ── */
+    .bars { display: flex; flex-direction: column; gap: .7rem; }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 160px 1fr 60px;
+      align-items: center;
+      gap: .8rem;
+    }
+    .bar-label {
+      font-size: .88rem;
       color: var(--text-dim);
-      padding: .6rem 0;
-      border-bottom: 1px solid var(--border);
-      margin: 2.5rem 0 1.2rem;
+      text-align: right;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .bar-track {
+      background: var(--bg3);
+      height: 26px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .bar-fill {
+      height: 100%;
+      width: 0;
       display: flex;
       align-items: center;
-      gap: .5rem;
+      position: relative;
     }
-    .section-title::before { content: '▸'; color: var(--red); }
+    .bar-fill.anim { transition: width 1.1s cubic-bezier(.4,0,.2,1); }
+    .bar-fill--ca    { background: linear-gradient(90deg, var(--accent-dark), var(--accent)); }
+    .bar-fill--es    { background: linear-gradient(90deg, #4d3000, #c9a84c); }
+    .bar-fill--en    { background: linear-gradient(90deg, #003040, var(--blue)); }
+    .bar-fill--page  { background: linear-gradient(90deg, var(--accent-dark), var(--accent-light)); }
+    .bar-fill--browser { background: linear-gradient(90deg, #003040, var(--blue)); }
+    .bar-fill--system  { background: linear-gradient(90deg, var(--accent-dark), var(--accent-light)); }
+    .bar-fill--size    { background: linear-gradient(90deg, #1a2a00, #7ab840); }
+    .bar-fill--location { background: linear-gradient(90deg, #1a1040, #8060d0); }
+    .bar-pct {
+      font-size: .72rem;
+      color: rgba(240,220,200,.7);
+      position: absolute;
+      right: 6px;
+      font-weight: 600;
+    }
+    .bar-count {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text);
+      text-align: right;
+    }
 
-    .chart { display: flex; flex-direction: column; gap: .8rem; }
-    .chart-row { display: grid; grid-template-columns: 150px 1fr 55px; align-items: center; gap: .8rem; }
-    .chart-label { font-size: .95rem; color: var(--text-dim); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .chart-bar-wrap { background: var(--bg3); height: 28px; position: relative; border: 1px solid var(--border); overflow: hidden; }
-    .chart-bar { height: 100%; position: relative; display: flex; align-items: center; width: 0; }
-    .chart-bar.animate { transition: width 1.2s cubic-bezier(.4,0,.2,1); }
-    .chart-bar--lang-ca  { background: linear-gradient(90deg, #4d0000, var(--red-dim)); }
-    .chart-bar--lang-es  { background: linear-gradient(90deg, #4d3800, var(--amber)); }
-    .chart-bar--lang-en  { background: linear-gradient(90deg, #003d4d, var(--blue)); }
-    .chart-bar--section  { background: linear-gradient(90deg, #331515, var(--red)); }
-    .chart-bar--browser  { background: linear-gradient(90deg, #003d4d, var(--blue)); }
-    .chart-bar--system   { background: linear-gradient(90deg, #331515, var(--red-dim)); }
-    .chart-bar--size     { background: linear-gradient(90deg, #4d3800, var(--amber)); }
-    .chart-bar--location { background: linear-gradient(90deg, #2a1a3a, #aa77ff); }
-    .chart-pct { font-size: .75rem; color: rgba(255,255,255,.6); position: absolute; right: 6px; font-weight: 700; }
-    .chart-value { font-size: .95rem; color: var(--text); text-align: right; font-weight: 600; }
+    /* ── Dispositius icons ── */
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      padding: 1.5rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      margin-bottom: .5rem;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      min-width: 72px;
+    }
+    .icon-item svg { display: block; }
+    .icon-pct   { font-size: 1rem; font-weight: 600; color: var(--accent-light); }
+    .icon-name  { font-size: .72rem; color: var(--text-muted); text-align: center; letter-spacing: .05em; }
+    .icon-count { font-size: .72rem; color: var(--text-muted); }
 
-    .icon-row { display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-end; justify-content: center; gap: 1.5rem; margin: 1.2rem 0 1.5rem; padding: 1.2rem; background: var(--bg2); border: 1px solid var(--border); }
-    .icon-item { display: flex; flex-direction: column; align-items: center; gap: .4rem; }
-    .icon-item svg { display: block; color: var(--red-dim); }
-    .icon-item--browser svg { color: var(--blue); }
-    .icon-item--system svg  { color: var(--red-dim); }
-    .icon-item--size svg    { color: var(--amber); }
-    .icon-item__pct   { font-size: .95rem; color: var(--red); font-weight: 700; }
-    .icon-item__name  { font-size: .75rem; color: var(--text-dim); text-align: center; }
-    .icon-item__count { font-size: .75rem; color: var(--text-dim); }
-
+    /* ── Insights ── */
     .insight-box {
       background: var(--bg2);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--red);
-      padding: 1.2rem 1.5rem;
-      margin-top: 2.5rem;
-      font-size: .95rem;
-      color: var(--text-dim);
-      line-height: 1.8;
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0 0;
+      line-height: 2;
     }
-    .insight-box .label { color: var(--red); font-size: .85rem; letter-spacing: .2em; text-transform: uppercase; display: block; margin-bottom: .8rem; }
-    .insight-item { display: flex; gap: .6rem; align-items: baseline; margin-bottom: .3rem; }
-    .insight-item::before { content: '→'; color: var(--red); flex-shrink: 0; }
-
-    .loading { color: var(--text-dim); font-size: .9rem; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-    .blink { animation: blink 1s step-end infinite; }
-
-    .dash-footer { margin-top: 1.5rem; font-size: .78rem; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: .8rem; }
-
-    /* ── Manual ── */
-    .manual-content {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      padding: 2rem;
-      line-height: 1.8;
+    .insight-label {
+      font-size: .75rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: .8rem;
+    }
+    .insight-item {
+      display: flex;
+      gap: .6rem;
+      align-items: baseline;
       font-size: .9rem;
       color: var(--text-dim);
     }
-    .manual-content h2 {
-      color: var(--red);
-      font-size: 1rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      margin: 2rem 0 1rem;
-      padding-bottom: .5rem;
-      border-bottom: 1px solid var(--border);
+    .insight-item::before { content: '—'; color: var(--accent); flex-shrink: 0; }
+    .insight-item strong { color: var(--text); font-weight: 500; }
+    .accent-text { color: var(--accent-light); }
+
+    /* ── Dues columnes ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
-    .manual-content h2:first-child { margin-top: 0; }
-    .manual-content h3 { color: var(--text); font-size: .9rem; margin: 1.5rem 0 .5rem; letter-spacing: .1em; }
-    .manual-content p { margin-bottom: .75rem; }
-    .manual-content code {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      color: var(--red-dim);
-      padding: .1rem .4rem;
-      font-family: inherit;
-      font-size: .85rem;
-    }
-    .manual-content pre {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--red-dark);
-      padding: 1rem 1.2rem;
-      margin: .75rem 0 1rem;
-      overflow-x: auto;
-      font-size: .82rem;
-      line-height: 1.6;
-      color: var(--text-dim);
-    }
-    .manual-content ul { padding-left: 1.5rem; margin-bottom: .75rem; }
-    .manual-content li { margin-bottom: .3rem; }
-    .manual-content .tip {
-      background: var(--red-dark);
-      border-left: 3px solid var(--red-dim);
-      padding: .75rem 1rem;
-      margin: 1rem 0;
-      font-size: .85rem;
-    }
-    .manual-content table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-      font-size: .85rem;
-    }
-    .manual-content th {
-      background: var(--red-dark);
-      color: var(--red);
-      padding: .5rem .75rem;
-      text-align: left;
-      letter-spacing: .1em;
-      font-size: .8rem;
-    }
-    .manual-content td {
-      padding: .4rem .75rem;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-dim);
-    }
-    .manual-content td code { font-size: .8rem; }
 
     /* ── Footer ── */
-    .admin-footer {
-      text-align: center;
+    .data-footer {
       font-size: .75rem;
-      color: var(--text-dim);
-      padding: 1.5rem;
+      color: var(--text-muted);
       border-top: 1px solid var(--border);
-      margin-top: 2rem;
+      padding-top: .8rem;
+      margin-top: 2.5rem;
+      letter-spacing: .05em;
     }
-    .admin-footer a { color: var(--red-dim); text-decoration: none; }
+
+    .loading-msg { color: var(--text-dim); font-size: .9rem; padding: 2rem 0; }
 
     /* ── Responsive ── */
-    @media (max-width: 600px) {
-      #dashboard { padding: 1rem; }
-      .chart-row { grid-template-columns: 90px 1fr 40px; gap: .5rem; }
-      .chart-label { font-size: .78rem; }
-      .dash-title span { font-size: 1.3rem; }
-      .stats-total strong { font-size: 3rem; }
-      .login-ascii { font-size: .48rem; }
-      .login-box { padding: 1.5rem 1.2rem; }
+    @media (max-width: 768px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-col  { grid-template-columns: 1fr; }
+      .bar-row  { grid-template-columns: 90px 1fr 45px; gap: .5rem; }
+      .bar-label { font-size: .75rem; }
+      .chart-container { height: 200px; }
+      .dash-title-main { font-size: 1.6rem; }
+      .login-box { padding: 2rem 1.5rem; }
+      .kpi-value { font-size: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .kpi-grid { grid-template-columns: 1fr 1fr; gap: .7rem; }
+      .tabs { overflow-x: auto; }
+      .tab-btn { padding: .7rem 1rem; font-size: .78rem; white-space: nowrap; }
+      #dashboard { padding: 1.2rem 1rem 3rem; }
     }
   </style>
 </head>
@@ -365,409 +499,571 @@
 
   <!-- Topbar -->
   <div class="topbar">
-    <div>
-      <a href="https://linuxbcn.com" target="_blank">LinuxBCN.com</a>
-      · Admin · Machiroku
-    </div>
-    <div class="topbar-nav">
-      <a href="/machiroku-web/ca/inici/">← Anar al web</a>
-    </div>
+    <span><span class="topbar-brand">MACHIROKU</span> · Estadístiques</span>
+    <a href="/machiroku-web/ca/inici/">← Tornar al web</a>
   </div>
 
-  <!-- URL de dades (GoatCounter) -->
+  <!-- URL de dades -->
   <div id="analytics-data-url" data-url="/machiroku-web/admin/analytics.json" style="display:none"></div>
 
-  <!-- LOGIN -->
+  <!-- ══ LOGIN ══ -->
   <div id="login-screen">
-    <pre class="login-ascii">
- ███╗   ███╗ █████╗  ██████╗██╗  ██╗██╗██████╗  ██████╗ ██╗  ██╗██╗   ██╗
- ████╗ ████║██╔══██╗██╔════╝██║  ██║██║██╔══██╗██╔═══██╗██║ ██╔╝██║   ██║
- ██╔████╔██║███████║██║     ███████║██║██████╔╝██║   ██║█████╔╝ ██║   ██║
- ██║╚██╔╝██║██╔══██║██║     ██╔══██║██║██╔══██╗██║   ██║██╔═██╗ ██║   ██║
- ██║ ╚═╝ ██║██║  ██║╚██████╗██║  ██║██║██║  ██║╚██████╔╝██║  ██╗╚██████╔╝
- ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝</pre>
-
+    <div class="login-logo">
+      <span class="kanji">MACHIROKU</span>
+      <span class="sub">estadístiques · accés restringit</span>
+    </div>
     <div class="login-box">
-      <h2>// analytics console</h2>
-      <p>Introdueix el token de l'API de GoatCounter per accedir al dashboard.</p>
-      <div class="token-input-wrap">
-        <input type="password" id="token-input" placeholder="token GoatCounter" autocomplete="off">
-        <button class="btn-connect" onclick="connect()">CONNECT_</button>
+      <h2>// <span>accés</span> al panell</h2>
+      <div class="pw-wrap">
+        <input type="password" id="pw-input" placeholder="contrasenya" autocomplete="current-password">
+        <button class="btn-enter" id="btn-enter">ENTRAR</button>
       </div>
-      <p class="login-hint">
-        Token a <a href="https://machiroku.goatcounter.com/settings/api" target="_blank">GoatCounter → API tokens</a>
-      </p>
+      <p class="login-error" id="login-error">Contrasenya incorrecta.</p>
     </div>
   </div>
 
-  <!-- DASHBOARD -->
+  <!-- ══ DASHBOARD ══ -->
   <div id="dashboard">
 
     <div class="dash-header">
-      <div class="dash-title">
-        analytics_console
-        <span>MACHIROKU</span>
+      <div class="dash-title-block">
+        <div class="dash-title-sup">panell d'estadístiques</div>
+        <div class="dash-title-main">MACHIROKU</div>
+        <div class="dash-title-gen" id="gen-info">carregant…</div>
       </div>
-      <button class="btn-logout" onclick="logout()">[ DISCONNECT ]</button>
+      <button class="btn-logout" onclick="logout()">Tancar sessió</button>
     </div>
 
-    <!-- Pestanyes -->
+    <!-- KPI -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Avui</div>
+        <div class="kpi-value accent" id="kpi-today">–</div>
+        <div class="kpi-sub">visites</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Aquesta setmana</div>
+        <div class="kpi-value" id="kpi-week">–</div>
+        <div class="kpi-sub">últims 7 dies</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Aquest mes</div>
+        <div class="kpi-value" id="kpi-month">–</div>
+        <div class="kpi-sub">últims 30 dies</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Total anual</div>
+        <div class="kpi-value" id="kpi-total">–</div>
+        <div class="kpi-sub" id="kpi-period-sub">–</div>
+      </div>
+    </div>
+
+    <!-- PESTANYES -->
     <div class="tabs">
-      <button class="tab-btn active" onclick="showTab('stats')">📊 Estadístiques</button>
-      <button class="tab-btn" onclick="showTab('manual')">📖 Manual d'edició</button>
+      <button class="tab-btn active" onclick="showTab('temporal', this)">Temporal</button>
+      <button class="tab-btn" onclick="showTab('pagines', this)">Pàgines</button>
+      <button class="tab-btn" onclick="showTab('dispositius', this)">Dispositius</button>
     </div>
 
-    <!-- TAB: Estadístiques -->
-    <div id="tab-stats" class="tab-panel active">
-      <div class="period-wrap">
-        <span class="period-label">període //</span>
-        <div id="period-selector"></div>
+    <!-- TAB: Temporal -->
+    <div id="tab-temporal" class="tab-panel active">
+      <div class="chart-controls">
+        <button class="chart-period-btn active" onclick="setChartPeriod(7, this)">7 dies</button>
+        <button class="chart-period-btn" onclick="setChartPeriod(30, this)">30 dies</button>
+        <button class="chart-period-btn" onclick="setChartPeriod(90, this)">3 mesos</button>
+        <button class="chart-period-btn" onclick="setChartPeriod(365, this)">1 any</button>
+        <div class="chart-sep"></div>
+        <button class="chart-group-btn active" onclick="setChartGroup('day', this)">Dia</button>
+        <button class="chart-group-btn" onclick="setChartGroup('week', this)">Setmana</button>
+        <button class="chart-group-btn" onclick="setChartGroup('month', this)">Mes</button>
       </div>
-      <div id="dash-content">
-        <div class="loading">carregant dades<span class="blink">_</span></div>
+      <div class="chart-container">
+        <canvas id="chart-visits"></canvas>
       </div>
+      <div id="temporal-insight" style="margin-top:1rem;font-size:.85rem;color:var(--text-muted);letter-spacing:.03em;"></div>
     </div>
 
-    <!-- TAB: Manual -->
-    <div id="tab-manual" class="tab-panel">
-      <div class="manual-content">
+    <!-- TAB: Pàgines -->
+    <div id="tab-pagines" class="tab-panel">
+      <div class="section-title"><span class="accent-mark">▸</span> Visites per idioma</div>
+      <div id="chart-langs" class="bars"></div>
 
-        <h2>1. Flux de treball diari</h2>
-        <p>Per publicar qualsevol canvi al web, el flux és sempre el mateix:</p>
-        <pre>cd ~/Documents/Obsidian/machiroku_hugo
-./symc-machiroku.sh
-→ Opció 4 (Deploy)</pre>
-        <div class="tip">⚠️ Sempre opció 4 (Deploy) per publicar. L'opció 3 (Push) només guarda el codi sense reconstruir el web.</div>
+      <div class="section-title"><span class="accent-mark">▸</span> Seccions més visitades</div>
+      <div id="chart-sections" class="bars"></div>
 
-        <h2>2. Editar menús del migdia</h2>
-        <p>Fitxer: <code>data/ca/menus.yaml</code> (i els equivalents <code>data/es/</code> i <code>data/en/</code>)</p>
-        <h3>Canviar un preu</h3>
-        <pre>- id: "menu-sushi"
-  preu: 17.00   ← canviar aquí</pre>
-        <h3>Desactivar un menú temporalment</h3>
-        <pre>actiu: false   ← no apareix al web, però es conserva</pre>
-        <h3>Canviar els plats inclosos</h3>
-        <pre>plats:
-  - "Sopa miso"
-  - "Nou plat aquí"   ← afegir o modificar
-  - "Te verd"</pre>
-
-        <h2>3. Editar la carta nocturna</h2>
-        <p>Fitxer: <code>data/ca/plats.yaml</code> (i els equivalents ES i EN)</p>
-        <h3>Afegir un plat nou</h3>
-        <pre>- id: "nom-unic"          ← sense espais ni accents
-  nom: "Nom del plat"
-  categoria: "entrants"   ← veure taula de categories
-  ordre: 5               ← ordre dins la categoria
-  actiu: true
-  destacat: false        ← true = badge "Destacat"
-  preu: 6.50
-  foto: ""               ← deixar buit fins tenir foto
-  descripcio: "Descripció breu del plat"
-  alergics:
-    - "soja"             ← veure taula d'al·lèrgens</pre>
-
-        <h3>Categories disponibles</h3>
-        <table>
-          <tr><th>id</th><th>Nom CA</th><th>Nom ES</th><th>Nom EN</th></tr>
-          <tr><td><code>entrants</code></td><td>Entrants</td><td>Entrantes</td><td>Starters</td></tr>
-          <tr><td><code>amanides</code></td><td>Amanides</td><td>Ensaladas</td><td>Salads</td></tr>
-          <tr><td><code>carn</code></td><td>Carn</td><td>Carne</td><td>Meat</td></tr>
-          <tr><td><code>arros</code></td><td>Arròs</td><td>Arroz</td><td>Rice</td></tr>
-          <tr><td><code>sashimi</code></td><td>Sashimi</td><td>Sashimi</td><td>Sashimi</td></tr>
-          <tr><td><code>nigiri</code></td><td>Nigiri Sushi</td><td>Nigiri Sushi</td><td>Nigiri Sushi</td></tr>
-          <tr><td><code>maki</code></td><td>Maki Sushi</td><td>Maki Sushi</td><td>Maki Sushi</td></tr>
-        </table>
-
-        <h2>4. Al·lèrgens</h2>
-        <p>Al camp <code>alergics</code> de cada plat o menú, usa exactament aquests identificadors:</p>
-        <table>
-          <tr><th>id</th><th>Icona</th><th>Al·lèrgen</th></tr>
-          <tr><td><code>gluten</code></td><td>🌾</td><td>Gluten (blat, civada...)</td></tr>
-          <tr><td><code>crustacis</code></td><td>🦐</td><td>Crustacis</td></tr>
-          <tr><td><code>ou</code></td><td>🥚</td><td>Ou</td></tr>
-          <tr><td><code>peix</code></td><td>🐟</td><td>Peix</td></tr>
-          <tr><td><code>cacauets</code></td><td>🥜</td><td>Cacauets</td></tr>
-          <tr><td><code>soja</code></td><td>🫘</td><td>Soja</td></tr>
-          <tr><td><code>lactis</code></td><td>🥛</td><td>Làctics</td></tr>
-          <tr><td><code>fruits-secs</code></td><td>🌰</td><td>Fruits secs</td></tr>
-          <tr><td><code>api</code></td><td>🥬</td><td>Api</td></tr>
-          <tr><td><code>mostassa</code></td><td>🌭</td><td>Mostassa</td></tr>
-          <tr><td><code>sesam</code></td><td>⚪</td><td>Sèsam</td></tr>
-          <tr><td><code>sulfits</code></td><td>🍷</td><td>Sulfits</td></tr>
-          <tr><td><code>mol·luscos</code></td><td>🐚</td><td>Mol·luscos</td></tr>
-          <tr><td><code>altramossos</code></td><td>🫛</td><td>Altramossos</td></tr>
-        </table>
-        <div class="tip">⚠️ L'id ha de coincidir EXACTAMENT (incloses les majúscules i caràcters especials). Si no coincideix, la icona no apareixerà.</div>
-
-        <h2>5. Avisos temporals</h2>
-        <p>Fitxer: <code>data/avisos.yaml</code></p>
-        <p>Per activar un avís de tancament o especial:</p>
-        <pre>- id: "tancat-setmana-santa"
-  actiu: true              ← canviar a true per activar
-  des_de: "2026-04-01"    ← data inici (YYYY-MM-DD)
-  fins_a: "2026-04-06"    ← data fi (YYYY-MM-DD)
-  prioritat: "alta"       ← alta (vermell) | mitjana (groc) | baixa (verd)
-  tipus: "banner"         ← banner (barra) | popup (modal)
-  titol:
-    ca: "Tancats per Setmana Santa"
-    es: "Cerrados por Semana Santa"
-    en: "Closed for Easter"
-  text:
-    ca: "Tornem el dimarts 7 d'abril."
-    es: "Volvemos el martes 7 de abril."
-    en: "We reopen on Tuesday 7 April."
-  cta:
-    ca: ""
-    es: ""
-    en: ""
-  link: ""</pre>
-        <div class="tip">✓ Quan passin les dates, l'avís desapareix sol. No cal desactivar-lo manualment.</div>
-
-        <h2>6. Fotos de plats</h2>
-        <ul>
-          <li>Mida recomanada: <code>800×600 px</code> (proporció 4:3)</li>
-          <li>Format: <code>.jpg</code> o <code>.webp</code></li>
-          <li>Pes màxim: <code>200 KB</code></li>
-          <li>Carpeta: <code>static/images/menus/</code> o <code>static/images/plats/</code></li>
-        </ul>
-        <pre>foto: "/images/plats/nom-del-fitxer.jpg"</pre>
-        <div class="tip">✓ Si la foto no existeix, la card es mostra igualment sense imatge — no dona error.</div>
-
-        <h2>7. Horaris del restaurant</h2>
-        <p>Fitxer: <code>data/horaris.yaml</code> — canviant aquest fitxer s'actualitzen els horaris a tot el web (header, footer, pàgina de contacte).</p>
-
-        <h2>8. Informació del restaurant</h2>
-        <p>Fitxer: <code>data/restaurant.yaml</code> — telèfon, email, adreça, xarxes socials, Google Maps.</p>
-
+      <div id="pagines-insight" class="insight-box" style="display:none">
+        <span class="insight-label">// resum</span>
+        <div id="pagines-insight-body"></div>
       </div>
     </div>
 
-    <div class="admin-footer">
-      Powered by <a href="https://linuxbcn.com" target="_blank">LinuxBCN.com</a>
-      · Consultancy · Development · Hosting · Design · Hugo SSG
+    <!-- TAB: Dispositius -->
+    <div id="tab-dispositius" class="tab-panel">
+      <div class="two-col">
+        <div>
+          <div class="section-title"><span class="accent-mark">▸</span> Navegadors</div>
+          <div id="chart-browsers" class="bars"></div>
+        </div>
+        <div>
+          <div class="section-title"><span class="accent-mark">▸</span> Sistemes operatius</div>
+          <div id="chart-systems" class="bars"></div>
+        </div>
+      </div>
+
+      <div class="section-title"><span class="accent-mark">▸</span> Tipus de dispositiu</div>
+      <div id="icons-sizes" class="icon-grid"></div>
+      <div id="chart-sizes" class="bars" style="margin-top:.8rem"></div>
+
+      <div id="dispositius-insight" class="insight-box" style="display:none">
+        <span class="insight-label">// resum</span>
+        <div id="dispositius-insight-body"></div>
+      </div>
     </div>
+
+    <div class="data-footer" id="data-footer"></div>
   </div>
 
   <script>
-    var DATA_URL = document.getElementById('analytics-data-url').dataset.url;
+  /* ══ CONFIGURACIÓ ══ */
+  var DATA_URL = document.getElementById('analytics-data-url').dataset.url;
+  // SHA-256 de la contrasenya "machiroku"
+  // Per canviar: echo -n "nova_contrasenya" | sha256sum
+  var PW_HASH = '116272762b38a30c5a806273658d91cbc094af966413e78c75f62f402bbd9050';
 
-    /* ── Períodes ── */
-    var PERIODS = [
-      { id: '7d',  label: '7 dies',  days: 7   },
-      { id: '30d', label: '30 dies', days: 30  },
-      { id: '90d', label: '3 mesos', days: 90  },
-      { id: '1y',  label: '1 any',   days: 365 },
-      { id: 'all', label: 'Total',   days: null }
-    ];
-    var activePeriod = '30d';
+  /* ══ AUTH ══ */
+  async function sha256(str) {
+    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  }
 
-    /* ── Auth ── */
-    function connect() {
-      var token = document.getElementById('token-input').value.trim();
-      if (!token) return;
-      sessionStorage.setItem('gc_token', token);
-      showDashboard();
-    }
-
-    function logout() {
-      sessionStorage.removeItem('gc_token');
-      document.getElementById('dashboard').style.display = 'none';
-      document.getElementById('login-screen').style.display = 'flex';
-      document.getElementById('token-input').value = '';
-    }
-
-    function showDashboard() {
+  async function tryLogin() {
+    var pw = document.getElementById('pw-input').value;
+    if (!pw) return;
+    var h = await sha256(pw);
+    if (h === PW_HASH) {
+      sessionStorage.setItem('mach_auth', '1');
       document.getElementById('login-screen').style.display = 'none';
       document.getElementById('dashboard').style.display = 'block';
-      renderPeriodSelector();
+      loadData();
+    } else {
+      var err = document.getElementById('login-error');
+      err.style.display = 'block';
+      document.getElementById('pw-input').select();
+      setTimeout(function(){ err.style.display = 'none'; }, 3000);
+    }
+  }
+
+  function logout() {
+    sessionStorage.removeItem('mach_auth');
+    document.getElementById('dashboard').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'flex';
+    document.getElementById('pw-input').value = '';
+    if (visitsChart) { visitsChart.destroy(); visitsChart = null; }
+    globalData = null;
+  }
+
+  document.getElementById('btn-enter').addEventListener('click', tryLogin);
+  document.getElementById('pw-input').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') tryLogin();
+  });
+
+  window.addEventListener('DOMContentLoaded', function(){
+    if (sessionStorage.getItem('mach_auth')) {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
       loadData();
     }
+  });
 
-    /* ── Pestanyes ── */
-    function showTab(id) {
-      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-      document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
-      document.getElementById('tab-' + id).classList.add('active');
-      event.target.classList.add('active');
+  /* ══ PESTANYES ══ */
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  /* ══ DADES GLOBALS ══ */
+  var globalData = null;
+  var visitsChart = null;
+  var chartPeriodDays = 7;
+  var chartGroup = 'day';
+
+  function loadData() {
+    fetch(DATA_URL + '?t=' + Date.now())
+      .then(function(r){ if (!r.ok) throw new Error('No s\'ha pogut carregar analytics.json'); return r.json(); })
+      .then(function(d){ globalData = d; renderAll(d); })
+      .catch(function(e){
+        document.getElementById('kpi-today').textContent = '–';
+        document.getElementById('gen-info').innerHTML = '<span style="color:var(--accent-light)">Error: ' + e.message + '</span>';
+      });
+  }
+
+  /* ══ RENDERITZACIÓ PRINCIPAL ══ */
+  function renderAll(data) {
+    var hits_by_day = data.hits_by_day || [];
+    var today = new Date().toISOString().slice(0,10);
+
+    // KPI
+    var todayCount = 0, weekCount = 0, monthCount = 0;
+    var cutoff7  = daysAgo(7);
+    var cutoff30 = daysAgo(30);
+    hits_by_day.forEach(function(d){
+      if (d.date === today)    todayCount += d.count;
+      if (d.date >= cutoff7)   weekCount  += d.count;
+      if (d.date >= cutoff30)  monthCount += d.count;
+    });
+    document.getElementById('kpi-today').textContent  = todayCount.toLocaleString('ca');
+    document.getElementById('kpi-week').textContent   = weekCount.toLocaleString('ca');
+    document.getElementById('kpi-month').textContent  = monthCount.toLocaleString('ca');
+    document.getElementById('kpi-total').textContent  = (data.total || 0).toLocaleString('ca');
+
+    var p = data.period || {};
+    document.getElementById('kpi-period-sub').textContent = fmtPeriod(p.start, p.end);
+
+    var gen = data.generated
+      ? new Date(data.generated).toLocaleString('ca-ES', {day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'})
+      : '–';
+    document.getElementById('gen-info').innerHTML =
+      'Darrera actualització: <span>' + gen + '</span> · Font: GoatCounter';
+
+    // Gràfic
+    renderChart();
+
+    // Pàgines
+    renderBars('chart-langs',    objToArr(data.by_lang    || {}), 'bar-fill--ca',   LANG_NAMES,    'lang');
+    renderBars('chart-sections', objToArr(data.by_section || {}), 'bar-fill--page',  SECTION_NAMES, 'section');
+
+    // Dispositius
+    renderBars('chart-browsers', data.browsers || [], 'bar-fill--browser', {}, 'browser');
+    renderBars('chart-systems',  data.systems  || [], 'bar-fill--system',  {}, 'system');
+    renderBars('chart-sizes',    data.sizes    || [], 'bar-fill--size',    SIZE_LABELS, 'size');
+    renderSizeIcons(data.sizes || []);
+
+    // Insights
+    renderPaginesInsight(data);
+    renderDispositiusInsight(data);
+
+    document.getElementById('data-footer').textContent =
+      'Dades actualitzades: ' + gen + ' · Període: ' + fmtPeriod(p.start, p.end) + ' · Font: GoatCounter (machiroku.goatcounter.com)';
+
+    // Animació barres
+    setTimeout(function(){
+      document.querySelectorAll('.bar-fill').forEach(function(b){
+        b.classList.add('anim');
+        setTimeout(function(){ b.style.width = b.getAttribute('data-w') + '%'; }, 40);
+      });
+    }, 120);
+  }
+
+  /* ══ GRÀFIC CHART.JS ══ */
+  function renderChart() {
+    if (!globalData) return;
+    var hits_by_day = globalData.hits_by_day || [];
+    var cutoff = daysAgo(chartPeriodDays);
+    var filtered = hits_by_day.filter(function(d){ return d.date >= cutoff; });
+
+    var grouped = groupHits(filtered, chartGroup);
+    var labels  = grouped.map(function(g){ return g.label; });
+    var values  = grouped.map(function(g){ return g.count; });
+
+    if (visitsChart) {
+      visitsChart.data.labels  = labels;
+      visitsChart.data.datasets[0].data = values;
+      visitsChart.update();
+      updateTemporalInsight(grouped);
+      return;
     }
 
-    /* ── Selector de període ── */
-    function renderPeriodSelector() {
-      var wrap = document.getElementById('period-selector');
-      if (!wrap) return;
-      wrap.innerHTML = PERIODS.map(function(p) {
-        return '<button class="period-btn' + (p.id === activePeriod ? ' active' : '') + '" ' +
-          'onclick="setPeriod(\'' + p.id + '\')">' + p.label + '</button>';
-      }).join('');
-    }
+    Chart.defaults.color = '#8a6a5a';
+    Chart.defaults.font.family = "'Oswald', sans-serif";
+    Chart.defaults.font.weight = '300';
 
-    function setPeriod(id) { activePeriod = id; renderPeriodSelector(); loadData(); }
+    var ctx = document.getElementById('chart-visits').getContext('2d');
+    visitsChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Visites',
+          data: values,
+          borderColor: '#b02020',
+          backgroundColor: function(ctx2) {
+            var gradient = ctx2.chart.ctx.createLinearGradient(0, 0, 0, ctx2.chart.height);
+            gradient.addColorStop(0, 'rgba(139,26,26,0.5)');
+            gradient.addColorStop(1, 'rgba(139,26,26,0.02)');
+            return gradient;
+          },
+          fill: true,
+          tension: 0.35,
+          pointRadius: function(){ return values.length > 60 ? 0 : 3; },
+          pointHoverRadius: 5,
+          pointBackgroundColor: '#b02020',
+          borderWidth: 2,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: {
+            grid:  { color: 'rgba(255,255,255,0.04)' },
+            ticks: { color: '#8a6a5a', maxTicksLimit: 10, font: { size: 11 } },
+            border: { color: 'rgba(255,255,255,0.08)' }
+          },
+          y: {
+            grid:  { color: 'rgba(255,255,255,0.04)' },
+            ticks: { color: '#8a6a5a', font: { size: 11 } },
+            border: { color: 'rgba(255,255,255,0.08)' },
+            beginAtZero: true
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1c1818',
+            borderColor: '#3a1e1e',
+            borderWidth: 1,
+            titleColor: '#f0ddd0',
+            bodyColor: '#8a6a5a',
+            padding: 10,
+            callbacks: {
+              label: function(ctx3){
+                return ' ' + ctx3.parsed.y.toLocaleString('ca') + ' visites';
+              }
+            }
+          }
+        }
+      }
+    });
+    updateTemporalInsight(grouped);
+  }
 
-    function fmtDate(str) {
-      if (!str) return '';
-      var d = new Date(str + 'T00:00:00');
-      return d.toLocaleDateString('ca-ES', { day: 'numeric', month: 'long', year: 'numeric' });
-    }
+  function setChartPeriod(days, btn) {
+    chartPeriodDays = days;
+    document.querySelectorAll('.chart-period-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    renderChart();
+  }
 
-    function periodLabel(start, end) { return fmtDate(start) + ' → ' + fmtDate(end); }
+  function setChartGroup(grp, btn) {
+    chartGroup = grp;
+    document.querySelectorAll('.chart-group-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    renderChart();
+  }
 
-    function filterByPeriod(data) {
-      var p = PERIODS.find(function(x){ return x.id === activePeriod; });
-      if (!p || !p.days) return data;
-      var now = new Date();
-      var cutoff = new Date(now);
-      cutoff.setDate(cutoff.getDate() - p.days);
-      var cutoffStr = cutoff.toISOString().slice(0, 10);
-      var dataStart = (data.period || {}).start || '';
-      if (dataStart >= cutoffStr) return data;
-      var totalStart = new Date(dataStart + 'T00:00:00');
-      var totalEnd   = new Date(((data.period || {}).end || now.toISOString().slice(0,10)) + 'T00:00:00');
-      var totalDays  = Math.max(1, Math.round((totalEnd - totalStart) / 86400000));
-      var ratio      = Math.min(1, p.days / totalDays);
-      function scale(obj) { var out = {}; Object.keys(obj).forEach(function(k){ out[k] = Math.round(obj[k] * ratio); }); return out; }
-      function scaleArr(arr) { return (arr || []).map(function(i){ return Object.assign({}, i, { count: Math.round(i.count * ratio) }); }); }
-      var newStart = new Date(Math.max(totalStart, cutoff));
-      return Object.assign({}, data, {
-        total: Math.round((data.total || 0) * ratio),
-        by_lang: scale(data.by_lang || {}), by_section: scale(data.by_section || {}),
-        browsers: scaleArr(data.browsers), systems: scaleArr(data.systems),
-        sizes: scaleArr(data.sizes), locations: scaleArr(data.locations),
-        period: { start: newStart.toISOString().slice(0, 10), end: (data.period || {}).end || now.toISOString().slice(0, 10) }
+  function groupHits(days, groupBy) {
+    if (groupBy === 'day') {
+      return days.map(function(d){
+        return { label: fmtDateShort(d.date), count: d.count };
       });
     }
-
-    function loadData() {
-      var content = document.getElementById('dash-content');
-      content.innerHTML = '<div class="loading">carregant dades<span class="blink">_</span></div>';
-      fetch(DATA_URL + '?t=' + Date.now())
-        .then(function(res) { if (!res.ok) throw new Error('No es pot carregar analytics.json'); return res.json(); })
-        .then(function(data) { renderDashboard(filterByPeriod(data)); })
-        .catch(function(err) { content.innerHTML = '<div style="color:var(--red)">ERROR: ' + err.message + '<br><br>Configura GoatCounter i el GitHub Action per generar analytics.json</div>'; });
-    }
-
-    function bar(value, max, cls) {
-      var p = max > 0 ? Math.round((value / max) * 100) : 0;
-      return '<div class="chart-bar-wrap"><div class="chart-bar ' + cls + '" data-width="' + p + '" style="width:0%">' +
-        (p > 8 ? '<span class="chart-pct">' + p + '%</span>' : '') + '</div></div>';
-    }
-
-    var BROWSER_ICONS = {
-      'Safari':  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>',
-      'Chrome':  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>',
-      'Firefox': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M17 12a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/></svg>',
-      'Edge':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.9 0 3.7-.5 5.2-1.5"/><path d="M22 12c0-2.5-1-4.8-2.7-6.5C17.7 4 15.5 3 13 3"/></svg>'
-    };
-    var SYSTEM_ICONS = {
-      'macOS':   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
-      'iOS':     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>',
-      'Windows': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5l8-1v8H3z"/><path d="M13 4l8-1v9h-8z"/><path d="M3 13h8v8l-8-1z"/><path d="M13 13h8v9l-8-1z"/></svg>',
-      'Android': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 16a7 7 0 0 1 14 0"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/><line x1="4" y1="8" x2="4" y2="14"/><line x1="20" y1="8" x2="20" y2="14"/></svg>',
-      'Linux':   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a5 5 0 0 0-5 5v5l-2 4h14l-2-4V7a5 5 0 0 0-5-5z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>'
-    };
-    var SIZE_ICONS = {
-      'phone':     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>',
-      'tablet':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>',
-      'desktop':   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
-      'desktophd': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
-      'larger':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="22" height="14" rx="2"/><line x1="7" y1="21" x2="17" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
-    };
-    var SIZE_LABELS   = { phone: 'Mòbil', tablet: 'Tauleta', desktop: 'Escriptori', desktophd: 'Escriptori HD', larger: 'Pantalla gran' };
-    var LANG_NAMES    = { ca: 'Català', es: 'Castellà', en: 'Anglès' };
-    var SECTION_NAMES = {
-      'inici': 'Inici', 'oferta': 'Oferta gastronòmica',
-      'reserves': 'Reserves', 'sobre-nosaltres': 'Sobre nosaltres', 'contacte': 'Contacte'
-    };
-
-    function iconRowVisual(items, icons, cls) {
-      if (!items || !items.length) return '';
-      var total = items.reduce(function(s, i){ return s + i.count; }, 0);
-      var MAX_SIZE = 64, MIN_SIZE = 18;
-      var maxCount = Math.max.apply(null, items.map(function(i){ return i.count; }));
-      var html = '<div class="icon-row">';
-      items.forEach(function(item) {
-        var pct  = total > 0 ? Math.round((item.count / total) * 100) : 0;
-        var size = Math.max(MIN_SIZE, Math.round((item.count / maxCount) * MAX_SIZE));
-        var icon = icons[item.id] || icons[item.name] || '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/></svg>';
-        var label = SIZE_LABELS[item.id] || item.name;
-        html += '<div class="icon-item icon-item--' + cls + '">' +
-          '<div style="width:' + MAX_SIZE + 'px;display:flex;align-items:flex-end;justify-content:center">' +
-          '<span style="width:' + size + 'px;height:' + size + 'px;display:block;color:inherit">' + icon + '</span></div>' +
-          '<div class="icon-item__pct">' + pct + '%</div>' +
-          '<div class="icon-item__name">' + label + '</div>' +
-          '<div class="icon-item__count">' + item.count + '</div></div>';
-      });
-      return html + '</div>';
-    }
-
-    function statSection(title, items, cls, icons) {
-      if (!items || !items.length) return '';
-      var max = Math.max.apply(null, items.map(function(i){ return i.count; }));
-      var vis = icons ? iconRowVisual(items, icons, cls.replace('chart-bar--', '')) : '';
-      var rows = items.map(function(item) {
-        return '<div class="chart-row"><div class="chart-label">' + (SIZE_LABELS[item.id] || item.name) + '</div>' +
-          bar(item.count, max, cls) + '<div class="chart-value">' + item.count + '</div></div>';
-      }).join('');
-      return '<div class="section-title">' + title + '</div>' + vis + '<div class="chart">' + rows + '</div>';
-    }
-
-    function renderDashboard(data) {
-      var total     = data.total || 0;
-      var byLang    = data.by_lang    || {};
-      var bySection = data.by_section || {};
-      var period    = data.period     || {};
-      var generated = data.generated
-        ? new Date(data.generated).toLocaleString('ca-ES', { dateStyle: 'medium', timeStyle: 'short' }) : '';
-
-      var langMax    = Math.max.apply(null, Object.values(byLang).concat([1]));
-      var sectionMax = Math.max.apply(null, Object.values(bySection).concat([1]));
-
-      var langRows = Object.entries(byLang).sort(function(a,b){ return b[1]-a[1]; })
-        .map(function(e) {
-          return '<div class="chart-row"><div class="chart-label">' + (LANG_NAMES[e[0]] || e[0]) + '</div>' +
-            bar(e[1], langMax, 'chart-bar--lang-' + e[0]) + '<div class="chart-value">' + e[1] + '</div></div>';
-        }).join('');
-
-      var sectionRows = Object.entries(bySection).sort(function(a,b){ return b[1]-a[1]; })
-        .map(function(e) {
-          return '<div class="chart-row"><div class="chart-label">' + (SECTION_NAMES[e[0]] || e[0]) + '</div>' +
-            bar(e[1], sectionMax, 'chart-bar--section') + '<div class="chart-value">' + e[1] + '</div></div>';
-        }).join('');
-
-      var topLang    = Object.entries(byLang).sort(function(a,b){return b[1]-a[1];})[0];
-      var topSection = Object.entries(bySection).sort(function(a,b){return b[1]-a[1];})[0];
-      var insights   = [];
-      if (topLang) insights.push('L\'idioma més usat és el <strong style="color:var(--red)">' + (LANG_NAMES[topLang[0]] || topLang[0]) + '</strong> amb ' + topLang[1] + ' visites (' + Math.round(topLang[1]/total*100) + '% del total).');
-      if (topSection) insights.push('La secció més visitada és <strong style="color:var(--red)">' + (SECTION_NAMES[topSection[0]] || topSection[0]) + '</strong> amb ' + topSection[1] + ' visites.');
-
-      document.getElementById('dash-content').innerHTML =
-        '<div class="period-header"><div class="period-range">' + periodLabel(period.start, period.end) + '</div></div>' +
-        '<div class="stats-total">visites totals<strong>' + total.toLocaleString('ca-ES') + '</strong></div>' +
-        '<div class="section-title">visites per idioma</div><div class="chart">' + langRows + '</div>' +
-        '<div class="section-title">visites per secció</div><div class="chart">' + sectionRows + '</div>' +
-        statSection('navegadors', data.browsers, 'chart-bar--browser', BROWSER_ICONS) +
-        statSection('sistemes operatius', data.systems, 'chart-bar--system', SYSTEM_ICONS) +
-        statSection('tipus de dispositiu', data.sizes, 'chart-bar--size', SIZE_ICONS) +
-        statSection('ubicacions', data.locations, 'chart-bar--location', null) +
-        '<div class="insight-box"><span class="label">// interpretació automàtica</span>' +
-        insights.map(function(i){ return '<div class="insight-item">' + i + '</div>'; }).join('') + '</div>' +
-        '<div class="dash-footer">dades actualitzades: ' + generated + ' · font: GoatCounter</div>';
-
-      setTimeout(function() {
-        document.querySelectorAll('.chart-bar').forEach(function(b) {
-          b.classList.add('animate');
-          setTimeout(function(){ b.style.width = b.getAttribute('data-width') + '%'; }, 50);
-        });
-      }, 100);
-    }
-
-    window.addEventListener('DOMContentLoaded', function() {
-      if (sessionStorage.getItem('gc_token')) showDashboard();
+    var buckets = {};
+    days.forEach(function(d) {
+      var key;
+      if (groupBy === 'week') {
+        var dt = new Date(d.date + 'T12:00:00');
+        var mon = new Date(dt);
+        mon.setDate(dt.getDate() - ((dt.getDay() + 6) % 7));
+        key = mon.toISOString().slice(0,10);
+      } else { // month
+        key = d.date.slice(0,7);
+      }
+      buckets[key] = (buckets[key] || 0) + d.count;
     });
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' && document.getElementById('login-screen').style.display !== 'none') connect();
+    return Object.keys(buckets).sort().map(function(k){
+      return {
+        label: groupBy === 'week' ? 'Setm. ' + fmtDateShort(k) : fmtMonth(k),
+        count: buckets[k]
+      };
     });
+  }
+
+  function updateTemporalInsight(grouped) {
+    if (!grouped || !grouped.length) {
+      document.getElementById('temporal-insight').textContent = '';
+      return;
+    }
+    var total = grouped.reduce(function(s,g){ return s + g.count; }, 0);
+    var max   = grouped.reduce(function(a,b){ return a.count > b.count ? a : b; });
+    var avg   = Math.round(total / grouped.length);
+    var label = chartGroup === 'day' ? 'dia' : chartGroup === 'week' ? 'setmana' : 'mes';
+    document.getElementById('temporal-insight').innerHTML =
+      'Total en el període: <strong style="color:var(--text)">' + total.toLocaleString('ca') + '</strong> visites · ' +
+      'Mitjana per ' + label + ': <strong style="color:var(--text)">' + avg.toLocaleString('ca') + '</strong> · ' +
+      'Pic màxim: <strong style="color:var(--accent-light)">' + max.count.toLocaleString('ca') + '</strong> (' + max.label + ')';
+  }
+
+  /* ══ BARRES CSS ══ */
+  var LANG_NAMES = { ca: 'Català', es: 'Castellà', en: 'Anglès' };
+  var SECTION_NAMES = {
+    'inici': 'Inici', 'oferta': 'Oferta gastronòmica',
+    'reserves': 'Reserves', 'sobre-nosaltres': 'Sobre nosaltres',
+    'contacte': 'Contacte', 'menus': 'Menús', 'dishes': 'Plats',
+    'legals': 'Avís legal', 'privacitat': 'Privacitat', 'cookies': 'Cookies'
+  };
+  var SIZE_LABELS = {
+    phone: 'Mòbil', tablet: 'Tauleta', desktop: 'Escriptori',
+    desktophd: 'Escriptori HD', larger: 'Pantalla gran'
+  };
+  var LANG_CLASS = { ca: 'bar-fill--ca', es: 'bar-fill--es', en: 'bar-fill--en' };
+
+  function objToArr(obj) {
+    return Object.entries(obj)
+      .map(function(e){ return {name: e[0], id: e[0], count: e[1]}; })
+      .sort(function(a,b){ return b.count - a.count; });
+  }
+
+  function renderBars(containerId, items, defaultCls, labelMap, type) {
+    var el = document.getElementById(containerId);
+    if (!items || !items.length) { el.innerHTML = '<span style="color:var(--text-muted);font-size:.85rem">Sense dades</span>'; return; }
+    var max = Math.max.apply(null, items.map(function(i){ return i.count; }));
+    var total = items.reduce(function(s,i){ return s + i.count; }, 0);
+    el.innerHTML = items.map(function(item){
+      var pct = max > 0 ? Math.round(item.count / max * 100) : 0;
+      var gpct = total > 0 ? Math.round(item.count / total * 100) : 0;
+      var name = labelMap[item.id] || labelMap[item.name] || item.name;
+      var cls = (type === 'lang' ? (LANG_CLASS[item.id] || defaultCls) : defaultCls);
+      return '<div class="bar-row">' +
+        '<div class="bar-label">' + name + '</div>' +
+        '<div class="bar-track">' +
+          '<div class="bar-fill ' + cls + '" data-w="' + pct + '" style="width:0%">' +
+            (pct > 10 ? '<span class="bar-pct">' + gpct + '%</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="bar-count">' + item.count.toLocaleString('ca') + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  /* ══ ICONS DISPOSITIU ══ */
+  var DEVICE_ICONS = {
+    phone:     '<svg width="{s}" height="{s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>',
+    tablet:    '<svg width="{s}" height="{s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>',
+    desktop:   '<svg width="{s}" height="{s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+    desktophd: '<svg width="{s}" height="{s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+    larger:    '<svg width="{s}" height="{s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="22" height="14" rx="2"/><line x1="7" y1="21" x2="17" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+  };
+  var DEVICE_COLORS = { phone: '#7ab840', tablet: '#c9a84c', desktop: '#4a90b8', desktophd: '#8060d0', larger: '#8a6a5a' };
+
+  function renderSizeIcons(items) {
+    var el = document.getElementById('icons-sizes');
+    if (!items || !items.length) { el.style.display = 'none'; return; }
+    var total = items.reduce(function(s,i){ return s + i.count; }, 0);
+    var maxC  = Math.max.apply(null, items.map(function(i){ return i.count; }));
+    var MAX_S = 58, MIN_S = 20;
+    el.innerHTML = items.map(function(item){
+      var pct  = total > 0 ? Math.round(item.count / total * 100) : 0;
+      var size = Math.max(MIN_S, Math.round(item.count / maxC * MAX_S));
+      var icon = (DEVICE_ICONS[item.id] || DEVICE_ICONS[item.name] || DEVICE_ICONS.desktop).replace(/\{s\}/g, size);
+      var name  = SIZE_LABELS[item.id] || item.name;
+      var color = DEVICE_COLORS[item.id] || 'var(--text-dim)';
+      return '<div class="icon-item">' +
+        '<div style="width:' + MAX_S + 'px;display:flex;align-items:flex-end;justify-content:center;color:' + color + '">' + icon + '</div>' +
+        '<div class="icon-pct" style="color:' + color + '">' + pct + '%</div>' +
+        '<div class="icon-name">' + name + '</div>' +
+        '<div class="icon-count">' + item.count.toLocaleString('ca') + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  /* ══ INSIGHTS EN LLENGUATGE NATURAL ══ */
+  function renderPaginesInsight(data) {
+    var total = data.total || 0;
+    if (!total) return;
+    var lines = [];
+    var byLang = objToArr(data.by_lang || {});
+    var bySection = objToArr(data.by_section || {});
+
+    if (byLang.length) {
+      var top = byLang[0];
+      var pct = Math.round(top.count / total * 100);
+      lines.push('L\'idioma dominant és el <strong>' + (LANG_NAMES[top.name] || top.name) + '</strong> amb ' +
+        top.count.toLocaleString('ca') + ' visites (<span class="accent-text">' + pct + '%</span> del total).');
+      if (byLang.length > 1) {
+        var sec = byLang[1];
+        lines.push('El ' + (LANG_NAMES[sec.name] || sec.name).toLowerCase() + ' és el segon idioma amb ' +
+          sec.count.toLocaleString('ca') + ' visites (' + Math.round(sec.count/total*100) + '%).');
+      }
+    }
+    if (bySection.length) {
+      var topS = bySection[0];
+      lines.push('La secció més visitada és <strong>' + (SECTION_NAMES[topS.name] || topS.name) + '</strong> amb ' +
+        topS.count.toLocaleString('ca') + ' visites.');
+      if (bySection.length > 1) {
+        var secS = bySection[1];
+        lines.push('La segueix <strong>' + (SECTION_NAMES[secS.name] || secS.name) + '</strong> amb ' +
+          secS.count.toLocaleString('ca') + ' visites.');
+      }
+    }
+    if (!lines.length) return;
+    document.getElementById('pagines-insight').style.display = 'block';
+    document.getElementById('pagines-insight-body').innerHTML =
+      lines.map(function(l){ return '<div class="insight-item">' + l + '</div>'; }).join('');
+  }
+
+  function renderDispositiusInsight(data) {
+    var lines = [];
+    var total = data.total || 0;
+
+    var browsers = (data.browsers || []).slice(0, 3);
+    var systems  = (data.systems  || []).slice(0, 2);
+    var sizes    = data.sizes || [];
+
+    if (browsers.length) {
+      var bTotal = browsers.reduce(function(s,b){ return s + b.count; }, 0) + 1;
+      var top = browsers[0];
+      lines.push('<strong>' + top.name + '</strong> és el navegador principal (' +
+        Math.round(top.count / (data.browsers.reduce(function(s,b){return s+b.count;},0)||1) * 100) + '% dels usuaris).');
+    }
+    if (systems.length) {
+      var sTotal = data.systems.reduce(function(s,b){return s+b.count;},0) || 1;
+      var topSys = systems[0];
+      lines.push('<strong>' + topSys.name + '</strong> és el sistema operatiu predominant amb un ' +
+        Math.round(topSys.count / sTotal * 100) + '% del trànsit.');
+    }
+    var mobileItem = sizes.find(function(s){ return s.id === 'phone' || s.name === 'phone'; });
+    var deskItem   = sizes.find(function(s){ return s.id === 'desktop' || s.id === 'desktophd'; });
+    if (mobileItem && sizes.length) {
+      var sTotal2 = sizes.reduce(function(s,b){return s+b.count;},0) || 1;
+      var mPct = Math.round(mobileItem.count / sTotal2 * 100);
+      lines.push('El <strong>' + mPct + '%</strong> de les visites ' + (mPct > 50 ? 'prové de mòbil' : 'és d\'escriptori') + '.');
+    }
+    if (!lines.length) return;
+    document.getElementById('dispositius-insight').style.display = 'block';
+    document.getElementById('dispositius-insight-body').innerHTML =
+      lines.map(function(l){ return '<div class="insight-item">' + l + '</div>'; }).join('');
+  }
+
+  /* ══ UTILITATS ══ */
+  function daysAgo(n) {
+    var d = new Date();
+    d.setDate(d.getDate() - n);
+    return d.toISOString().slice(0,10);
+  }
+
+  function fmtDateShort(str) {
+    if (!str) return '';
+    var d = new Date(str + 'T12:00:00');
+    return d.toLocaleDateString('ca-ES', { day: 'numeric', month: 'short' });
+  }
+
+  function fmtMonth(ym) {
+    var parts = ym.split('-');
+    var d = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, 1);
+    return d.toLocaleDateString('ca-ES', { month: 'short', year: '2-digit' });
+  }
+
+  function fmtPeriod(start, end) {
+    if (!start || !end) return '';
+    var fmt = function(s){
+      var d = new Date(s + 'T12:00:00');
+      return d.toLocaleDateString('ca-ES', { day: 'numeric', month: 'short', year: 'numeric' });
+    };
+    return fmt(start) + ' – ' + fmt(end);
+  }
   </script>
 </body>
 </html>

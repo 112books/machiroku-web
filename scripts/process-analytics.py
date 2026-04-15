@@ -81,6 +81,18 @@ def main():
             section = extract_section(path)
             by_section[section] = by_section.get(section, 0) + count
 
+    # Hits per dia
+    hits_by_day = {}
+    for day in hits:
+        date = (day.get("day") or "")[:10]
+        if not date:
+            continue
+        day_total = sum(s.get("count", 0) for s in day.get("stats", []))
+        if day_total > 0:
+            hits_by_day[date] = hits_by_day.get(date, 0) + day_total
+
+    hits_by_day_list = [{"date": k, "count": v} for k, v in sorted(hits_by_day.items())]
+
     # La resta
     browsers_raw  = safe_get(safe_get(raw, "browsers")  or {}, "browsers")  or []
     systems_raw   = safe_get(safe_get(raw, "systems")   or {}, "systems")   or []
@@ -97,15 +109,16 @@ def main():
         return sorted(out, key=lambda x: x["count"], reverse=True)
 
     output = {
-        "generated":  datetime.utcnow().isoformat() + "Z",
-        "period":     {"start": start_date, "end": end_date},
-        "total":      total,
-        "by_lang":    by_lang,
-        "by_section": by_section,
-        "browsers":   norm_items(browsers_raw),
-        "systems":    norm_items(systems_raw),
-        "sizes":      norm_items(sizes_raw),
-        "locations":  norm_items(locations_raw),
+        "generated":   datetime.utcnow().isoformat() + "Z",
+        "period":      {"start": start_date, "end": end_date},
+        "total":       total,
+        "hits_by_day": hits_by_day_list,
+        "by_lang":     by_lang,
+        "by_section":  by_section,
+        "browsers":    norm_items(browsers_raw),
+        "systems":     norm_items(systems_raw),
+        "sizes":       norm_items(sizes_raw),
+        "locations":   norm_items(locations_raw),
     }
 
     import os

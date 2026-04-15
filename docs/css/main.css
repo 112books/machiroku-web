@@ -977,7 +977,7 @@ a:hover {
    13. PÀGINA RESERVES
    ============================================================ */
 .reserves-section {
-  padding: var(--spacing-xl) 0;
+  padding: 0;
 }
 
 .reserves-header {
@@ -1153,7 +1153,7 @@ a:hover {
    14. PÀGINA CONTACTE
    ============================================================ */
 .contacte-section {
-  padding: var(--spacing-xl) 0;
+  padding: 0;
 }
 
 .contacte-header h1 {

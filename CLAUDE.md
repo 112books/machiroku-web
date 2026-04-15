@@ -86,8 +86,12 @@ layout: "oferta"   # oferta | reserves | contacte | sobre-nosaltres
 
 ### Analytics
 - GoatCounter at `machiroku.goatcounter.com`
-- GitHub Action updates `static/admin/analytics.json` hourly via `GOATCOUNTER_TOKEN` secret
-- Dashboard: `https://112books.github.io/machiroku-web/admin/`
+- GitHub Action updates `static/admin/analytics.json` **i** `docs/admin/analytics.json` hourly via `GOATCOUNTER_TOKEN` secret
+- Dashboard d'estadístiques: `/admin/` — protegit amb contrasenya **`machiroku`**
+  - Staging: `https://112books.github.io/machiroku-web/admin/`
+  - Producció: `https://machiroku.com/admin/`
+- Per canviar la contrasenya: `echo -n "nova" | sha256sum` i actualitzar `PW_HASH` a `static/admin/index.html`
+- Mostra: visites per dia/setmana/mes, idiomes, seccions, navegadors, SO, dispositius
 
 ## Known Hugo v0.159 warnings
 - `.Site.Languages` deprecated since v0.156.0 — pending official Hugo solution

@@ -1,113 +1,255 @@
-# CLAUDE.md
+# CLAUDE.md — Machiroku Web
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guia per a Claude Code quan treballa en aquest repositori.
+Última revisió: 2026-04-15
 
-## Project overview
+---
 
-Corporate website for Machiroku, a Japanese restaurant in Barcelona. Built with Hugo, hosted on GitHub Pages, with GoatCounter analytics.
+## Visió del projecte
+
+Web corporativa del restaurant japonès Machiroku (Barcelona).
+Objectius: informar (oferta, horaris, ubicació), activar reserves, permetre autonomia d'edició al client sense tocar codi.
 
 - **Repo**: https://github.com/112books/machiroku-web
 - **Staging**: https://112books.github.io/machiroku-web/ca/inici/
-- **Production**: https://machiroku.com/ (pending DNS setup)
-- **Hugo version**: v0.159 (extended)
+- **Producció**: https://machiroku.com/
+- **Hugo**: v0.159 (extended)
+- **Stack**: Hugo + GitHub Pages + GoatCounter
 
-## Common commands
+---
+
+## Comandes habituals
 
 ```bash
-# Local dev server
-./symc-machiroku.sh server        # opció 2 — environment: development → localhost:1313
-# o directament:
+# Servidor local
+./symc-machiroku.sh server        # environment: development → localhost:1313
 hugo server --environment development
 
-# Build and deploy to GitHub Pages (production → machiroku.com)
+# Deploy a GitHub Pages
 ./symc-machiroku.sh deploy        # opció 5 — environment: production
-# o directament:
 hugo --environment production --destination docs
 ```
 
-**Important**: Sempre usar `deploy` (opció 5) per publicar a GitHub Pages — `push` (opció 4) no reconstrueix `docs/`.
+**Important**: Sempre `deploy` (opció 5) per publicar. `push` (opció 4) no reconstrueix `docs/`.
 
 ### Entorns Hugo
-| Entorn | Config | URL |
-|--------|--------|-----|
-| `development` | `config/development/hugo.toml` | `http://localhost:1313/` |
-| `staging` | `config/staging/hugo.toml` | `https://112books.github.io/machiroku-web/` |
-| `production` | `config/production/hugo.toml` | `https://machiroku.com/` |
 
-## Architecture
+| Entorn        | Config                        | URL                                         |
+|---------------|-------------------------------|---------------------------------------------|
+| `development` | `config/development/hugo.toml`| `http://localhost:1313/`                    |
+| `staging`     | `config/staging/hugo.toml`    | `https://112books.github.io/machiroku-web/` |
+| `production`  | `config/production/hugo.toml` | `https://machiroku.com/`                    |
 
-### Multi-environment config
-- `hugo.toml` (root) — shared config, no `baseURL`
-- `config/staging/hugo.toml` — `baseURL = "https://112books.github.io/machiroku-web/"`
-- `config/production/hugo.toml` — `baseURL = "https://machiroku.com/"`
+El `hugo.toml` arrel no té `baseURL` — es defineix per entorn a `config/`.
 
-### Multilingual (ca/es/en)
-- `defaultContentLanguage = "ca"` — Catalan is primary
-- `defaultContentLanguageInSubdir = true` — required for `/ca/`, `/es/`, `/en/` prefixes; without it, Catalan routes to root and nav URLs 404
-- i18n files: `i18n/ca.yaml`, `i18n/es.yaml`, `i18n/en.yaml` (no `i18n-` prefix)
+---
 
-### Data access patterns
+## Arquitectura
+
+### Estructura del projecte
+
 ```
-# Global data
+machiroku_hugo/
+├── config/
+│   ├── staging/hugo.toml       # baseURL = "https://112books.github.io/machiroku-web/"
+│   └── production/hugo.toml    # baseURL = "https://machiroku.com/"
+├── content/
+│   ├── ca/                     # Català (idioma principal)
+│   ├── es/                     # Castellà
+│   └── en/                     # Anglès
+├── data/
+│   ├── restaurant.yaml         # Tel, email, maps, xarxes socials
+│   ├── horaris.yaml            # Horaris (font única — footer + contacte)
+│   ├── avisos.yaml             # Avisos temporals (banner/popup)
+│   ├── ca/
+│   │   ├── menus.yaml          # Menús del migdia en català
+│   │   ├── plats.yaml          # Carta nocturna en català
+│   │   └── alergics.yaml
+│   ├── es/                     # Ídem en castellà
+│   └── en/                     # Ídem en anglès
+├── layouts/
+│   ├── _default/
+│   │   ├── baseof.html         # Template base (header + footer + cookies + avisos)
+│   │   ├── home.html           # Redirect a /ca/inici/
+│   │   ├── oferta.html         # layout: "oferta"
+│   │   ├── reserves.html       # layout: "reserves"
+│   │   ├── contacte.html       # layout: "contacte"
+│   │   └── sobre-nosaltres.html
+│   └── partials/
+│       ├── seo.html            # title, description, canonical, hreflang, og:*, twitter:*
+│       ├── schema.html         # JSON-LD schema.org Restaurant
+│       ├── avisos.html         # Banners/popups temporals
+│       ├── estat-restaurant.html  # Injecta horaris + i18n com a JSON per JS
+│       ├── menu-card.html      # Card de menú del migdia
+│       └── plat-card.html      # Card de plat de la carta
+├── static/
+│   ├── css/main.css            # 16 seccions (veure baix)
+│   ├── js/
+│   │   ├── main.js             # Toggle nav mòbil + scroll suau
+│   │   └── estat-restaurant.js # Sense optional chaining (?.) per compatibilitat
+│   ├── images/
+│   │   └── machiroku-web-background.svg  # 2064×2912px retrat
+│   ├── logos/
+│   │   └── Machiroku-logo-gran-vectoritzat.svg
+│   └── admin/
+│       ├── index.html          # Dashboard estadístiques (protegit amb password)
+│       └── analytics.json      # Actualitzat per GitHub Action cada hora
+├── scripts/
+│   ├── build-analytics-json.py # Consolida raw JSON de GoatCounter
+│   └── process-analytics.py   # Genera analytics.json final (hits_by_day inclòs)
+├── .github/workflows/
+│   └── fetch-analytics.yml     # Actualitza analytics.json cada hora
+├── i18n/
+│   ├── ca.yaml
+│   ├── es.yaml
+│   └── en.yaml
+├── hugo.toml
+├── symc-machiroku.sh
+└── CLAUDE.md
+```
+
+### Multiidioma (ca/es/en)
+
+- `defaultContentLanguage = "ca"` — català és l'idioma per defecte
+- `defaultContentLanguageInSubdir = true` — obligatori per prefixos `/ca/` `/es/` `/en/`; sense aquesta línia el català va a l'arrel i les URLs dels menús donen 404
+- Fitxers i18n: `ca.yaml`, `es.yaml`, `en.yaml` (sense prefix `i18n-`)
+
+### Patrons d'accés a dades
+
+```
+# Dades globals
 (hugo.Data).horaris.base
 
-# Language-scoped data
+# Dades per idioma
 (index (hugo.Data) $lang).alergics.alergics
 
-# Pass context to partials
+# Passar context a partials
 {{ partial "menu-card.html" (dict "menu" . "lang" $.Site.Language.Lang) }}
 
-# JS i18n: inject via Hugo partial
+# Traduccions al JS: injectar via Hugo al partial
 window.i18nEstat = { ... }
 ```
 
-### Partial rules (from notes/hugo-rules.md)
-- Logic partials return a `dict` — never HTML
-- Render partials output HTML — never return data
-- Don't chain partials without type control
-- Don't use `template.HTML` in control flow
-- Don't use `index()` on HTML strings
-- Restaurant state contract: `status` (string: `open | closed | menu`), `reason` (string)
+### Regles de partials
 
-### Content data structure
-- `data/restaurant.yaml` — phone, email, maps, social
-- `data/horaris.yaml` — opening hours (single source of truth for footer and contacte)
-- `data/avisos.yaml` — temporary banners/popups with date ranges
-- `data/ca/`, `data/es/`, `data/en/` — `menus.yaml`, `plats.yaml`, `alergics.yaml`
+- Partials de lògica retornen un `dict` — mai HTML
+- Partials de renderització emeten HTML — mai retornen dades
+- No encadenar partials sense control de tipus
+- No usar `template.HTML` en control de flux
+- No usar `index()` sobre strings HTML
+- Contracte estat restaurant: `status` (string: `open | closed | menu`), `reason` (string)
 
-### Page layouts
-Content `.md` files must declare `layout:` in frontmatter:
+### Layouts de pàgina
+
+Els fitxers `.md` de contingut han de declarar `layout:` al frontmatter:
+
 ```yaml
 layout: "oferta"   # oferta | reserves | contacte | sobre-nosaltres
 ```
 
-### CSS structure (static/css/main.css)
-16 sections in order: Variables → Reset → Tipografia → Botons → Header → Navegació → Estat restaurant → Avisos → Main content → Hero → Footer → Oferta → Reserves → Contacte → Sobre nosaltres → **Responsive (single block at bottom: tablet 769–1024px + mobile ≤768px)**
+---
 
-### Analytics
-- GoatCounter at `machiroku.goatcounter.com`
-- GitHub Action updates `static/admin/analytics.json` **i** `docs/admin/analytics.json` hourly via `GOATCOUNTER_TOKEN` secret
-- Dashboard d'estadístiques: `/admin/` — protegit amb contrasenya **`machiroku`**
+## Analytics i panell d'administració
+
+- GoatCounter: `machiroku.goatcounter.com`
+- GitHub Action actualitza `static/admin/analytics.json` **i** `docs/admin/analytics.json` cada hora via secret `GOATCOUNTER_TOKEN`
+- Dashboard: `/admin/` — contrasenya: **`machiroku`**
   - Staging: `https://112books.github.io/machiroku-web/admin/`
   - Producció: `https://machiroku.com/admin/`
-- Per canviar la contrasenya: `echo -n "nova" | sha256sum` i actualitzar `PW_HASH` a `static/admin/index.html`
-- Mostra: visites per dia/setmana/mes, idiomes, seccions, navegadors, SO, dispositius
+- Per canviar la contrasenya: `echo -n "nova" | sha256sum` → actualitzar `PW_HASH` a `static/admin/index.html`
+- Mostra: visites per dia/setmana/mes (Chart.js), idiomes, seccions, navegadors, SO, dispositius
 
-## Known Hugo v0.159 warnings
-- `.Site.Languages` deprecated since v0.156.0 — pending official Hugo solution
-- `.Site.Data` deprecated since v0.156.0 — replaced everywhere with `hugo.Data`
+---
 
-## Design tokens
+## Disseny
+
+### Tokens CSS
+
 ```css
---color-accent: #8b1a1a
+--color-accent:      #8b1a1a
 --color-accent-dark: #5a0f0f
---color-black: #1a1a1a
---header-overlay: rgba(30, 5, 5, 0.98)
---bg-overlay: rgba(26, 26, 26, 0.55)
+--color-black:       #1a1a1a
+--header-overlay:    rgba(30, 5, 5, 0.98)
+--bg-overlay:        rgba(26, 26, 26, 0.55)
 ```
-Fonts: **Oswald** (body), **Kaushan Script** (slogan). Background SVG: `machiroku-web-background.svg` (2064×2912px portrait), `background-size: auto 100vh` on desktop, `cover` on mobile.
 
-## Valid allergen IDs
+Fonts: **Oswald** (cos), **Kaushan Script** (eslogan).
+Fons: `machiroku-web-background.svg` (2064×2912px retrat) — `background-size: auto 100vh` desktop, `cover` mòbil.
+
+### CSS — 16 seccions (`static/css/main.css`)
+
+```
+01 Variables globals    09 Main content
+02 Reset & base         10 Hero – Inici
+03 Tipografia           11 Footer
+04 Botons               12 Oferta
+05 Header               13 Reserves
+06 Navegació            14 Contacte
+07 Estat restaurant     15 Sobre nosaltres
+08 Avisos temporals     16 Responsive (1 bloc: tablet 769–1024px + mòbil ≤768px)
+```
+
+---
+
+## IDs d'al·lèrgens vàlids
+
 `gluten`, `crustacis`, `ou`, `peix`, `cacauets`, `soja`, `lactis`, `fruits-secs`, `api`, `mostassa`, `sesam`, `sulfits`, `mol·luscos`, `altramossos`
 
-These must match exactly between `data/[lang]/plats.yaml` and `data/[lang]/alergics.yaml`.
+Han de coincidir exactament entre `data/[lang]/plats.yaml` i `data/[lang]/alergics.yaml`.
+
+---
+
+## Warnings Hugo v0.159 coneguts
+
+- `.Site.Languages` deprecated des de v0.156.0 — pendent de solució oficial Hugo
+- `.Site.Data` deprecated des de v0.156.0 — substituït per `hugo.Data` a tots els templates
+
+---
+
+## Pendents
+
+### Prioritat baixa
+
+- [ ] SEO: meta description personalitzada per pàgina
+- [ ] Accessibilitat WCAG 2.1 AA: contrast verificat, alt text, nav teclat
+- [ ] humans.txt a `static/`
+
+### Pendent de client
+
+- [ ] Fotos de plats (`static/images/plats/`) i menús (`static/images/menus/`) — JPG/WebP, 800×600px, màx 200KB
+- [ ] WhatsApp real (mòbil) → `data/restaurant.yaml` camp `whatsapp:`
+- [ ] Verificar preus i plats de la carta
+
+### Producció
+
+- [ ] DNS: CNAME a Dinahosting → `112books.github.io`
+- [ ] Activar HTTPS a GitHub Pages
+- [ ] Eliminar Google Analytics del web antic
+
+---
+
+## Accesos
+
+- **GitHub repo**: https://github.com/112books/machiroku-web
+- **GoatCounter**: machiroku.goatcounter.com (compte: webmaster@linuxbcn.com)
+- **GitHub Secret**: `GOATCOUNTER_TOKEN`
+- **Email restaurant**: machiroku@machiroku.com → redirecció Gmail
+
+---
+
+## Com reprendre la sessió amb Claude
+
+1. Obre el projecte: `cd /Users/joan/Documents/Obsidian/machiroku_hugo`
+2. Comprova l'estat: `./symc-machiroku.sh` → opció 1 (Status)
+3. Comparteix aquest `CLAUDE.md` amb Claude Code
+4. Descriu la tasca concreta
+
+---
+
+## Historial de canvis rellevants
+
+| Data       | Canvis |
+|------------|--------|
+| 2026-04-15 | Dashboard estadístiques `/admin/` amb Chart.js, contrasenya simple, dades per dia/setmana/mes; fix GitHub Action per actualitzar `docs/`; unificació CLAUDE.md |
+| 2026-04-07 | SEO complet (seo.html, schema.html, og:image, hreflang); CSS reorganitzat 16 seccions; icones transport SVG; i18n ES/EN fix |
+| 2026-04-06 | Projecte inicial: Hugo multiidioma ca/es/en, 3 entorns, layouts propis, carta completa, al·lèrgens, avisos temporals, GoatCounter, footer, header |

@@ -37,6 +37,12 @@ jobs:
           fetch_json "${BASE}/stats/sizes?start=${START}&end=${END}&limit=10"     > /tmp/sizes.json
           fetch_json "${BASE}/stats/locations?start=${START}&end=${END}&limit=10" > /tmp/locations.json
           python3 scripts/build-analytics-json.py "${START}" "${END}"
+      - name: Debug raw API response
+        run: |
+          echo "=== HITS (primeres 50 línies) ==="
+          head -50 /tmp/hits.json
+          echo "=== BROWSERS ==="
+          head -20 /tmp/browsers.json
       - name: Process analytics
         run: |
           python3 scripts/process-analytics.py \

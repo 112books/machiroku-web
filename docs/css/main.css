@@ -1567,6 +1567,7 @@ a:hover {
 
 .sobre-foto-xef img {
   width: 100%;
+  height: auto;
   border-radius: 6px;
   box-shadow: var(--shadow-md);
   border: 3px solid rgba(139, 26, 26, 0.2);

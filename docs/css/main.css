@@ -810,6 +810,25 @@ a:hover {
   font-style: italic;
 }
 
+.footer-schedule-sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.footer-schedule-sessions .hours {
+  display: inline;
+  margin-right: 0.4rem;
+}
+
+.footer-schedule-sessions .service {
+  display: inline;
+}
+
+.footer-schedule-item--tancat .day {
+  color: rgba(255, 255, 255, 0.4);
+}
+
 /* Ubicació */
 .footer-address {
   display: block;

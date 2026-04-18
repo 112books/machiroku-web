@@ -14,7 +14,7 @@ estat_aviat: "Abrimos pronto"
 
 # Serveis
 servei_menu: "Menú del mediodía"
-servei_carta: "Carta nocturna"
+servei_carta: "A la Carta (menú no disponible)"
 
 # Missatges d'estat
 msg_obert_ara: "Ahora estamos abiertos"

@@ -81,31 +81,22 @@
           <h3>Horaris</h3>
           <div class="footer-schedule-list">
             {{ $horaris := (hugo.Data).horaris.base }}
-            {{ $serveis := (hugo.Data).horaris.serveis }}
-            {{ $lang := .Site.Language.Lang }}
-
-            {{ $dilluns := index $horaris "dilluns" }}
-            {{ if $dilluns }}
-            <div class="footer-schedule-item">
-              <span class="day">{{ i18n "dilluns" }}–{{ i18n "dissabte" }}</span>
-              <span class="hours">{{ (index $dilluns 0).inici }} – {{ (index $dilluns 0).fi }}</span>
-              <span class="service">{{ index (index $serveis "menu").nom $lang }}</span>
+            {{ range $dia := slice "dilluns" "dimarts" "dimecres" "dijous" "divendres" "dissabte" "diumenge" }}
+            {{ $franges := index $horaris $dia }}
+            <div class="footer-schedule-item {{ if not $franges }}footer-schedule-item--tancat{{ end }}">
+              <span class="day">{{ i18n $dia }}</span>
+              <div class="footer-schedule-sessions">
+                {{ if $franges }}
+                  {{ range $franges }}
+                  <span class="hours">{{ .inici }}–{{ .fi }}</span>
+                  <span class="service">{{ if eq .servei "menu" }}{{ i18n "servei_menu" }}{{ else }}{{ i18n "servei_carta" }}{{ end }}</span>
+                  {{ end }}
+                {{ else }}
+                  <span class="hours closed">{{ i18n "estat_tancat" }}</span>
+                {{ end }}
+              </div>
             </div>
             {{ end }}
-
-            {{ $dimecres := index $horaris "dimecres" }}
-            {{ if gt (len $dimecres) 1 }}
-            <div class="footer-schedule-item">
-              <span class="day">{{ i18n "dimecres" }}, {{ i18n "dijous" }}, {{ i18n "divendres" }}, {{ i18n "dissabte" }}</span>
-              <span class="hours">{{ (index $dimecres 1).inici }} – {{ (index $dimecres 1).fi }}</span>
-              <span class="service">{{ index (index $serveis "carta").nom $lang }}</span>
-            </div>
-            {{ end }}
-
-            <div class="footer-schedule-item">
-              <span class="day">{{ i18n "diumenge" }}</span>
-              <span class="hours closed">{{ i18n "estat_tancat" }}</span>
-            </div>
           </div>  {{/* fi footer-schedule-list */}}
         </div>  {{/* fi footer-col footer-horaris */}}
       

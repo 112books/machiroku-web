@@ -79,25 +79,66 @@
       
         <div class="footer-col footer-horaris">
           <h3>Horaris</h3>
-          <div class="footer-schedule-list">
-            {{ $horaris := (hugo.Data).horaris.base }}
-            {{ range $dia := slice "dilluns" "dimarts" "dimecres" "dijous" "divendres" "dissabte" "diumenge" }}
-            {{ $franges := index $horaris $dia }}
-            <div class="footer-schedule-item {{ if not $franges }}footer-schedule-item--tancat{{ end }}">
-              <span class="day">{{ i18n $dia }}</span>
-              <div class="footer-schedule-sessions">
-                {{ if $franges }}
-                  {{ range $franges }}
-                  <span class="hours">{{ .inici }}–{{ .fi }}</span>
-                  <span class="service">{{ if eq .servei "menu" }}{{ i18n "servei_menu" }}{{ else }}{{ i18n "servei_carta" }}{{ end }}</span>
-                  {{ end }}
-                {{ else }}
-                  <span class="hours closed">{{ i18n "estat_tancat" }}</span>
+          {{ $horaris := (hugo.Data).horaris.base }}
+          {{ $dies := slice "dilluns" "dimarts" "dimecres" "dijous" "divendres" "dissabte" "diumenge" }}
+          {{ $abr  := dict "dilluns" "dl" "dimarts" "dt" "dimecres" "dc" "dijous" "dj" "divendres" "dv" "dissabte" "ds" "diumenge" "dg" }}
+
+          <div class="footer-horaris-grid">
+
+            {{/* ── DINAR ── */}}
+            <div class="footer-horaris-bloc">
+              <div class="footer-bloc-titol">{{ i18n "horari_migdia" }}</div>
+              <div class="footer-bloc-hores">13:00 – 15:30</div>
+              <div class="footer-bloc-dies">
+                {{ range $dia := $dies }}
+                  {{ $franges := index $horaris $dia }}
+                  {{ $tipus := "" }}
+                  {{ range $franges }}{{ if lt .inici "16:00" }}{{ $tipus = .servei }}{{ end }}{{ end }}
+                  <span class="fdb {{ if eq $tipus "menu" }}fdb--menu{{ else if eq $tipus "carta" }}fdb--carta{{ else }}fdb--off{{ end }}"
+                        title="{{ i18n $dia }}">{{ i18n (index $abr $dia) }}</span>
                 {{ end }}
               </div>
+              <div class="footer-bloc-llegenda">
+                <span class="fbl fbl--menu">■ {{ i18n "servei_menu" }}</span>
+                <span class="fbl fbl--carta">■ A la Carta</span>
+              </div>
             </div>
+
+            {{/* ── SOPAR ── */}}
+            <div class="footer-horaris-bloc">
+              <div class="footer-bloc-titol">{{ i18n "horari_nit" }}</div>
+              <div class="footer-bloc-hores">20:00 – 23:00</div>
+              <div class="footer-bloc-dies">
+                {{ range $dia := $dies }}
+                  {{ $franges := index $horaris $dia }}
+                  {{ $teSopar := false }}
+                  {{ $fi := "" }}
+                  {{ range $franges }}{{ if ge .inici "16:00" }}{{ $teSopar = true }}{{ $fi = .fi }}{{ end }}{{ end }}
+                  <span class="fdb {{ if $teSopar }}fdb--carta{{ else }}fdb--off{{ end }}"
+                        {{ if and $teSopar (ne $fi "23:00") }}title="{{ i18n "horari_fins" }} {{ $fi }}"{{ end }}>
+                    {{ i18n (index $abr $dia) }}{{ if and $teSopar (ne $fi "23:00") }}*{{ end }}
+                  </span>
+                {{ end }}
+              </div>
+              {{ range $dia := $dies }}
+                {{ $franges := index $horaris $dia }}
+                {{ range $franges }}
+                  {{ if and (ge .inici "16:00") (ne .fi "23:00") }}
+                  <div class="footer-bloc-excepcio">* {{ i18n $dia }}: {{ i18n "horari_fins" }} {{ .fi }}</div>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            </div>
+
+          </div>{{/* fi footer-horaris-grid */}}
+
+          {{/* Dies tancats */}}
+          {{ range $dia := $dies }}
+            {{ if not (index $horaris $dia) }}
+            <div class="footer-horaris-tancat">{{ i18n $dia }} · {{ i18n "estat_tancat" }}</div>
             {{ end }}
-          </div>  {{/* fi footer-schedule-list */}}
+          {{ end }}
+
         </div>  {{/* fi footer-col footer-horaris */}}
       
       {{/* Columna 2: Ubicació + Xarxes */}}

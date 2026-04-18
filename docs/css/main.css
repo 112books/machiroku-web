@@ -771,62 +771,97 @@ a:hover {
   text-transform: capitalize;
 }
 
-/* Horaris */
-.footer-schedule-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+/* Horaris — dos blocs (Dinar / Sopar) */
+.footer-horaris-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 0.6rem;
 }
 
-.footer-schedule-item {
+.footer-bloc-titol {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.3rem;
+}
+
+.footer-bloc-hores {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.55rem;
+}
+
+/* Badges de dia */
+.footer-bloc-dies {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.fdb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.fdb--menu {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.fdb--carta {
+  background: rgba(201, 168, 76, 0.18);
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  color: #c9a84c;
+}
+
+.fdb--off {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.18);
+}
+
+/* Llegenda */
+.footer-bloc-llegenda {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-schedule-item .day {
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.9);
-  text-transform: capitalize;
-}
-
-.footer-schedule-item .hours {
-  color: var(--color-white);
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-.footer-schedule-item .service {
+.fbl {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: capitalize;
+  letter-spacing: 0.03em;
 }
 
-.footer-schedule-item .closed {
-  color: rgba(255, 255, 255, 0.5);
+.fbl--menu { color: rgba(139, 26, 26, 0.9); }
+.fbl--carta { color: rgba(201, 168, 76, 0.7); }
+
+/* Excepció d'hora */
+.footer-bloc-excepcio {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.35);
   font-style: italic;
+  margin-top: 0.2rem;
 }
 
-.footer-schedule-sessions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.footer-schedule-sessions .hours {
-  display: inline;
-  margin-right: 0.4rem;
-}
-
-.footer-schedule-sessions .service {
-  display: inline;
-}
-
-.footer-schedule-item--tancat .day {
-  color: rgba(255, 255, 255, 0.4);
+/* Tancat */
+.footer-horaris-tancat {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.3);
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  letter-spacing: 0.04em;
 }
 
 /* Ubicació */

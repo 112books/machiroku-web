@@ -1,6 +1,6 @@
 import json
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Seccions de Machiroku
 SECTION_MAP = {
@@ -20,15 +20,30 @@ def safe_get(data, key, default=None):
         return default
     return data.get(key, default)
 
+def extract_lang(path):
+    """Extreu l'idioma d'una URL de Machiroku.
+    Producció: /ca/inici/ → ca
+    Staging:   /machiroku-web/ca/inici/ → ca
+    """
+    parts = [p for p in path.strip('/').split('/') if p]
+    if parts and parts[0] in ('ca', 'es', 'en'):
+        return parts[0]
+    if len(parts) >= 2 and parts[1] in ('ca', 'es', 'en'):
+        return parts[1]
+    return 'ca'
+
 def extract_section(path):
     """Extreu la secció principal d'una URL de Machiroku.
-    /machiroku-web/ca/oferta/ → oferta
-    /machiroku-web/es/reserves/ → reserves
+    Producció: /ca/oferta/ → oferta
+    Staging:   /machiroku-web/ca/oferta/ → oferta
     """
     if not path:
         return 'inici'
     parts = [p for p in path.strip('/').split('/') if p]
-    # Estructura: machiroku-web / lang / seccio
+    # Producció: /lang/seccio/
+    if parts and parts[0] in ('ca', 'es', 'en'):
+        return parts[1] if len(parts) >= 2 else 'inici'
+    # Staging: /machiroku-web/lang/seccio/
     if len(parts) >= 3:
         return parts[2]
     elif len(parts) == 2:
@@ -57,43 +72,36 @@ def main():
         print(f"❌ JSON invàlid: {e}")
         sys.exit(1)
 
-    # Hits
+    # Hits: estructura GoatCounter v0:
+    #   {hits: [{path, stats: [{day, hourly, daily}], total, total_unique}]}
     hits_data = safe_get(raw, "hits_data") or {}
     hits = safe_get(hits_data, "hits") or []
 
-    # Totals per idioma i secció
     by_lang    = {}
     by_section = {}
     total      = 0
-
-    for day in hits:
-        for stat in safe_get(day, "stats") or []:
-            path  = safe_get(stat, "path", "")
-            count = safe_get(stat, "count", 0)
-            total += count
-
-            # Idioma: /machiroku-web/ca/ → ca
-            parts = [p for p in path.strip('/').split('/') if p]
-            lang = parts[1] if len(parts) >= 2 and parts[1] in ('ca', 'es', 'en') else 'ca'
-            by_lang[lang] = by_lang.get(lang, 0) + count
-
-            # Secció
-            section = extract_section(path)
-            by_section[section] = by_section.get(section, 0) + count
-
-    # Hits per dia
     hits_by_day = {}
-    for day in hits:
-        date = (day.get("day") or "")[:10]
-        if not date:
-            continue
-        day_total = sum(s.get("count", 0) for s in day.get("stats", []))
-        if day_total > 0:
-            hits_by_day[date] = hits_by_day.get(date, 0) + day_total
+
+    for path_item in hits:
+        path    = path_item.get("path", "")
+        lang    = extract_lang(path)
+        section = extract_section(path)
+
+        for stat in path_item.get("stats", []):
+            date  = (stat.get("day") or "")[:10]
+            count = stat.get("daily", 0)
+            if not count:
+                continue
+            total += count
+            by_lang[lang]       = by_lang.get(lang, 0) + count
+            by_section[section] = by_section.get(section, 0) + count
+            if date:
+                hits_by_day[date] = hits_by_day.get(date, 0) + count
 
     hits_by_day_list = [{"date": k, "count": v} for k, v in sorted(hits_by_day.items())]
 
-    # La resta
+    # Browsers, systems, sizes, locations
+    # Estructura: {browsers: [{id, browser, stats: [{day, hourly, daily}], total}]}
     browsers_raw  = safe_get(safe_get(raw, "browsers")  or {}, "browsers")  or []
     systems_raw   = safe_get(safe_get(raw, "systems")   or {}, "systems")   or []
     sizes_raw     = safe_get(safe_get(raw, "sizes")     or {}, "sizes")     or []
@@ -102,14 +110,17 @@ def main():
     def norm_items(items):
         out = []
         for item in items:
-            name = item.get("browser") or item.get("system") or item.get("size") or item.get("location") or item.get("id") or "Desconegut"
-            count = sum(s.get("count", 0) for s in item.get("stats", [])) or item.get("count", 0)
+            name = (item.get("browser") or item.get("system") or item.get("size") or
+                    item.get("location") or item.get("id") or "Desconegut")
+            count = sum(s.get("daily", 0) for s in item.get("stats", []))
+            if not count:
+                count = item.get("total", 0)
             if count > 0:
-                out.append({"name": name, "id": name, "count": count})
+                out.append({"name": name, "id": item.get("id", name), "count": count})
         return sorted(out, key=lambda x: x["count"], reverse=True)
 
     output = {
-        "generated":   datetime.utcnow().isoformat() + "Z",
+        "generated":   datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
         "period":      {"start": start_date, "end": end_date},
         "total":       total,
         "hits_by_day": hits_by_day_list,
@@ -122,7 +133,7 @@ def main():
     }
 
     import os
-    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    os.makedirs(os.path.dirname(os.path.abspath(output_file)), exist_ok=True)
 
     with open(output_file, "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)

@@ -19,8 +19,8 @@ base:
     - inici: "13:00"
       fi: "15:30"
       servei: "menu"
-    - inici: "19:00"
-      fi: "22:00"
+    - inici: "20:00"
+      fi: "23:00"
       servei: "carta"
 
   # Dijous
@@ -28,8 +28,8 @@ base:
     - inici: "13:00"
       fi: "15:30"
       servei: "menu"
-    - inici: "19:00"
-      fi: "22:00"
+    - inici: "20:00"
+      fi: "22:30"
       servei: "carta"
 
   # Divendres
@@ -37,8 +37,8 @@ base:
     - inici: "13:00"
       fi: "15:30"
       servei: "menu"
-    - inici: "19:00"
-      fi: "22:00"
+    - inici: "20:00"
+      fi: "23:00"
       servei: "carta"
 
   # Dissabte
@@ -46,8 +46,8 @@ base:
     - inici: "13:00"
       fi: "15:30"
       servei: "carta"
-    - inici: "19:00"
-      fi: "22:00"
+    - inici: "20:00"
+      fi: "23:00"
       servei: "carta"
 
   # Diumenge (TANCAT)

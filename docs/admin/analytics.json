@@ -1,17 +1,13 @@
 {
-  "generated": "2026-04-17T23:47:58.423407Z",
+  "generated": "2026-04-18T02:55:47.074168Z",
   "period": {
-    "start": "2025-04-17",
-    "end": "2026-04-17"
+    "start": "2025-04-18",
+    "end": "2026-04-18"
   },
   "total": 0,
   "hits_by_day": [],
-  "by_lang": {
-    "ca": 0
-  },
-  "by_section": {
-    "inici": 0
-  },
+  "by_lang": {},
+  "by_section": {},
   "browsers": [],
   "systems": [],
   "sizes": [],

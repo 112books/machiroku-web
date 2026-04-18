@@ -14,7 +14,7 @@ estat_aviat: "Opening soon"
 
 # Serveis
 servei_menu: "Lunch menu"
-servei_carta: "A la carte (no set menu)"
+servei_carta: "À la carte (no set menu)"
 
 # Missatges d'estat
 msg_obert_ara: "We are now open"

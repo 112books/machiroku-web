@@ -1124,6 +1124,32 @@ a:hover {
   flex: 1;
 }
 
+/* Horaris dins reserva-card (fons clar) */
+.reserva-card .footer-horaris-grid {
+  width: 100%;
+  text-align: left;
+}
+.reserva-card .footer-bloc-titol {
+  color: var(--color-accent);
+}
+.reserva-card .footer-bloc-hores {
+  color: var(--color-black);
+}
+.reserva-card .fdb--off {
+  background: rgba(0, 0, 0, 0.07);
+  color: rgba(0, 0, 0, 0.28);
+}
+.reserva-card .fbl--carta {
+  color: rgba(140, 100, 10, 0.85);
+}
+.reserva-card .footer-bloc-excepcio {
+  color: rgba(0, 0, 0, 0.45);
+}
+.reserva-card .footer-horaris-tancat {
+  color: rgba(0, 0, 0, 0.38);
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
 .horaris-list {
   width: 100%;
   display: flex;

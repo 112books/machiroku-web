@@ -1,16 +1,74 @@
 {
-  "generated": "2026-04-18T17:59:29.287448Z",
+  "generated": "2026-04-18T18:11:31.773311Z",
   "period": {
     "start": "2025-04-18",
     "end": "2026-04-18"
   },
-  "total": 0,
-  "hits_by_day": [],
+  "total": 244,
+  "hits_by_day": [
+    {
+      "date": "2026-04-06",
+      "count": 38
+    },
+    {
+      "date": "2026-04-07",
+      "count": 15
+    },
+    {
+      "date": "2026-04-08",
+      "count": 13
+    },
+    {
+      "date": "2026-04-09",
+      "count": 5
+    },
+    {
+      "date": "2026-04-10",
+      "count": 4
+    },
+    {
+      "date": "2026-04-11",
+      "count": 1
+    },
+    {
+      "date": "2026-04-12",
+      "count": 5
+    },
+    {
+      "date": "2026-04-13",
+      "count": 6
+    },
+    {
+      "date": "2026-04-14",
+      "count": 40
+    },
+    {
+      "date": "2026-04-15",
+      "count": 54
+    },
+    {
+      "date": "2026-04-16",
+      "count": 37
+    },
+    {
+      "date": "2026-04-17",
+      "count": 26
+    }
+  ],
   "by_lang": {
-    "ca": 0
+    "ca": 188,
+    "en": 31,
+    "es": 25
   },
   "by_section": {
-    "inici": 0
+    "inici": 101,
+    "oferta": 51,
+    "reserves": 40,
+    "contacte": 27,
+    "sobre-nosaltres": 17,
+    "legals": 4,
+    "cookies": 2,
+    "privacitat": 2
   },
   "browsers": [],
   "systems": [],

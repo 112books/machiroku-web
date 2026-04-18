@@ -1,7 +1,7 @@
 # CLAUDE.md — Machiroku Web
 
 Guia per a Claude Code quan treballa en aquest repositori.
-Última revisió: 2026-04-15
+Última revisió: 2026-04-18
 
 ---
 
@@ -191,6 +191,26 @@ Fons: `machiroku-web-background.svg` (2064×2912px retrat) — `background-size:
 
 ---
 
+## Horaris — patró de visualització
+
+Els horaris es mostren en **tres llocs** sempre llegint de `data/horaris.yaml`:
+
+| Lloc | Template | Estil |
+|------|----------|-------|
+| Footer | `layouts/_default/baseof.html` | Fons fosc — colors blancs |
+| Reserves | `layouts/_default/reserves.html` | Fons clar — overrides `.reserva-card .footer-*` |
+| Contacte | `layouts/_default/contacte.html` | Taula dia per dia (diferent) |
+
+### Format footer/reserves (dos blocs Dinar/Sopar)
+
+Classes CSS: `.footer-horaris-grid`, `.fdb`, `.fdb--menu` (vermell), `.fdb--carta` (daurat), `.fdb--off` (gris).
+Lògica: sessions amb `inici < "16:00"` → dinar; `inici >= "16:00"` → sopar.
+Excepcions d'hora (ex: Dijous tanca 22:30) es mostren automàticament si `fi != "23:00"`.
+
+**Per canviar els horaris**: editar només `data/horaris.yaml` — es reflecteix als tres llocs automàticament.
+
+---
+
 ## IDs d'al·lèrgens vàlids
 
 `gluten`, `crustacis`, `ou`, `peix`, `cacauets`, `soja`, `lactis`, `fruits-secs`, `api`, `mostassa`, `sesam`, `sulfits`, `mol·luscos`, `altramossos`
@@ -222,7 +242,7 @@ Han de coincidir exactament entre `data/[lang]/plats.yaml` i `data/[lang]/alergi
 
 ### Producció
 
-- [ ] DNS: CNAME a Dinahosting → `112books.github.io`
+- [x] DNS: CNAME a Dinahosting → `112books.github.io`
 - [ ] Activar HTTPS a GitHub Pages
 - [ ] Eliminar Google Analytics del web antic
 
@@ -250,6 +270,7 @@ Han de coincidir exactament entre `data/[lang]/plats.yaml` i `data/[lang]/alergi
 
 | Data       | Canvis |
 |------------|--------|
+| 2026-04-18 | Fix analytics: `process-analytics.py` reescrit (parsing GoatCounter correcte, camp `daily` no `count`, detecció idioma URLs producció); eliminar `config.yml` Netlify CMS amb credencials exposades; favicon admin; footer horaris → dos blocs Dinar/Sopar amb badges de dies (dinàmic des de YAML); mateixa lògica a Reserves amb overrides fons clar; fix foto distorsionada `sobre-nosaltres`; `servei_carta` → "A la Carta (menú no disponible)" / "À la carte" |
 | 2026-04-15 | Dashboard estadístiques `/admin/` amb Chart.js, contrasenya simple, dades per dia/setmana/mes; fix GitHub Action per actualitzar `docs/`; unificació CLAUDE.md |
 | 2026-04-07 | SEO complet (seo.html, schema.html, og:image, hreflang); CSS reorganitzat 16 seccions; icones transport SVG; i18n ES/EN fix |
 | 2026-04-06 | Projecte inicial: Hugo multiidioma ca/es/en, 3 entorns, layouts propis, carta completa, al·lèrgens, avisos temporals, GoatCounter, footer, header |

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — Plat no trobat · Machiroku</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent:      #8b1a1a;
+      --accent-dk:   #5a0f0f;
+      --paper:       #faf7f2;
+      --ink:         #2a2018;
+      --ink-light:   #7a6a55;
+      --ink-faint:   #b8a890;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      background-image:
+        radial-gradient(ellipse at 20% 30%, rgba(200,180,140,.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(180,160,120,.05) 0%, transparent 60%);
+    }
+
+    .logo-link {
+      position: absolute;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: .3;
+      transition: opacity .25s;
+    }
+    .logo-link:hover { opacity: .6; }
+    .logo-link img { height: 26px; width: auto; }
+
+    /* ── Il·lustració ── */
+    .plate-wrap {
+      width: 240px;
+      height: 240px;
+      margin: 0 auto 2.5rem;
+    }
+    .plate-wrap svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    /* ── Número error ── */
+    .error-num {
+      font-size: .85rem;
+      font-weight: 400;
+      letter-spacing: .5em;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+    .error-num span {
+      font-size: 4.5rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+      margin: .15rem 0 .25rem;
+    }
+
+    .error-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: .3rem;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      justify-content: center;
+      margin: 1.2rem auto;
+      color: var(--ink-faint);
+      font-size: .75rem;
+      letter-spacing: .25em;
+    }
+    .divider::before,
+    .divider::after {
+      content: '';
+      width: 44px;
+      height: 1px;
+      background: var(--ink-faint);
+      opacity: .45;
+    }
+
+    .error-body {
+      font-size: .98rem;
+      font-weight: 300;
+      color: var(--ink-light);
+      line-height: 2.1;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    .error-body em {
+      font-style: italic;
+      color: var(--ink-faint);
+      font-size: .9em;
+    }
+
+    .btn-inici {
+      display: inline-block;
+      margin-top: 2.2rem;
+      padding: .85rem 2.8rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: inherit;
+      font-size: .88rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-inici:hover { background: var(--accent-dk); }
+
+    .nota-peu {
+      margin-top: 2.8rem;
+      font-family: 'Kaushan Script', cursive;
+      font-size: .95rem;
+      color: var(--ink-faint);
+      line-height: 1.85;
+    }
+
+    @media (max-width: 480px) {
+      .plate-wrap { width: 190px; height: 190px; }
+      .error-num span { font-size: 3.5rem; }
+      .error-title { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <a id="logo-link" href="/ca/inici/" class="logo-link" aria-label="Machiroku">
+    <img id="logo-img" src="/logos/Machiroku-logo-gran-vectoritzat.svg" alt="Machiroku">
+  </a>
+
+  <!-- ── Il·lustració ── -->
+  <div class="plate-wrap" role="img" aria-label="Plat buit amb bastonets mal col·locats">
+    <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="plate-fill" cx="42%" cy="38%" r="62%">
+          <stop offset="0%"   stop-color="#ffffff"/>
+          <stop offset="100%" stop-color="#f4ede0"/>
+        </radialGradient>
+        <linearGradient id="bast1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#d09a60"/>
+          <stop offset="100%" stop-color="#8b5c2a"/>
+        </linearGradient>
+        <linearGradient id="bast2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#c8905a"/>
+          <stop offset="100%" stop-color="#7a4f22"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Ombra -->
+      <ellipse cx="132" cy="250" rx="92" ry="9" fill="rgba(0,0,0,0.06)"/>
+
+      <!-- Plat — vora exterior -->
+      <circle cx="130" cy="126" r="112"
+              fill="url(#plate-fill)"
+              stroke="#d8cfc0" stroke-width="1.5"/>
+      <!-- Anell decoratiu interior -->
+      <circle cx="130" cy="126" r="94"
+              fill="none"
+              stroke="#e5dccf" stroke-width=".8"/>
+      <!-- Superfície del plat -->
+      <circle cx="130" cy="126" r="89"
+              fill="#fdfaf6"/>
+
+      <!-- Engruna principal (sospitosa) -->
+      <ellipse cx="149" cy="117"
+               rx="4.5" ry="2.8"
+               fill="#c0aa88" opacity=".72"
+               transform="rotate(-22 149 117)"/>
+      <!-- Engruna còmplice petita -->
+      <ellipse cx="143" cy="131"
+               rx="2.2" ry="1.3"
+               fill="#c0aa88" opacity=".48"
+               transform="rotate(12 143 131)"/>
+
+      <!--
+        Bastonet 1: quasi vertical, lleument inclinat cap a la dreta
+        (el gest tabú — recordatori dels incensers funeraris japonesos)
+      -->
+      <line x1="112" y1="6"  x2="126" y2="215"
+            stroke="url(#bast1)" stroke-width="5.5" stroke-linecap="round"/>
+      <line x1="126" y1="215" x2="128" y2="238"
+            stroke="#8b5c2a" stroke-width="2.5" stroke-linecap="round"/>
+
+      <!--
+        Bastonet 2: creuat en diagonal descuidada
+        (col·locació incorrecta — altra provocació cultural fina)
+      -->
+      <line x1="48"  y1="68"  x2="218" y2="165"
+            stroke="url(#bast2)" stroke-width="4.8" stroke-linecap="round"/>
+      <line x1="218" y1="165" x2="240" y2="177"
+            stroke="#7a4f22" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <!-- ── Text ── -->
+  <p class="error-num">Error <span>404</span></p>
+  <h1 class="error-title">Plat no trobat</h1>
+
+  <div class="divider">◆</div>
+
+  <p class="error-body">
+    El que busques no figura<br>al nostre menú d'avui.<br>
+    Potser mai hi ha estat.<br>
+    Potser l'hem retirat per temporada.<br>
+    <em>El xef no es pronuncia.</em>
+  </p>
+
+  <a id="btn-inici" href="/ca/inici/" class="btn-inici">Tornar a l'inici</a>
+
+  <p class="nota-peu">
+    Els bastonets mal col·locats<br>no són responsabilitat de la casa.
+  </p>
+
+  <script>
+    // Ajusta URLs per a staging (github.io) i producció (machiroku.com)
+    (function () {
+      var isStaging = window.location.hostname.includes('github.io');
+      var base = isStaging ? '/machiroku-web' : '';
+      var home = base + '/ca/inici/';
+      var logoSrc = base + '/logos/Machiroku-logo-gran-vectoritzat.svg';
+
+      document.getElementById('logo-link').href = home;
+      document.getElementById('logo-img').src   = logoSrc;
+      document.getElementById('btn-inici').href  = home;
+    })();
+  </script>
+
+</body>
+</html>

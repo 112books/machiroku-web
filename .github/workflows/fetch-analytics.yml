@@ -46,9 +46,10 @@ jobs:
             "$(date +%Y-%m-%d)"
       - name: Commit analytics data
         run: |
+          cp static/admin/analytics.json docs/admin/analytics.json
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add static/admin/analytics.json
+          git add static/admin/analytics.json docs/admin/analytics.json
           git diff --staged --quiet || git commit -m "chore: actualitzar analytics [skip ci]"
           git pull --rebase
           git push

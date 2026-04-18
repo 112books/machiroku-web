@@ -20,7 +20,7 @@
           </a>
           {{ end }}
         </div>
-        <button class="aviso-tancar" onclick="document.getElementById('aviso-{{ .id }}').style.display='none'" aria-label="Tancar">✕</button>
+        <button type="button" class="aviso-tancar" onclick="document.getElementById('aviso-{{ .id }}').style.display='none'" aria-label="Tancar avís">✕</button>
       </div>
       {{ end }}
 
@@ -28,7 +28,7 @@
       {{/* POPUP — modal centrat */}}
       <div class="aviso-popup-overlay" id="aviso-{{ .id }}">
         <div class="aviso-popup">
-          <button class="aviso-popup-tancar" onclick="document.getElementById('aviso-{{ .id }}').style.display='none'" aria-label="Tancar">✕</button>
+          <button type="button" class="aviso-popup-tancar" onclick="document.getElementById('aviso-{{ .id }}').style.display='none'" aria-label="Tancar avís">✕</button>
           <h3 class="aviso-popup-titol">{{ index .titol $lang }}</h3>
           <p class="aviso-popup-text">{{ index .text $lang }}</p>
           {{ if .link }}

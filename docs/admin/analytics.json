@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-08T14:56:53.901945Z",
+  "generated": "2026-05-08T16:21:49.193023Z",
   "period": {
     "start": "2025-05-08",
     "end": "2026-05-08"
@@ -158,8 +158,127 @@
     "contacte-en": 1,
     "cookies": 2
   },
-  "browsers": [],
-  "systems": [],
-  "sizes": [],
-  "locations": []
+  "browsers": [
+    {
+      "name": "Safari",
+      "id": "Safari",
+      "count": 899
+    },
+    {
+      "name": "Chrome",
+      "id": "Chrome",
+      "count": 544
+    },
+    {
+      "name": "Firefox",
+      "id": "Firefox",
+      "count": 45
+    },
+    {
+      "name": "Desconegut",
+      "id": "Desconegut",
+      "count": 8
+    }
+  ],
+  "systems": [
+    {
+      "name": "iOS",
+      "id": "iOS",
+      "count": 834
+    },
+    {
+      "name": "Android",
+      "id": "Android",
+      "count": 309
+    },
+    {
+      "name": "macOS",
+      "id": "macOS",
+      "count": 182
+    },
+    {
+      "name": "Windows",
+      "id": "Windows",
+      "count": 124
+    },
+    {
+      "name": "Linux",
+      "id": "Linux",
+      "count": 47
+    }
+  ],
+  "sizes": [
+    {
+      "name": "phone",
+      "id": "phone",
+      "count": 1131
+    },
+    {
+      "name": "desktop",
+      "id": "desktop",
+      "count": 202
+    },
+    {
+      "name": "desktophd",
+      "id": "desktophd",
+      "count": 133
+    },
+    {
+      "name": "tablet",
+      "id": "tablet",
+      "count": 30
+    }
+  ],
+  "locations": [
+    {
+      "name": "Spain",
+      "id": "ES",
+      "count": 1377
+    },
+    {
+      "name": "United States",
+      "id": "US",
+      "count": 43
+    },
+    {
+      "name": "France",
+      "id": "FR",
+      "count": 12
+    },
+    {
+      "name": "Netherlands",
+      "id": "NL",
+      "count": 10
+    },
+    {
+      "name": "United Kingdom",
+      "id": "GB",
+      "count": 8
+    },
+    {
+      "name": "Australia",
+      "id": "AU",
+      "count": 6
+    },
+    {
+      "name": "Italy",
+      "id": "IT",
+      "count": 6
+    },
+    {
+      "name": "Ireland",
+      "id": "IE",
+      "count": 5
+    },
+    {
+      "name": "Israel",
+      "id": "IL",
+      "count": 5
+    },
+    {
+      "name": "Belgium",
+      "id": "BE",
+      "count": 4
+    }
+  ]
 }

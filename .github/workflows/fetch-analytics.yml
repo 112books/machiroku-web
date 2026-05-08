@@ -36,6 +36,9 @@ jobs:
           fetch_json "${BASE}/stats/systems?start=${START}&end=${END}&limit=10"   > /tmp/systems.json
           fetch_json "${BASE}/stats/sizes?start=${START}&end=${END}&limit=10"     > /tmp/sizes.json
           fetch_json "${BASE}/stats/locations?start=${START}&end=${END}&limit=10" > /tmp/locations.json
+          echo "--- DEBUG browsers ---" && head -c 300 /tmp/browsers.json
+          echo "--- DEBUG systems ---"  && head -c 300 /tmp/systems.json
+          echo "--- DEBUG sizes ---"    && head -c 300 /tmp/sizes.json
           python3 scripts/build-analytics-json.py "${START}" "${END}"
       - name: Process analytics
         run: |

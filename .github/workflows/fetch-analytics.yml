@@ -24,7 +24,7 @@ jobs:
           fetch_json() {
             local url="$1"
             local result
-            result=$(curl -s --max-time 15 -H "${AUTH}" "${url}")
+            result=$(curl -s --max-time 15 --retry 2 -H "${AUTH}" "${url}" 2>/dev/null) || true
             if echo "${result}" | python3 -c "import sys,json; json.load(sys.stdin)" 2>/dev/null; then
               echo "${result}"
             else

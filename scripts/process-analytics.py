@@ -112,9 +112,13 @@ def main():
         for item in items:
             name = (item.get("browser") or item.get("system") or item.get("size") or
                     item.get("location") or item.get("id") or "Desconegut")
-            count = sum(s.get("daily", 0) for s in item.get("stats", []))
+            # Prova stats[].daily (hits), stats[].count, o count/total directe
+            count = sum(
+                s.get("daily", 0) or s.get("count", 0)
+                for s in item.get("stats", [])
+            )
             if not count:
-                count = item.get("total", 0)
+                count = item.get("total", 0) or item.get("count", 0)
             if count > 0:
                 out.append({"name": name, "id": item.get("id", name), "count": count})
         return sorted(out, key=lambda x: x["count"], reverse=True)

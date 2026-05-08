@@ -62,9 +62,9 @@ Logging de depuració (surt a GitHub Actions → logs del pas):
 Transforma `raw_all.json` → `analytics.json` amb estructura normalitzada.
 
 **Funció `norm_items`** — extreu counts de browsers/systems/sizes/locations:
-- Prova `stats[].daily` (estructura hits)
-- Prova `stats[].count` (format alternatiu)
-- Fallback: `item.total` o `item.count` (camp directe)
+- GoatCounter API v0: `GET /stats/{page}` → `{"stats": [{id, name, count}]}`
+- El camp principal és `item.count` (directe a l'item, no dins `stats[]`)
+- Fallback: `stats[].daily` / `stats[].count` / `item.total` per compatibilitat
 
 ### Pas 4 — Commit
 

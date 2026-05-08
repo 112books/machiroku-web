@@ -101,24 +101,25 @@ def main():
     hits_by_day_list = [{"date": k, "count": v} for k, v in sorted(hits_by_day.items())]
 
     # Browsers, systems, sizes, locations
-    # Estructura: {browsers: [{id, browser, stats: [{day, hourly, daily}], total}]}
-    browsers_raw  = safe_get(safe_get(raw, "browsers")  or {}, "browsers")  or []
-    systems_raw   = safe_get(safe_get(raw, "systems")   or {}, "systems")   or []
-    sizes_raw     = safe_get(safe_get(raw, "sizes")     or {}, "sizes")     or []
-    locations_raw = safe_get(safe_get(raw, "locations") or {}, "locations") or []
+    # GoatCounter API v0: GET /stats/{page} → {"stats": [{id, name, count}], "more": bool}
+    browsers_raw  = safe_get(safe_get(raw, "browsers")  or {}, "stats") or []
+    systems_raw   = safe_get(safe_get(raw, "systems")   or {}, "stats") or []
+    sizes_raw     = safe_get(safe_get(raw, "sizes")     or {}, "stats") or []
+    locations_raw = safe_get(safe_get(raw, "locations") or {}, "stats") or []
 
     def norm_items(items):
         out = []
         for item in items:
-            name = (item.get("browser") or item.get("system") or item.get("size") or
-                    item.get("location") or item.get("id") or "Desconegut")
-            # Prova stats[].daily (hits), stats[].count, o count/total directe
-            count = sum(
-                s.get("daily", 0) or s.get("count", 0)
-                for s in item.get("stats", [])
-            )
+            # Camp name directe (API v0 actual) o camps legacy
+            name = (item.get("name") or item.get("browser") or item.get("system") or
+                    item.get("size") or item.get("location") or item.get("id") or "Desconegut")
+            # Camp count directe (API v0 actual), o stats[].daily/count (format antic)
+            count = item.get("count", 0)
             if not count:
-                count = item.get("total", 0) or item.get("count", 0)
+                count = sum(
+                    s.get("daily", 0) or s.get("count", 0)
+                    for s in item.get("stats", [])
+                ) or item.get("total", 0)
             if count > 0:
                 out.append({"name": name, "id": item.get("id", name), "count": count})
         return sorted(out, key=lambda x: x["count"], reverse=True)

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-11T19:01:03.152760Z",
+  "generated": "2026-05-11T21:22:04.301607Z",
   "period": {
     "start": "2025-05-11",
     "end": "2026-05-11"
@@ -174,17 +174,38 @@
     "contacte-en": 1,
     "cookies": 2
   },
-  "browsers": [],
+  "browsers": [
+    {
+      "name": "Safari",
+      "id": "Safari",
+      "count": 999
+    },
+    {
+      "name": "Chrome",
+      "id": "Chrome",
+      "count": 608
+    },
+    {
+      "name": "Firefox",
+      "id": "Firefox",
+      "count": 45
+    },
+    {
+      "name": "Desconegut",
+      "id": "Desconegut",
+      "count": 8
+    }
+  ],
   "systems": [
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 931
+      "count": 934
     },
     {
       "name": "Android",
       "id": "Android",
-      "count": 350
+      "count": 356
     },
     {
       "name": "macOS",
@@ -206,7 +227,7 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 1267
+      "count": 1276
     },
     {
       "name": "desktop",
@@ -228,7 +249,7 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 1520
+      "count": 1529
     },
     {
       "name": "United States",

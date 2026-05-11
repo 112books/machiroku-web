@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-11T16:06:15.776284Z",
+  "generated": "2026-05-11T19:01:03.152760Z",
   "period": {
     "start": "2025-05-11",
     "end": "2026-05-11"
@@ -174,33 +174,12 @@
     "contacte-en": 1,
     "cookies": 2
   },
-  "browsers": [
-    {
-      "name": "Safari",
-      "id": "Safari",
-      "count": 987
-    },
-    {
-      "name": "Chrome",
-      "id": "Chrome",
-      "count": 600
-    },
-    {
-      "name": "Firefox",
-      "id": "Firefox",
-      "count": 45
-    },
-    {
-      "name": "Desconegut",
-      "id": "Desconegut",
-      "count": 8
-    }
-  ],
+  "browsers": [],
   "systems": [
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 922
+      "count": 931
     },
     {
       "name": "Android",
@@ -210,7 +189,7 @@
     {
       "name": "macOS",
       "id": "macOS",
-      "count": 184
+      "count": 186
     },
     {
       "name": "Windows",
@@ -227,12 +206,12 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 1258
+      "count": 1267
     },
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 217
+      "count": 219
     },
     {
       "name": "desktophd",
@@ -249,7 +228,7 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 1509
+      "count": 1520
     },
     {
       "name": "United States",

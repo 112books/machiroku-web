@@ -1,10 +1,10 @@
 {
-  "generated": "2026-05-12T23:07:37.446306Z",
+  "generated": "2026-05-13T03:56:38.263431Z",
   "period": {
-    "start": "2025-05-12",
-    "end": "2026-05-12"
+    "start": "2025-05-13",
+    "end": "2026-05-13"
   },
-  "total": 1662,
+  "total": 1692,
   "hits_by_day": [
     {
       "date": "2026-04-06",
@@ -152,19 +152,23 @@
     },
     {
       "date": "2026-05-12",
-      "count": 1
+      "count": 26
+    },
+    {
+      "date": "2026-05-13",
+      "count": 5
     }
   ],
   "by_lang": {
-    "ca": 1382,
-    "es": 161,
-    "en": 119
+    "ca": 1399,
+    "es": 164,
+    "en": 129
   },
   "by_section": {
-    "inici": 780,
-    "oferta": 459,
-    "reserves": 271,
-    "contacte": 73,
+    "inici": 797,
+    "oferta": 469,
+    "reserves": 273,
+    "contacte": 74,
     "sobre-nosaltres": 58,
     "privacitat": 4,
     "legals": 6,
@@ -182,7 +186,7 @@
     {
       "name": "Safari",
       "id": "Safari",
-      "count": 1020
+      "count": 1025
     },
     {
       "name": "Chrome",
@@ -192,7 +196,7 @@
     {
       "name": "Firefox",
       "id": "Firefox",
-      "count": 45
+      "count": 46
     },
     {
       "name": "Desconegut",
@@ -204,7 +208,7 @@
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 955
+      "count": 960
     },
     {
       "name": "Android",
@@ -224,19 +228,19 @@
     {
       "name": "Linux",
       "id": "Linux",
-      "count": 49
+      "count": 50
     }
   ],
   "sizes": [
     {
       "name": "phone",
       "id": "phone",
-      "count": 1301
+      "count": 1306
     },
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 221
+      "count": 222
     },
     {
       "name": "desktophd",
@@ -253,7 +257,7 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 1552
+      "count": 1557
     },
     {
       "name": "United States",
@@ -268,7 +272,7 @@
     {
       "name": "United Kingdom",
       "id": "GB",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Netherlands",

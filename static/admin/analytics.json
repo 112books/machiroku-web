@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-14T00:07:46.277786Z",
+  "generated": "2026-05-14T04:50:57.923657Z",
   "period": {
     "start": "2025-05-14",
     "end": "2026-05-14"
@@ -196,7 +196,7 @@
     {
       "name": "Firefox",
       "id": "Firefox",
-      "count": 49
+      "count": 52
     },
     {
       "name": "Desconegut",
@@ -228,7 +228,7 @@
     {
       "name": "Linux",
       "id": "Linux",
-      "count": 55
+      "count": 58
     }
   ],
   "sizes": [
@@ -240,12 +240,12 @@
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 237
+      "count": 239
     },
     {
       "name": "desktophd",
       "id": "desktophd",
-      "count": 134
+      "count": 135
     },
     {
       "name": "tablet",
@@ -262,7 +262,7 @@
     {
       "name": "United States",
       "id": "US",
-      "count": 50
+      "count": 51
     },
     {
       "name": "France",

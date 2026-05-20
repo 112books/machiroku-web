@@ -1,23 +1,225 @@
 {
-  "generated": "2026-05-20T18:23:41.729595Z",
+  "generated": "2026-05-20T21:01:50.257461Z",
   "period": {
     "start": "2025-05-20",
     "end": "2026-05-20"
   },
-  "total": 0,
-  "hits_by_day": [],
-  "by_lang": {},
-  "by_section": {},
+  "total": 1978,
+  "hits_by_day": [
+    {
+      "date": "2026-04-06",
+      "count": 38
+    },
+    {
+      "date": "2026-04-07",
+      "count": 15
+    },
+    {
+      "date": "2026-04-08",
+      "count": 13
+    },
+    {
+      "date": "2026-04-09",
+      "count": 5
+    },
+    {
+      "date": "2026-04-10",
+      "count": 4
+    },
+    {
+      "date": "2026-04-11",
+      "count": 1
+    },
+    {
+      "date": "2026-04-12",
+      "count": 5
+    },
+    {
+      "date": "2026-04-13",
+      "count": 6
+    },
+    {
+      "date": "2026-04-14",
+      "count": 40
+    },
+    {
+      "date": "2026-04-15",
+      "count": 54
+    },
+    {
+      "date": "2026-04-16",
+      "count": 37
+    },
+    {
+      "date": "2026-04-17",
+      "count": 26
+    },
+    {
+      "date": "2026-04-18",
+      "count": 39
+    },
+    {
+      "date": "2026-04-19",
+      "count": 34
+    },
+    {
+      "date": "2026-04-20",
+      "count": 14
+    },
+    {
+      "date": "2026-04-21",
+      "count": 27
+    },
+    {
+      "date": "2026-04-22",
+      "count": 59
+    },
+    {
+      "date": "2026-04-23",
+      "count": 51
+    },
+    {
+      "date": "2026-04-24",
+      "count": 47
+    },
+    {
+      "date": "2026-04-25",
+      "count": 26
+    },
+    {
+      "date": "2026-04-26",
+      "count": 45
+    },
+    {
+      "date": "2026-04-27",
+      "count": 32
+    },
+    {
+      "date": "2026-04-28",
+      "count": 18
+    },
+    {
+      "date": "2026-04-29",
+      "count": 64
+    },
+    {
+      "date": "2026-04-30",
+      "count": 68
+    },
+    {
+      "date": "2026-05-01",
+      "count": 178
+    },
+    {
+      "date": "2026-05-02",
+      "count": 144
+    },
+    {
+      "date": "2026-05-03",
+      "count": 97
+    },
+    {
+      "date": "2026-05-04",
+      "count": 76
+    },
+    {
+      "date": "2026-05-05",
+      "count": 76
+    },
+    {
+      "date": "2026-05-06",
+      "count": 69
+    },
+    {
+      "date": "2026-05-07",
+      "count": 50
+    },
+    {
+      "date": "2026-05-08",
+      "count": 72
+    },
+    {
+      "date": "2026-05-09",
+      "count": 53
+    },
+    {
+      "date": "2026-05-10",
+      "count": 27
+    },
+    {
+      "date": "2026-05-11",
+      "count": 51
+    },
+    {
+      "date": "2026-05-12",
+      "count": 26
+    },
+    {
+      "date": "2026-05-13",
+      "count": 54
+    },
+    {
+      "date": "2026-05-14",
+      "count": 55
+    },
+    {
+      "date": "2026-05-15",
+      "count": 55
+    },
+    {
+      "date": "2026-05-16",
+      "count": 46
+    },
+    {
+      "date": "2026-05-17",
+      "count": 23
+    },
+    {
+      "date": "2026-05-18",
+      "count": 26
+    },
+    {
+      "date": "2026-05-19",
+      "count": 27
+    },
+    {
+      "date": "2026-05-20",
+      "count": 5
+    }
+  ],
+  "by_lang": {
+    "ca": 1638,
+    "es": 197,
+    "en": 143
+  },
+  "by_section": {
+    "inici": 941,
+    "oferta": 541,
+    "reserves": 327,
+    "contacte": 83,
+    "sobre-nosaltres": 63,
+    "cookies": 4,
+    "privacitat": 4,
+    "legals": 6,
+    "menus": 1,
+    "dishes": 1,
+    "categories": 2,
+    "tags": 1,
+    "reserves-en": 1,
+    "oferta-en": 1,
+    "inici-en": 1,
+    "contacte-en": 1
+  },
   "browsers": [
     {
       "name": "Safari",
       "id": "Safari",
-      "count": 1180
+      "count": 1198
     },
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 751
+      "count": 756
     },
     {
       "name": "Firefox",
@@ -34,12 +236,12 @@
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 1107
+      "count": 1125
     },
     {
       "name": "Android",
       "id": "Android",
-      "count": 441
+      "count": 445
     },
     {
       "name": "macOS",
@@ -49,7 +251,7 @@
     {
       "name": "Windows",
       "id": "Windows",
-      "count": 186
+      "count": 187
     },
     {
       "name": "Linux",
@@ -61,7 +263,7 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 1533
+      "count": 1555
     },
     {
       "name": "desktop",
@@ -71,7 +273,7 @@
     {
       "name": "desktophd",
       "id": "desktophd",
-      "count": 137
+      "count": 138
     },
     {
       "name": "tablet",
@@ -83,12 +285,17 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 1837
+      "count": 1853
     },
     {
       "name": "United States",
       "id": "US",
       "count": 58
+    },
+    {
+      "name": "Netherlands",
+      "id": "NL",
+      "count": 16
     },
     {
       "name": "United Kingdom",
@@ -101,14 +308,9 @@
       "count": 12
     },
     {
-      "name": "Netherlands",
-      "id": "NL",
-      "count": 10
-    },
-    {
       "name": "Ireland",
       "id": "IE",
-      "count": 9
+      "count": 10
     },
     {
       "name": "Australia",

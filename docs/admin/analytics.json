@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-30T19:26:18.690542Z",
+  "generated": "2026-05-30T21:06:30.492615Z",
   "period": {
     "start": "2025-05-30",
     "end": "2026-05-30"
@@ -259,7 +259,7 @@
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 890
+      "count": 891
     },
     {
       "name": "Firefox",
@@ -281,7 +281,7 @@
     {
       "name": "Android",
       "id": "Android",
-      "count": 547
+      "count": 548
     },
     {
       "name": "macOS",
@@ -303,7 +303,7 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 1889
+      "count": 1890
     },
     {
       "name": "desktop",
@@ -325,7 +325,7 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 2208
+      "count": 2209
     },
     {
       "name": "United States",

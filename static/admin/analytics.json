@@ -1,10 +1,10 @@
 {
-  "generated": "2026-06-02T23:52:02.807355Z",
+  "generated": "2026-06-03T04:50:53.198995Z",
   "period": {
-    "start": "2025-06-02",
-    "end": "2026-06-02"
+    "start": "2025-06-03",
+    "end": "2026-06-03"
   },
-  "total": 2462,
+  "total": 2488,
   "hits_by_day": [
     {
       "date": "2026-04-06",
@@ -236,20 +236,20 @@
     },
     {
       "date": "2026-06-02",
-      "count": 2
+      "count": 28
     }
   ],
   "by_lang": {
-    "ca": 2010,
-    "es": 270,
-    "en": 182
+    "ca": 2032,
+    "es": 272,
+    "en": 184
   },
   "by_section": {
-    "inici": 1187,
-    "oferta": 669,
-    "reserves": 418,
-    "contacte": 94,
-    "sobre-nosaltres": 71,
+    "inici": 1198,
+    "oferta": 676,
+    "reserves": 424,
+    "contacte": 95,
+    "sobre-nosaltres": 72,
     "cookies": 4,
     "privacitat": 4,
     "legals": 6,
@@ -271,7 +271,7 @@
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 919
+      "count": 921
     },
     {
       "name": "Firefox",
@@ -303,7 +303,7 @@
     {
       "name": "Windows",
       "id": "Windows",
-      "count": 220
+      "count": 222
     },
     {
       "name": "Linux",
@@ -320,7 +320,7 @@
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 349
+      "count": 351
     },
     {
       "name": "desktophd",

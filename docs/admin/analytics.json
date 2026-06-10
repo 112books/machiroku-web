@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-10T04:16:40.939366Z",
+  "generated": "2026-06-10T08:54:02.929754Z",
   "period": {
     "start": "2025-06-10",
     "end": "2026-06-10"
@@ -303,7 +303,7 @@
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 969
+      "count": 970
     },
     {
       "name": "Firefox",
@@ -340,7 +340,7 @@
     {
       "name": "Linux",
       "id": "Linux",
-      "count": 69
+      "count": 70
     }
   ],
   "sizes": [
@@ -362,7 +362,7 @@
     {
       "name": "tablet",
       "id": "tablet",
-      "count": 41
+      "count": 42
     }
   ],
   "locations": [

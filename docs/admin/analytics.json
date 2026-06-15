@@ -1,10 +1,10 @@
 {
-  "generated": "2026-06-14T23:14:29.990418Z",
+  "generated": "2026-06-15T05:03:50.043300Z",
   "period": {
-    "start": "2025-06-14",
-    "end": "2026-06-14"
+    "start": "2025-06-15",
+    "end": "2026-06-15"
   },
-  "total": 2817,
+  "total": 2839,
   "hits_by_day": [
     {
       "date": "2026-04-06",
@@ -281,20 +281,24 @@
     {
       "date": "2026-06-13",
       "count": 28
+    },
+    {
+      "date": "2026-06-14",
+      "count": 22
     }
   ],
   "by_lang": {
-    "ca": 2282,
-    "es": 307,
-    "en": 228
+    "ca": 2298,
+    "es": 309,
+    "en": 232
   },
   "by_section": {
-    "inici": 1361,
-    "oferta": 754,
-    "reserves": 496,
+    "inici": 1372,
+    "oferta": 759,
+    "reserves": 500,
     "contacte": 103,
     "sobre-nosaltres": 80,
-    "cookies": 4,
+    "cookies": 6,
     "privacitat": 4,
     "legals": 6,
     "menus": 1,
@@ -325,7 +329,7 @@
     {
       "name": "Desconegut",
       "id": "Desconegut",
-      "count": 17
+      "count": 18
     }
   ],
   "systems": [
@@ -352,7 +356,7 @@
     {
       "name": "Linux",
       "id": "Linux",
-      "count": 74
+      "count": 75
     }
   ],
   "sizes": [
@@ -364,7 +368,7 @@
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 425
+      "count": 426
     },
     {
       "name": "desktophd",
@@ -381,7 +385,7 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 2551
+      "count": 2552
     },
     {
       "name": "United States",

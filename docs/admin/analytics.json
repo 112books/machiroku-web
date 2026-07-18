@@ -1,10 +1,10 @@
 {
-  "generated": "2026-07-17T22:58:35.135658Z",
+  "generated": "2026-07-18T00:00:54.940855Z",
   "period": {
-    "start": "2025-07-17",
-    "end": "2026-07-17"
+    "start": "2025-07-18",
+    "end": "2026-07-18"
   },
-  "total": 3636,
+  "total": 3671,
   "hits_by_day": [
     {
       "date": "2026-04-06",
@@ -416,18 +416,22 @@
     },
     {
       "date": "2026-07-17",
-      "count": 6
+      "count": 39
+    },
+    {
+      "date": "2026-07-18",
+      "count": 2
     }
   ],
   "by_lang": {
-    "ca": 2893,
-    "es": 434,
-    "en": 309
+    "ca": 2911,
+    "es": 449,
+    "en": 311
   },
   "by_section": {
-    "inici": 1753,
-    "oferta": 959,
-    "reserves": 679,
+    "inici": 1767,
+    "oferta": 977,
+    "reserves": 682,
     "contacte": 119,
     "sobre-nosaltres": 101,
     "cookies": 6,
@@ -451,7 +455,7 @@
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 1403
+      "count": 1404
     },
     {
       "name": "Firefox",
@@ -493,7 +497,7 @@
     {
       "name": "Linux",
       "id": "Linux",
-      "count": 103
+      "count": 104
     }
   ],
   "sizes": [
@@ -505,7 +509,7 @@
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 602
+      "count": 603
     },
     {
       "name": "desktophd",
@@ -527,7 +531,7 @@
     {
       "name": "United States",
       "id": "US",
-      "count": 128
+      "count": 129
     },
     {
       "name": "United Kingdom",

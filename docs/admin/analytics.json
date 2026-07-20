@@ -1,10 +1,10 @@
 {
-  "generated": "2026-07-19T22:00:36.314008Z",
+  "generated": "2026-07-20T00:01:27.011119Z",
   "period": {
-    "start": "2025-07-19",
-    "end": "2026-07-19"
+    "start": "2025-07-20",
+    "end": "2026-07-20"
   },
-  "total": 3690,
+  "total": 3706,
   "hits_by_day": [
     {
       "date": "2026-04-06",
@@ -421,17 +421,25 @@
     {
       "date": "2026-07-18",
       "count": 21
+    },
+    {
+      "date": "2026-07-19",
+      "count": 14
+    },
+    {
+      "date": "2026-07-20",
+      "count": 2
     }
   ],
   "by_lang": {
-    "ca": 2921,
-    "es": 456,
-    "en": 313
+    "ca": 2932,
+    "es": 459,
+    "en": 315
   },
   "by_section": {
-    "inici": 1774,
-    "oferta": 985,
-    "reserves": 686,
+    "inici": 1781,
+    "oferta": 992,
+    "reserves": 688,
     "contacte": 119,
     "sobre-nosaltres": 101,
     "cookies": 6,
@@ -455,7 +463,7 @@
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 1422
+      "count": 1424
     },
     {
       "name": "Firefox",
@@ -482,7 +490,7 @@
     {
       "name": "Android",
       "id": "Android",
-      "count": 860
+      "count": 862
     },
     {
       "name": "Windows",
@@ -504,7 +512,7 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 2866
+      "count": 2868
     },
     {
       "name": "desktop",
@@ -526,7 +534,7 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 3290
+      "count": 3292
     },
     {
       "name": "United States",

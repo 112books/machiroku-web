@@ -1,10 +1,10 @@
 {
-  "generated": "2026-07-21T23:01:45.845625Z",
+  "generated": "2026-07-22T03:18:55.267350Z",
   "period": {
-    "start": "2025-07-21",
-    "end": "2026-07-21"
+    "start": "2025-07-22",
+    "end": "2026-07-22"
   },
-  "total": 3735,
+  "total": 3775,
   "hits_by_day": [
     {
       "date": "2026-04-06",
@@ -429,19 +429,27 @@
     {
       "date": "2026-07-20",
       "count": 31
+    },
+    {
+      "date": "2026-07-21",
+      "count": 36
+    },
+    {
+      "date": "2026-07-22",
+      "count": 4
     }
   ],
   "by_lang": {
-    "ca": 2949,
-    "es": 462,
-    "en": 324
+    "ca": 2979,
+    "es": 468,
+    "en": 328
   },
   "by_section": {
-    "inici": 1793,
-    "oferta": 1003,
-    "reserves": 692,
+    "inici": 1812,
+    "oferta": 1014,
+    "reserves": 701,
     "contacte": 120,
-    "sobre-nosaltres": 102,
+    "sobre-nosaltres": 103,
     "cookies": 6,
     "privacitat": 4,
     "legals": 6,
@@ -458,12 +466,12 @@
     {
       "name": "Safari",
       "id": "Safari",
-      "count": 2213
+      "count": 2214
     },
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 1449
+      "count": 1451
     },
     {
       "name": "Firefox",
@@ -485,7 +493,7 @@
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 2074
+      "count": 2075
     },
     {
       "name": "Android",
@@ -500,24 +508,24 @@
     {
       "name": "macOS",
       "id": "macOS",
-      "count": 321
+      "count": 322
     },
     {
       "name": "Linux",
       "id": "Linux",
-      "count": 118
+      "count": 119
     }
   ],
   "sizes": [
     {
       "name": "phone",
       "id": "phone",
-      "count": 2924
+      "count": 2925
     },
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 624
+      "count": 626
     },
     {
       "name": "desktophd",
@@ -534,12 +542,12 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 3341
+      "count": 3343
     },
     {
       "name": "United States",
       "id": "US",
-      "count": 144
+      "count": 145
     },
     {
       "name": "United Kingdom",

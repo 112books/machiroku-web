@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-03T21:10:10.684757Z",
+  "generated": "2026-08-03T23:08:12.209972Z",
   "period": {
     "start": "2025-08-03",
     "end": "2026-08-03"
@@ -530,7 +530,7 @@
     {
       "name": "Desconegut",
       "id": "Desconegut",
-      "count": 22
+      "count": 23
     },
     {
       "name": "Edge",
@@ -542,7 +542,7 @@
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 2220
+      "count": 2221
     },
     {
       "name": "Android",
@@ -579,7 +579,7 @@
     {
       "name": "desktophd",
       "id": "desktophd",
-      "count": 163
+      "count": 164
     },
     {
       "name": "tablet",
@@ -626,7 +626,7 @@
     {
       "name": "Ireland",
       "id": "IE",
-      "count": 15
+      "count": 16
     },
     {
       "name": "Israel",

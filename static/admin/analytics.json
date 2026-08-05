@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-05T18:25:31.111635Z",
+  "generated": "2026-08-05T20:34:59.397170Z",
   "period": {
     "start": "2025-08-05",
     "end": "2026-08-05"
@@ -524,7 +524,7 @@
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 1629
+      "count": 1633
     },
     {
       "name": "Firefox",
@@ -561,7 +561,7 @@
     {
       "name": "macOS",
       "id": "macOS",
-      "count": 354
+      "count": 358
     },
     {
       "name": "Linux",
@@ -578,7 +578,7 @@
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 737
+      "count": 741
     },
     {
       "name": "desktophd",
@@ -595,7 +595,7 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 3610
+      "count": 3614
     },
     {
       "name": "United States",

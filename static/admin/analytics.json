@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-08T23:33:52.019125Z",
+  "generated": "2026-08-09T02:07:14.018698Z",
   "period": {
-    "start": "2025-08-08",
-    "end": "2026-08-08"
+    "start": "2025-08-09",
+    "end": "2026-08-09"
   },
-  "total": 4201,
+  "total": 4234,
   "hits_by_day": [
     {
       "date": "2026-04-06",
@@ -504,19 +504,23 @@
     },
     {
       "date": "2026-08-08",
-      "count": 1
+      "count": 30
+    },
+    {
+      "date": "2026-08-09",
+      "count": 4
     }
   ],
   "by_lang": {
-    "ca": 3283,
-    "es": 524,
-    "en": 394
+    "ca": 3301,
+    "es": 536,
+    "en": 397
   },
   "by_section": {
-    "inici": 2015,
-    "oferta": 1114,
-    "reserves": 785,
-    "contacte": 138,
+    "inici": 2031,
+    "oferta": 1119,
+    "reserves": 796,
+    "contacte": 139,
     "sobre-nosaltres": 111,
     "cookies": 9,
     "privacitat": 7,

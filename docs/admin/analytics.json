@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-14T23:26:07.829268Z",
+  "generated": "2026-08-15T01:35:33.357001Z",
   "period": {
-    "start": "2025-08-14",
-    "end": "2026-08-14"
+    "start": "2025-08-15",
+    "end": "2026-08-15"
   },
-  "total": 4335,
+  "total": 4363,
   "hits_by_day": [
     {
       "date": "2026-04-06",
@@ -525,23 +525,31 @@
     {
       "date": "2026-08-13",
       "count": 21
+    },
+    {
+      "date": "2026-08-14",
+      "count": 26
+    },
+    {
+      "date": "2026-08-15",
+      "count": 2
     }
   ],
   "by_lang": {
-    "ca": 3368,
-    "es": 549,
-    "en": 418
+    "ca": 3384,
+    "es": 556,
+    "en": 423
   },
   "by_section": {
-    "inici": 2091,
-    "oferta": 1130,
-    "reserves": 822,
-    "contacte": 141,
-    "sobre-nosaltres": 113,
+    "inici": 2105,
+    "oferta": 1134,
+    "reserves": 829,
+    "contacte": 142,
+    "sobre-nosaltres": 114,
     "cookies": 9,
     "privacitat": 7,
     "legals": 9,
-    "inici-es": 3,
+    "inici-es": 4,
     "inici-en": 2,
     "menus": 1,
     "dishes": 1,
@@ -560,7 +568,7 @@
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 1713
+      "count": 1715
     },
     {
       "name": "Firefox",
@@ -602,7 +610,7 @@
     {
       "name": "Linux",
       "id": "Linux",
-      "count": 135
+      "count": 137
     }
   ],
   "sizes": [
@@ -614,7 +622,7 @@
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 768
+      "count": 769
     },
     {
       "name": "desktophd",
@@ -624,7 +632,7 @@
     {
       "name": "tablet",
       "id": "tablet",
-      "count": 72
+      "count": 73
     }
   ],
   "locations": [
@@ -636,7 +644,7 @@
     {
       "name": "United States",
       "id": "US",
-      "count": 184
+      "count": 186
     },
     {
       "name": "United Kingdom",

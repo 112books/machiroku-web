@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-17T14:33:20.158081Z",
+  "generated": "2026-08-17T15:29:56.420261Z",
   "period": {
     "start": "2025-08-17",
     "end": "2026-08-17"
@@ -563,59 +563,60 @@
     "oferta-en": 1,
     "contacte-en": 1
   },
-  "browsers": [],
-  "systems": [],
-  "sizes": [],
-  "locations": [
+  "browsers": [
     {
-      "name": "Spain",
-      "id": "ES",
-      "count": 3831
+      "name": "Safari",
+      "id": "Safari",
+      "count": 2560
     },
     {
-      "name": "United States",
-      "id": "US",
-      "count": 191
+      "name": "Chrome",
+      "id": "Chrome",
+      "count": 1736
     },
     {
-      "name": "United Kingdom",
-      "id": "GB",
-      "count": 52
+      "name": "Firefox",
+      "id": "Firefox",
+      "count": 99
     },
     {
-      "name": "Netherlands",
-      "id": "NL",
-      "count": 45
-    },
-    {
-      "name": "Germany",
-      "id": "DE",
-      "count": 44
-    },
-    {
-      "name": "France",
-      "id": "FR",
-      "count": 28
-    },
-    {
-      "name": "Japan",
-      "id": "JP",
+      "name": "Desconegut",
+      "id": "Desconegut",
       "count": 23
     },
     {
-      "name": "Ireland",
-      "id": "IE",
-      "count": 19
-    },
-    {
-      "name": "Israel",
-      "id": "IL",
-      "count": 19
-    },
-    {
-      "name": "Switzerland",
-      "id": "CH",
-      "count": 16
+      "name": "Edge",
+      "id": "Edge",
+      "count": 2
     }
-  ]
+  ],
+  "systems": [
+    {
+      "name": "iOS",
+      "id": "iOS",
+      "count": 2406
+    },
+    {
+      "name": "Android",
+      "id": "Android",
+      "count": 1014
+    },
+    {
+      "name": "Windows",
+      "id": "Windows",
+      "count": 484
+    },
+    {
+      "name": "macOS",
+      "id": "macOS",
+      "count": 379
+    },
+    {
+      "name": "Linux",
+      "id": "Linux",
+      "count": 137
+    }
+  ],
+  "sizes": [],
+  "locations": []
 }

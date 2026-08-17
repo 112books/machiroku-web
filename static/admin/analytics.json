@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-17T13:42:31.360999Z",
+  "generated": "2026-08-17T14:33:20.158081Z",
   "period": {
     "start": "2025-08-17",
     "end": "2026-08-17"
@@ -563,82 +563,9 @@
     "oferta-en": 1,
     "contacte-en": 1
   },
-  "browsers": [
-    {
-      "name": "Safari",
-      "id": "Safari",
-      "count": 2557
-    },
-    {
-      "name": "Chrome",
-      "id": "Chrome",
-      "count": 1735
-    },
-    {
-      "name": "Firefox",
-      "id": "Firefox",
-      "count": 99
-    },
-    {
-      "name": "Desconegut",
-      "id": "Desconegut",
-      "count": 23
-    },
-    {
-      "name": "Edge",
-      "id": "Edge",
-      "count": 2
-    }
-  ],
-  "systems": [
-    {
-      "name": "iOS",
-      "id": "iOS",
-      "count": 2403
-    },
-    {
-      "name": "Android",
-      "id": "Android",
-      "count": 1013
-    },
-    {
-      "name": "Windows",
-      "id": "Windows",
-      "count": 484
-    },
-    {
-      "name": "macOS",
-      "id": "macOS",
-      "count": 379
-    },
-    {
-      "name": "Linux",
-      "id": "Linux",
-      "count": 137
-    }
-  ],
-  "sizes": [
-    {
-      "name": "phone",
-      "id": "phone",
-      "count": 3386
-    },
-    {
-      "name": "desktop",
-      "id": "desktop",
-      "count": 779
-    },
-    {
-      "name": "desktophd",
-      "id": "desktophd",
-      "count": 175
-    },
-    {
-      "name": "tablet",
-      "id": "tablet",
-      "count": 76
-    }
-  ],
+  "browsers": [],
+  "systems": [],
+  "sizes": [],
   "locations": [
     {
       "name": "Spain",

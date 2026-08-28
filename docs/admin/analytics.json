@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-27T19:43:33.516019Z",
+  "generated": "2026-08-28T04:07:50.902313Z",
   "period": {
-    "start": "2025-08-27",
-    "end": "2026-08-27"
+    "start": "2025-08-28",
+    "end": "2026-08-28"
   },
-  "total": 4680,
+  "total": 4706,
   "hits_by_day": [
     {
       "date": "2026-04-06",
@@ -577,19 +577,27 @@
     {
       "date": "2026-08-26",
       "count": 52
+    },
+    {
+      "date": "2026-08-27",
+      "count": 25
+    },
+    {
+      "date": "2026-08-28",
+      "count": 1
     }
   ],
   "by_lang": {
-    "ca": 3635,
-    "es": 594,
-    "en": 451
+    "ca": 3656,
+    "es": 597,
+    "en": 453
   },
   "by_section": {
-    "inici": 2253,
-    "oferta": 1189,
-    "reserves": 912,
+    "inici": 2266,
+    "oferta": 1193,
+    "reserves": 920,
     "contacte": 156,
-    "sobre-nosaltres": 129,
+    "sobre-nosaltres": 130,
     "cookies": 11,
     "privacitat": 7,
     "legals": 9,
@@ -607,7 +615,7 @@
     {
       "name": "Safari",
       "id": "Safari",
-      "count": 2742
+      "count": 2743
     },
     {
       "name": "Chrome",
@@ -634,7 +642,7 @@
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 2583
+      "count": 2584
     },
     {
       "name": "Android",
@@ -666,7 +674,7 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 3645
+      "count": 3646
     },
     {
       "name": "desktop",
@@ -688,7 +696,7 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 4100
+      "count": 4101
     },
     {
       "name": "United States",

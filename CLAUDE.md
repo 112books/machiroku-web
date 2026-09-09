@@ -274,3 +274,14 @@ Han de coincidir exactament entre `data/[lang]/plats.yaml` i `data/[lang]/alergi
 | 2026-04-15 | Dashboard estadístiques `/admin/` amb Chart.js, contrasenya simple, dades per dia/setmana/mes; fix GitHub Action per actualitzar `docs/`; unificació CLAUDE.md |
 | 2026-04-07 | SEO complet (seo.html, schema.html, og:image, hreflang); CSS reorganitzat 16 seccions; icones transport SVG; i18n ES/EN fix |
 | 2026-04-06 | Projecte inicial: Hugo multiidioma ca/es/en, 3 entorns, layouts propis, carta completa, al·lèrgens, avisos temporals, GoatCounter, footer, header |
+
+
+---
+
+## Control horari
+
+Skill actiu: `gestor-hores` — registra automàticament el temps de treball per sessió.
+
+- Logs a `.taques/machiroku_hugo/YYYY-MM-DD.md` (creat automàticament)
+- Comandes: `/time-log [tasca] [hores]`, `/time-report [periode]`, `/time-config [hores] [tarifa]`
+- No modificar manualment els fitxers `.taques/` — són append-only

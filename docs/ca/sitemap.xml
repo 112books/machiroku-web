@@ -5,33 +5,28 @@
     <loc>https://machiroku.com/ca/categories/entrants/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ca-ES"
-                href="https://machiroku.com/ca/categories/entrants/"
+                hreflang="es-ES"
+                href="https://machiroku.com/es/categories/entrants/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="es-ES"
-                href="https://machiroku.com/es/categories/entrants/"
+                hreflang="ca-ES"
+                href="https://machiroku.com/ca/categories/entrants/"
                 />
   </url><url>
     <loc>https://machiroku.com/ca/dishes/goma-wakame/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ca-ES"
-                href="https://machiroku.com/ca/dishes/goma-wakame/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="es-ES"
                 href="https://machiroku.com/es/dishes/goma-wakame/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/legals/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/legals/"
+                href="https://machiroku.com/ca/dishes/goma-wakame/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/legals/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -42,13 +37,13 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/legals/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/categories/"
+                href="https://machiroku.com/ca/legals/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -59,13 +54,13 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/categories/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/contacte/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/contacte/"
+                href="https://machiroku.com/ca/categories/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/contacte/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -76,13 +71,13 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/contacte/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/cookies/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/cookies/"
+                href="https://machiroku.com/ca/contacte/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/cookies/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -93,25 +88,25 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/cookies/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/dishes/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/dishes/"
+                href="https://machiroku.com/ca/cookies/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/dishes/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
                 href="https://machiroku.com/es/dishes/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/inici/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/inici/"
+                href="https://machiroku.com/ca/dishes/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/inici/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -122,13 +117,13 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/inici/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/sobre-nosaltres/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/sobre-nosaltres/"
+                href="https://machiroku.com/ca/inici/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/sobre-nosaltres/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -139,13 +134,13 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/sobre-nosaltres/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/"
+                href="https://machiroku.com/ca/sobre-nosaltres/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -156,37 +151,37 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/menus/menu-sushi/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/menus/menu-sushi/"
+                href="https://machiroku.com/ca/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/menus/menu-sushi/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
                 href="https://machiroku.com/es/menus/menu-sushi/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/menus/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/menus/"
+                href="https://machiroku.com/ca/menus/menu-sushi/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/menus/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
                 href="https://machiroku.com/es/menus/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/oferta/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/oferta/"
+                href="https://machiroku.com/ca/menus/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/oferta/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -197,13 +192,13 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/oferta/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/privacitat/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/privacitat/"
+                href="https://machiroku.com/ca/oferta/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/privacitat/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -214,13 +209,13 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/privacitat/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/reserves/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/reserves/"
+                href="https://machiroku.com/ca/privacitat/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/reserves/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -231,13 +226,13 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/reserves/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/ca/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/tags/"
+                href="https://machiroku.com/ca/reserves/"
                 />
+  </url><url>
+    <loc>https://machiroku.com/ca/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -247,6 +242,11 @@
                 rel="alternate"
                 hreflang="en-GB"
                 href="https://machiroku.com/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="https://machiroku.com/ca/tags/"
                 />
   </url>
 </urlset>

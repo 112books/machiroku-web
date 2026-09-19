@@ -539,14 +539,14 @@
     <!-- KPI -->
     <div class="kpi-grid">
       <div class="kpi-card">
-        <div class="kpi-label">Mitjana diària</div>
-        <div class="kpi-value accent" id="kpi-avg">–</div>
-        <div class="kpi-sub" id="kpi-avg-sub">visites / dia</div>
-      </div>
-      <div class="kpi-card">
         <div class="kpi-label">Avui</div>
         <div class="kpi-value accent" id="kpi-today">–</div>
         <div class="kpi-sub">visites</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Mitjana diària</div>
+        <div class="kpi-value accent" id="kpi-avg">–</div>
+        <div class="kpi-sub" id="kpi-avg-sub">visites / dia</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Aquesta setmana</div>
@@ -563,14 +563,6 @@
         <div class="kpi-value" id="kpi-total">–</div>
         <div class="kpi-sub" id="kpi-period-sub">–</div>
       </div>
-    </div>
-
-    <!-- DIES DE LA SETMANA -->
-    <div class="section-title"><span class="accent-mark">▸</span> Dies de la setmana més visitats</div>
-    <div id="chart-weekdays" class="bars"></div>
-    <div id="weekdays-insight" class="insight-box" style="display:none">
-      <span class="insight-label">// resum</span>
-      <div id="weekdays-insight-body"></div>
     </div>
 
     <!-- PESTANYES -->
@@ -633,6 +625,14 @@
         <span class="insight-label">// resum</span>
         <div id="dispositius-insight-body"></div>
       </div>
+    </div>
+
+    <!-- DIES DE LA SETMANA -->
+    <div class="section-title"><span class="accent-mark">▸</span> Dies de la setmana més visitats</div>
+    <div id="chart-weekdays" class="bars"></div>
+    <div id="weekdays-insight" class="insight-box" style="display:none">
+      <span class="insight-label">// resum</span>
+      <div id="weekdays-insight-body"></div>
     </div>
 
     <div class="data-footer" id="data-footer"></div>

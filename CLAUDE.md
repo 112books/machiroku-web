@@ -1,7 +1,7 @@
 # CLAUDE.md — Machiroku Web
 
 Guia per a Claude Code quan treballa en aquest repositori.
-Última revisió: 2026-04-18
+Última revisió: 2026-09-19
 
 ---
 
@@ -270,6 +270,7 @@ Han de coincidir exactament entre `data/[lang]/plats.yaml` i `data/[lang]/alergi
 
 | Data       | Canvis |
 |------------|--------|
+| 2026-09-19 | Dashboard `/admin/`: KPI **Mitjana diària** (visites/dia sobre dies amb dades); bloc **Dies de la setmana més visitats** al final de pàgina amb resum natural; vinculat al període temporal (7/30/90/365 dies) del gràfic; visualització en **gràfic donut** (Chart.js) amb diferents colors per dia |
 | 2026-04-18 | Fix analytics: `process-analytics.py` reescrit (parsing GoatCounter correcte, camp `daily` no `count`, detecció idioma URLs producció); eliminar `config.yml` Netlify CMS amb credencials exposades; favicon admin; footer horaris → dos blocs Dinar/Sopar amb badges de dies (dinàmic des de YAML); mateixa lògica a Reserves amb overrides fons clar; fix foto distorsionada `sobre-nosaltres`; `servei_carta` → "A la Carta (menú no disponible)" / "À la carte" |
 | 2026-04-15 | Dashboard estadístiques `/admin/` amb Chart.js, contrasenya simple, dades per dia/setmana/mes; fix GitHub Action per actualitzar `docs/`; unificació CLAUDE.md |
 | 2026-04-07 | SEO complet (seo.html, schema.html, og:image, hreflang); CSS reorganitzat 16 seccions; icones transport SVG; i18n ES/EN fix |

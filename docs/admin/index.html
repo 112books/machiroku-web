@@ -297,6 +297,14 @@
       gap: .6rem;
     }
     .section-title .accent-mark { color: var(--accent); font-size: 1.1em; }
+    .period-tag {
+      color: var(--text-muted);
+      font-weight: 400;
+      letter-spacing: .1em;
+      text-transform: none;
+      font-size: .75rem;
+      margin-left: .6rem;
+    }
 
     /* ── Gràfic temporal ── */
     .chart-controls {
@@ -628,7 +636,7 @@
     </div>
 
     <!-- DIES DE LA SETMANA -->
-    <div class="section-title"><span class="accent-mark">▸</span> Dies de la setmana més visitats</div>
+    <div class="section-title"><span class="accent-mark">▸</span> Dies de la setmana més visitats <span id="weekdays-period" class="period-tag"></span></div>
     <div id="chart-weekdays" class="bars"></div>
     <div id="weekdays-insight" class="insight-box" style="display:none">
       <span class="insight-label">// resum</span>
@@ -867,6 +875,7 @@
     document.querySelectorAll('.chart-period-btn').forEach(function(b){ b.classList.remove('active'); });
     btn.classList.add('active');
     renderChart();
+    renderWeekdayBars();
   }
 
   function setChartGroup(grp, btn) {
@@ -995,12 +1004,21 @@
   var WEEKDAY_NAMES = ['Diumenge','Dilluns','Dimarts','Dimecres','Dijous','Divendres','Dissabte'];
 
   function renderWeekdayBars() {
-    var hits_by_day = globalData.hits_by_day || [];
+    var all   = globalData.hits_by_day || [];
+    var cutoff = daysAgo(chartPeriodDays);
+    var hits  = all.filter(function(d){ return d.date >= cutoff; });
+
     var counts = [0,0,0,0,0,0,0];
-    hits_by_day.forEach(function(d){
+    hits.forEach(function(d){
       var dow = new Date(d.date + 'T12:00:00').getDay();
       counts[dow] += d.count;
     });
+
+    var periodLabel = chartPeriodDays >= 365 ? 'últim any'
+      : chartPeriodDays >= 90 ? 'últims 3 mesos'
+      : chartPeriodDays >= 30 ? 'últims 30 dies'
+      : 'últims ' + chartPeriodDays + ' dies';
+    document.getElementById('weekdays-period').textContent = '(' + periodLabel + ')';
 
     var arr = counts.map(function(c,i){ return { name: WEEKDAY_NAMES[i], id: i, count: c }; });
     renderBars('chart-weekdays', arr, 'bar-fill--weekday', {}, 'weekday');
@@ -1014,7 +1032,7 @@
     var pct    = Math.round(top.count / total * 100);
 
     var lines = [
-      'El dia de la setmana amb més visites és el <strong>' + top.name.toLowerCase() + '</strong> (' +
+      'Dins del període seleccionat (' + periodLabel + '), el dia amb més visites és el <strong>' + top.name.toLowerCase() + '</strong> (' +
         top.count.toLocaleString('ca') + ' visites, <span class="accent-text">' + pct + '%</span> del període).'
     ];
     if (sorted.length > 1) {

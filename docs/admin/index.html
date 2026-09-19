@@ -637,7 +637,9 @@
 
     <!-- DIES DE LA SETMANA -->
     <div class="section-title"><span class="accent-mark">▸</span> Dies de la setmana més visitats <span id="weekdays-period" class="period-tag"></span></div>
-    <div id="chart-weekdays" class="bars"></div>
+    <div class="chart-container">
+      <canvas id="chart-weekdays"></canvas>
+    </div>
     <div id="weekdays-insight" class="insight-box" style="display:none">
       <span class="insight-label">// resum</span>
       <div id="weekdays-insight-body"></div>
@@ -682,6 +684,7 @@
     document.getElementById('login-screen').style.display = 'flex';
     document.getElementById('pw-input').value = '';
     if (visitsChart) { visitsChart.destroy(); visitsChart = null; }
+    if (weekdayChart) { weekdayChart.destroy(); weekdayChart = null; }
     globalData = null;
   }
 
@@ -1002,6 +1005,8 @@
 
   /* ══ INSIGHTS EN LLENGUATGE NATURAL ══ */
   var WEEKDAY_NAMES = ['Diumenge','Dilluns','Dimarts','Dimecres','Dijous','Divendres','Dissabte'];
+  var WEEKDAY_COLORS = ['#8b1a1a','#b02020','#c9a84c','#7ab840','#4a90b8','#8060d0','#5a4a3a'];
+  var weekdayChart = null;
 
   function renderWeekdayBars() {
     var all   = globalData.hits_by_day || [];
@@ -1020,16 +1025,64 @@
       : 'últims ' + chartPeriodDays + ' dies';
     document.getElementById('weekdays-period').textContent = '(' + periodLabel + ')';
 
-    var arr = counts.map(function(c,i){ return { name: WEEKDAY_NAMES[i], id: i, count: c }; });
-    renderBars('chart-weekdays', arr, 'bar-fill--weekday', {}, 'weekday');
+    var labels = WEEKDAY_NAMES.slice();
+    var values = counts.slice();
+    var total  = values.reduce(function(s,x){ return s + x; }, 0);
+
+    if (weekdayChart) {
+      weekdayChart.data.labels = labels;
+      weekdayChart.data.datasets[0].data = values;
+      weekdayChart.update();
+    } else {
+      var ctx = document.getElementById('chart-weekdays').getContext('2d');
+      weekdayChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            backgroundColor: WEEKDAY_COLORS,
+            borderColor: '#111010',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '55%',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: '#8a6a5a', font: { family: "'Oswald', sans-serif", size: 12 }, boxWidth: 14 }
+            },
+            tooltip: {
+              backgroundColor: '#1c1818',
+              borderColor: '#3a1e1e',
+              borderWidth: 1,
+              titleColor: '#f0ddd0',
+              bodyColor: '#8a6a5a',
+              padding: 10,
+              callbacks: {
+                label: function(ctx2){
+                  var v = ctx2.parsed || 0;
+                  var p = total > 0 ? Math.round(v / total * 100) : 0;
+                  return ' ' + v.toLocaleString('ca') + ' visites (' + p + '%)';
+                }
+              }
+            }
+          }
+        }
+      });
+    }
 
     var insightBox = document.getElementById('weekdays-insight');
-    if (!arr.some(function(x){ return x.count > 0; })) { insightBox.style.display = 'none'; return; }
+    if (!total) { insightBox.style.display = 'none'; return; }
 
-    var total  = arr.reduce(function(s,x){ return s + x.count; }, 0);
-    var sorted = arr.filter(function(x){ return x.count > 0; }).sort(function(a,b){ return b.count - a.count; });
-    var top    = sorted[0];
-    var pct    = Math.round(top.count / total * 100);
+    var sorted = counts.map(function(c,i){ return { name: WEEKDAY_NAMES[i], count: c }; })
+      .filter(function(x){ return x.count > 0; })
+      .sort(function(a,b){ return b.count - a.count; });
+    var top = sorted[0];
+    var pct = Math.round(top.count / total * 100);
 
     var lines = [
       'Dins del període seleccionat (' + periodLabel + '), el dia amb més visites és el <strong>' + top.name.toLowerCase() + '</strong> (' +

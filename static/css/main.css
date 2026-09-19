@@ -1078,9 +1078,63 @@ a:hover {
   line-height: 1.7;
 }
 
+.reserves-politica {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.pol-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid;
+}
+
+.pol-item--no {
+  background: rgba(139, 26, 26, 0.18);
+  border-color: var(--color-accent);
+}
+
+.pol-item--si {
+  background: rgba(30, 90, 30, 0.18);
+  border-color: #3a8a3a;
+}
+
+.pol-icona {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.pol-item--no .pol-icona { color: var(--color-accent); }
+.pol-item--si .pol-icona { color: #4caf4c; }
+
+.pol-contingut {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pol-contingut strong {
+  color: var(--color-white);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.pol-contingut span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 .reserves-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
 }
@@ -1808,6 +1862,10 @@ a:hover {
 }
 
   /* Reserves */
+  .reserves-politica {
+    grid-template-columns: 1fr;
+  }
+
   .reserves-cards {
     grid-template-columns: 1fr;
   }

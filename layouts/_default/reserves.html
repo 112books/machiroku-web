@@ -10,6 +10,24 @@
       <p class="reserves-intro-text">{{ i18n "reserves_intro" }}</p>
     </div>
 
+    {{/* Política de reserves */}}
+    <div class="reserves-politica">
+      <div class="pol-item pol-item--no">
+        <div class="pol-icona" aria-hidden="true">✕</div>
+        <div class="pol-contingut">
+          <strong>{{ i18n "reserves_pol_no" }}</strong>
+          <span>{{ i18n "reserves_pol_no_desc" }}</span>
+        </div>
+      </div>
+      <div class="pol-item pol-item--si">
+        <div class="pol-icona" aria-hidden="true">✓</div>
+        <div class="pol-contingut">
+          <strong>{{ i18n "reserves_pol_si" }}</strong>
+          <span>{{ i18n "reserves_pol_si_desc" }}</span>
+        </div>
+      </div>
+    </div>
+
     {{/* 3 cards horitzontals */}}
     <div class="reserves-cards">
 

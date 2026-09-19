@@ -208,7 +208,7 @@
     /* ── KPI Cards ── */
     .kpi-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
       margin-bottom: 2.5rem;
     }
@@ -391,6 +391,7 @@
     .bar-fill--system  { background: linear-gradient(90deg, var(--accent-dark), var(--accent-light)); }
     .bar-fill--size    { background: linear-gradient(90deg, #1a2a00, #7ab840); }
     .bar-fill--location { background: linear-gradient(90deg, #1a1040, #8060d0); }
+    .bar-fill--weekday  { background: linear-gradient(90deg, var(--accent-dark), #c9a84c); }
     .bar-pct {
       font-size: .72rem;
       color: rgba(240,220,200,.7);
@@ -538,6 +539,11 @@
     <!-- KPI -->
     <div class="kpi-grid">
       <div class="kpi-card">
+        <div class="kpi-label">Mitjana diària</div>
+        <div class="kpi-value accent" id="kpi-avg">–</div>
+        <div class="kpi-sub" id="kpi-avg-sub">visites / dia</div>
+      </div>
+      <div class="kpi-card">
         <div class="kpi-label">Avui</div>
         <div class="kpi-value accent" id="kpi-today">–</div>
         <div class="kpi-sub">visites</div>
@@ -557,6 +563,14 @@
         <div class="kpi-value" id="kpi-total">–</div>
         <div class="kpi-sub" id="kpi-period-sub">–</div>
       </div>
+    </div>
+
+    <!-- DIES DE LA SETMANA -->
+    <div class="section-title"><span class="accent-mark">▸</span> Dies de la setmana més visitats</div>
+    <div id="chart-weekdays" class="bars"></div>
+    <div id="weekdays-insight" class="insight-box" style="display:none">
+      <span class="insight-label">// resum</span>
+      <div id="weekdays-insight-body"></div>
     </div>
 
     <!-- PESTANYES -->
@@ -719,6 +733,12 @@
     document.getElementById('kpi-month').textContent  = monthCount.toLocaleString('ca');
     document.getElementById('kpi-total').textContent  = (data.total || 0).toLocaleString('ca');
 
+    // KPI mitjana diària (sobre els dies amb dades)
+    var distinctDays = hits_by_day.length;
+    var dailyAvg = distinctDays > 0 ? Math.round((data.total || 0) / distinctDays) : 0;
+    document.getElementById('kpi-avg').textContent = dailyAvg.toLocaleString('ca');
+    document.getElementById('kpi-avg-sub').textContent = 'visites / dia · ' + distinctDays + ' dies de dades';
+
     var p = data.period || {};
     document.getElementById('kpi-period-sub').textContent = fmtPeriod(p.start, p.end);
 
@@ -744,6 +764,7 @@
     // Insights
     renderPaginesInsight(data);
     renderDispositiusInsight(data);
+    renderWeekdayBars();
 
     document.getElementById('data-footer').textContent =
       'Dades actualitzades: ' + gen + ' · Període: ' + fmtPeriod(p.start, p.end) + ' · Font: GoatCounter (machiroku.goatcounter.com)';
@@ -971,6 +992,41 @@
   }
 
   /* ══ INSIGHTS EN LLENGUATGE NATURAL ══ */
+  var WEEKDAY_NAMES = ['Diumenge','Dilluns','Dimarts','Dimecres','Dijous','Divendres','Dissabte'];
+
+  function renderWeekdayBars() {
+    var hits_by_day = globalData.hits_by_day || [];
+    var counts = [0,0,0,0,0,0,0];
+    hits_by_day.forEach(function(d){
+      var dow = new Date(d.date + 'T12:00:00').getDay();
+      counts[dow] += d.count;
+    });
+
+    var arr = counts.map(function(c,i){ return { name: WEEKDAY_NAMES[i], id: i, count: c }; });
+    renderBars('chart-weekdays', arr, 'bar-fill--weekday', {}, 'weekday');
+
+    var insightBox = document.getElementById('weekdays-insight');
+    if (!arr.some(function(x){ return x.count > 0; })) { insightBox.style.display = 'none'; return; }
+
+    var total  = arr.reduce(function(s,x){ return s + x.count; }, 0);
+    var sorted = arr.filter(function(x){ return x.count > 0; }).sort(function(a,b){ return b.count - a.count; });
+    var top    = sorted[0];
+    var pct    = Math.round(top.count / total * 100);
+
+    var lines = [
+      'El dia de la setmana amb més visites és el <strong>' + top.name.toLowerCase() + '</strong> (' +
+        top.count.toLocaleString('ca') + ' visites, <span class="accent-text">' + pct + '%</span> del període).'
+    ];
+    if (sorted.length > 1) {
+      lines.push('El segueixen ' + sorted.slice(1, 3).map(function(x){
+        return '<strong>' + x.name.toLowerCase() + '</strong> (' + x.count.toLocaleString('ca') + ')';
+      }).join(' i ') + '.');
+    }
+    insightBox.style.display = 'block';
+    document.getElementById('weekdays-insight-body').innerHTML =
+      lines.map(function(l){ return '<div class="insight-item">' + l + '</div>'; }).join('');
+  }
+
   function renderPaginesInsight(data) {
     var total = data.total || 0;
     if (!total) return;

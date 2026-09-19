@@ -2,199 +2,199 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://machiroku.com/en/categories/</loc>
+    <loc>http://localhost:1313/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/categories/"
+                href="http://localhost:1313/ca/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/categories/"
+                href="http://localhost:1313/es/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/categories/"
+                href="http://localhost:1313/en/categories/"
                 />
   </url><url>
-    <loc>https://machiroku.com/en/contacte-en/</loc>
+    <loc>http://localhost:1313/en/contacte-en/</loc>
   </url><url>
-    <loc>https://machiroku.com/en/contacte/</loc>
+    <loc>http://localhost:1313/en/contacte/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/contacte/"
+                href="http://localhost:1313/ca/contacte/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/contacte/"
+                href="http://localhost:1313/es/contacte/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/contacte/"
+                href="http://localhost:1313/en/contacte/"
                 />
   </url><url>
-    <loc>https://machiroku.com/en/cookies/</loc>
+    <loc>http://localhost:1313/en/cookies/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/cookies/"
+                href="http://localhost:1313/ca/cookies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/cookies/"
+                href="http://localhost:1313/es/cookies/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/cookies/"
+                href="http://localhost:1313/en/cookies/"
                 />
   </url><url>
-    <loc>https://machiroku.com/en/oferta/</loc>
+    <loc>http://localhost:1313/en/oferta/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/oferta/"
+                href="http://localhost:1313/ca/oferta/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/oferta/"
+                href="http://localhost:1313/es/oferta/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/oferta/"
+                href="http://localhost:1313/en/oferta/"
                 />
   </url><url>
-    <loc>https://machiroku.com/en/inici-en/</loc>
+    <loc>http://localhost:1313/en/inici-en/</loc>
   </url><url>
-    <loc>https://machiroku.com/en/inici/</loc>
+    <loc>http://localhost:1313/en/inici/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/inici/"
+                href="http://localhost:1313/ca/inici/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/inici/"
+                href="http://localhost:1313/es/inici/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/inici/"
+                href="http://localhost:1313/en/inici/"
                 />
   </url><url>
-    <loc>https://machiroku.com/en/legals/</loc>
+    <loc>http://localhost:1313/en/legals/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/legals/"
+                href="http://localhost:1313/ca/legals/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/legals/"
+                href="http://localhost:1313/es/legals/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/legals/"
+                href="http://localhost:1313/en/legals/"
                 />
   </url><url>
-    <loc>https://machiroku.com/en/</loc>
+    <loc>http://localhost:1313/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/"
+                href="http://localhost:1313/ca/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/"
+                href="http://localhost:1313/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/"
+                href="http://localhost:1313/en/"
                 />
   </url><url>
-    <loc>https://machiroku.com/en/sobre-nosaltres/</loc>
+    <loc>http://localhost:1313/en/sobre-nosaltres/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/sobre-nosaltres/"
+                href="http://localhost:1313/ca/sobre-nosaltres/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/sobre-nosaltres/"
+                href="http://localhost:1313/es/sobre-nosaltres/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/sobre-nosaltres/"
+                href="http://localhost:1313/en/sobre-nosaltres/"
                 />
   </url><url>
-    <loc>https://machiroku.com/en/oferta-en/</loc>
+    <loc>http://localhost:1313/en/oferta-en/</loc>
   </url><url>
-    <loc>https://machiroku.com/en/privacitat/</loc>
+    <loc>http://localhost:1313/en/privacitat/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/privacitat/"
+                href="http://localhost:1313/ca/privacitat/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/privacitat/"
+                href="http://localhost:1313/es/privacitat/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/privacitat/"
+                href="http://localhost:1313/en/privacitat/"
                 />
   </url><url>
-    <loc>https://machiroku.com/en/reserves/</loc>
+    <loc>http://localhost:1313/en/reserves/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/reserves/"
+                href="http://localhost:1313/ca/reserves/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/reserves/"
+                href="http://localhost:1313/es/reserves/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/reserves/"
+                href="http://localhost:1313/en/reserves/"
                 />
   </url><url>
-    <loc>https://machiroku.com/en/reserves-en/</loc>
+    <loc>http://localhost:1313/en/reserves-en/</loc>
   </url><url>
-    <loc>https://machiroku.com/en/tags/</loc>
+    <loc>http://localhost:1313/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ca-ES"
-                href="https://machiroku.com/ca/tags/"
+                href="http://localhost:1313/ca/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="https://machiroku.com/es/tags/"
+                href="http://localhost:1313/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-GB"
-                href="https://machiroku.com/en/tags/"
+                href="http://localhost:1313/en/tags/"
                 />
   </url>
 </urlset>

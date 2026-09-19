@@ -10,24 +10,6 @@
       <p class="reserves-intro-text">{{ i18n "reserves_intro" }}</p>
     </div>
 
-    {{/* Política de reserves */}}
-    <div class="reserves-politica">
-      <div class="pol-item pol-item--no">
-        <div class="pol-icona" aria-hidden="true">✕</div>
-        <div class="pol-contingut">
-          <strong>{{ i18n "reserves_pol_no" }}</strong>
-          <span>{{ i18n "reserves_pol_no_desc" }}</span>
-        </div>
-      </div>
-      <div class="pol-item pol-item--si">
-        <div class="pol-icona" aria-hidden="true">✓</div>
-        <div class="pol-contingut">
-          <strong>{{ i18n "reserves_pol_si" }}</strong>
-          <span>{{ i18n "reserves_pol_si_desc" }}</span>
-        </div>
-      </div>
-    </div>
-
     {{/* 3 cards horitzontals */}}
     <div class="reserves-cards">
 
@@ -35,8 +17,17 @@
       {{ if $restaurant.reserves.sistemes.telefon }}
       <div class="reserva-card">
         <div class="reserva-icona">📞</div>
-        <h3>{{ i18n "telefon" }}</h3>
-        <p class="reserva-descripcio">{{ i18n "reserves_carta_text" }}</p>
+        <h3>{{ i18n "fer_reserva" }}</h3>
+        <div class="pol-list">
+          <div class="pol-row pol-row--no">
+            <span class="pol-badge pol-badge--no" aria-hidden="true">✕</span>
+            <span>{{ i18n "reserves_pol_no" }}</span>
+          </div>
+          <div class="pol-row pol-row--si">
+            <span class="pol-badge pol-badge--si" aria-hidden="true">✓</span>
+            <span>{{ i18n "reserves_pol_si" }}</span>
+          </div>
+        </div>
         <a href="tel:{{ $restaurant.telefon }}" class="btn btn-primary">
           {{ i18n "trucar_ara" }}
         </a>

@@ -36,9 +36,22 @@ jobs:
           fetch_json "${BASE}/stats/systems?start=${START}&end=${END}&limit=10"   > /tmp/systems.json
           fetch_json "${BASE}/stats/sizes?start=${START}&end=${END}&limit=10"     > /tmp/sizes.json
           fetch_json "${BASE}/stats/locations?start=${START}&end=${END}&limit=10" > /tmp/locations.json
+          echo "--- DEBUG hits ---"     && head -c 500 /tmp/hits.json
           echo "--- DEBUG browsers ---" && head -c 300 /tmp/browsers.json
           echo "--- DEBUG systems ---"  && head -c 300 /tmp/systems.json
           echo "--- DEBUG sizes ---"    && head -c 300 /tmp/sizes.json
+          python3 -c "
+import json, sys
+for name, path in [('hits','/tmp/hits.json'),('browsers','/tmp/browsers.json')]:
+    try:
+        d = json.load(open(path))
+        if 'error' in d:
+            print(f'ERROR API {name}: {d[\"error\"]}', flush=True)
+            sys.exit(1)
+        print(f'OK {name}: {list(d.keys())}')
+    except Exception as e:
+        print(f'WARN {name}: {e}')
+"
           python3 scripts/build-analytics-json.py "${START}" "${END}"
       - name: Process analytics
         run: |

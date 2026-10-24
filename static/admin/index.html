@@ -468,6 +468,12 @@
     .accent-text { color: var(--accent-light); }
 
     /* ── Dues columnes ── */
+    .pages-period { margin-top: .6rem; }
+    .period-hint { font-size: .78rem; color: var(--text-muted); margin-left: .4rem; }
+    .pie-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+    .pie-container { height: 260px; }
+    .pie-container canvas { width: 100% !important; height: 100% !important; }
+
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -490,6 +496,7 @@
     @media (max-width: 768px) {
       .kpi-grid { grid-template-columns: repeat(2, 1fr); }
       .two-col  { grid-template-columns: 1fr; }
+      .pie-grid { grid-template-columns: 1fr; }
       .bar-row  { grid-template-columns: 90px 1fr 45px; gap: .5rem; }
       .bar-label { font-size: .75rem; }
       .chart-container { height: 200px; }
@@ -603,8 +610,21 @@
       <div class="section-title"><span class="accent-mark">▸</span> Visites per idioma</div>
       <div id="chart-langs" class="bars"></div>
 
+      <div class="chart-controls pages-period" id="pages-period-controls" role="group" aria-label="Període de seccions i pàgines">
+        <button class="chart-period-btn pg-btn" onclick="setPagesPeriod('day', this)">Dia</button>
+        <button class="chart-period-btn pg-btn" onclick="setPagesPeriod('week', this)">Setmana</button>
+        <button class="chart-period-btn pg-btn" onclick="setPagesPeriod('month', this)">Mes</button>
+        <button class="chart-period-btn pg-btn" onclick="setPagesPeriod('quarter', this)">Trimestre</button>
+        <button class="chart-period-btn pg-btn" onclick="setPagesPeriod('year', this)">Any</button>
+        <button class="chart-period-btn pg-btn active" onclick="setPagesPeriod('all', this)">Tot</button>
+        <span class="period-hint" id="pages-period-hint"></span>
+      </div>
+
       <div class="section-title"><span class="accent-mark">▸</span> Seccions més visitades</div>
       <div id="chart-sections" class="bars"></div>
+
+      <div class="section-title"><span class="accent-mark">▸</span> Pàgines més visitades</div>
+      <div id="chart-pages" class="bars"></div>
 
       <div id="pagines-insight" class="insight-box" style="display:none">
         <span class="insight-label">// resum</span>
@@ -614,6 +634,21 @@
 
     <!-- TAB: Dispositius -->
     <div id="tab-dispositius" class="tab-panel">
+      <div class="pie-grid">
+        <div>
+          <div class="section-title"><span class="accent-mark">▸</span> Repartiment per dispositiu</div>
+          <div class="chart-container pie-container"><canvas id="pie-devices"></canvas></div>
+        </div>
+        <div>
+          <div class="section-title"><span class="accent-mark">▸</span> Navegadors</div>
+          <div class="chart-container pie-container"><canvas id="pie-browsers"></canvas></div>
+        </div>
+        <div>
+          <div class="section-title"><span class="accent-mark">▸</span> Sistemes operatius</div>
+          <div class="chart-container pie-container"><canvas id="pie-systems"></canvas></div>
+        </div>
+      </div>
+
       <div class="two-col">
         <div>
           <div class="section-title"><span class="accent-mark">▸</span> Navegadors</div>
@@ -714,6 +749,8 @@
   var visitsChart = null;
   var chartPeriodDays = 7;
   var chartGroup = 'day';
+  var pagesPeriod = 'all';
+  var pieCharts = {};
 
   function loadData() {
     fetch(DATA_URL + '?t=' + Date.now())
@@ -763,14 +800,17 @@
     renderChart();
 
     // Pàgines
-    renderBars('chart-langs',    objToArr(data.by_lang    || {}), 'bar-fill--ca',   LANG_NAMES,    'lang');
-    renderBars('chart-sections', objToArr(data.by_section || {}), 'bar-fill--page',  SECTION_NAMES, 'section');
+    renderBars('chart-langs', objToArr(data.by_lang || {}), 'bar-fill--ca', LANG_NAMES, 'lang');
+    updatePagesPeriodUI(data);
+    renderSections(data);
+    renderPages(data);
 
     // Dispositius
     renderBars('chart-browsers', data.browsers || [], 'bar-fill--browser', {}, 'browser');
     renderBars('chart-systems',  data.systems  || [], 'bar-fill--system',  {}, 'system');
     renderBars('chart-sizes',    data.sizes    || [], 'bar-fill--size',    SIZE_LABELS, 'size');
     renderSizeIcons(data.sizes || []);
+    renderPies(data);
 
     // Insights
     renderPaginesInsight(data);
@@ -781,12 +821,7 @@
       'Dades actualitzades: ' + gen + ' · Període: ' + fmtPeriod(p.start, p.end) + ' · Font: GoatCounter (machiroku.goatcounter.com)';
 
     // Animació barres
-    setTimeout(function(){
-      document.querySelectorAll('.bar-fill').forEach(function(b){
-        b.classList.add('anim');
-        setTimeout(function(){ b.style.width = b.getAttribute('data-w') + '%'; }, 40);
-      });
-    }, 120);
+    animateBars();
   }
 
   /* ══ GRÀFIC CHART.JS ══ */
@@ -950,6 +985,191 @@
       .sort(function(a,b){ return b.count - a.count; });
   }
 
+  /* ══ FILTRE DE PERÍODE (PÀGINES I SECCIONS) ══ */
+  var PAGES_PERIODS = {
+    day: 1, week: 7, month: 30, quarter: 90, year: 365, all: null
+  };
+
+  function pagesPeriodRange(key) {
+    var days = PAGES_PERIODS[key];
+    if (!days) return { from: null, to: null };
+    return { from: daysAgo(days - 1), to: daysAgo(0) };
+  }
+
+  function hasDailyData(data) {
+    return !!(data && ((data.pages_daily && Object.keys(data.pages_daily).length) ||
+                       (data.sections_daily && Object.keys(data.sections_daily).length)));
+  }
+
+  function sumDaily(daily, range) {
+    var out = {};
+    Object.entries(daily || {}).forEach(function(entry) {
+      var key = entry[0], series = entry[1], n = 0;
+      Object.entries(series || {}).forEach(function(s) {
+        var date = s[0], count = s[1];
+        if (!range.from || (date >= range.from && date <= range.to)) n += (count || 0);
+      });
+      if (n > 0) out[key] = n;
+    });
+    return out;
+  }
+
+  function pagesPeriodData(data) {
+    var range = pagesPeriodRange(pagesPeriod);
+    var daily = hasDailyData(data);
+    if (daily) {
+      return {
+        sectionMap: sumDaily(data.sections_daily, range),
+        pageMap: sumDaily(data.pages_daily, range),
+        hasDaily: true
+      };
+    }
+    var pageMap = {};
+    (data.hits || []).forEach(function(h) { pageMap[h.path] = h.count; });
+    return { sectionMap: data.by_section || {}, pageMap: pageMap, hasDaily: false };
+  }
+
+  function updatePagesPeriodUI(data) {
+    var daily = hasDailyData(data);
+    if (!daily) pagesPeriod = 'all';
+    document.querySelectorAll('.pg-btn').forEach(function(b) {
+      b.classList.toggle('active', b.getAttribute('onclick').indexOf("'" + pagesPeriod + "'") !== -1);
+      b.disabled = !daily && pagesPeriod !== 'all' && b.getAttribute('onclick').indexOf("'all'") === -1;
+    });
+    var hint = document.getElementById('pages-period-hint');
+    if (!hint) return;
+    if (!daily) {
+      hint.textContent = '· dades antigues: només total';
+    } else if (pagesPeriod === 'all') {
+      var p = data.period || {};
+      hint.textContent = p.start && p.end ? '· ' + fmtPeriod(p.start, p.end) : '';
+    } else {
+      var r = pagesPeriodRange(pagesPeriod);
+      hint.textContent = '· ' + fmtPeriod(r.from, r.to);
+    }
+  }
+
+  function setPagesPeriod(period, btn) {
+    pagesPeriod = period;
+    document.querySelectorAll('.pg-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    if (!globalData) return;
+    updatePagesPeriodUI(globalData);
+    renderSections(globalData);
+    renderPages(globalData);
+    renderPaginesInsight(globalData);
+    animateBars();
+  }
+
+  function renderSections(data) {
+    var map = pagesPeriodData(data).sectionMap;
+    renderBars('chart-sections', objToArr(map), 'bar-fill--page', SECTION_NAMES, 'section');
+  }
+
+  function renderPages(data) {
+    var map = pagesPeriodData(data).pageMap;
+    var items = Object.entries(map)
+      .map(function(e) { return { name: e[0], count: e[1] }; })
+      .sort(function(a, b) { return b.count - a.count; })
+      .slice(0, 15);
+    renderBars('chart-pages', items, 'bar-fill--page', {}, 'page');
+  }
+
+  function animateBars() {
+    setTimeout(function() {
+      document.querySelectorAll('.bar-fill').forEach(function(b) {
+        b.classList.add('anim');
+        setTimeout(function() { b.style.width = b.getAttribute('data-w') + '%'; }, 40);
+      });
+    }, 120);
+  }
+
+  /* ══ GRÀFICS DE FORMATGE ══ */
+  var PIE_COLORS = ['#8b1a1a', '#c9a84c', '#4a90b8', '#4a8b5a', '#8a6a5a', '#8060d0', '#5a4a3a'];
+
+  function pieSlices(items, maxSlices) {
+    var sorted = (items || []).filter(function(i) { return (i.count || 0) > 0; })
+      .sort(function(a, b) { return b.count - a.count; });
+    if (sorted.length <= maxSlices) return sorted;
+    var head = sorted.slice(0, maxSlices - 1);
+    var other = sorted.slice(maxSlices - 1).reduce(function(s, i) { return s + i.count; }, 0);
+    return other > 0 ? head.concat([{ name: 'Altres', count: other }]) : head;
+  }
+
+  function renderPie(canvasId, items, maxSlices) {
+    if (typeof Chart === 'undefined') return;
+    var canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    var slices = pieSlices(items, maxSlices || 6);
+    if (pieCharts[canvasId]) { pieCharts[canvasId].destroy(); delete pieCharts[canvasId]; }
+    if (!slices.length) return;
+    var labels = slices.map(function(s) { return s.name; });
+    var values = slices.map(function(s) { return s.count; });
+    var colors = slices.map(function(s, i) { return s.name === 'Altres' ? '#5a4a3a' : PIE_COLORS[i % PIE_COLORS.length]; });
+
+    pieCharts[canvasId] = new Chart(canvas.getContext('2d'), {
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [{ data: values, backgroundColor: colors, borderColor: '#111010', borderWidth: 2, hoverOffset: 4 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              boxWidth: 9, boxHeight: 9, padding: 8, color: '#8a6a5a',
+              generateLabels: function(chart) {
+                var ds = chart.data.datasets[0];
+                var t = ds.data.reduce(function(s, v) { return s + v; }, 0) || 1;
+                return chart.data.labels.map(function(label, i) {
+                  return {
+                    text: label + ' · ' + ds.data[i].toLocaleString('ca') + ' (' + Math.round(ds.data[i] / t * 100) + '%)',
+                    fillStyle: ds.backgroundColor[i],
+                    strokeStyle: ds.backgroundColor[i],
+                    lineWidth: 0,
+                    index: i,
+                    hidden: !chart.getDataVisibility(i)
+                  };
+                });
+              }
+            }
+          },
+          tooltip: {
+            backgroundColor: '#1c1818', borderColor: '#3a1e1e', borderWidth: 1,
+            titleColor: '#f0ddd0', bodyColor: '#8a6a5a', padding: 10,
+            callbacks: {
+              label: function(c) {
+                var t = c.dataset.data.reduce(function(s, v) { return s + v; }, 0) || 1;
+                return ' ' + c.label + ': ' + c.parsed.toLocaleString('ca') + ' (' + Math.round(c.parsed / t * 100) + '%)';
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  function renderPies(data) {
+    var sizes = data.sizes || [];
+    var mobile = 0, tablet = 0, desktop = 0;
+    sizes.forEach(function(s) {
+      var id = (s.id || s.name || '').toLowerCase();
+      var c = s.count || 0;
+      if (id === 'phone') mobile += c;
+      else if (id === 'tablet') tablet += c;
+      else if (id === 'desktop' || id === 'desktophd' || id === 'larger') desktop += c;
+    });
+    renderPie('pie-devices', [
+      { name: 'Mòbil', count: mobile },
+      { name: 'Tauleta', count: tablet },
+      { name: 'Escriptori', count: desktop }
+    ], 3);
+    renderPie('pie-browsers', (data.browsers || []).map(function(b) { return { name: b.name || '?', count: b.count }; }), 6);
+    renderPie('pie-systems', (data.systems || []).map(function(s) { return { name: s.name || '?', count: s.count }; }), 6);
+  }
+
   function renderBars(containerId, items, defaultCls, labelMap, type) {
     var el = document.getElementById(containerId);
     if (!items || !items.length) { el.innerHTML = '<span style="color:var(--text-muted);font-size:.85rem">Sense dades</span>'; return; }
@@ -1103,7 +1323,7 @@
     if (!total) return;
     var lines = [];
     var byLang = objToArr(data.by_lang || {});
-    var bySection = objToArr(data.by_section || {});
+    var bySection = objToArr(pagesPeriodData(data).sectionMap);
 
     if (byLang.length) {
       var top = byLang[0];

@@ -21,37 +21,21 @@ jobs:
           START=$(date -d '365 days ago' +%Y-%m-%d)
           BASE="https://${GC_ACCOUNT}.goatcounter.com/api/v0"
           AUTH="Authorization: Bearer ${GC_TOKEN}"
-          fetch_json() {
-            local url="$1"
-            local result
-            result=$(curl -s --max-time 15 --retry 2 -H "${AUTH}" "${url}" 2>/dev/null) || true
-            if echo "${result}" | python3 -c "import sys,json; json.load(sys.stdin)" 2>/dev/null; then
-              echo "${result}"
-            else
-              echo "null"
-            fi
+          fetch_to_file() {
+            local url="$1" outfile="$2" timeout="${3:-15}"
+            curl -sf --max-time "${timeout}" --retry 2 -H "${AUTH}" "${url}" -o "${outfile}" 2>/dev/null || echo "null" > "${outfile}"
+            python3 -c "import json; json.load(open('${outfile}'))" 2>/dev/null || echo "null" > "${outfile}"
+            echo "DEBUG ${outfile}: $(wc -c < ${outfile}) bytes"
           }
-          fetch_json "${BASE}/stats/hits?start=${START}&end=${END}&limit=100"     > /tmp/hits.json
-          fetch_json "${BASE}/stats/browsers?start=${START}&end=${END}&limit=10"  > /tmp/browsers.json
-          fetch_json "${BASE}/stats/systems?start=${START}&end=${END}&limit=10"   > /tmp/systems.json
-          fetch_json "${BASE}/stats/sizes?start=${START}&end=${END}&limit=10"     > /tmp/sizes.json
-          fetch_json "${BASE}/stats/locations?start=${START}&end=${END}&limit=10" > /tmp/locations.json
-          echo "--- DEBUG hits ---"     && head -c 500 /tmp/hits.json
-          echo "--- DEBUG browsers ---" && head -c 300 /tmp/browsers.json
-          echo "--- DEBUG systems ---"  && head -c 300 /tmp/systems.json
-          echo "--- DEBUG sizes ---"    && head -c 300 /tmp/sizes.json
-          python3 -c "
-import json, sys
-for name, path in [('hits','/tmp/hits.json'),('browsers','/tmp/browsers.json')]:
-    try:
-        d = json.load(open(path))
-        if 'error' in d:
-            print(f'ERROR API {name}: {d[\"error\"]}', flush=True)
-            sys.exit(1)
-        print(f'OK {name}: {list(d.keys())}')
-    except Exception as e:
-        print(f'WARN {name}: {e}')
-"
+          fetch_to_file "${BASE}/stats/hits?start=${START}&end=${END}&limit=100" /tmp/hits.json 60
+          fetch_to_file "${BASE}/stats/browsers?start=${START}&end=${END}&limit=10"  /tmp/browsers.json
+          fetch_to_file "${BASE}/stats/systems?start=${START}&end=${END}&limit=10"   /tmp/systems.json
+          fetch_to_file "${BASE}/stats/sizes?start=${START}&end=${END}&limit=10"     /tmp/sizes.json
+          fetch_to_file "${BASE}/stats/locations?start=${START}&end=${END}&limit=10" /tmp/locations.json
+          echo "DEBUG hits: $(wc -c < /tmp/hits.json) bytes"
+          echo "DEBUG browsers: $(wc -c < /tmp/browsers.json) bytes"
+          echo "DEBUG systems: $(wc -c < /tmp/systems.json) bytes"
+          echo "DEBUG sizes: $(wc -c < /tmp/sizes.json) bytes"
           python3 scripts/build-analytics-json.py "${START}" "${END}"
       - name: Process analytics
         run: |
@@ -66,6 +50,6 @@ for name, path in [('hits','/tmp/hits.json'),('browsers','/tmp/browsers.json')]:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add static/admin/analytics.json docs/admin/analytics.json
-          git diff --staged --quiet || git commit -m "chore: actualitzar analytics [skip ci]"
+          git diff --staged --quiet || git commit -m "chore: actualitzar analytics"
           git pull --rebase
           git push

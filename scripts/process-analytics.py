@@ -1,4 +1,5 @@
 import json
+import os
 import sys
 from datetime import datetime, timezone
 
@@ -77,15 +78,30 @@ def main():
     hits_data = safe_get(raw, "hits_data") or {}
     hits = safe_get(hits_data, "hits") or []
 
+    # Guard: si hits torna buit, conserva l'analytics existent.
+    if not hits and os.path.exists(output_file):
+        try:
+            with open(output_file) as f:
+                previous = json.load(f)
+            if previous.get("hits"):
+                print("WARN: hits buit; es conserva l'analytics existent")
+                return
+        except (json.JSONDecodeError, OSError):
+            pass
+
     by_lang    = {}
     by_section = {}
     total      = 0
     hits_by_day = {}
+    hits_pages = {}
+    pages_daily = {}
+    sections_daily = {}
 
     for path_item in hits:
         path    = path_item.get("path", "")
         lang    = extract_lang(path)
         section = extract_section(path)
+        path_total = 0
 
         for stat in path_item.get("stats", []):
             date  = (stat.get("day") or "")[:10]
@@ -93,12 +109,24 @@ def main():
             if not count:
                 continue
             total += count
+            path_total += count
             by_lang[lang]       = by_lang.get(lang, 0) + count
             by_section[section] = by_section.get(section, 0) + count
             if date:
                 hits_by_day[date] = hits_by_day.get(date, 0) + count
+                pages_daily.setdefault(path, {})
+                pages_daily[path][date] = pages_daily[path].get(date, 0) + count
+                sections_daily.setdefault(section, {})
+                sections_daily[section][date] = sections_daily[section].get(date, 0) + count
+
+        if path_total > 0:
+            hits_pages[path] = hits_pages.get(path, 0) + path_total
 
     hits_by_day_list = [{"date": k, "count": v} for k, v in sorted(hits_by_day.items())]
+    hits_top = sorted(
+        [{"path": k, "count": v} for k, v in hits_pages.items()],
+        key=lambda x: x["count"], reverse=True
+    )[:30]
 
     # Browsers, systems, sizes, locations
     # GoatCounter API v0: GET /stats/{page} → {"stats": [{id, name, count}], "more": bool}
@@ -131,6 +159,9 @@ def main():
         "hits_by_day": hits_by_day_list,
         "by_lang":     by_lang,
         "by_section":  by_section,
+        "hits":        hits_top,
+        "pages_daily": pages_daily,
+        "sections_daily": sections_daily,
         "browsers":    norm_items(browsers_raw),
         "systems":     norm_items(systems_raw),
         "sizes":       norm_items(sizes_raw),

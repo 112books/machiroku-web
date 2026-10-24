@@ -83,7 +83,7 @@ def main():
         try:
             with open(output_file) as f:
                 previous = json.load(f)
-            if previous.get("hits"):
+            if previous.get("hits") or previous.get("total", 0) > 0:
                 print("WARN: hits buit; es conserva l'analytics existent")
                 return
         except (json.JSONDecodeError, OSError):
@@ -168,7 +168,6 @@ def main():
         "locations":   norm_items(locations_raw),
     }
 
-    import os
     os.makedirs(os.path.dirname(os.path.abspath(output_file)), exist_ok=True)
 
     with open(output_file, "w") as f:

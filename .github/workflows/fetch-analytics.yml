@@ -23,11 +23,14 @@ jobs:
           AUTH="Authorization: Bearer ${GC_TOKEN}"
           fetch_to_file() {
             local url="$1" outfile="$2" timeout="${3:-15}"
-            curl -sf --max-time "${timeout}" --retry 2 -H "${AUTH}" "${url}" -o "${outfile}" 2>/dev/null || echo "null" > "${outfile}"
+            curl -sf --max-time "${timeout}" --retry 5 --retry-delay 2 -H "${AUTH}" "${url}" -o "${outfile}" 2>/dev/null || echo "null" > "${outfile}"
             python3 -c "import json; json.load(open('${outfile}'))" 2>/dev/null || echo "null" > "${outfile}"
             echo "DEBUG ${outfile}: $(wc -c < ${outfile}) bytes"
           }
           fetch_to_file "${BASE}/stats/hits?start=${START}&end=${END}&limit=100" /tmp/hits.json 60
+          if [ "$(wc -c < /tmp/hits.json)" -lt 100 ]; then
+            fetch_to_file "${BASE}/stats/hits?start=${START}&end=${END}&limit=50" /tmp/hits.json 60
+          fi
           fetch_to_file "${BASE}/stats/browsers?start=${START}&end=${END}&limit=10"  /tmp/browsers.json
           fetch_to_file "${BASE}/stats/systems?start=${START}&end=${END}&limit=10"   /tmp/systems.json
           fetch_to_file "${BASE}/stats/sizes?start=${START}&end=${END}&limit=10"     /tmp/sizes.json

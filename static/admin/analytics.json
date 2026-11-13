@@ -1,14 +1,14 @@
 {
-  "generated": "2026-11-13T11:53:49.243193Z",
+  "generated": "2026-11-13T19:16:24.771782Z",
   "period": {
     "start": "2025-11-13",
     "end": "2026-11-13"
   },
-  "total": 6741,
+  "total": 6742,
   "hits_by_day": [
     {
       "date": "2026-04-06",
-      "count": 42
+      "count": 43
     },
     {
       "date": "2026-04-07",
@@ -898,14 +898,14 @@
   "by_lang": {
     "ca": 5140,
     "es": 927,
-    "en": 674
+    "en": 675
   },
   "by_section": {
     "inici": 3279,
     "oferta": 1685,
     "reserves": 1312,
     "contacte": 211,
-    "sobre-nosaltres": 204,
+    "sobre-nosaltres": 205,
     "cookies": 13,
     "inici-es": 10,
     "privacitat": 7,
@@ -2920,6 +2920,9 @@
     },
     "/machiroku-web/ca/cookies": {
       "2026-04-12": 1
+    },
+    "/machiroku-web/en/sobre-nosaltres": {
+      "2026-04-06": 1
     }
   },
   "sections_daily": {
@@ -3828,7 +3831,7 @@
       "2026-09-06": 1,
       "2026-10-21": 1,
       "2026-11-03": 1,
-      "2026-04-06": 4,
+      "2026-04-06": 5,
       "2026-04-08": 1,
       "2026-04-10": 1,
       "2026-04-13": 1,
@@ -3909,17 +3912,17 @@
     {
       "name": "Safari",
       "id": "Safari",
-      "count": 3882
+      "count": 3893
     },
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 2695
+      "count": 2712
     },
     {
       "name": "Firefox",
       "id": "Firefox",
-      "count": 146
+      "count": 148
     },
     {
       "name": "Desconegut",
@@ -3936,27 +3939,27 @@
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 3667
+      "count": 3678
     },
     {
       "name": "Android",
       "id": "Android",
-      "count": 1601
+      "count": 1606
     },
     {
       "name": "Windows",
       "id": "Windows",
-      "count": 790
+      "count": 798
     },
     {
       "name": "macOS",
       "id": "macOS",
-      "count": 538
+      "count": 543
     },
     {
       "name": "Linux",
       "id": "Linux",
-      "count": 150
+      "count": 151
     },
     {
       "name": "Chrome OS",
@@ -3968,17 +3971,17 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 5226
+      "count": 5242
     },
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 1193
+      "count": 1202
     },
     {
       "name": "desktophd",
       "id": "desktophd",
-      "count": 225
+      "count": 230
     },
     {
       "name": "tablet",
@@ -3990,12 +3993,12 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 5921
+      "count": 5950
     },
     {
       "name": "United States",
       "id": "US",
-      "count": 251
+      "count": 252
     },
     {
       "name": "United Kingdom",

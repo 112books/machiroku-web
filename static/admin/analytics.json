@@ -1,14 +1,14 @@
 {
-  "generated": "2026-11-15T13:31:37.702704Z",
+  "generated": "2026-11-15T19:34:44.231513Z",
   "period": {
     "start": "2025-11-15",
     "end": "2026-11-15"
   },
-  "total": 6817,
+  "total": 6816,
   "hits_by_day": [
     {
       "date": "2026-04-06",
-      "count": 43
+      "count": 42
     },
     {
       "date": "2026-04-07",
@@ -906,14 +906,14 @@
   "by_lang": {
     "ca": 5199,
     "es": 939,
-    "en": 679
+    "en": 678
   },
   "by_section": {
     "inici": 3311,
     "oferta": 1701,
     "reserves": 1334,
     "contacte": 213,
-    "sobre-nosaltres": 208,
+    "sobre-nosaltres": 207,
     "cookies": 13,
     "inici-es": 10,
     "privacitat": 7,
@@ -2947,9 +2947,6 @@
     },
     "/machiroku-web/ca/cookies": {
       "2026-04-12": 1
-    },
-    "/machiroku-web/en/sobre-nosaltres": {
-      "2026-04-06": 1
     }
   },
   "sections_daily": {
@@ -3870,7 +3867,7 @@
       "2026-09-06": 1,
       "2026-10-21": 1,
       "2026-11-03": 1,
-      "2026-04-06": 5,
+      "2026-04-06": 4,
       "2026-04-08": 1,
       "2026-04-10": 1,
       "2026-04-13": 1,
@@ -3951,12 +3948,12 @@
     {
       "name": "Safari",
       "id": "Safari",
-      "count": 3918
+      "count": 3920
     },
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 2724
+      "count": 2728
     },
     {
       "name": "Firefox",
@@ -3978,7 +3975,7 @@
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 3706
+      "count": 3708
     },
     {
       "name": "Android",
@@ -3988,7 +3985,7 @@
     {
       "name": "Windows",
       "id": "Windows",
-      "count": 798
+      "count": 802
     },
     {
       "name": "macOS",
@@ -4010,12 +4007,12 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 5281
+      "count": 5283
     },
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 1203
+      "count": 1207
     },
     {
       "name": "desktophd",
@@ -4032,7 +4029,7 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 5986
+      "count": 5992
     },
     {
       "name": "United States",

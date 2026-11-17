@@ -8,4 +8,6 @@ description_en: "Wakame seaweed salad with sesame"
 price: 5.00
 category: "Entrantes"
 available: true
+sitemap:
+  disable: true
 ---

@@ -3,6 +3,7 @@ publishDir = "docs"
 defaultContentLanguage = "ca"
 defaultContentLanguageInSubdir = true
 title = "Machiroku"
+disableKinds = ["taxonomy", "term"]
 
 # Output
 canonifyURLs = true

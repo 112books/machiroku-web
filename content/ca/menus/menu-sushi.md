@@ -7,6 +7,8 @@ description_es: "5 nigiri + 4 maki, Wafu sarada, Sopa de Miso"
 description_en: "5 nigiri + 4 maki, Wafu sarada, Miso Soup"
 price: 16.00
 available: true
+sitemap:
+  disable: true
 ---
 
 Menú complet amb 5 nigiri, 4 maki, amanida i sopa de miso.

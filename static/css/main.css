@@ -1153,7 +1153,7 @@ h1.slogan {
   font-size: 2.5rem;
 }
 
-.reserva-card h3 {
+.reserva-card h2 {
   font-size: 1.3rem;
   color: var(--color-black);
   margin-bottom: 0;
@@ -1529,7 +1529,7 @@ h1.slogan {
   display: block;
 }
 
-.arribar-subcard h4 {
+.arribar-subcard h3 {
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;

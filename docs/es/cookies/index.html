@@ -211,16 +211,16 @@
     
 <div class="legal-page" style="max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);">
 <h1 id="política-de-cookies">Política de cookies</h1>
-<h3 id="1-qué-son-las-cookies">1. ¿Qué son las cookies?</h3>
+<h2 id="1-qué-son-las-cookies">1. ¿Qué son las cookies?</h2>
 <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando navegas por un sitio web. Se utilizan para recordar tus preferencias y mejorar tu experiencia.</p>
-<h3 id="2-tipos-de-cookies-que-utilizamos">2. Tipos de cookies que utilizamos</h3>
+<h2 id="2-tipos-de-cookies-que-utilizamos">2. Tipos de cookies que utilizamos</h2>
 <ul>
 <li><strong>Cookies esenciales:</strong> Necesarias para el funcionamiento del sitio web.</li>
 <li><strong>Cookies analíticas:</strong> Nos permiten analizar cómo los usuarios utilizan el sitio para mejorarlo.</li>
 </ul>
-<h3 id="3-gestión-de-las-cookies">3. Gestión de las cookies</h3>
+<h2 id="3-gestión-de-las-cookies">3. Gestión de las cookies</h2>
 <p>Puedes configurar tu navegador para aceptar o rechazar las cookies. Si rechazas las cookies, es posible que algunas funciones del sitio no funcionen correctamente.</p>
-<h3 id="4-más-información">4. Más información</h3>
+<h2 id="4-más-información">4. Más información</h2>
 <p>Para obtener más información sobre las cookies, visita <a href="https://www.aboutcookies.org">www.aboutcookies.org</a></p>
 </div>
 
@@ -472,7 +472,7 @@
         
         <div class="footer-reviews">
           <h4>Google Reviews</h4>
-          <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="google-reviews-link" aria-label="Veure valoracions a Google Maps (4.7 estrelles, obre en una finestra nova)">
+          <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="google-reviews-link" aria-label="4.7 · Ver más — Ver valoraciones en Google Maps (abre en una ventana nueva)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="#4285F4" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
             <span class="rating" aria-hidden="true">4.7</span>
             <span class="reviews-link">Ver más</span>
@@ -510,7 +510,7 @@
     <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-md); flex-wrap: wrap;">
       <p id="cookie-text" style="margin: 0; font-size: 14px; flex: 1; min-width: 200px; color: #ffffff;"></p>
       <div style="display: flex; gap: var(--spacing-sm);">
-        <button type="button" onclick="rejectCookies()" class="btn" style="padding: 8px 16px; font-size: 12px;"></button>
+        <button type="button" onclick="rejectCookies()" class="btn btn-outline" style="padding: 8px 16px; font-size: 12px;"></button>
         <button type="button" onclick="acceptCookies()" class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;"></button>
       </div>
     </div>
@@ -521,19 +521,19 @@ const lang = document.documentElement.lang || 'ca';
 const texts = {
   ca: {
     text: 'Aquest lloc utilitza cookies per millorar la teva experiència.',
-    link: 'Més informació',
+    link: 'Més informació sobre cookies',
     reject: 'Rebutjar',
     accept: 'Acceptar'
   },
   es: {
     text: 'Este sitio utiliza cookies para mejorar tu experiencia.',
-    link: 'Más información',
+    link: 'Más información sobre cookies',
     reject: 'Rechazar',
     accept: 'Aceptar'
   },
   en: {
     text: 'This site uses cookies to improve your experience.',
-    link: 'More info',
+    link: 'More info about cookies',
     reject: 'Reject',
     accept: 'Accept'
   }
@@ -561,7 +561,7 @@ function rejectCookies() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="' + 'https:\/\/machiroku.com\/' + lang + '/cookies/" style="color: var(--color-accent);">' + t.link + '</a>';
+  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="' + 'https:\/\/machiroku.com\/' + lang + '/cookies/" style="color:#f0ddd0; text-decoration:underline;">' + t.link + '</a>';
   const btns = document.querySelectorAll('#cookie-banner .btn');
   btns[0].textContent = t.reject;
   btns[1].textContent = t.accept;

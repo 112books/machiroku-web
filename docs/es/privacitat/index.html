@@ -211,26 +211,26 @@
     
 <div class="legal-page" style="max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);">
 <h1 id="política-de-privacidad">Política de privacidad</h1>
-<h3 id="1-responsable-del-tratamiento">1. Responsable del tratamiento</h3>
+<h2 id="1-responsable-del-tratamiento">1. Responsable del tratamiento</h2>
 <ul>
 <li><strong>Denominación social:</strong> Machiroku</li>
 <li><strong>Dirección:</strong> Calle de las Magdalenas, 23 - 08003 Barcelona</li>
 <li><strong>Email:</strong> <a href="mailto:machiroku@machiroku.com">machiroku@machiroku.com</a></li>
 </ul>
-<h3 id="2-finalidad">2. Finalidad</h3>
+<h2 id="2-finalidad">2. Finalidad</h2>
 <p>Los datos personales que nos proporciones se utilizarán exclusivamente para:</p>
 <ul>
 <li>Atender tu solicitud de reserva</li>
 <li>Contactar contigo para cuestiones relacionadas con el restaurante</li>
 <li>Cumplir con las obligaciones legales</li>
 </ul>
-<h3 id="3-base-jurídica">3. Base jurídica</h3>
+<h2 id="3-base-jurídica">3. Base jurídica</h2>
 <p>El tratamiento de tus datos se basa en tu consentimiento y/o en la ejecución de un contrato.</p>
-<h3 id="4-destinatarios">4. Destinatarios</h3>
+<h2 id="4-destinatarios">4. Destinatarios</h2>
 <p>Tus datos no se comunicarán a terceros, salvo obligación legal.</p>
-<h3 id="5-derechos">5. Derechos</h3>
+<h2 id="5-derechos">5. Derechos</h2>
 <p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, portabilidad y limitación enviando un email a <a href="mailto:machiroku@machiroku.com">machiroku@machiroku.com</a>.</p>
-<h3 id="6-plazo-de-conservación">6. Plazo de conservación</h3>
+<h2 id="6-plazo-de-conservación">6. Plazo de conservación</h2>
 <p>Los datos se conservarán mientras exista una relación contractual o hasta que solicites su supresión.</p>
 </div>
 
@@ -482,7 +482,7 @@
         
         <div class="footer-reviews">
           <h4>Google Reviews</h4>
-          <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="google-reviews-link" aria-label="Veure valoracions a Google Maps (4.7 estrelles, obre en una finestra nova)">
+          <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="google-reviews-link" aria-label="4.7 · Ver más — Ver valoraciones en Google Maps (abre en una ventana nueva)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="#4285F4" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
             <span class="rating" aria-hidden="true">4.7</span>
             <span class="reviews-link">Ver más</span>
@@ -520,7 +520,7 @@
     <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-md); flex-wrap: wrap;">
       <p id="cookie-text" style="margin: 0; font-size: 14px; flex: 1; min-width: 200px; color: #ffffff;"></p>
       <div style="display: flex; gap: var(--spacing-sm);">
-        <button type="button" onclick="rejectCookies()" class="btn" style="padding: 8px 16px; font-size: 12px;"></button>
+        <button type="button" onclick="rejectCookies()" class="btn btn-outline" style="padding: 8px 16px; font-size: 12px;"></button>
         <button type="button" onclick="acceptCookies()" class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;"></button>
       </div>
     </div>
@@ -531,19 +531,19 @@ const lang = document.documentElement.lang || 'ca';
 const texts = {
   ca: {
     text: 'Aquest lloc utilitza cookies per millorar la teva experiència.',
-    link: 'Més informació',
+    link: 'Més informació sobre cookies',
     reject: 'Rebutjar',
     accept: 'Acceptar'
   },
   es: {
     text: 'Este sitio utiliza cookies para mejorar tu experiencia.',
-    link: 'Más información',
+    link: 'Más información sobre cookies',
     reject: 'Rechazar',
     accept: 'Aceptar'
   },
   en: {
     text: 'This site uses cookies to improve your experience.',
-    link: 'More info',
+    link: 'More info about cookies',
     reject: 'Reject',
     accept: 'Accept'
   }
@@ -571,7 +571,7 @@ function rejectCookies() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="' + 'https:\/\/machiroku.com\/' + lang + '/cookies/" style="color: var(--color-accent);">' + t.link + '</a>';
+  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="' + 'https:\/\/machiroku.com\/' + lang + '/cookies/" style="color:#f0ddd0; text-decoration:underline;">' + t.link + '</a>';
   const btns = document.querySelectorAll('#cookie-banner .btn');
   btns[0].textContent = t.reject;
   btns[1].textContent = t.accept;

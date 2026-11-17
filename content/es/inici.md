@@ -15,7 +15,7 @@ og_image: "images/og-machiroku.jpg"
     <span class="slogan-line slogan-line--2">Mediodías ágiles. Noches con calma.</span>
   </h1>
   <div class="hero-schedule">
-    <h3 class="schedule-title">Horarios</h3>
+    <h2 class="schedule-title">Horarios</h2>
     <div class="schedule-group">
       <span class="day">Lunes y martes</span>
       <span class="hours">13:00h - 15:30h</span>

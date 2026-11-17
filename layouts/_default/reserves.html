@@ -17,7 +17,7 @@
       {{ if $restaurant.reserves.sistemes.telefon }}
       <div class="reserva-card">
         <div class="reserva-icona">📞</div>
-        <h3>{{ i18n "fer_reserva" }}</h3>
+        <h2>{{ i18n "fer_reserva" }}</h2>
         <div class="pol-list">
           <div class="pol-row pol-row--no">
             <span class="pol-badge pol-badge--no" aria-hidden="true">✕</span>
@@ -40,7 +40,7 @@
       {{ if $restaurant.reserves.sistemes.whatsapp }}
       <div class="reserva-card">
         <div class="reserva-icona">💬</div>
-        <h3>WhatsApp</h3>
+        <h2>WhatsApp</h2>
         <p class="reserva-descripcio">{{ i18n "whatsapp_descripcio" }}</p>
         {{ $missatge := index $restaurant.reserves.missatge_whatsapp $lang | default (index $restaurant.reserves.missatge_whatsapp "ca") }}
         {{ $missatge = replace $missatge "{persones}" "X" }}
@@ -58,7 +58,7 @@
       {{/* Horaris */}}
       <div class="reserva-card">
         <div class="reserva-icona">🕐</div>
-        <h3>{{ i18n "horaris" }}</h3>
+        <h2>{{ i18n "horaris" }}</h2>
         {{ $horaris := (hugo.Data).horaris.base }}
         {{ $dies := slice "dilluns" "dimarts" "dimecres" "dijous" "divendres" "dissabte" "diumenge" }}
         {{ $abr  := dict "dilluns" "dl" "dimarts" "dt" "dimecres" "dc" "dijous" "dj" "divendres" "dv" "dissabte" "ds" "diumenge" "dg" }}
@@ -136,7 +136,7 @@
         </iframe>
       </div>
       <div class="mapa-info">
-        <h3><span aria-hidden="true">📍 </span>{{ i18n "com_arribar" }}</h3>
+        <h2><span aria-hidden="true">📍 </span>{{ i18n "com_arribar" }}</h2>
         <p class="mapa-adreca">{{ index $restaurant.adreca.complet $lang }}</p>
         <div class="transport-info">
           <p><span aria-hidden="true">🚇 </span><strong>Metro:</strong> L4 Jaume I · 3 min</p>

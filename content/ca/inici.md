@@ -15,7 +15,7 @@ og_image: "images/og-machiroku.jpg"
 <span class="slogan-line slogan-line--2">Migdies àgils. Nits amb calma.</span>
   </h1>
   <div class="hero-schedule">
-    <h3 class="schedule-title">Horaris</h3>
+    <h2 class="schedule-title">Horaris</h2>
     <div class="schedule-group">
       <span class="day">Dilluns i dimarts</span>
       <span class="hours">13:00h - 15:30h</span>

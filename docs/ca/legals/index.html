@@ -211,22 +211,22 @@
     
 <div class="legal-page" style="max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);">
 <h1 id="avís-legal">Avís Legal</h1>
-<h3 id="1-identificació-del-titular">1. Identificació del titular</h3>
+<h2 id="1-identificació-del-titular">1. Identificació del titular</h2>
 <ul>
 <li><strong>Denominació social:</strong> Machiroku</li>
 <li><strong>Adreça:</strong> Carrer de les Magdalenes, 23 - 08003 Barcelona</li>
 <li><strong>Telèfon:</strong> +34 93 412 60 82</li>
 <li><strong>Email:</strong> <a href="mailto:machiroku@machiroku.com">machiroku@machiroku.com</a></li>
 </ul>
-<h3 id="2-condicions-dús">2. Condicions d&rsquo;ús</h3>
+<h2 id="2-condicions-dús">2. Condicions d&rsquo;ús</h2>
 <p>L&rsquo;accés a aquest lloc web implica l&rsquo;acceptació sense reserves de les condicions d&rsquo;ús descrites en aquest avís legal. L&rsquo;usuari es compromet a fer un ús adequat i llegítim del lloc web i dels seus continguts.</p>
-<h3 id="3-propietat-intellectual">3. Propietat intel·lectual</h3>
+<h2 id="3-propietat-intellectual">3. Propietat intel·lectual</h2>
 <p>Tots els continguts d&rsquo;aquest lloc web (textos, gràfics, logotips, imatges, codi) són propietat de Machiroku o de tercers que han autoritzat el seu ús. Queda prohibida la reproducció, distribució o modificació sense autorització prèvia.</p>
-<h3 id="4-limitació-de-responsabilitat">4. Limitació de responsabilitat</h3>
+<h2 id="4-limitació-de-responsabilitat">4. Limitació de responsabilitat</h2>
 <p>Machiroku no es fa responsable de les errades en els continguts d&rsquo;aquest lloc web, ni de les conseqüències derivades de l&rsquo;ús de la informació continguda.</p>
-<h3 id="5-enllaços">5. Enllaços</h3>
+<h2 id="5-enllaços">5. Enllaços</h2>
 <p>Aquest lloc web pot contenir enllaços a llocs web de tercers. Machiroku no controla aquests llocs i no es fa responsable dels seus continguts.</p>
-<h3 id="6-legislació-aplicable">6. Legislació aplicable</h3>
+<h2 id="6-legislació-aplicable">6. Legislació aplicable</h2>
 <p>Aquest avís legal es regeix per la legislació espanyola.</p>
 </div>
 
@@ -478,7 +478,7 @@
         
         <div class="footer-reviews">
           <h4>Google Reviews</h4>
-          <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="google-reviews-link" aria-label="Veure valoracions a Google Maps (4.7 estrelles, obre en una finestra nova)">
+          <a href="https://maps.google.com/?q=Machiroku&#43;Barcelona" target="_blank" rel="noopener" class="google-reviews-link" aria-label="4.7 · Veure més — Veure valoracions a Google Maps (obre en una finestra nova)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="#4285F4" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
             <span class="rating" aria-hidden="true">4.7</span>
             <span class="reviews-link">Veure més</span>
@@ -516,7 +516,7 @@
     <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-md); flex-wrap: wrap;">
       <p id="cookie-text" style="margin: 0; font-size: 14px; flex: 1; min-width: 200px; color: #ffffff;"></p>
       <div style="display: flex; gap: var(--spacing-sm);">
-        <button type="button" onclick="rejectCookies()" class="btn" style="padding: 8px 16px; font-size: 12px;"></button>
+        <button type="button" onclick="rejectCookies()" class="btn btn-outline" style="padding: 8px 16px; font-size: 12px;"></button>
         <button type="button" onclick="acceptCookies()" class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;"></button>
       </div>
     </div>
@@ -527,19 +527,19 @@ const lang = document.documentElement.lang || 'ca';
 const texts = {
   ca: {
     text: 'Aquest lloc utilitza cookies per millorar la teva experiència.',
-    link: 'Més informació',
+    link: 'Més informació sobre cookies',
     reject: 'Rebutjar',
     accept: 'Acceptar'
   },
   es: {
     text: 'Este sitio utiliza cookies para mejorar tu experiencia.',
-    link: 'Más información',
+    link: 'Más información sobre cookies',
     reject: 'Rechazar',
     accept: 'Aceptar'
   },
   en: {
     text: 'This site uses cookies to improve your experience.',
-    link: 'More info',
+    link: 'More info about cookies',
     reject: 'Reject',
     accept: 'Accept'
   }
@@ -567,7 +567,7 @@ function rejectCookies() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="' + 'https:\/\/machiroku.com\/' + lang + '/cookies/" style="color: var(--color-accent);">' + t.link + '</a>';
+  document.getElementById('cookie-text').innerHTML = t.text + ' <a href="' + 'https:\/\/machiroku.com\/' + lang + '/cookies/" style="color:#f0ddd0; text-decoration:underline;">' + t.link + '</a>';
   const btns = document.querySelectorAll('#cookie-banner .btn');
   btns[0].textContent = t.reject;
   btns[1].textContent = t.accept;

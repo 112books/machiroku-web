@@ -15,7 +15,7 @@ og_image: "images/og-machiroku.jpg"
     <span class="slogan-line slogan-line--2">Quick lunches. Calm evenings.</span>
   </h1>
   <div class="hero-schedule">
-    <h3 class="schedule-title">Hours</h3>
+    <h2 class="schedule-title">Hours</h2>
     <div class="schedule-group">
       <span class="day">Monday and Tuesday</span>
       <span class="hours">13:00h - 15:30h</span>

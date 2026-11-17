@@ -89,7 +89,7 @@ machiroku_hugo/
 │   │   ├── main.js             # Toggle nav mòbil + scroll suau
 │   │   └── estat-restaurant.js # Sense optional chaining (?.) per compatibilitat
 │   ├── images/
-│   │   └── machiroku-web-background.svg  # 2064×2912px retrat
+│   │   └── machiroku-web-background.webp # 2064×2912px retrat (lossless)
 │   ├── logos/
 │   │   └── Machiroku-logo-gran-vectoritzat.svg
 │   └── admin/
@@ -175,7 +175,7 @@ layout: "oferta"   # oferta | reserves | contacte | sobre-nosaltres
 ```
 
 Fonts: **Oswald** (cos), **Kaushan Script** (eslogan).
-Fons: `machiroku-web-background.svg` (2064×2912px retrat) — `background-size: auto 100vh` desktop, `cover` mòbil.
+Fons: `machiroku-web-background.webp` (2064×2912px retrat, lossless) — ruta relativa des de `/css/` — `background-size: auto 100vh` desktop, `cover` mòbil.
 
 ### CSS — 16 seccions (`static/css/main.css`)
 

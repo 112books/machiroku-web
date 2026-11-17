@@ -130,7 +130,7 @@ plats:
     ordre: 2
     actiu: true
     destacat: false
-    preu: 5.80
+    preu: 6.80
     foto: ""
     descripcio: "Tofu salad"
     alergics: ["soja"]
@@ -141,7 +141,7 @@ plats:
     ordre: 1
     actiu: true
     destacat: true
-    preu: 8.00
+    preu: 8.50
     foto: ""
     descripcio: "Beef carpaccio, lightly seared"
     alergics: ["soja", "gluten"]
@@ -163,7 +163,7 @@ plats:
     ordre: 2
     actiu: true
     destacat: true
-    preu: 15.00
+    preu: 15.80
     foto: ""
     descripcio: "Japanese rice box of cooked eel with sauce"
     alergics: ["peix", "gluten", "soja"]
@@ -196,7 +196,7 @@ plats:
     ordre: 1
     actiu: true
     destacat: false
-    preu: 17.50
+    preu: 18.00
     foto: ""
     descripcio: "Tuna and salmon"
     alergics: ["peix"]
@@ -207,7 +207,7 @@ plats:
     ordre: 2
     actiu: true
     destacat: false
-    preu: 16.00
+    preu: 16.50
     foto: ""
     descripcio: "Salmon sashimi"
     alergics: ["peix"]
@@ -229,7 +229,7 @@ plats:
     ordre: 1
     actiu: true
     destacat: false
-    preu: 5.60
+    preu: 5.80
     foto: ""
     descripcio: "Tuna"
     alergics: ["peix", "sesam"]
@@ -251,7 +251,7 @@ plats:
     ordre: 3
     actiu: true
     destacat: false
-    preu: 5.20
+    preu: 5.60
     foto: ""
     descripcio: "Salmon"
     alergics: ["peix", "sesam"]
@@ -273,7 +273,7 @@ plats:
     ordre: 5
     actiu: true
     destacat: false
-    preu: 4.80
+    preu: 5.00
     foto: ""
     descripcio: "Vinegared mackerel"
     alergics: ["peix", "sesam"]
@@ -317,7 +317,7 @@ plats:
     ordre: 9
     actiu: true
     destacat: false
-    preu: 10.50
+    preu: 10.90
     foto: ""
     descripcio: "Combination 5 nigiri"
     alergics: ["peix", "sesam"]
@@ -328,7 +328,7 @@ plats:
     ordre: 10
     actiu: true
     destacat: false
-    preu: 16.00
+    preu: 17.00
     foto: ""
     descripcio: "Combination 7 nigiri"
     alergics: ["peix", "sesam"]
@@ -339,7 +339,7 @@ plats:
     ordre: 11
     actiu: true
     destacat: true
-    preu: 16.00
+    preu: 17.00
     foto: ""
     descripcio: "Combination 5 nigiri + 6 maki"
     alergics: ["peix", "sesam", "gluten"]
@@ -350,7 +350,7 @@ plats:
     ordre: 1
     actiu: true
     destacat: false
-    preu: 6.00
+    preu: 7.00
     foto: ""
     descripcio: "Tuna"
     alergics: ["peix", "sesam", "gluten"]
@@ -361,7 +361,7 @@ plats:
     ordre: 2
     actiu: true
     destacat: false
-    preu: 5.50
+    preu: 6.50
     foto: ""
     descripcio: "Salmon"
     alergics: ["peix", "sesam", "gluten"]
@@ -372,7 +372,7 @@ plats:
     ordre: 3
     actiu: true
     destacat: false
-    preu: 6.50
+    preu: 7.50
     foto: ""
     descripcio: "Minced fatty tuna with spring onion"
     alergics: ["peix", "sesam", "gluten"]
@@ -383,7 +383,7 @@ plats:
     ordre: 4
     actiu: true
     destacat: false
-    preu: 8.50
+    preu: 9.50
     foto: ""
     descripcio: "Salmon roe"
     alergics: ["peix", "sesam", "gluten"]
@@ -394,7 +394,7 @@ plats:
     ordre: 5
     actiu: true
     destacat: false
-    preu: 7.00
+    preu: 8.00
     foto: ""
     descripcio: "Salmon, crab stick and mayonnaise"
     alergics: ["peix", "crustacis", "ou", "sesam", "gluten"]
@@ -405,7 +405,7 @@ plats:
     ordre: 6
     actiu: true
     destacat: false
-    preu: 7.00
+    preu: 8.00
     foto: ""
     descripcio: "Avocado, crab stick and mayonnaise"
     alergics: ["crustacis", "ou", "sesam", "gluten"]
@@ -416,7 +416,7 @@ plats:
     ordre: 7
     actiu: true
     destacat: false
-    preu: 8.00
+    preu: 9.00
     foto: ""
     descripcio: "Big roll of salmon, avocado, crab stick, masago and cucumber"
     alergics: ["peix", "crustacis", "ou", "sesam", "gluten"]
@@ -427,7 +427,7 @@ plats:
     ordre: 8
     actiu: true
     destacat: false
-    preu: 8.30
+    preu: 9.30
     foto: ""
     descripcio: "Salmon and avocado"
     alergics: ["peix", "sesam", "gluten"]
@@ -438,7 +438,7 @@ plats:
     ordre: 9
     actiu: true
     destacat: false
-    preu: 8.50
+    preu: 9.50
     foto: ""
     descripcio: "Tuna and avocado"
     alergics: ["peix", "sesam", "gluten"]
@@ -449,7 +449,7 @@ plats:
     ordre: 10
     actiu: true
     destacat: false
-    preu: 8.30
+    preu: 9.30
     foto: ""
     descripcio: "Cooked eel and avocado"
     alergics: ["peix", "sesam", "gluten", "soja"]
@@ -460,7 +460,7 @@ plats:
     ordre: 11
     actiu: true
     destacat: false
-    preu: 8.00
+    preu: 9.00
     foto: ""
     descripcio: "Cooked shrimp, avocado, crab stick and flying-fish roe"
     alergics: ["peix", "crustacis", "sesam", "gluten"]
@@ -471,7 +471,7 @@ plats:
     ordre: 12
     actiu: true
     destacat: false
-    preu: 7.00
+    preu: 8.00
     foto: ""
     descripcio: "Fried chicken"
     alergics: ["gluten", "soja"]
@@ -482,7 +482,7 @@ plats:
     ordre: 13
     actiu: true
     destacat: false
-    preu: 8.00
+    preu: 9.00
     foto: ""
     descripcio: "Shrimp tempura with mayonnaise"
     alergics: ["crustacis", "ou", "gluten", "sesam"]

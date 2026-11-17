@@ -152,7 +152,7 @@ plats:
     ordre: 2
     actiu: true
     destacat: false
-    preu: 5.80
+    preu: 6.80
     foto: ""
     descripcio: "Amanida amb tofu"
     alergics:
@@ -165,7 +165,7 @@ plats:
     ordre: 1
     actiu: true
     destacat: true
-    preu: 8.00
+    preu: 8.50
     foto: ""
     descripcio: "Carpaccio de vedella semi feta"
     alergics:
@@ -193,7 +193,7 @@ plats:
     ordre: 2
     actiu: true
     destacat: true
-    preu: 15.00
+    preu: 15.80
     foto: ""
     descripcio: "Caixa d'arròs amb anguila cuita amb salsa"
     alergics:
@@ -232,7 +232,7 @@ plats:
     ordre: 1
     actiu: true
     destacat: false
-    preu: 17.50
+    preu: 18.00
     foto: ""
     descripcio: "Tonyina i salmó"
     alergics:
@@ -244,7 +244,7 @@ plats:
     ordre: 2
     actiu: true
     destacat: false
-    preu: 16.00
+    preu: 16.50
     foto: ""
     descripcio: "Sashimi de salmó"
     alergics:
@@ -269,7 +269,7 @@ plats:
     ordre: 1
     actiu: true
     destacat: false
-    preu: 5.60
+    preu: 5.80
     foto: ""
     descripcio: "Tonyina"
     alergics:
@@ -295,7 +295,7 @@ plats:
     ordre: 3
     actiu: true
     destacat: false
-    preu: 5.20
+    preu: 5.60
     foto: ""
     descripcio: "Salmó"
     alergics:
@@ -321,7 +321,7 @@ plats:
     ordre: 5
     actiu: true
     destacat: false
-    preu: 4.80
+    preu: 5.00
     foto: ""
     descripcio: "Verat marinat"
     alergics:
@@ -374,7 +374,7 @@ plats:
     ordre: 9
     actiu: true
     destacat: false
-    preu: 10.50
+    preu: 10.90
     foto: ""
     descripcio: "Variat (5 peces)"
     alergics:
@@ -387,7 +387,7 @@ plats:
     ordre: 10
     actiu: true
     destacat: false
-    preu: 16.00
+    preu: 17.00
     foto: ""
     descripcio: "Variat (7 peces)"
     alergics:
@@ -400,7 +400,7 @@ plats:
     ordre: 11
     actiu: true
     destacat: true
-    preu: 16.00
+    preu: 17.00
     foto: ""
     descripcio: "Variat (5 nigiri + 6 maki)"
     alergics:
@@ -415,7 +415,7 @@ plats:
     ordre: 1
     actiu: true
     destacat: false
-    preu: 6.00
+    preu: 7.00
     foto: ""
     descripcio: "Tonyina"
     alergics:
@@ -429,7 +429,7 @@ plats:
     ordre: 2
     actiu: true
     destacat: false
-    preu: 5.50
+    preu: 6.50
     foto: ""
     descripcio: "Salmó"
     alergics:
@@ -443,7 +443,7 @@ plats:
     ordre: 3
     actiu: true
     destacat: false
-    preu: 6.50
+    preu: 7.50
     foto: ""
     descripcio: "Ventresca amb ceba tendra"
     alergics:
@@ -457,7 +457,7 @@ plats:
     ordre: 4
     actiu: true
     destacat: false
-    preu: 8.50
+    preu: 9.50
     foto: ""
     descripcio: "Ous de salmó"
     alergics:
@@ -471,7 +471,7 @@ plats:
     ordre: 5
     actiu: true
     destacat: false
-    preu: 7.00
+    preu: 8.00
     foto: ""
     descripcio: "Salmó, pal de cranc i maionesa"
     alergics:
@@ -487,7 +487,7 @@ plats:
     ordre: 6
     actiu: true
     destacat: false
-    preu: 7.00
+    preu: 8.00
     foto: ""
     descripcio: "Alvocat, pal de cranc i maionesa"
     alergics:
@@ -502,7 +502,7 @@ plats:
     ordre: 7
     actiu: true
     destacat: false
-    preu: 8.00
+    preu: 9.00
     foto: ""
     descripcio: "Rotlle gran de salmó, alvocat, pal de cranc, ous de masago i cogombre"
     alergics:
@@ -518,7 +518,7 @@ plats:
     ordre: 8
     actiu: true
     destacat: false
-    preu: 8.30
+    preu: 9.30
     foto: ""
     descripcio: "Salmó i alvocat"
     alergics:
@@ -532,7 +532,7 @@ plats:
     ordre: 9
     actiu: true
     destacat: false
-    preu: 8.50
+    preu: 9.50
     foto: ""
     descripcio: "Tonyina i alvocat"
     alergics:
@@ -546,7 +546,7 @@ plats:
     ordre: 10
     actiu: true
     destacat: false
-    preu: 8.30
+    preu: 9.30
     foto: ""
     descripcio: "Anguila i alvocat"
     alergics:
@@ -561,7 +561,7 @@ plats:
     ordre: 11
     actiu: true
     destacat: false
-    preu: 8.00
+    preu: 9.00
     foto: ""
     descripcio: "Llagostí cuit, alvocat, pal de cranc i ous de peix volador"
     alergics:
@@ -576,7 +576,7 @@ plats:
     ordre: 12
     actiu: true
     destacat: false
-    preu: 7.00
+    preu: 8.00
     foto: ""
     descripcio: "Pollastre arrebossat"
     alergics:
@@ -589,7 +589,7 @@ plats:
     ordre: 13
     actiu: true
     destacat: false
-    preu: 8.00
+    preu: 9.00
     foto: ""
     descripcio: "Tempura de llagostí amb maionesa"
     alergics:

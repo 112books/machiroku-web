@@ -686,9 +686,9 @@
   <script>
   /* ══ CONFIGURACIÓ ══ */
   var DATA_URL = document.getElementById('analytics-data-url').dataset.url;
-  // SHA-256 de la contrasenya "LinuxBCN2026"
-  // Per canviar: echo -n "nova_contrasenya" | sha256sum
-  var PW_HASH = 'ec689a6b20231cab576cd7604ab478777e3e23bd4e4822dbc841779afa57fbbf';
+  // SHA-256 de la contrasenya de l'equip (no es documenta al repositori públic)
+  // Per canviar: echo -n "nova_contrasenya" | shasum -a 256
+  var PW_HASH = '990a1dfa1164a0cefc6c8fc528864be21c0ac0e4f47d779828899973e5e8facd';
 
   /* ══ AUTH ══ */
   async function sha256(str) {
@@ -843,7 +843,7 @@
       return;
     }
 
-    Chart.defaults.color = '#8a6a5a';
+    Chart.defaults.color = '#d9c5b6';
     Chart.defaults.font.family = "'Oswald', sans-serif";
     Chart.defaults.font.weight = '300';
 
@@ -877,12 +877,12 @@
         scales: {
           x: {
             grid:  { color: 'rgba(255,255,255,0.04)' },
-            ticks: { color: '#8a6a5a', maxTicksLimit: 10, font: { size: 11 } },
+            ticks: { color: '#d9c5b6', maxTicksLimit: 10, font: { size: 11 } },
             border: { color: 'rgba(255,255,255,0.08)' }
           },
           y: {
             grid:  { color: 'rgba(255,255,255,0.04)' },
-            ticks: { color: '#8a6a5a', font: { size: 11 } },
+            ticks: { color: '#d9c5b6', font: { size: 11 } },
             border: { color: 'rgba(255,255,255,0.08)' },
             beginAtZero: true
           }
@@ -894,7 +894,7 @@
             borderColor: '#3a1e1e',
             borderWidth: 1,
             titleColor: '#f0ddd0',
-            bodyColor: '#8a6a5a',
+            bodyColor: '#d9c5b6',
             padding: 10,
             callbacks: {
               label: function(ctx3){
@@ -1119,7 +1119,7 @@
           legend: {
             position: 'bottom',
             labels: {
-              boxWidth: 9, boxHeight: 9, padding: 8, color: '#8a6a5a',
+              boxWidth: 10, boxHeight: 10, padding: 9, color: '#e8d5c6',
               generateLabels: function(chart) {
                 var ds = chart.data.datasets[0];
                 var t = ds.data.reduce(function(s, v) { return s + v; }, 0) || 1;
@@ -1138,7 +1138,7 @@
           },
           tooltip: {
             backgroundColor: '#1c1818', borderColor: '#3a1e1e', borderWidth: 1,
-            titleColor: '#f0ddd0', bodyColor: '#8a6a5a', padding: 10,
+            titleColor: '#f0ddd0', bodyColor: '#d9c5b6', padding: 10,
             callbacks: {
               label: function(c) {
                 var t = c.dataset.data.reduce(function(s, v) { return s + v; }, 0) || 1;
@@ -1273,14 +1273,14 @@
           plugins: {
             legend: {
               position: 'bottom',
-              labels: { color: '#8a6a5a', font: { family: "'Oswald', sans-serif", size: 12 }, boxWidth: 14 }
+              labels: { color: '#e8d5c6', font: { family: "'Oswald', sans-serif", size: 12 }, boxWidth: 14 }
             },
             tooltip: {
               backgroundColor: '#1c1818',
               borderColor: '#3a1e1e',
               borderWidth: 1,
               titleColor: '#f0ddd0',
-              bodyColor: '#8a6a5a',
+              bodyColor: '#d9c5b6',
               padding: 10,
               callbacks: {
                 label: function(ctx2){

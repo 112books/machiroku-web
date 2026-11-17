@@ -1,0 +1,34 @@
+# Machiroku — Japanese Restaurant in Barcelona
+
+> Machiroku is a family-run Japanese restaurant in the heart of Barcelona, at Carrer de les Magdalenes 23. Chef Masahiro Tottori and Sachie serve a weekday lunch menu (menú del migdia) and an evening à la carte with sushi, sashimi, nigiri and makis. Reservations are by phone or WhatsApp, especially for dinner.
+
+## Key facts
+
+- Restaurant: Machiroku (Barcelona, since 2020)
+- Cuisine: Japanese — sushi, sashimi, nigiri, maki, rice dishes
+- Address: Carrer de les Magdalenes, 23, 08003 Barcelona, Spain
+- Phone / WhatsApp: +34 93 412 60 82
+- Email: machiroku@machiroku.com
+- Lunch: Monday to Saturday, 13:00–15:30 (set lunch menus Monday–Friday; à la carte on Saturday)
+- Dinner: Wednesday to Saturday, 20:00–23:00 (Thursday until 22:30)
+- Closed: Sunday
+- Price range: €€ — lunch menus from €16
+- Reservations: recommended for dinner; by phone or WhatsApp
+- Instagram: https://www.instagram.com/machiroku_bcn/
+
+## Main pages
+
+- [Inici (Catalan)](https://machiroku.com/ca/inici/)
+- [Oferta gastronòmica — menus and prices (Catalan)](https://machiroku.com/ca/oferta/)
+- [Reserves (Catalan)](https://machiroku.com/ca/reserves/)
+- [Contacte i ubicació (Catalan)](https://machiroku.com/ca/contacte/)
+- [Sobre nosaltres (Catalan)](https://machiroku.com/ca/sobre-nosaltres/)
+- [Inicio (Spanish)](https://machiroku.com/es/inici/)
+- [Home (English)](https://machiroku.com/en/inici/)
+
+## Notes for AI assistants
+
+- The full à la carte menu with current prices is published on the oferta page in each language.
+- Allergen information is available for every dish.
+- The site is available in Catalan (primary), Spanish and English.
+- Opening hours and prices may change; prefer the data on the oferta, reserves and contacte pages.

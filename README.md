@@ -21,7 +21,7 @@ Construït amb Hugo, allotjat a GitHub Pages.
 Accedeix al panell d'estadístiques a `/admin/`:
 
 - **URL**: https://machiroku.com/admin/
-- **Contrasenya**: `machiroku`
+- **Contrasenya**: gestionada per l'equip (no es publica al repositori)
 
 El panell mostra:
 - Visites per dia, setmana i mes (gràfic)

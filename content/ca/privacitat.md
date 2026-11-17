@@ -5,7 +5,7 @@ slug: "privacitat"
 
 <div class="legal-page" style="max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);">
 
-## Política de privacitat
+# Política de privacitat
 
 ### 1. Responsable del tractament
 

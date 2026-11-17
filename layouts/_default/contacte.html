@@ -1,7 +1,7 @@
 {{ define "main" }}
-{{ $restaurant := .Site.Data.restaurant }}
+{{ $restaurant := hugo.Data.restaurant }}
 {{ $lang := .Site.Language.Lang }}
-{{ $horaris := .Site.Data.horaris.base }}
+{{ $horaris := hugo.Data.horaris.base }}
 
 <section class="contacte-section">
   <div class="container">

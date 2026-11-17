@@ -11,7 +11,7 @@
       </div>
       <div class="menus-grid">
         {{ $lang := .Site.Language.Lang }}
-        {{ $menusData := index .Site.Data $lang "menus" }}
+        {{ $menusData := index hugo.Data $lang "menus" }}
         {{ $menus := $menusData.menus }}
         {{ range sort $menus "ordre" }}
           {{ if .actiu }}
@@ -32,7 +32,7 @@
 
       {{/* Plats per categoria */}}
       {{ $lang := .Site.Language.Lang }}
-      {{ $platsData := index .Site.Data $lang "plats" }}
+      {{ $platsData := index hugo.Data $lang "plats" }}
       {{ $categories := $platsData.categories }}
       {{ $plats := $platsData.plats }}
 
@@ -55,7 +55,7 @@
 
       {{/* Al·lèrgens */}}
       {{ $lang := .Site.Language.Lang }}
-      {{ $alergicsData := .Site.Data.ca.alergics }}
+      {{ $alergicsData := hugo.Data.ca.alergics }}
       <div class="alergics-info">
         <h4>{{ i18n "info_alergics" }}</h4>
         <p>{{ i18n "consultar_alergics" }}</p>

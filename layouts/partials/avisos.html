@@ -4,7 +4,7 @@
 {{ $lang := .Site.Language.Lang }}
 {{ $avui := now.Format "2006-01-02" }}
 
-{{ range .Site.Data.avisos.avisos }}
+{{ range hugo.Data.avisos.avisos }}
   {{ if .actiu }}
     {{ if and (ge $avui .des_de) (le $avui .fins_a) }}
 

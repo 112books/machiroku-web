@@ -41,17 +41,14 @@
 <meta name="description" content="{{ $description }}">
 <link rel="canonical" href="{{ $canonical }}">
 
-{{/* --- hreflang (multiidioma) --- */}}
-{{ range .Site.Languages }}
-  {{ $altLang := .Lang }}
-  {{ $altURL  := printf "%s%s/inici/" $baseURL $altLang }}
-  {{ if $.File }}
-    {{ $altPage := $.GetPage (printf "/%s/%s" $altLang ($.File.Path | path.Dir)) }}
-    {{ if $altPage }}{{ $altURL = $altPage.Permalink }}{{ end }}
-  {{ end }}
-  <link rel="alternate" hreflang="{{ $altLang }}" href="{{ $altURL }}">
+{{/* --- hreflang (multiidioma) — basat en les traduccions reals de la pàgina --- */}}
+{{ $translations := .AllTranslations }}
+{{ range $translations }}
+  <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
 {{ end }}
-<link rel="alternate" hreflang="x-default" href="{{ $baseURL }}ca/inici/">
+{{ $xDefault := printf "%sca/inici/" $baseURL }}
+{{ range $translations }}{{ if eq .Lang "ca" }}{{ $xDefault = .Permalink }}{{ end }}{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ $xDefault }}">
 
 {{/* --- Open Graph --- */}}
 <meta property="og:type"        content="{{ if .IsHome }}website{{ else }}article{{ end }}">
@@ -61,8 +58,11 @@
 <meta property="og:image"       content="{{ $ogImage }}">
 <meta property="og:image:width"  content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt"   content="Machiroku — restaurant japonès a Barcelona">
 <meta property="og:site_name"   content="Machiroku">
-<meta property="og:locale"      content="{{ .Site.Language.Lang }}_{{ upper .Site.Language.Lang }}">
+<meta property="og:locale"      content="{{ .Site.Language.Locale }}">
+{{ range .AllTranslations }}{{ if ne .Lang $.Lang }}<meta property="og:locale:alternate" content="{{ .Site.Language.Locale }}">
+{{ end }}{{ end }}
 
 {{/* --- Twitter Card --- */}}
 <meta name="twitter:card"        content="summary_large_image">
@@ -73,4 +73,14 @@
 {{/* --- Schema.org Restaurant (JSON-LD) — només a la home i pàgines principals --- */}}
 {{ if or .IsHome .Params.schema }}
 {{ partial "schema.html" . }}
+{{ end }}
+
+{{/* --- Schema.org Menu (JSON-LD) — pàgina d'oferta --- */}}
+{{ if eq .Layout "oferta" }}
+{{ partial "menu-schema.html" . }}
+{{ end }}
+
+{{/* --- noindex per pàgines de secció primes (categories, tags, dishes, menus) --- */}}
+{{ if in (slice "categories" "tags" "dishes" "menus") .Section }}
+<meta name="robots" content="noindex, follow">
 {{ end }}

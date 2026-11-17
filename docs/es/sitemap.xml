@@ -60,8 +60,6 @@
                 href="https://machiroku.com/en/categories/"
                 />
   </url><url>
-    <loc>https://machiroku.com/es/contacte-es/</loc>
-  </url><url>
     <loc>https://machiroku.com/es/contacte/</loc>
     <xhtml:link
                 rel="alternate"
@@ -107,8 +105,6 @@
                 hreflang="es-ES"
                 href="https://machiroku.com/es/dishes/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/es/inici-es/</loc>
   </url><url>
     <loc>https://machiroku.com/es/inici/</loc>
     <xhtml:link
@@ -168,8 +164,6 @@
                 href="https://machiroku.com/es/menus/"
                 />
   </url><url>
-    <loc>https://machiroku.com/es/oferta-es/</loc>
-  </url><url>
     <loc>https://machiroku.com/es/oferta/</loc>
     <xhtml:link
                 rel="alternate"
@@ -220,8 +214,6 @@
                 hreflang="en-GB"
                 href="https://machiroku.com/en/reserves/"
                 />
-  </url><url>
-    <loc>https://machiroku.com/es/reserves-es/</loc>
   </url><url>
     <loc>https://machiroku.com/es/sobre-nosaltres/</loc>
     <xhtml:link

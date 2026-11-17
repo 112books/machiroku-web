@@ -17,8 +17,8 @@ title = true
 
 # Multiidioma
 [languages.ca]
-languageName = "Català"
-languageCode = "ca-ES"
+label = "Català"
+locale = "ca-ES"
 weight = 1
 contentDir = "content/ca"
 title = "Machiroku - Restaurant Japonès"
@@ -58,8 +58,8 @@ url = "/ca/contacte/"
 weight = 5
 
 [languages.es]
-languageName = "Español"
-languageCode = "es-ES"
+label = "Español"
+locale = "es-ES"
 weight = 2
 contentDir = "content/es"
 title = "Machiroku - Restaurante Japonés"
@@ -99,8 +99,8 @@ url = "/es/contacte/"
 weight = 5
 
 [languages.en]
-languageName = "English"
-languageCode = "en-GB"
+label = "English"
+locale = "en-GB"
 weight = 3
 contentDir = "content/en"
 title = "Machiroku - Japanese Restaurant"

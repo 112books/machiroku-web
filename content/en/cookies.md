@@ -5,7 +5,7 @@ slug: "cookies"
 
 <div class="legal-page" style="max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);">
 
-## Cookie Policy
+# Cookie Policy
 
 ### 1. What are cookies?
 

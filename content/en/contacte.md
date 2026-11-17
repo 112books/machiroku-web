@@ -1,5 +1,5 @@
 ---
-title: "Contacte"
-description: "Contacta amb el restaurant Machiroku de Barcelona."
+title: "Contact"
+description: "Contact Machiroku restaurant in Barcelona: address, phone, email and opening hours."
 layout: "contacte"
 ---

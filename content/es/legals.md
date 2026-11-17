@@ -5,7 +5,7 @@ slug: "legals"
 
 <div class="legal-page" style="max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);">
 
-## Aviso Legal
+# Aviso Legal
 
 ### 1. Identificación del titular
 

@@ -657,6 +657,13 @@ a:hover {
   margin: var(--spacing-md) 0;
 }
 
+h1.slogan {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
 .slogan-line--1 {
   font-family: 'Kaushan Script', cursive;
   font-size: 2.6rem;

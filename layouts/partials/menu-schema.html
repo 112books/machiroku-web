@@ -1,0 +1,64 @@
+{{/* ==============================================
+     SCHEMA.ORG — Menu (JSON-LD)
+     Generat des de data/[lang]/plats.yaml i menus.yaml
+     ============================================== */}}
+{{ $lang       := .Site.Language.Lang }}
+{{ $platsData  := index hugo.Data $lang "plats" }}
+{{ $menusData  := index hugo.Data $lang "menus" }}
+{{ $sections   := slice }}
+
+{{/* Menús del migdia */}}
+{{ $menusItems := slice }}
+{{ range sort $menusData.menus "ordre" }}
+  {{ if .actiu }}
+    {{ $menusItems = $menusItems | append (dict
+      "@type" "MenuItem"
+      "name" .nom
+      "description" .descripcio
+      "offers" (dict "@type" "Offer" "price" (printf "%.2f" .preu) "priceCurrency" "EUR")
+    ) }}
+  {{ end }}
+{{ end }}
+{{ with $menusItems }}
+  {{ $sections = $sections | append (dict
+    "@type" "MenuSection"
+    "name" (i18n "servei_menu")
+    "hasMenuItem" .
+  ) }}
+{{ end }}
+
+{{/* Carta nocturna per categories */}}
+{{ range sort $platsData.categories "ordre" }}
+  {{ $catId  := .id }}
+  {{ $catNom := .nom }}
+  {{ $items  := slice }}
+  {{ range sort $platsData.plats "ordre" }}
+    {{ if and (eq .categoria $catId) .actiu }}
+      {{ $items = $items | append (dict
+        "@type" "MenuItem"
+        "name" .nom
+        "description" .descripcio
+        "offers" (dict "@type" "Offer" "price" (printf "%.2f" .preu) "priceCurrency" "EUR")
+      ) }}
+    {{ end }}
+  {{ end }}
+  {{ with $items }}
+    {{ $sections = $sections | append (dict
+      "@type" "MenuSection"
+      "name" $catNom
+      "hasMenuItem" .
+    ) }}
+  {{ end }}
+{{ end }}
+
+{{ $menu := dict
+  "@context" "https://schema.org"
+  "@type" "Menu"
+  "name" (printf "Machiroku — %s" (i18n "nav_oferta"))
+  "inLanguage" $lang
+  "url" .Permalink
+  "hasMenuSection" $sections
+}}
+<script type="application/ld+json">
+{{ $menu | jsonify | safeJS }}
+</script>

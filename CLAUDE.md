@@ -1,7 +1,7 @@
 # CLAUDE.md — Machiroku Web
 
 Guia per a Claude Code quan treballa en aquest repositori.
-Última revisió: 2026-09-19
+Última revisió: 2026-11-17
 
 ---
 
@@ -13,7 +13,7 @@ Objectius: informar (oferta, horaris, ubicació), activar reserves, permetre aut
 - **Repo**: https://github.com/112books/machiroku-web
 - **Staging**: https://112books.github.io/machiroku-web/ca/inici/
 - **Producció**: https://machiroku.com/
-- **Hugo**: v0.159 (extended)
+- **Hugo**: v0.168 (extended)
 - **Stack**: Hugo + GitHub Pages + GoatCounter
 
 ---
@@ -77,7 +77,8 @@ machiroku_hugo/
 │   │   └── sobre-nosaltres.html
 │   └── partials/
 │       ├── seo.html            # title, description, canonical, hreflang, og:*, twitter:*
-│       ├── schema.html         # JSON-LD schema.org Restaurant
+│       ├── schema.html         # JSON-LD schema.org Restaurant (des de data/)
+│       ├── menu-schema.html    # JSON-LD schema.org Menu (carta + preus)
 │       ├── avisos.html         # Banners/popups temporals
 │       ├── estat-restaurant.html  # Injecta horaris + i18n com a JSON per JS
 │       ├── menu-card.html      # Card de menú del migdia
@@ -153,7 +154,7 @@ layout: "oferta"   # oferta | reserves | contacte | sobre-nosaltres
 
 - GoatCounter: `machiroku.goatcounter.com`
 - GitHub Action actualitza `static/admin/analytics.json` **i** `docs/admin/analytics.json` cada hora via secret `GOATCOUNTER_TOKEN`
-- Dashboard: `/admin/` — contrasenya: **`machiroku`**
+- Dashboard: `/admin/` — contrasenya gestionada per l'equip (**no es publica en aquest repositori públic**; demana-la si cal)
   - Staging: `https://112books.github.io/machiroku-web/admin/`
   - Producció: `https://machiroku.com/admin/`
 - Per canviar la contrasenya: `echo -n "nova" | sha256sum` → actualitzar `PW_HASH` a `static/admin/index.html`
@@ -219,10 +220,13 @@ Han de coincidir exactament entre `data/[lang]/plats.yaml` i `data/[lang]/alergi
 
 ---
 
-## Warnings Hugo v0.159 coneguts
+## Migració Hugo 0.168
 
-- `.Site.Languages` deprecated des de v0.156.0 — pendent de solució oficial Hugo
-- `.Site.Data` deprecated des de v0.156.0 — substituït per `hugo.Data` a tots els templates
+- Config: `languageCode` → `locale`, `languageName` → `label`
+- Dades: `.Site.Data` → `hugo.Data`
+- Idiomes: `.Site.Languages` → `.AllTranslations` (selector d'idioma i hreflang)
+- JSON-LD: dins `<script>` cal `{{ $d | jsonify | safeJS }}` (Go escapa el JSON com a string)
+- Build net: sense warnings de deprecació amb Hugo 0.168
 
 ---
 
@@ -230,7 +234,7 @@ Han de coincidir exactament entre `data/[lang]/plats.yaml` i `data/[lang]/alergi
 
 ### Prioritat baixa
 
-- [ ] SEO: meta description personalitzada per pàgina
+- [x] SEO: meta description personalitzada per pàgina
 - [ ] Accessibilitat WCAG 2.1 AA: contrast verificat, alt text, nav teclat
 - [ ] humans.txt a `static/`
 
@@ -270,6 +274,7 @@ Han de coincidir exactament entre `data/[lang]/plats.yaml` i `data/[lang]/alergi
 
 | Data       | Canvis |
 |------------|--------|
+| 2026-11-17 | Hugo 0.168 (locale/label, hugo.Data, .AllTranslations, jsonify+safeJS); preus actualitzats (Tofu Salad 6,80; Gyu Tataki 8,50; Unaju 15,80; Maguro to Salmon 18,00; Salmó 16,50; nigiri 5 kan 10,90 / 7 kan 17,00 / moriawase 17,00; tots els makis +1€); SEO/IA: Schema Restaurant i Menu generats des de dades, hreflang per traduccions, og:locale, llms.txt, robots per a IA, favicon = logo, h1 a inici i legals; eliminació de 8 pàgines duplicades i 25 orfes amb localhost; admin: contrast de llegendes i contrasenya gestionada fora del repo |
 | 2026-09-19 | Dashboard `/admin/`: KPI **Mitjana diària** (visites/dia sobre dies amb dades); bloc **Dies de la setmana més visitats** al final de pàgina amb resum natural; vinculat al període temporal (7/30/90/365 dies) del gràfic; visualització en **gràfic donut** (Chart.js) amb diferents colors per dia |
 | 2026-04-18 | Fix analytics: `process-analytics.py` reescrit (parsing GoatCounter correcte, camp `daily` no `count`, detecció idioma URLs producció); eliminar `config.yml` Netlify CMS amb credencials exposades; favicon admin; footer horaris → dos blocs Dinar/Sopar amb badges de dies (dinàmic des de YAML); mateixa lògica a Reserves amb overrides fons clar; fix foto distorsionada `sobre-nosaltres`; `servei_carta` → "A la Carta (menú no disponible)" / "À la carte" |
 | 2026-04-15 | Dashboard estadístiques `/admin/` amb Chart.js, contrasenya simple, dades per dia/setmana/mes; fix GitHub Action per actualitzar `docs/`; unificació CLAUDE.md |

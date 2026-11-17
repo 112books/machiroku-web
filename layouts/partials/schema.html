@@ -1,62 +1,64 @@
 {{/* ==============================================
      SCHEMA.ORG — Restaurant (JSON-LD)
+     Generat des de data/restaurant.yaml i data/horaris.yaml
      ============================================== */}}
 {{ $r    := (hugo.Data).restaurant }}
 {{ $h    := (hugo.Data).horaris }}
 {{ $lang := .Site.Language.Lang }}
+{{ $base := .Site.BaseURL }}
 
+{{/* Dies en ordre + noms schema.org */}}
+{{ $dies   := slice "dilluns" "dimarts" "dimecres" "dijous" "divendres" "dissabte" "diumenge" }}
+{{ $diesEn := dict "dilluns" "Monday" "dimarts" "Tuesday" "dimecres" "Wednesday" "dijous" "Thursday" "divendres" "Friday" "dissabte" "Saturday" "diumenge" "Sunday" }}
+
+{{ $specs := slice }}
+{{ range $dies }}
+  {{ $dia := . }}
+  {{ range index $h.base $dia }}
+    {{ $specs = $specs | append (dict
+      "@type" "OpeningHoursSpecification"
+      "dayOfWeek" (index $diesEn $dia)
+      "opens" .inici
+      "closes" .fi
+    ) }}
+  {{ end }}
+{{ end }}
+
+{{ $sameAs := slice }}
+{{ with $r.xarxes.instagram.url }}{{ $sameAs = $sameAs | append . }}{{ end }}
+{{ with $r.xarxes.facebook.url }}{{ $sameAs = $sameAs | append . }}{{ end }}
+
+{{ $schema := dict
+  "@context" "https://schema.org"
+  "@type" "Restaurant"
+  "@id" (printf "%s#restaurant" $base)
+  "name" "Machiroku"
+  "alternateName" "Machiroku Barcelona"
+  "description" (index $r.slogan $lang)
+  "url" $base
+  "telephone" $r.telefon
+  "email" $r.email
+  "servesCuisine" (slice "Japanese" "Sushi")
+  "priceRange" "€€"
+  "currenciesAccepted" "EUR"
+  "paymentAccepted" "Cash, Credit Card"
+  "acceptsReservations" "True"
+  "hasMenu" (printf "%s%s/oferta/" $base $lang)
+  "image" (slice (printf "%simages/og-machiroku.jpg" $base))
+  "logo" (printf "%slogos/Machiroku-logo-gran-vectoritzat.svg" $base)
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" $r.adreca.carrer
+    "postalCode" $r.adreca.codi_postal
+    "addressLocality" $r.adreca.ciutat
+    "addressRegion" $r.adreca.provincia
+    "addressCountry" "ES"
+  )
+  "geo" (dict "@type" "GeoCoordinates" "latitude" $r.google_maps.lat "longitude" $r.google_maps.lng)
+  "hasMap" $r.google_maps.url
+  "openingHoursSpecification" $specs
+  "sameAs" $sameAs
+}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "Machiroku",
-  "description": {{ index $r.slogan $lang | jsonify }},
-  "url": {{ .Site.BaseURL | jsonify }},
-  "telephone": {{ $r.telefon | jsonify }},
-  "email": {{ $r.email | jsonify }},
-  "servesCuisine": "Japanese",
-  "priceRange": "€€",
-  "currenciesAccepted": "EUR",
-  "paymentAccepted": "Cash, Credit Card",
-  "image": "{{ .Site.BaseURL }}images/og-machiroku.jpg",
-  "logo": "{{ .Site.BaseURL }}logos/Machiroku-logo-gran-vectoritzat.svg",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": {{ $r.adreca.carrer | jsonify }},
-    "postalCode": {{ $r.adreca.codi_postal | jsonify }},
-    "addressLocality": {{ $r.adreca.ciutat | jsonify }},
-    "addressRegion": {{ $r.adreca.provincia | jsonify }},
-    "addressCountry": "ES"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": {{ $r.google_maps.lat }},
-    "longitude": {{ $r.google_maps.lng }}
-  },
-  "hasMap": {{ $r.google_maps.url | jsonify }},
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday"],
-      "opens": "13:00",
-      "closes": "15:30"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "13:00",
-      "closes": "15:30"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "20:00",
-      "closes": "23:00"
-    }
-  ],
-  "sameAs": [
-    {{ $r.xarxes.instagram.url | jsonify }},
-    {{ $r.xarxes.facebook.url | jsonify }}
-  ]
-}
+{{ $schema | jsonify | safeJS }}
 </script>

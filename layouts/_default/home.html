@@ -1,16 +1,17 @@
+{{ $lang := .Site.Language.Lang }}
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="{{ $lang }}">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url={{ .Site.BaseURL }}ca/inici/">
-  <link rel="canonical" href="{{ .Site.BaseURL }}ca/inici/">
-  <title>Machiroku - Restaurant Japonès</title>
+  <meta http-equiv="refresh" content="0; url={{ .Site.BaseURL }}{{ $lang }}/inici/">
+  <link rel="canonical" href="{{ .Site.BaseURL }}{{ $lang }}/inici/">
+  <title>{{ .Site.Title }}</title>
   <script>
-    window.location.replace("{{ .Site.BaseURL }}ca/inici/");
+    window.location.replace("{{ .Site.BaseURL }}{{ $lang }}/inici/");
   </script>
 </head>
 <body style="font-family: sans-serif; text-align: center; padding: 50px;">
   <h1>Redirigint...</h1>
-  <p>Si no es redirigeix automàticament, <a href="{{ .Site.BaseURL }}ca/inici/">clica aquí</a></p>
+  <p>Si no es redirigeix automàticament, <a href="{{ .Site.BaseURL }}{{ $lang }}/inici/">clica aquí</a></p>
 </body>
 </html>

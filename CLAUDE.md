@@ -175,8 +175,8 @@ layout: "oferta"   # oferta | reserves | contacte | sobre-nosaltres
 --bg-overlay:        rgba(26, 26, 26, 0.55)
 ```
 
-Fonts: **Oswald** (cos), **Kaushan Script** (eslogan).
-Fons ornamental: color paper `#f8f7ef` + flors fixades a les cantonades (`background-flors-top/bottom.webp`) via `body::after` amb `position: fixed`. Així el fons omple tot l'ample i les flors **sempre** es veuen (abans `cover` les retallava en pantalles amples).
+Fonts: **Oswald** (cos, variable 300–900) i **Kaushan Script** (eslògan), **auto-allotjades** a `static/fonts/` (sense Google Fonts), amb `preload` i `font-display: swap`.
+Fons ornamental: color paper `#f8f7ef` + flors fixades a les cantonades (`background-flors-top/bottom.webp`) com a `background-image` del `body` (amb `background-attachment: fixed`). Així el fons omple tot l'ample i les flors **sempre** es veuen (abans `cover` les retallava en pantalles amples).
 
 ### CSS — 16 seccions (`static/css/main.css`)
 

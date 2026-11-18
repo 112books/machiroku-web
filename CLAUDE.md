@@ -89,7 +89,8 @@ machiroku_hugo/
 │   │   ├── main.js             # Toggle nav mòbil + scroll suau
 │   │   └── estat-restaurant.js # Sense optional chaining (?.) per compatibilitat
 │   ├── images/
-│   │   └── machiroku-web-background.webp # 2064×2912px retrat (lossless)
+│   │   ├── background-flors-top.webp     # Flors (cantonada superior dreta)
+│   │   └── background-flors-bottom.webp  # Flors (cantonada inferior esquerra)
 │   ├── logos/
 │   │   └── Machiroku-logo-gran-vectoritzat.svg
 │   └── admin/
@@ -175,7 +176,7 @@ layout: "oferta"   # oferta | reserves | contacte | sobre-nosaltres
 ```
 
 Fonts: **Oswald** (cos), **Kaushan Script** (eslogan).
-Fons: `machiroku-web-background.webp` (2064×2912px retrat, lossless) — ruta relativa des de `/css/` — `background-size: auto 100vh` desktop, `cover` mòbil.
+Fons ornamental: color paper `#f8f7ef` + flors fixades a les cantonades (`background-flors-top/bottom.webp`) via `body::after` amb `position: fixed`. Així el fons omple tot l'ample i les flors **sempre** es veuen (abans `cover` les retallava en pantalles amples).
 
 ### CSS — 16 seccions (`static/css/main.css`)
 

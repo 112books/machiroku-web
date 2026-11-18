@@ -92,11 +92,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  background-image: url('../images/machiroku-web-background.webp');
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #f8f7ef;
+}
+
+/* Fons ornamental: flors fixades a les cantonades (sempre visibles) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: url('../images/background-flors-top.webp'), url('../images/background-flors-bottom.webp');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top right, bottom left;
+  background-size: 42vw auto, 56vw auto;
+  background-size: min(42vw, 620px) auto, min(56vw, 820px) auto;
 }
 
 /* Overlay fosc sobre el fons */
@@ -1716,8 +1726,9 @@ h1.slogan {
   }
 
   /* Base */
-  body {
-    background-size: cover;
+  body::after {
+    background-size: 70vw auto, 85vw auto;
+    background-size: min(70vw, 340px) auto, min(85vw, 420px) auto;
   }
 
   h1 { font-size: 2rem; }

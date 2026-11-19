@@ -136,6 +136,7 @@ Google Search Console pot reportar quatre motius perquè una pàgina no s'indexi
 - Les redireccions de URLs antigues viuen a `data/redirects.yaml` (font única) i es materialitzen a `static/<url-antiga>/index.html` amb canonical + `meta refresh` + JS.
 - **No usar `aliases:` al frontmatter**: en un lloc multiidioma Hugo prefixa l'alias amb l'idioma (`/contacto/` → `/ca/contacto/`) i no serveix per a URLs antigues a l'arrel.
 - HTTPS forçat a GitHub Pages activat: `http://` fa 301 → `https://`.
+- `<lastmod>` als sitemaps: `enableGitInfo = true` agafa la data dels commits de cada `.md`. **Les pàgines que es renderitzen des de `data/`** (`oferta`, `reserves`, `contacte`) porten `lastmod:` manual al frontmatter: **actualitza'l quan canviïs preus, menús o horaris** a `data/*.yaml`.
 
 ### Patrons d'accés a dades
 

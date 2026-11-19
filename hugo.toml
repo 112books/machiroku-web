@@ -5,6 +5,10 @@ defaultContentLanguageInSubdir = true
 title = "Machiroku"
 disableKinds = ["taxonomy", "term"]
 
+# Dates de modificació reals (git) → <lastmod> als sitemaps
+# Ajuda Google a prioritzar el recrawl de les pàgines actualitzades.
+enableGitInfo = true
+
 # Output
 canonifyURLs = true
 
@@ -164,3 +168,7 @@ url = "https://maps.google.com/?q=Machiroku+Barcelona"
 # Build
 [build]
 writeStats = true
+
+# Prioritat de dates: lastmod manual del frontmatter > data del commit (git)
+[frontmatter]
+lastmod = ["lastmod", ":git", "date", "publishDate"]

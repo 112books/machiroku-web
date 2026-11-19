@@ -12,18 +12,32 @@
 		
 			<atom:link href="https://machiroku.com/es/index.xml" rel="self" type="application/rss+xml" />
 			<item>
+				<title>Contacto</title>
+				<link>https://machiroku.com/es/contacte/</link>
+				<pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>https://machiroku.com/es/contacte/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Oferta gastronómica</title>
+				<link>https://machiroku.com/es/oferta/</link>
+				<pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>https://machiroku.com/es/oferta/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Reservas</title>
+				<link>https://machiroku.com/es/reserves/</link>
+				<pubDate>Tue, 17 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>https://machiroku.com/es/reserves/</guid>
+				<description></description>
+			</item>
+			<item>
 				<title>Aviso legal</title>
 				<link>https://machiroku.com/es/legals/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
 				<guid>https://machiroku.com/es/legals/</guid>
 				<description>&lt;div class=&#34;legal-page&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h1 id=&#34;aviso-legal&#34;&gt;Aviso Legal&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-identificación-del-titular&#34;&gt;1. Identificación del titular&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Denominación social:&lt;/strong&gt; Machiroku&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; Calle de las Magdalenas, 23 - 08003 Barcelona&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Teléfono:&lt;/strong&gt; +34 93 412 60 82&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:machiroku@machiroku.com&#34;&gt;machiroku@machiroku.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;2-condiciones-de-uso&#34;&gt;2. Condiciones de uso&lt;/h2&gt;&#xA;&lt;p&gt;El acceso a este sitio web implica la aceptación sin reservas de las condiciones de uso descritas en este aviso legal. El usuario se compromete a hacer un uso adecuado y legítimo del sitio web y de sus contenidos.&lt;/p&gt;&#xA;&lt;h2 id=&#34;3-propiedad-intelectual&#34;&gt;3. Propiedad intelectual&lt;/h2&gt;&#xA;&lt;p&gt;Todos los contenidos de este sitio web (textos, gráficos, logotipos, imágenes, código) son propiedad de Machiroku o de terceros que han autorizado su uso. Queda prohibida la reproducción, distribución o modificación sin autorización previa.&lt;/p&gt;&#xA;&lt;h2 id=&#34;4-limitación-de-responsabilidad&#34;&gt;4. Limitación de responsabilidad&lt;/h2&gt;&#xA;&lt;p&gt;Machiroku no se hace responsable de los errores en los contenidos de este sitio web, ni de las consecuencias derivadas del uso de la información contenida.&lt;/p&gt;&#xA;&lt;h2 id=&#34;5-enlaces&#34;&gt;5. Enlaces&lt;/h2&gt;&#xA;&lt;p&gt;Este sitio web puede contener enlaces a sitios web de terceros. Machiroku no controla estos sitios y no se hace responsable de sus contenidos.&lt;/p&gt;&#xA;&lt;h2 id=&#34;6-legislación-aplicable&#34;&gt;6. Legislación aplicable&lt;/h2&gt;&#xA;&lt;p&gt;Este aviso legal se rige por la legislación española.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
-			</item>
-			<item>
-				<title>Contacto</title>
-				<link>https://machiroku.com/es/contacte/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://machiroku.com/es/contacte/</guid>
-				<description></description>
 			</item>
 			<item>
 				<title>Cookies</title>
@@ -33,25 +47,11 @@
 				<description>&lt;div class=&#34;legal-page&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h1 id=&#34;política-de-cookies&#34;&gt;Política de cookies&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-qué-son-las-cookies&#34;&gt;1. ¿Qué son las cookies?&lt;/h2&gt;&#xA;&lt;p&gt;Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando navegas por un sitio web. Se utilizan para recordar tus preferencias y mejorar tu experiencia.&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-tipos-de-cookies-que-utilizamos&#34;&gt;2. Tipos de cookies que utilizamos&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cookies esenciales:&lt;/strong&gt; Necesarias para el funcionamiento del sitio web.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cookies analíticas:&lt;/strong&gt; Nos permiten analizar cómo los usuarios utilizan el sitio para mejorarlo.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;3-gestión-de-las-cookies&#34;&gt;3. Gestión de las cookies&lt;/h2&gt;&#xA;&lt;p&gt;Puedes configurar tu navegador para aceptar o rechazar las cookies. Si rechazas las cookies, es posible que algunas funciones del sitio no funcionen correctamente.&lt;/p&gt;&#xA;&lt;h2 id=&#34;4-más-información&#34;&gt;4. Más información&lt;/h2&gt;&#xA;&lt;p&gt;Para obtener más información sobre las cookies, visita &lt;a href=&#34;https://www.aboutcookies.org&#34;&gt;www.aboutcookies.org&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/div&gt;</description>
 			</item>
 			<item>
-				<title>Oferta gastronómica</title>
-				<link>https://machiroku.com/es/oferta/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://machiroku.com/es/oferta/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>Privacidad</title>
 				<link>https://machiroku.com/es/privacitat/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
 				<guid>https://machiroku.com/es/privacitat/</guid>
 				<description>&lt;div class=&#34;legal-page&#34; style=&#34;max-width: 800px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-lg);&#34;&gt;&#xA;&lt;h1 id=&#34;política-de-privacidad&#34;&gt;Política de privacidad&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-responsable-del-tratamiento&#34;&gt;1. Responsable del tratamiento&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Denominación social:&lt;/strong&gt; Machiroku&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Dirección:&lt;/strong&gt; Calle de las Magdalenas, 23 - 08003 Barcelona&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:machiroku@machiroku.com&#34;&gt;machiroku@machiroku.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;2-finalidad&#34;&gt;2. Finalidad&lt;/h2&gt;&#xA;&lt;p&gt;Los datos personales que nos proporciones se utilizarán exclusivamente para:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Atender tu solicitud de reserva&lt;/li&gt;&#xA;&lt;li&gt;Contactar contigo para cuestiones relacionadas con el restaurante&lt;/li&gt;&#xA;&lt;li&gt;Cumplir con las obligaciones legales&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;3-base-jurídica&#34;&gt;3. Base jurídica&lt;/h2&gt;&#xA;&lt;p&gt;El tratamiento de tus datos se basa en tu consentimiento y/o en la ejecución de un contrato.&lt;/p&gt;&#xA;&lt;h2 id=&#34;4-destinatarios&#34;&gt;4. Destinatarios&lt;/h2&gt;&#xA;&lt;p&gt;Tus datos no se comunicarán a terceros, salvo obligación legal.&lt;/p&gt;&#xA;&lt;h2 id=&#34;5-derechos&#34;&gt;5. Derechos&lt;/h2&gt;&#xA;&lt;p&gt;Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, portabilidad y limitación enviando un email a &lt;a href=&#34;mailto:machiroku@machiroku.com&#34;&gt;machiroku@machiroku.com&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;6-plazo-de-conservación&#34;&gt;6. Plazo de conservación&lt;/h2&gt;&#xA;&lt;p&gt;Los datos se conservarán mientras exista una relación contractual o hasta que solicites su supresión.&lt;/p&gt;&#xA;&lt;/div&gt;</description>
-			</item>
-			<item>
-				<title>Reservas</title>
-				<link>https://machiroku.com/es/reserves/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://machiroku.com/es/reserves/</guid>
-				<description></description>
 			</item>
 			<item>
 				<title>Restaurante japonés en Barcelona</title>

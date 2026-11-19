@@ -1,5 +1,5 @@
 ---
-title: "Inicio"
+title: "Restaurante japonés en Barcelona"
 slug: "inici"
 schema: true
 description: "Machiroku, restaurante japonés en el centro de Barcelona. Menús de mediodía y carta de noche con producto fresco. Reserva tu mesa ahora."

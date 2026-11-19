@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Japanese restaurant in Barcelona"
 slug: "inici"
 schema: true
 description: "Machiroku, Japanese restaurant in the heart of Barcelona. Fresh lunch menus and dinner à la carte. Book your table now."

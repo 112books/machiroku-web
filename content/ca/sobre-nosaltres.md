@@ -1,5 +1,5 @@
 ---
-title: "Machiroku"
+title: "Sobre nosaltres"
 description: "Machiroku és un restaurant japonès familiar al cor de Barcelona, obert el 2020 pel xef Masahiro Tottori i la Sachie."
 layout: "sobre-nosaltres"
 og_image: "images/og-machiroku.jpg"

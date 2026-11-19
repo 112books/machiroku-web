@@ -53,40 +53,6 @@
                 href="https://machiroku.com/en/cookies/"
                 />
   </url><url>
-    <loc>https://machiroku.com/ca/inici/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ca-ES"
-                href="https://machiroku.com/ca/inici/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="https://machiroku.com/es/inici/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-GB"
-                href="https://machiroku.com/en/inici/"
-                />
-  </url><url>
-    <loc>https://machiroku.com/ca/sobre-nosaltres/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ca-ES"
-                href="https://machiroku.com/ca/sobre-nosaltres/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="https://machiroku.com/es/sobre-nosaltres/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-GB"
-                href="https://machiroku.com/en/sobre-nosaltres/"
-                />
-  </url><url>
     <loc>https://machiroku.com/ca/oferta/</loc>
     <xhtml:link
                 rel="alternate"
@@ -136,6 +102,40 @@
                 rel="alternate"
                 hreflang="en-GB"
                 href="https://machiroku.com/en/reserves/"
+                />
+  </url><url>
+    <loc>https://machiroku.com/ca/inici/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="https://machiroku.com/ca/inici/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="https://machiroku.com/es/inici/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="https://machiroku.com/en/inici/"
+                />
+  </url><url>
+    <loc>https://machiroku.com/ca/sobre-nosaltres/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="https://machiroku.com/ca/sobre-nosaltres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="https://machiroku.com/es/sobre-nosaltres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="https://machiroku.com/en/sobre-nosaltres/"
                 />
   </url>
 </urlset>

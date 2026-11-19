@@ -1,5 +1,5 @@
 ---
-title: "Inici"
+title: "Restaurant japonès a Barcelona"
 slug: "inici"
 description: "Machiroku, restaurant japonès al centre de Barcelona. Menús del migdia i carta de nit amb producte fresc. Reserva taula ara."
 schema: true

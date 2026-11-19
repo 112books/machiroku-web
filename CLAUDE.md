@@ -1,7 +1,7 @@
 # CLAUDE.md — Machiroku Web
 
 Guia per a Claude Code quan treballa en aquest repositori.
-Última revisió: 2026-11-17
+Última revisió: 2026-11-19
 
 ---
 
@@ -28,9 +28,13 @@ hugo server --environment development
 # Deploy a GitHub Pages
 ./symc-machiroku.sh deploy        # opció 5 — environment: production
 hugo --environment production --destination docs
+
+# Regenerar redireccions de URLs antigues (només si canvies data/redirects.yaml)
+python3 scripts/generate-redirects.py
 ```
 
 **Important**: Sempre `deploy` (opció 5) per publicar. `push` (opció 4) no reconstrueix `docs/`.
+Si canvies `data/redirects.yaml`, executa abans `python3 scripts/generate-redirects.py`: genera les pàgines de redirecció a `static/` que després es copien a `docs/`.
 
 ### Entorns Hugo
 
@@ -61,6 +65,7 @@ machiroku_hugo/
 │   ├── restaurant.yaml         # Tel, email, maps, xarxes socials
 │   ├── horaris.yaml            # Horaris (font única — footer + contacte)
 │   ├── avisos.yaml             # Avisos temporals (banner/popup)
+│   ├── redirects.yaml          # Mapa d'URLs antigues → noves (genera static/)
 │   ├── ca/
 │   │   ├── menus.yaml          # Menús del migdia en català
 │   │   ├── plats.yaml          # Carta nocturna en català
@@ -98,7 +103,8 @@ machiroku_hugo/
 │       └── analytics.json      # Actualitzat per GitHub Action cada hora
 ├── scripts/
 │   ├── build-analytics-json.py # Consolida raw JSON de GoatCounter
-│   └── process-analytics.py   # Genera analytics.json final (hits_by_day inclòs)
+│   ├── process-analytics.py   # Genera analytics.json final (hits_by_day inclòs)
+│   └── generate-redirects.py  # Genera static/<url-antiga>/index.html des de data/redirects.yaml
 ├── .github/workflows/
 │   └── fetch-analytics.yml     # Actualitza analytics.json cada hora
 ├── i18n/
@@ -115,6 +121,21 @@ machiroku_hugo/
 - `defaultContentLanguage = "ca"` — català és l'idioma per defecte
 - `defaultContentLanguageInSubdir = true` — obligatori per prefixos `/ca/` `/es/` `/en/`; sense aquesta línia el català va a l'arrel i les URLs dels menús donen 404
 - Fitxers i18n: `ca.yaml`, `es.yaml`, `en.yaml` (sense prefix `i18n-`)
+
+### SEO — indexació i redireccions
+
+Google Search Console pot reportar quatre motius perquè una pàgina no s'indexi:
+
+| Motiu | Què és | Acció |
+|-------|--------|-------|
+| **Pàgina amb redirecció** | `/index.html`, `/ca/`, `/es/`, `/en/` redirigeixen a `/{lang}/inici/` (GitHub Pages no fa 301) | Intencionat — no cal tocar res |
+| **Exclòs per `noindex`** | Només `/admin/` i `/404.html` | Intencionat |
+| **No s'ha trobat (404)** | URLs antigues (WordPress 2020, builds intermedis) | Afegir a `data/redirects.yaml` + `python3 scripts/generate-redirects.py` |
+| **Rastrejada: sense indexar** | Pàgines primes o poc úniques | Millorar títol/descripció/contingut; no és un error tècnic |
+
+- Les redireccions de URLs antigues viuen a `data/redirects.yaml` (font única) i es materialitzen a `static/<url-antiga>/index.html` amb canonical + `meta refresh` + JS.
+- **No usar `aliases:` al frontmatter**: en un lloc multiidioma Hugo prefixa l'alias amb l'idioma (`/contacto/` → `/ca/contacto/`) i no serveix per a URLs antigues a l'arrel.
+- HTTPS forçat a GitHub Pages activat: `http://` fa 301 → `https://`.
 
 ### Patrons d'accés a dades
 
@@ -248,7 +269,7 @@ Han de coincidir exactament entre `data/[lang]/plats.yaml` i `data/[lang]/alergi
 ### Producció
 
 - [x] DNS: CNAME a Dinahosting → `112books.github.io`
-- [ ] Activar HTTPS a GitHub Pages
+- [x] Activar HTTPS a GitHub Pages (`https_enforced` = true; http → 301 https)
 - [ ] Eliminar Google Analytics del web antic
 
 ---
@@ -275,6 +296,7 @@ Han de coincidir exactament entre `data/[lang]/plats.yaml` i `data/[lang]/alergi
 
 | Data       | Canvis |
 |------------|--------|
+| 2026-11-19 | SEO/indexació (Search Console): eliminades 10 pàgines primes residuals (`categories`, `dishes`, `menus` a ca/es) que sortien com a `noindex`; 61 redireccions per a URLs antigues (WordPress 2020 + builds intermedis + seccions eliminades) via `data/redirects.yaml` i `scripts/generate-redirects.py`; títols millorats (`inici` i `sobre-nosaltres` als 3 idiomes); HTTPS forçat a GitHub Pages (`http` → 301 `https`) |
 | 2026-11-17 | Hugo 0.168 (locale/label, hugo.Data, .AllTranslations, jsonify+safeJS); preus actualitzats (Tofu Salad 6,80; Gyu Tataki 8,50; Unaju 15,80; Maguro to Salmon 18,00; Salmó 16,50; nigiri 5 kan 10,90 / 7 kan 17,00 / moriawase 17,00; tots els makis +1€); SEO/IA: Schema Restaurant i Menu generats des de dades, hreflang per traduccions, og:locale, llms.txt, robots per a IA, favicon = logo, h1 a inici i legals; eliminació de 8 pàgines duplicades i 25 orfes amb localhost; admin: contrast de llegendes i contrasenya gestionada fora del repo |
 | 2026-09-19 | Dashboard `/admin/`: KPI **Mitjana diària** (visites/dia sobre dies amb dades); bloc **Dies de la setmana més visitats** al final de pàgina amb resum natural; vinculat al període temporal (7/30/90/365 dies) del gràfic; visualització en **gràfic donut** (Chart.js) amb diferents colors per dia |
 | 2026-04-18 | Fix analytics: `process-analytics.py` reescrit (parsing GoatCounter correcte, camp `daily` no `count`, detecció idioma URLs producció); eliminar `config.yml` Netlify CMS amb credencials exposades; favicon admin; footer horaris → dos blocs Dinar/Sopar amb badges de dies (dinàmic des de YAML); mateixa lògica a Reserves amb overrides fons clar; fix foto distorsionada `sobre-nosaltres`; `servei_carta` → "A la Carta (menú no disponible)" / "À la carte" |

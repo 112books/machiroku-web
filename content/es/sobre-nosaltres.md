@@ -1,5 +1,5 @@
 ---
-title: "Restaurante Machiroku"
+title: "Sobre nosotros"
 description: "Cocina japonesa tradicional en el centro de Barcelona desde el año 2000."
 layout: "sobre-nosaltres"
 ---

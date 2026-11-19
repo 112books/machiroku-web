@@ -1,0 +1,144 @@
+# =============================================================
+# REDIRECCIONS 301 (via meta refresh) — Machiroku
+# -------------------------------------------------------------
+# URLs antigues que Google encara coneix (404 / redireccions):
+#   - Web WordPress 2020 (WooCommerce, en castellà)
+#   - Builds intermedis de Hugo amb pàgines a l'arrel
+#   - Seccions primes eliminades (categories, dishes, menus, tags)
+#
+# No es poden fer 301 reals amb GitHub Pages, així que
+# scripts/generate-redirects.py genera static/<from>/index.html
+# amb canonical + meta refresh + JS.
+# =============================================================
+redirects:
+  # ── Web WordPress 2020 (castellà) ──
+  - from: /acerca-de/
+    to: /ca/sobre-nosaltres/
+  - from: /aviso-legal/
+    to: /ca/legals/
+  - from: /blog/
+    to: /ca/inici/
+  - from: /carrito/
+    to: /ca/oferta/
+  - from: /contacto/
+    to: /ca/contacte/
+  - from: /finalizar-compra/
+    to: /ca/reserves/
+  - from: /mi-cuenta/
+    to: /ca/contacte/
+  - from: /oferta-gastronomica/
+    to: /ca/oferta/
+  - from: /pagina-ejemplo/
+    to: /ca/inici/
+  - from: /pedidos-telefonicos-y-recogida-en-nuestro-restaurante/
+    to: /ca/reserves/
+  - from: /politica-de-cookies/
+    to: /ca/cookies/
+  - from: /politica-privacidad/
+    to: /ca/privacitat/
+  - from: /tienda/
+    to: /ca/oferta/
+
+  # ── Pàgines a l'arrel (build intermedi de Hugo) ──
+  - from: /inici/
+    to: /ca/inici/
+  - from: /oferta/
+    to: /ca/oferta/
+  - from: /reserves/
+    to: /ca/reserves/
+  - from: /contacte/
+    to: /ca/contacte/
+  - from: /sobre-nosaltres/
+    to: /ca/sobre-nosaltres/
+  - from: /carta/
+    to: /ca/oferta/
+  - from: /carta/nigiris/
+    to: /ca/oferta/
+  - from: /cookies/
+    to: /ca/cookies/
+  - from: /legals/
+    to: /ca/legals/
+  - from: /privacitat/
+    to: /ca/privacitat/
+  - from: /menus/
+    to: /ca/oferta/
+  - from: /menus/sushi/
+    to: /ca/oferta/
+  - from: /menus/tendon/
+    to: /ca/oferta/
+  - from: /menus/unaju/
+    to: /ca/oferta/
+  - from: /menus/menu-sushi/
+    to: /ca/oferta/
+  - from: /categories/
+    to: /ca/oferta/
+  - from: /categories/entrants/
+    to: /ca/oferta/
+  - from: /dishes/
+    to: /ca/oferta/
+  - from: /dishes/goma-wakame/
+    to: /ca/oferta/
+  - from: /tags/
+    to: /ca/oferta/
+  - from: /pages/
+    to: /ca/oferta/
+
+  # ── Seccions primes eliminades (CA) ──
+  - from: /ca/menus/
+    to: /ca/oferta/
+  - from: /ca/menus/menu-sushi/
+    to: /ca/oferta/
+  - from: /ca/categories/
+    to: /ca/oferta/
+  - from: /ca/categories/entrants/
+    to: /ca/oferta/
+  - from: /ca/dishes/
+    to: /ca/oferta/
+  - from: /ca/dishes/goma-wakame/
+    to: /ca/oferta/
+  - from: /ca/tags/
+    to: /ca/oferta/
+
+  # ── Seccions primes i URLs antigues (ES) ──
+  - from: /es/categories/
+    to: /es/oferta/
+  - from: /es/categories/entrants/
+    to: /es/oferta/
+  - from: /es/dishes/
+    to: /es/oferta/
+  - from: /es/dishes/goma-wakame/
+    to: /es/oferta/
+  - from: /es/menus/
+    to: /es/oferta/
+  - from: /es/menus/menu-sushi/
+    to: /es/oferta/
+  - from: /es/tags/
+    to: /es/oferta/
+  - from: /es/contacte-es/
+    to: /es/contacte/
+  - from: /es/inici-es/
+    to: /es/inici/
+  - from: /es/oferta-es/
+    to: /es/oferta/
+  - from: /es/reserves-es/
+    to: /es/reserves/
+  - from: /es/home/
+    to: /es/inici/
+
+  # ── Seccions primes i URLs antigues (EN) ──
+  - from: /en/categories/
+    to: /en/oferta/
+  - from: /en/tags/
+    to: /en/oferta/
+  - from: /en/menus/
+    to: /en/oferta/
+  - from: /en/contacte-en/
+    to: /en/contacte/
+  - from: /en/inici-en/
+    to: /en/inici/
+  - from: /en/oferta-en/
+    to: /en/oferta/
+  - from: /en/reserves-en/
+    to: /en/reserves/
+  - from: /en/home/
+    to: /en/inici/

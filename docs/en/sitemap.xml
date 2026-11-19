@@ -2,6 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://machiroku.com/en/sobre-nosaltres/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ca-ES"
+                href="https://machiroku.com/ca/sobre-nosaltres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="https://machiroku.com/es/sobre-nosaltres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-GB"
+                href="https://machiroku.com/en/sobre-nosaltres/"
+                />
+  </url><url>
     <loc>https://machiroku.com/en/contacte/</loc>
     <xhtml:link
                 rel="alternate"
@@ -85,23 +102,6 @@
                 rel="alternate"
                 hreflang="en-GB"
                 href="https://machiroku.com/en/legals/"
-                />
-  </url><url>
-    <loc>https://machiroku.com/en/sobre-nosaltres/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ca-ES"
-                href="https://machiroku.com/ca/sobre-nosaltres/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="https://machiroku.com/es/sobre-nosaltres/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-GB"
-                href="https://machiroku.com/en/sobre-nosaltres/"
                 />
   </url><url>
     <loc>https://machiroku.com/en/privacitat/</loc>

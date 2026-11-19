@@ -1,5 +1,0 @@
----
-title: "Categories"
-sitemap:
-  disable: true
----

@@ -274,9 +274,24 @@ Telèfon, email, adreça, xarxes socials i Google Maps: `data/restaurant.yaml`.
 
 ---
 
+## SEO i indexació
+
+- **Sitemap**: https://machiroku.com/sitemap.xml — 24 URLs (8 per idioma), amb `lastmod`
+- **URLs antigues**: les del WordPress 2020 i dels canvis d'estructura redirigeixen automàticament a la pàgina nova
+- **HTTPS**: forçat (http → 301 https)
+- **`noindex`**: només `/admin/` i `/404.html`
+- **Search Console**: guia completa a `SEO-INDEXACIO.md`
+
+> Si canvies preus, menús o horaris a `data/`, recorda actualitzar el camp
+> `lastmod` de `oferta`, `reserves` i `contacte` als tres idiomes.
+
+---
+
 ## Estructura tècnica (referència)
 
 Per a canvis de codi o consultes tècniques, consulta `CLAUDE.md`.
+Per a SEO, redireccions i Search Console, consulta `SEO-INDEXACIO.md`.
+Per a estadístiques, consulta `ANALYTICS.md`.
 
 ---
 

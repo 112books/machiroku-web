@@ -16,6 +16,13 @@ Objectius: informar (oferta, horaris, ubicació), activar reserves, permetre aut
 - **Hugo**: v0.168 (extended)
 - **Stack**: Hugo + GitHub Pages + GoatCounter
 
+### Documentació
+
+- `README.md` — guia d'operació (menús, plats, avisos, horaris)
+- `CLAUDE.md` — referència tècnica (aquest fitxer)
+- `SEO-INDEXACIO.md` — SEO, redireccions, sitemaps i Search Console
+- `ANALYTICS.md` — estadístiques i dashboard
+
 ---
 
 ## Comandes habituals

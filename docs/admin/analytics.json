@@ -1,14 +1,14 @@
 {
-  "generated": "2026-11-22T15:58:00.553599Z",
+  "generated": "2026-11-22T21:39:56.740377Z",
   "period": {
     "start": "2025-11-22",
     "end": "2026-11-22"
   },
-  "total": 7008,
+  "total": 7007,
   "hits_by_day": [
     {
       "date": "2026-04-06",
-      "count": 43
+      "count": 42
     },
     {
       "date": "2026-04-07",
@@ -934,14 +934,14 @@
   "by_lang": {
     "ca": 5342,
     "es": 977,
-    "en": 689
+    "en": 688
   },
   "by_section": {
     "inici": 3398,
     "oferta": 1744,
     "reserves": 1375,
     "contacte": 220,
-    "sobre-nosaltres": 220,
+    "sobre-nosaltres": 219,
     "cookies": 14,
     "inici-es": 10,
     "privacitat": 7,
@@ -3031,9 +3031,6 @@
     },
     "/machiroku-web/ca/cookies": {
       "2026-04-12": 1
-    },
-    "/machiroku-web/en/sobre-nosaltres": {
-      "2026-04-06": 1
     }
   },
   "sections_daily": {
@@ -3983,7 +3980,7 @@
       "2026-09-06": 1,
       "2026-10-21": 1,
       "2026-11-03": 1,
-      "2026-04-06": 5,
+      "2026-04-06": 4,
       "2026-04-08": 1,
       "2026-04-10": 1,
       "2026-04-13": 1,
@@ -4065,7 +4062,7 @@
     {
       "name": "Safari",
       "id": "Safari",
-      "count": 4020
+      "count": 4023
     },
     {
       "name": "Chrome",
@@ -4092,7 +4089,7 @@
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 3795
+      "count": 3798
     },
     {
       "name": "Android",
@@ -4124,7 +4121,7 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 5404
+      "count": 5407
     },
     {
       "name": "desktop",

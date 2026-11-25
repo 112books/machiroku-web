@@ -1,14 +1,14 @@
 {
-  "generated": "2026-11-25T03:29:25.878423Z",
+  "generated": "2026-11-25T13:56:42.929407Z",
   "period": {
     "start": "2025-11-25",
     "end": "2026-11-25"
   },
-  "total": 7070,
+  "total": 7071,
   "hits_by_day": [
     {
       "date": "2026-04-06",
-      "count": 42
+      "count": 43
     },
     {
       "date": "2026-04-07",
@@ -946,14 +946,14 @@
   "by_lang": {
     "ca": 5392,
     "es": 988,
-    "en": 690
+    "en": 691
   },
   "by_section": {
     "inici": 3425,
     "oferta": 1759,
     "reserves": 1385,
     "contacte": 223,
-    "sobre-nosaltres": 225,
+    "sobre-nosaltres": 226,
     "cookies": 14,
     "inici-es": 10,
     "legals": 11,
@@ -3069,6 +3069,9 @@
     },
     "/machiroku-web/ca/cookies": {
       "2026-04-12": 1
+    },
+    "/machiroku-web/en/sobre-nosaltres": {
+      "2026-04-06": 1
     }
   },
   "sections_daily": {
@@ -4035,7 +4038,7 @@
       "2026-09-06": 1,
       "2026-10-21": 1,
       "2026-11-03": 1,
-      "2026-04-06": 4,
+      "2026-04-06": 5,
       "2026-04-08": 1,
       "2026-04-10": 1,
       "2026-04-13": 1,
@@ -4119,12 +4122,12 @@
     {
       "name": "Safari",
       "id": "Safari",
-      "count": 4042
+      "count": 4043
     },
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 2847
+      "count": 2861
     },
     {
       "name": "Firefox",
@@ -4146,22 +4149,22 @@
     {
       "name": "iOS",
       "id": "iOS",
-      "count": 3815
+      "count": 3816
     },
     {
       "name": "Android",
       "id": "Android",
-      "count": 1667
+      "count": 1672
     },
     {
       "name": "Windows",
       "id": "Windows",
-      "count": 847
+      "count": 852
     },
     {
       "name": "macOS",
       "id": "macOS",
-      "count": 582
+      "count": 586
     },
     {
       "name": "Linux",
@@ -4178,12 +4181,12 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 5440
+      "count": 5446
     },
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 1285
+      "count": 1294
     },
     {
       "name": "desktophd",
@@ -4200,7 +4203,7 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 6205
+      "count": 6220
     },
     {
       "name": "United States",

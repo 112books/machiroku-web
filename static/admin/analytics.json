@@ -1,14 +1,14 @@
 {
-  "generated": "2026-11-26T04:54:33.273708Z",
+  "generated": "2026-11-26T14:45:24.431098Z",
   "period": {
     "start": "2025-11-26",
     "end": "2026-11-26"
   },
-  "total": 7106,
+  "total": 7107,
   "hits_by_day": [
     {
       "date": "2026-04-06",
-      "count": 42
+      "count": 43
     },
     {
       "date": "2026-04-07",
@@ -946,14 +946,14 @@
   "by_lang": {
     "ca": 5411,
     "es": 996,
-    "en": 699
+    "en": 700
   },
   "by_section": {
     "inici": 3441,
     "oferta": 1769,
     "reserves": 1392,
     "contacte": 223,
-    "sobre-nosaltres": 228,
+    "sobre-nosaltres": 229,
     "cookies": 14,
     "inici-es": 10,
     "legals": 11,
@@ -3076,6 +3076,9 @@
     },
     "/machiroku-web/ca/cookies": {
       "2026-04-12": 1
+    },
+    "/machiroku-web/en/sobre-nosaltres": {
+      "2026-04-06": 1
     }
   },
   "sections_daily": {
@@ -4043,7 +4046,7 @@
       "2026-09-06": 1,
       "2026-10-21": 1,
       "2026-11-03": 1,
-      "2026-04-06": 4,
+      "2026-04-06": 5,
       "2026-04-08": 1,
       "2026-04-10": 1,
       "2026-04-13": 1,
@@ -4132,12 +4135,12 @@
     {
       "name": "Chrome",
       "id": "Chrome",
-      "count": 2872
+      "count": 2878
     },
     {
       "name": "Firefox",
       "id": "Firefox",
-      "count": 154
+      "count": 156
     },
     {
       "name": "Desconegut",
@@ -4159,22 +4162,22 @@
     {
       "name": "Android",
       "id": "Android",
-      "count": 1679
+      "count": 1680
     },
     {
       "name": "Windows",
       "id": "Windows",
-      "count": 856
+      "count": 859
     },
     {
       "name": "macOS",
       "id": "macOS",
-      "count": 589
+      "count": 591
     },
     {
       "name": "Linux",
       "id": "Linux",
-      "count": 158
+      "count": 160
     },
     {
       "name": "Chrome OS",
@@ -4186,17 +4189,17 @@
     {
       "name": "phone",
       "id": "phone",
-      "count": 5460
+      "count": 5461
     },
     {
       "name": "desktop",
       "id": "desktop",
-      "count": 1301
+      "count": 1306
     },
     {
       "name": "desktophd",
       "id": "desktophd",
-      "count": 242
+      "count": 244
     },
     {
       "name": "tablet",
@@ -4208,12 +4211,12 @@
     {
       "name": "Spain",
       "id": "ES",
-      "count": 6235
+      "count": 6241
     },
     {
       "name": "United States",
       "id": "US",
-      "count": 266
+      "count": 268
     },
     {
       "name": "United Kingdom",
